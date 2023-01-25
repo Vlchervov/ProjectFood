@@ -1,0 +1,100 @@
+ {
+  "categories": [
+      {
+      "id": 0,
+      "title": "Наименование товара №1",
+      "src": "https://top-fon.com/uploads/posts/2022-09/thumbs/1663730724_3-top-fon-com-p-serii-fon-jpeg-foto-5.jpg",
+      "descr": "Описание товара №1 в первой категории"
+    },
+    {
+      "id": 1,
+      "title": "Наименование товара №2",
+      "src": "https://top-fon.com/uploads/posts/2022-09/thumbs/1663730724_3-top-fon-com-p-serii-fon-jpeg-foto-5.jpg",
+      "descr": "Описание товара dasda dasdasd asd asdsadasd"
+    },
+    {
+      "id": 2,
+      "title": "Наименование товара №3",
+      "src": "https://top-fon.com/uploads/posts/2022-09/thumbs/1663730724_3-top-fon-com-p-serii-fon-jpeg-foto-5.jpg",
+      "descr": "Описание товара dasda dasdasd asd asdsadasd"
+    },
+    {
+      "id": 3,
+      "title": "Наименование товара №4",
+      "src": "https://top-fon.com/uploads/posts/2022-09/thumbs/1663730724_3-top-fon-com-p-serii-fon-jpeg-foto-5.jpg",
+      "descr": "Описание товара dasda dasdasd asd asdsadasd"
+    },
+    {
+      "id": 4,
+      "title": "Наименование товара №5",
+      "src": "https://top-fon.com/uploads/posts/2022-09/thumbs/1663730724_3-top-fon-com-p-serii-fon-jpeg-foto-5.jpg",
+      "descr": "Описание товара dasda dasdasd asd asdsadasd"
+    },
+    {
+      "id": 5,
+      "title": "Наименование товара №6",
+      "src": "https://top-fon.com/uploads/posts/2022-09/thumbs/1663730724_3-top-fon-com-p-serii-fon-jpeg-foto-5.jpg",
+      "descr": "Описание Денчика, как дела?"
+    },
+    {
+      "id": 6,
+      "title": "Наименование товара №7",
+      "src": "https://top-fon.com/uploads/posts/2022-09/thumbs/1663730724_3-top-fon-com-p-serii-fon-jpeg-foto-5.jpg",
+      "descr": "Описание товара dasda dasdasd asd asdsadasd"
+    },
+    {
+      "id": 7,
+      "title": "Наименование товара №8",
+      "src": "https://top-fon.com/uploads/posts/2022-09/thumbs/1663730724_3-top-fon-com-p-serii-fon-jpeg-foto-5.jpg",
+      "descr": "Описание товара dasda dasdasd asd asdsadasd"
+    },
+    {
+      "id": 8,
+      "title": "Наименование товара №9",
+      "src": "https://top-fon.com/uploads/posts/2022-09/thumbs/1663730724_3-top-fon-com-p-serii-fon-jpeg-foto-5.jpg",
+      "descr": "Описание товара №9 в первой категории"
+    },
+    {
+      "id": 9,
+      "title": "Наименование товара №10",
+      "src": "https://top-fon.com/uploads/posts/2022-09/thumbs/1663730724_3-top-fon-com-p-serii-fon-jpeg-foto-5.jpg",
+      "descr": "Описание товара №10 в первой категории"
+    },
+    {
+      "id": 10,
+      "title": "Наименование товара №11",
+      "src": "https://top-fon.com/uploads/posts/2022-09/thumbs/1663730724_3-top-fon-com-p-serii-fon-jpeg-foto-5.jpg",
+      "descr": "Описание товара №11 в первой категории"
+    },
+    {
+      "id": 11,
+      "title": "Наименование товара №12",
+      "src": "https://top-fon.com/uploads/posts/2022-09/thumbs/1663730724_3-top-fon-com-p-serii-fon-jpeg-foto-5.jpg",
+      "descr": "Описание товара №12 в первой категории"
+    },
+    {
+      "id": 12,
+      "title": "Наименование товара №13",
+      "src": "https://top-fon.com/uploads/posts/2022-09/thumbs/1663730724_3-top-fon-com-p-serii-fon-jpeg-foto-5.jpg",
+      "descr": "Описание товара №13 в первой категории"
+    },
+    {
+      "id": 13,
+      "title": "Наименование товара №14",
+      "src": "https://top-fon.com/uploads/posts/2022-09/thumbs/1663730724_3-top-fon-com-p-serii-fon-jpeg-foto-5.jpg",
+      "descr": "Описание товара №14 в первой категории"
+    },
+    {
+      "id": 14,
+      "title": "Наименование товара №15",
+      "src": "https://top-fon.com/uploads/posts/2022-09/thumbs/1663730724_3-top-fon-com-p-serii-fon-jpeg-foto-5.jpg",
+      "descr": "Описание товара №15 в первой категории"
+    },
+    {
+      "id": 15,
+      "title": "Наименование товара №16",
+      "src": "https://top-fon.com/uploads/posts/2022-09/thumbs/1663730724_3-top-fon-com-p-serii-fon-jpeg-foto-5.jpg",
+      "descr": "Описание товара №16 в первой категории"
+    }
+  ]
+  }
