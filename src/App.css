@@ -7,6 +7,15 @@
   pointer-events: none;
 }
 
+.GoogleLogo::before {
+  content: url("../public/img/google-play-5.svg");
+}
+
+.AppleLogo::before {
+  content: url("../public/img/apple-13.svg");
+}
+
+
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;

@@ -15,7 +15,7 @@ export const HeaderComponent = (props) => {
   return (
     <div className="header">
       <div className="header__section">
-        <Link to="/categories">
+        <Link to="/catalog">
           <h2 onClick={() => setState(state === false ? true : false)}>Меню</h2>
         </Link>
         {/* <Link to="/aboutUs">

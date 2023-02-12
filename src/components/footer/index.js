@@ -8,7 +8,7 @@ export const FooterComponent = () => {
       </div>
       <div className="footer__section">
         <div className="footer__item footerDelivery">
-          <a>#Company Name</a>
+          <a>Design by Vladislav Chervov</a>
         </div>
         <div className="footer__item footerNav">
           <ul>

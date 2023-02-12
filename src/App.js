@@ -1,5 +1,5 @@
 import "./App.css";
-import { CategoriesComponent } from "./components/categories";
+import { CatalogComponent } from "./components/Catalog/CatalogComponent";
 import { FooterComponent } from "./components/footer";
 import { HeaderComponent } from "./components/header";
 import { AppRouter } from "./router/AppRouter";
@@ -9,6 +9,7 @@ function App() {
     <div className="App">
       <HeaderComponent />
       <AppRouter />
+      <FooterComponent />
     </div>
   );
 }

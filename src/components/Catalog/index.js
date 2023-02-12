@@ -1,14 +1,8 @@
 import { useParams } from "react-router";
 import { useState, useEffect } from "react";
-
 const Singlepage = () => {
   const { id } = useParams();
   const [product, setProduct] = useState(null);
-  useEffect(() => {
-    fetch(`http://localhost:8000/categories/${id}`)
-      .then((res) => res.json())
-      .then((data) => setProduct(data));
-  }, [id]);
 
   return (
     <div>
