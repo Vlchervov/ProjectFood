@@ -1,5 +1,8 @@
 .App {
-  text-align: center;
+  text-align: flex-start;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 .App-logo {
@@ -12,9 +15,8 @@
 }
 
 .AppleLogo::before {
-  content: url("../public/img/apple-13.svg");
+  content: url("../public/img/icons8-apple-logo.svg");
 }
-
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {

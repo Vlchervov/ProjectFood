@@ -3,7 +3,8 @@ export const FooterComponent = () => {
     <div className="footer">
       <div className="footer__section">
         <div className="footer__item footerLogo">
-          <img src="../img/172f0794-4161-4e28-bbb8-b847954411d3.png"></img>
+          {/* <img src="../img/172f0794-4161-4e28-bbb8-b847954411d3.png"></img> */}
+          #LOGO
         </div>
       </div>
       <div className="footer__section">

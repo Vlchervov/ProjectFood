@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 
 export const CatalogCard = (props) => {
   const [state, setState] = useState(false);
+  const [change, setChange] = useState(true);
 
   useEffect(() => {
     setTimeout(() => {
@@ -10,7 +11,7 @@ export const CatalogCard = (props) => {
   }, [state]);
 
   return (
-    <div className="categories__item">
+    <div className="categories__item" key={props.id}>
       <img src="https://top-fon.com/uploads/posts/2022-09/thumbs/1663730724_3-top-fon-com-p-serii-fon-jpeg-foto-5.jpg"></img>
       <div className="categories__body">
         <p className="categories__title">
@@ -23,12 +24,18 @@ export const CatalogCard = (props) => {
           <p className="categories__price">{props.price}</p>
           <div className="categories__button">
             <button
+              // onMouseEnter={() => {
+              //   setChange(false);
+              // }}
+              // onMouseLeave={() => {
+              //   setChange(true);
+              // }}
               onClick={() => {
                 setState(true);
               }}
               disabled={state}
             >
-              Купить
+              {change ? "Купить" : "Добавить"}
             </button>
           </div>
         </div>
