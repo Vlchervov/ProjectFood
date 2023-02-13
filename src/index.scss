@@ -14,18 +14,12 @@ code {
 }
 
 .swiper {
-  width: 600px;
-  height: 300px;
+  height: 500px;
   border-radius: 25px;
-  text-align: center;
-  display: flex;
+  width: 1440px;
 
   img {
-    border-radius: 25px;
-
-    @media (max-width: 812px) {
-      width: 100%;
-    }
+    border-top-left-radius: 25px;
   }
 
   @media (max-width: 812px) {
@@ -55,8 +49,8 @@ code {
     margin-top: 0;
     font-weight: 400;
     user-select: none;
-    justify-content: flex-start;
-    margin-left: 180px;
+    justify-content: center;
+    
 
     @media (max-width: 812px) {
       justify-content: center;
@@ -320,7 +314,6 @@ code {
   img {
     max-height: 205px;
     object-fit: cover;
-    border-top-right-radius: 25px;
   }
 
   &__body {

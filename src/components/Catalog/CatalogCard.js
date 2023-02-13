@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 
 export const CatalogCard = (props) => {
   const [state, setState] = useState(false);
-  const [change, setChange] = useState(true);
 
   useEffect(() => {
     setTimeout(() => {
@@ -35,7 +34,7 @@ export const CatalogCard = (props) => {
               }}
               disabled={state}
             >
-              {change ? "Купить" : "Добавить"}
+              Купить
             </button>
           </div>
         </div>

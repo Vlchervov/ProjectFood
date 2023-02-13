@@ -11,19 +11,12 @@ code {
 }
 
 .swiper {
-  width: 600px;
-  height: 300px;
+  height: 500px;
   border-radius: 25px;
-  text-align: center;
-  display: flex;
+  width: 1440px;
 }
 .swiper img {
-  border-radius: 25px;
-}
-@media (max-width: 812px) {
-  .swiper img {
-    width: 100%;
-  }
+  border-top-left-radius: 25px;
 }
 @media (max-width: 812px) {
   .swiper {
@@ -52,8 +45,7 @@ code {
   -webkit-user-select: none;
      -moz-user-select: none;
           user-select: none;
-  justify-content: flex-start;
-  margin-left: 180px;
+  justify-content: center;
 }
 @media (max-width: 812px) {
   .catalog h1 {
@@ -292,7 +284,6 @@ code {
   max-height: 205px;
   -o-object-fit: cover;
      object-fit: cover;
-  border-top-right-radius: 25px;
 }
 .categories__body {
   border-bottom-left-radius: 25px;

@@ -4,6 +4,7 @@ import SwiperCore, { Keyboard } from "swiper";
 import "swiper/css";
 import "swiper/css/pagination";
 import { useState } from "react";
+import { CatalogCard } from "../Catalog/CatalogCard";
 
 SwiperCore.use([Keyboard]);
 
@@ -37,9 +38,7 @@ export const SwiperComponent = () => {
       >
         <img src="https://assets.htmlacademy.ru/img/blog/113/jpeg/jpeg1@1x.jpg"></img>
       </SwiperSlide>
-      <SwiperSlide>Slide 2</SwiperSlide>
-      <SwiperSlide>Slide 3</SwiperSlide>
-      <SwiperSlide>Slide 4</SwiperSlide>
+      <SwiperSlide>{<CatalogCard />}</SwiperSlide>
     </Swiper>
   );
 };
