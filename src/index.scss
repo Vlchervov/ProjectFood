@@ -13,6 +13,26 @@ code {
     monospace;
 }
 
+.swiper {
+  width: 600px;
+  height: 300px;
+  border-radius: 25px;
+  text-align: center;
+  display: flex;
+
+  img {
+    border-radius: 25px;
+
+    @media (max-width: 812px) {
+      width: 100%;
+    }
+  }
+
+  @media (max-width: 812px) {
+    width: 370px;
+  }
+}
+
 :root {
   &::-webkit-scrollbar {
     width: 10px;
