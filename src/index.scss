@@ -17,13 +17,24 @@ code {
   height: 500px;
   border-radius: 25px;
   width: 1440px;
+  border-bottom: 3px solid #ebeff0;
+  border-left: 3px solid #ebeff0;
+  border-right: 3px solid #ebeff0;
+
+  &:last-child {
+    border-bottom: none;
+  }
 
   img {
     border-top-left-radius: 25px;
+
+    @media (max-width: 812px) {
+      border-top-right-radius: 25px;
+    }
   }
 
   @media (max-width: 812px) {
-    width: 370px;
+    width: 100%;
   }
 }
 
@@ -49,8 +60,6 @@ code {
     margin-top: 0;
     font-weight: 400;
     user-select: none;
-    justify-content: center;
-    
 
     @media (max-width: 812px) {
       justify-content: center;
@@ -293,7 +302,6 @@ code {
 
   &__item {
     user-select: none;
-    margin-right: 40px;
     width: 400px;
     height: 413px;
     flex-direction: column;
@@ -306,6 +314,7 @@ code {
       margin-left: 0px;
       padding-left: 0px;
       margin-right: 0px;
+      width: 100%;
       flex-direction: column;
       justify-content: center;
     }
@@ -322,8 +331,7 @@ code {
     flex-direction: column;
     justify-content: space-between;
     padding: 24px 24px 0px 24px;
-    box-shadow: 0px 10px 15px rgb(0 0 0 / 20%);
-
+    box-shadow: 10px 10px 15px rgb(0 0 0 / 20%);
     button:disabled {
       background-color: #c9d6f0;
       color: black;

@@ -38,7 +38,7 @@ export const SwiperComponent = () => {
       >
         <img src="https://assets.htmlacademy.ru/img/blog/113/jpeg/jpeg1@1x.jpg"></img>
       </SwiperSlide>
-      <SwiperSlide>{<CatalogCard />}</SwiperSlide>
+      <SwiperSlide></SwiperSlide>
     </Swiper>
   );
 };

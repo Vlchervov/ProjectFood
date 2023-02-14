@@ -12,6 +12,7 @@ export const HeaderComponent = () => {
           <li>
             <Link to="basket">Корзина</Link>
           </li>
+          <li>О нас</li>
         </ul>
       </div>
     </header>
