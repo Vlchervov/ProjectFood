@@ -14,9 +14,6 @@ code {
   height: 500px;
   border-radius: 25px;
   width: 1440px;
-  border-bottom: 3px solid #ebeff0;
-  border-left: 3px solid #ebeff0;
-  border-right: 3px solid #ebeff0;
 }
 .swiper:last-child {
   border-bottom: none;
@@ -27,6 +24,7 @@ code {
 @media (max-width: 812px) {
   .swiper img {
     border-top-right-radius: 25px;
+    width: 100%;
   }
 }
 @media (max-width: 812px) {
@@ -51,6 +49,7 @@ code {
 }
 .catalog h1 {
   display: flex;
+  margin-left: 120px;
   margin-top: 0;
   font-weight: 400;
   -webkit-user-select: none;
@@ -277,6 +276,7 @@ code {
   width: 400px;
   height: 413px;
   flex-direction: column;
+  margin-left: 40px;
   display: flex;
   margin-bottom: 30px;
 }
@@ -294,6 +294,7 @@ code {
   max-height: 205px;
   -o-object-fit: cover;
      object-fit: cover;
+  border-top-right-radius: 25px;
 }
 .categories__body {
   border-bottom-left-radius: 25px;

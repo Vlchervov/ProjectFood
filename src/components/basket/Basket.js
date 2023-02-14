@@ -1,7 +1,11 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
+import CartContext from "../../context/cart/cartContext";
 
 export const Basket = () => {
   const [state, setState] = useState(false);
+  const { CartItems } = useContext;
+
+  const { showCart, cartItems, showHideCart } = useContext(CartContext);
 
   // useEffect(() => {
   //   setTimeout(() => {

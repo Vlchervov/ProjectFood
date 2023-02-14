@@ -1,4 +1,3 @@
-import { CatalogCard } from "./CatalogCard";
 import SwiperCore, {
   Navigation,
   Pagination,
@@ -6,7 +5,6 @@ import SwiperCore, {
   A11y,
   Keyboard,
   Mousewheel,
-  Controller,
 } from "swiper";
 import "swiper/css";
 import "swiper/css/pagination";
@@ -14,6 +12,7 @@ import "swiper/css/scrollbar";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { SwiperOptions, SwiperOptionsMobile } from "../Swiper/SwiperOptions";
 import { useMediaQuery } from "react-responsive";
+import { CatalogCard } from "./CatalogCard";
 SwiperCore.use([Keyboard, Mousewheel]);
 
 export const CategoryComponent = (props) => {
@@ -42,19 +41,12 @@ export const CategoryComponent = (props) => {
       {!isMobile && (
         <>
           <h1>{props.name}</h1>
-          <Swiper
-            modules={[Navigation, Pagination, Scrollbar, A11y]}
-            spaceBetween={55}
-            {...SwiperOptions}
-          >
-            <section className="categories">
-              {props.cards.map((e) => (
-                <SwiperSlide key={e.id}>
-                  <CatalogCard {...e} key={e.id} />
-                </SwiperSlide>
-              ))}
-            </section>
-          </Swiper>
+
+          <section className="categories">
+            {props.cards.map((e) => (
+              <CatalogCard {...e} key={e.id} />
+            ))}
+          </section>
         </>
       )}
     </>
