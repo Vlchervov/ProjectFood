@@ -4,7 +4,7 @@ SwiperCore.use([Keyboard]);
 
 export const SwiperOptions = {
   speed: 500,
-  slidesPerView: 3,
+  slidesPerView: 1,
   loop: "disabled",
   keyboard: {
     onlyInViewport: false,

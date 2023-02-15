@@ -1,14 +1,5 @@
 [
-    {   "id": 0,
-        "Anchor": "#Category1",
-        "title": "Наименование категории №1"
-    },
-    {   "id": 1,
-        "Anchor": "#Category2",
-        "title": "Наименование категории №2"
-    },
-    {   "id": 2,
-        "Anchor": "#Category3",
-        "title": "Наименование категории №3"
-    }
+  { "id": 0, "Anchor": "#Category1", "title": "Наименование категории №1" },
+  { "id": 1, "Anchor": "#Category2", "title": "Наименование категории №2" },
+  { "id": 2, "Anchor": "#Category3", "title": "Наименование категории №3" }
 ]

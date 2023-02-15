@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import CartContext from "../../context/cart/cartContext";
 
 export const HeaderComponent = () => {
-  const { cartItems, showHideCart } = useContext(CartContext);
+  const { cartItems } = useContext(CartContext);
 
   return (
     <header className="header">
@@ -21,7 +21,7 @@ export const HeaderComponent = () => {
               <span>{cartItems.length}</span>
             </div>
           )}
-          <img src="../img/icons8-basket-96.png" onClick={showHideCart}></img>
+          <img src="../img/icons8-basket-96.png"></img>
         </Link>
       </div>
     </header>

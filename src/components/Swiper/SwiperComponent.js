@@ -4,7 +4,6 @@ import SwiperCore, { Keyboard } from "swiper";
 import "swiper/css";
 import "swiper/css/pagination";
 import { useState } from "react";
-import { CatalogCard } from "../Catalog/CatalogCard";
 
 SwiperCore.use([Keyboard]);
 

@@ -5,7 +5,7 @@ import CartReducer from "./cartReducer";
 
 const CartState = ({ children }) => {
   const initialState = {
-    showCart: false,
+    showCart: true,
     cartItems: [],
   };
 

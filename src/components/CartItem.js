@@ -4,19 +4,34 @@ import formatCurrency from "format-currency";
 
 export const CartItem = ({ item }) => {
   const { removeItem } = useContext(CartContext);
-  let opts = { format: "%s%v", symbol: "₽" };
+  let opts = { format: "%v%s", symbol: "₽" };
 
   return (
-    <li>
-      <img src={item.src} />
-      <div>
-        {item.title} {formatCurrency(`${item.price}`, opts)}
+    <div className="product">
+      <div className="product__item">
+        <img src={item.src} />
+        <div className="product__body">
+          <div className="product__content">
+            <p className="product__title">{item.title}</p>
+            <p className="product__weight">{item.weight}</p>
+            <p className="product__description">{item.descr}</p>
+          </div>
+          <div className="product__footer">
+            <p className="product__price">
+              Цена: {"\u00A0"}
+              {formatCurrency(`${item.price}`, opts)}
+            </p>
+          </div>
+        </div>
+        <button
+          className="product__button"
+          onClick={() => {
+            removeItem(item.id);
+          }}
+        >
+          Удалить
+        </button>
       </div>
-      <button
-        onClick={() => {
-          removeItem(item.id);
-        }}
-      ></button>
-    </li>
+    </div>
   );
 };

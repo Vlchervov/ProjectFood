@@ -1,5 +1,4 @@
 import "./App.css";
-import { Cart } from "./components/cart";
 import { FooterComponent } from "./components/footer";
 import { HeaderComponent } from "./components/header";
 import { AppRouter } from "./router/AppRouter";

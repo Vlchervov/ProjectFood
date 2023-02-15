@@ -1,7 +1,5 @@
-import { useState } from "react"
-
-
+import { useState } from "react";
 
 const AuthForm = () => {
-    const [state, setState] = useState(false);
-}
+  const [state, setState] = useState(false);
+};

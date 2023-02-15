@@ -10,7 +10,7 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/scrollbar";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { SwiperOptions, SwiperOptionsMobile } from "../Swiper/SwiperOptions";
+import { SwiperOptionsMobile } from "../Swiper/SwiperOptions";
 import { useMediaQuery } from "react-responsive";
 import { CatalogCard } from "./CatalogCard";
 SwiperCore.use([Keyboard, Mousewheel]);
