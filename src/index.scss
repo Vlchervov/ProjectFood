@@ -13,6 +13,37 @@ code {
     monospace;
 }
 
+.cart__wrapper {
+  position: fixed;
+  top: 60px;
+  right: 20px;
+  border-radius: 12px;
+  background-color: white;
+  border: 1px solid gray;
+  padding: 10px;
+  z-index: 10;
+}
+
+.cart__innerWrapper {
+  height: max-content;
+  max-height: 50vh;
+  overflow: auto;
+}
+
+.Cart__cartTotal {
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.fa-times-circle {
+  color: gray;
+  transition: transform 0.2s linear;
+
+  &:hover {
+    transform: rotate(90deg);
+  }
+}
 .swiper {
   height: 500px;
   border-radius: 25px;
@@ -252,6 +283,33 @@ code {
         &:hover {
           text-decoration: underline;
         }
+      }
+    }
+  }
+
+  &__section:nth-child(2) {
+    padding-right: 40px;
+    margin: 0;
+
+    img {
+      width: 50px;
+    }
+
+    .item__count {
+      background-color: red;
+      width: 15px;
+      height: 15px;
+      border-radius: 50%;
+      align-items: center;
+      display: flex;
+      position: absolute;
+      margin-left: 35px;
+      justify-content: center;
+
+      span {
+        color: white;
+        font-weight: 700;
+        font-size: 11px;
       }
     }
   }

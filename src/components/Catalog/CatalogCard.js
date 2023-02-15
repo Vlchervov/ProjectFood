@@ -6,11 +6,11 @@ export const CatalogCard = (props) => {
 
   const [state, setState] = useState(false);
 
-  useEffect(() => {
-    setTimeout(() => {
-      setState(false);
-    }, 4000);
-  }, [state]);
+  // useEffect(() => {
+  //   setTimeout(() => {
+  //     setState(false);
+  //   }, 4000);
+  // }, [state]);
 
   return (
     <div className="categories__item" key={props.id}>
@@ -26,7 +26,7 @@ export const CatalogCard = (props) => {
           <div className="categories__button">
             <button
               onClick={() => {
-                setState(true);
+                // setState(true);
                 addToCart(props);
               }}
               disabled={state}

@@ -10,6 +10,38 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
 }
 
+.cart__wrapper {
+  position: fixed;
+  top: 60px;
+  right: 20px;
+  border-radius: 12px;
+  background-color: white;
+  border: 1px solid gray;
+  padding: 10px;
+  z-index: 10;
+}
+
+.cart__innerWrapper {
+  height: -moz-max-content;
+  height: max-content;
+  max-height: 50vh;
+  overflow: auto;
+}
+
+.Cart__cartTotal {
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.fa-times-circle {
+  color: gray;
+  transition: transform 0.2s linear;
+}
+.fa-times-circle:hover {
+  transform: rotate(90deg);
+}
+
 .swiper {
   height: 500px;
   border-radius: 25px;
@@ -238,6 +270,29 @@ code {
 }
 .header__section ul a:hover {
   text-decoration: underline;
+}
+.header__section:nth-child(2) {
+  padding-right: 40px;
+  margin: 0;
+}
+.header__section:nth-child(2) img {
+  width: 50px;
+}
+.header__section:nth-child(2) .item__count {
+  background-color: red;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  align-items: center;
+  display: flex;
+  position: absolute;
+  margin-left: 35px;
+  justify-content: center;
+}
+.header__section:nth-child(2) .item__count span {
+  color: white;
+  font-weight: 700;
+  font-size: 11px;
 }
 .header__item {
   padding: 10px 15px;

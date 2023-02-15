@@ -1,9 +1,11 @@
 import { useContext, useEffect, useState } from "react";
 import CartContext from "../../context/cart/cartContext";
+import formatCurrency from "format-currency";
 
-export const Basket = () => {
+export const Basket = ({ item }) => {
   const [state, setState] = useState(false);
-  const { CartItems } = useContext;
+  const { removeItem } = useContext(CartContext);
+  let opts = { format: "%s%v", symbol: "₽" };
 
   const { showCart, cartItems, showHideCart } = useContext(CartContext);
 
