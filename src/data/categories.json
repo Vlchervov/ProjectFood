@@ -4,7 +4,7 @@
       "name": "Категория 1",
       "cards": [
         {
-          "id": "0",
+          "id": 0,
           "title": "Наименование товара №1",
           "src": "https://top-fon.com/uploads/posts/2022-09/thumbs/1663730724_3-top-fon-com-p-serii-fon-jpeg-foto-5.jpg",
           "descr": "Описание товара №1 первая категория",
@@ -12,7 +12,7 @@
           "price": 2650
         },
         {
-          "id": "1",
+          "id": 1,
           "title": "Наименование товара №2",
           "src": "https://top-fon.com/uploads/posts/2022-09/thumbs/1663730724_3-top-fon-com-p-serii-fon-jpeg-foto-5.jpg",
           "descr": "Описание товара №2 первая категория",

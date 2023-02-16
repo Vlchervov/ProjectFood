@@ -1,11 +1,8 @@
-import formatCurrency from "format-currency";
 import { useEffect, useState, useContext } from "react";
 import CartContext from "../../context/cart/cartContext";
 
 export const CatalogCard = (props) => {
   const { addToCart } = useContext(CartContext);
-  let opts = { format: "%v%s", symbol: "₽" };
-
   const [state, setState] = useState(false);
 
   // useEffect(() => {
@@ -24,9 +21,7 @@ export const CatalogCard = (props) => {
         <p className="categories__weight">{props.weight}</p>
         <p className="categories__description">{props.descr}</p>
         <div className="categories__footer">
-          <p className="categories__price">
-            {formatCurrency(`${props.price}`, opts)}
-          </p>
+          <p className="categories__price">{props.price} ₽</p>
           <div className="categories__button">
             <button
               onClick={() => {

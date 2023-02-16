@@ -1,10 +1,8 @@
 import { useContext } from "react";
 import CartContext from "../context/cart/cartContext";
-import formatCurrency from "format-currency";
 
 export const CartItem = ({ item }) => {
-  const { removeItem } = useContext(CartContext);
-  let opts = { format: "%v%s", symbol: "₽" };
+  const { removeItem, addToCart } = useContext(CartContext);
 
   return (
     <div className="product">
@@ -19,7 +17,7 @@ export const CartItem = ({ item }) => {
           <div className="product__footer">
             <p className="product__price">
               Цена: {"\u00A0"}
-              {formatCurrency(`${item.price}`, opts)}
+              {item.price + "₽"}
             </p>
           </div>
         </div>
@@ -30,6 +28,13 @@ export const CartItem = ({ item }) => {
           }}
         >
           Удалить
+        </button>
+        <button
+          onClick={() => {
+            addToCart(item);
+          }}
+        >
+          добавить
         </button>
       </div>
     </div>

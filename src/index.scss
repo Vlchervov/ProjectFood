@@ -13,16 +13,18 @@ code {
     monospace;
 }
 
-.cardWrapper {
-  display: flex;
-}
-
 .cart__wrapper {
   display: flex;
   width: 100%;
   border-radius: 12px;
   background-color: white;
   z-index: 10;
+}
+
+.totalAmount {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
 }
 
 .cart__innerWrapper {
@@ -45,9 +47,8 @@ code {
   }
 }
 .swiper {
-  height: 500px;
-  border-radius: 25px;
-  width: 1440px;
+  height: 450px;
+  width: 850px;
 
   &:last-child {
     border-bottom: none;

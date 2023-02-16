@@ -3,18 +3,17 @@ import SwiperCore, { Keyboard } from "swiper";
 SwiperCore.use([Keyboard]);
 
 export const SwiperOptions = {
-  speed: 500,
-  slidesPerView: 1,
-  loop: "disabled",
+  speed: 300,
+  slidesPerView: 2,
   keyboard: {
-    onlyInViewport: false,
-    enabled: false,
+    onlyInViewport: true,
+    enabled: true,
   },
   mousewheel: {
     enabled: true,
   },
   pagination: {
-    clickable: true,
+    clickable: false,
   },
   effect: "fade",
   fadeEffect: {
