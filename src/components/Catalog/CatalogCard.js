@@ -2,7 +2,7 @@ import { useEffect, useState, useContext } from "react";
 import CartContext from "../../context/cart/cartContext";
 
 export const CatalogCard = (props) => {
-  const { addToCart } = useContext(CartContext);
+  const { addTo } = useContext(CartContext);
   const [state, setState] = useState(false);
 
   // useEffect(() => {
@@ -26,7 +26,7 @@ export const CatalogCard = (props) => {
             <button
               onClick={() => {
                 // setState(true);
-                addToCart(props);
+                addTo(props);
               }}
               disabled={state}
             >
