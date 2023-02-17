@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 
 export const Basket = () => {
   const [state, setState] = useState(false);
-  const { cartItems } = useContext(CartContext);
+  const { cartItems, cartOpen, setCartOpen } = useContext(CartContext);
   return (
     <section className="basketSection">
       <div className="basket">
@@ -32,7 +32,10 @@ export const Basket = () => {
         </div>
 
         {cartItems.length === 0 ? (
-          <Link to="/catalog">
+          <Link
+            to="/catalog"
+            onClick={() => setCartOpen(cartOpen === cartOpen ? false : true)}
+          >
             <button className="basket__button">Перейти в каталог</button>
           </Link>
         ) : (

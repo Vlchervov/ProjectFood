@@ -113,8 +113,7 @@ code {
 
     &:hover {
       text-decoration: none;
-      background-color: #e74c4c;
-      color: white;
+      color: #e74c4c;
       cursor: pointer;
     }
   }
@@ -204,11 +203,37 @@ code {
   width: 100%;
   display: flex;
   justify-content: space-between;
-  padding: 10px;
   margin: 0;
   background-color: white;
   border-bottom: 1px solid #ebeff0;
   z-index: 25;
+
+  &__shopCartButton {
+    cursor: pointer;
+    transition: color 500ms ease;
+
+    &:hover {
+      color: #dc3d3d;
+    }
+  }
+
+  &__shopCartButton.active {
+    color: #dc3d3d;
+  }
+
+  &__BiMenu {
+    cursor: pointer;
+    transition: color 500ms ease;
+    display: flex;
+
+    &:hover {
+      color: #dc3d3d;
+    }
+  }
+
+  &__BiMenu.active {
+    color: #dc3d3d;
+  }
 
   &__itemName {
     font-size: 20px;
@@ -217,7 +242,11 @@ code {
 
   &__section {
     display: flex;
-    align-items: center;
+
+    svg {
+      width: 55px;
+      height: 55px;
+    }
 
     ul {
       display: flex;
@@ -225,7 +254,10 @@ code {
       color: black;
       padding: 0;
       margin: 0;
+
       li {
+        display: flex;
+        align-items: center;
         padding: 10px 15px;
         font-size: 20px;
         margin-left: 5px;
@@ -236,37 +268,34 @@ code {
       a {
         color: black;
         text-decoration: none;
-
-        &:hover {
-          text-decoration: underline;
-        }
       }
     }
   }
 
   &__section:nth-child(2) {
-    padding-right: 40px;
+    padding-right: 60px;
     margin: 0;
 
-    img {
-      width: 50px;
+    svg {
+      width: 24px;
+      height: 30px;
     }
 
     .item__count {
       background-color: red;
-      width: 15px;
-      height: 15px;
+      width: 13px;
+      height: 13px;
       border-radius: 50%;
       align-items: center;
       display: flex;
       position: absolute;
-      margin-left: 35px;
+      margin-left: 16px;
       justify-content: center;
 
       span {
         color: white;
         font-weight: 700;
-        font-size: 11px;
+        font-size: 10px;
       }
     }
   }
@@ -623,17 +652,14 @@ input[type="submit"] {
 }
 
 .basketSection {
+  background-color: #d2d2d2;
   flex: 1 1 auto;
   padding-top: 100px;
   display: flex;
   justify-content: center;
 
   .basket {
-    background-color: white;
-    box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.2);
-    border-top-right-radius: 25px;
-    border-top-left-radius: 25px;
-    width: 80%;
+    width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;

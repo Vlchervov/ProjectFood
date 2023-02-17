@@ -2,6 +2,7 @@ import { useState } from "react";
 import CartContext from "./cartContext";
 
 const CartState = ({ children }) => {
+  let [cartOpen, setCartOpen] = useState(false);
   const [initialState, setInitialState] = useState({
     cartItems: [],
   });
@@ -25,6 +26,8 @@ const CartState = ({ children }) => {
   return (
     <CartContext.Provider
       value={{
+        cartOpen,
+        setCartOpen,
         cartItems: initialState.cartItems,
         removeItem,
         addTo,
