@@ -1,8 +1,11 @@
 import { useContext } from "react";
 import CartContext from "../context/cart/cartContext";
+import useCounter from "@rooks/use-counter";
 
 export const CartItem = ({ item }) => {
   const { removeItem } = useContext(CartContext);
+  const { value, increment, decrement, incrementBy, decrementBy, reset } =
+    useCounter(item.count);
 
   return (
     <div className="product">
@@ -20,6 +23,10 @@ export const CartItem = ({ item }) => {
               {item.price + "₽"}
             </p>
           </div>
+        </div>
+        <div>
+          Сейчас {item.count}
+          <button>Добавить</button>
         </div>
         <button
           className="product__button"

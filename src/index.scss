@@ -1,6 +1,7 @@
 body {
   z-index: 10;
   margin: 0;
+  background-color: #f1eeee;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
@@ -13,23 +14,43 @@ code {
     monospace;
 }
 
-.cart__wrapper {
+.emptyBasket {
+  width: 150px;
+  height: 150px;
+  color: #bebebe;
+}
+
+.cardWrapper {
   display: flex;
-  width: 100%;
-  border-radius: 12px;
-  background-color: white;
-  z-index: 10;
+  align-items: center;
+  border-radius: 25px;
+  margin-bottom: 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  @media (max-width: 812px) {
+    width: 100%;
+  }
 }
 
 .totalAmount {
+  position: sticky;
   display: flex;
+  top: 125px;
+  margin-left: 0;
   flex-direction: column;
-  align-items: flex-end;
-}
+  align-items: center;
+  background-color: white;
+  border-radius: 25px;
+  width: 363px;
+  height: 550px;
+  margin-left: 25px;
 
-.cart__innerWrapper {
-  width: 300px;
-  height: 300px;
+  button {
+    position: absolute;
+    bottom: 0;
+  }
 }
 
 .Cart__cartTotal {
@@ -38,14 +59,6 @@ code {
   justify-content: space-between;
 }
 
-.fa-times-circle {
-  color: gray;
-  transition: transform 0.2s linear;
-
-  &:hover {
-    transform: rotate(90deg);
-  }
-}
 .swiper {
   height: 450px;
   width: 850px;
@@ -119,10 +132,11 @@ code {
   }
 
   &__item {
-    @media (max-width: 812px) {
-      flex: 1 0 100%;
-      margin-top: 25px;
+    &:nth-child(1) {
+      margin-top: 20px;
     }
+    width: 700px;
+    margin-bottom: 25px;
     display: flex;
     border-radius: 20px;
     align-items: flex-end;
@@ -276,6 +290,10 @@ code {
     padding-right: 60px;
     margin: 0;
 
+    @media (max-width: 812px) {
+      padding-right: 0;
+    }
+
     svg {
       width: 24px;
       height: 30px;
@@ -347,6 +365,9 @@ code {
     user-select: none;
     width: 400px;
     height: 413px;
+    background-color: white;
+    border-top-right-radius: 25px;
+    border-bottom-left-radius: 25px;
     flex-direction: column;
     margin-left: 40px;
     display: flex;
@@ -376,7 +397,7 @@ code {
     flex-direction: column;
     justify-content: space-between;
     padding: 24px 24px 0px 24px;
-    box-shadow: 10px 10px 15px rgb(0 0 0 / 20%);
+    // box-shadow: 10px 10px 15px rgb(0 0 0 / 20%);
     button:disabled {
       background-color: #c9d6f0;
       color: black;
@@ -652,7 +673,6 @@ input[type="submit"] {
 }
 
 .basketSection {
-  background-color: #d2d2d2;
   flex: 1 1 auto;
   padding-top: 100px;
   display: flex;
@@ -661,15 +681,13 @@ input[type="submit"] {
   .basket {
     width: 100%;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    justify-content: space-evenly;
 
     &__button {
       cursor: pointer;
       border: none;
-      width: 21rem;
-      height: 3rem;
+      width: 350px;
+      height: 48px;
       margin-bottom: 25px;
       border-radius: 25px;
       background-color: #478dff;

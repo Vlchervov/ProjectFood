@@ -16,7 +16,7 @@ import { CatalogCard } from "./CatalogCard";
 SwiperCore.use([Keyboard, Mousewheel]);
 
 export const CategoryComponent = (props) => {
-  const isMobile = useMediaQuery({ maxWidth: "812px" });
+  const isMobile = useMediaQuery({ maxWidth: "420px" });
 
   return (
     <>

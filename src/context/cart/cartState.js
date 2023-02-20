@@ -1,10 +1,13 @@
 import { useState } from "react";
 import CartContext from "./cartContext";
+import data from "../../data/categories.json";
 
 const CartState = ({ children }) => {
   let [cartOpen, setCartOpen] = useState(false);
+  const [state, setState] = useState(data.data);
   const [initialState, setInitialState] = useState({
     cartItems: [],
+    writable: true,
   });
 
   const addTo = (item) => {
@@ -18,8 +21,12 @@ const CartState = ({ children }) => {
   };
 
   const removeItem = (id) => {
+    // setInitialState({
+    //   cartItems: initialState.cartItems.filter((el) => el.id !== id),
+    // });
+
     setInitialState({
-      cartItems: initialState.cartItems.filter((el) => el.id !== id),
+      cartItems: initialState.cartItems.filter((el) => id !== el.id),
     });
   };
 

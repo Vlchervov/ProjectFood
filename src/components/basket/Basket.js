@@ -3,6 +3,7 @@ import CartContext from "../../context/cart/cartContext";
 import { CartItem } from "../CartItem";
 import "swiper/css/scrollbar";
 import { Link } from "react-router-dom";
+import { FaShoppingBasket } from "react-icons/fa";
 
 export const Basket = () => {
   const [state, setState] = useState(false);
@@ -10,28 +11,69 @@ export const Basket = () => {
   return (
     <section className="basketSection">
       <div className="basket">
-        <div>
+        <div className="cardWrapper">
           <div>
             {cartItems.length === 0 ? (
-              <h4>Корзина пуста</h4>
+              <>
+                <div
+                  style={{
+                    display: "flex",
+                    flexDirection: "column",
+                    alignItems: "center",
+                    marginBottom: 20,
+                  }}
+                >
+                  <FaShoppingBasket className="emptyBasket" />
+                  <h4>Корзина пуста</h4>
+                  Добавьте товар из меню, чтобы сделать заказ
+                </div>
+                <Link
+                  to="/catalog"
+                  onClick={() =>
+                    setCartOpen(cartOpen === cartOpen ? false : true)
+                  }
+                >
+                  <button className="basket__button">Перейти в каталог</button>
+                </Link>
+              </>
             ) : (
-              <div className="cardWrapper">
-                {cartItems.map((item) => (
-                  <CartItem key={item.id} item={item} />
-                ))}
-              </div>
+              <>
+                <div>
+                  {cartItems.map((item) => (
+                    <CartItem key={item.id} item={item} />
+                  ))}
+                </div>
+              </>
             )}
-          </div>
-          <div className="totalAmount">
-            <div style={{ fontWeight: "600" }}>Итого:{"\u00A0"}</div>
-            <div style={{ marginLeft: 5 }}>
-              {cartItems.reduce((amount, item) => item.price + amount, 0)}
-              {"\u00A0"}₽
-            </div>
           </div>
         </div>
 
-        {cartItems.length === 0 ? (
+        {cartItems.length > 0 ? (
+          <>
+            <div className="totalAmount">
+              <div style={{ fontWeight: "600" }}>Итого:{"\u00A0"}</div>
+              <div>Количество: {cartItems.length}</div>
+              <div>
+                К оплате:{" "}
+                {cartItems.reduce((amount, item) => item.price + amount, 0)}
+                {"\u00A0"}₽
+              </div>
+              <button
+                className="basket__button"
+                disabled={state}
+                onClick={() => {
+                  setState(true);
+                }}
+              >
+                Перейти к оформлению заказа
+              </button>
+            </div>
+          </>
+        ) : (
+          <></>
+        )}
+
+        {/* {cartItems.length === 0 ? (
           <Link
             to="/catalog"
             onClick={() => setCartOpen(cartOpen === cartOpen ? false : true)}
@@ -48,7 +90,7 @@ export const Basket = () => {
           >
             Перейти к оформлению заказа
           </button>
-        )}
+        )} */}
       </div>
     </section>
   );
