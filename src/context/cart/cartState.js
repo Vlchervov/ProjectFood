@@ -7,7 +7,6 @@ const CartState = ({ children }) => {
   const [state, setState] = useState(data.data);
   const [initialState, setInitialState] = useState({
     cartItems: [],
-    writable: true,
   });
 
   const addTo = (item) => {
@@ -21,20 +20,27 @@ const CartState = ({ children }) => {
   };
 
   const removeItem = (id) => {
-    // setInitialState({
-    //   cartItems: initialState.cartItems.filter((el) => el.id !== id),
-    // });
-
     setInitialState({
       cartItems: initialState.cartItems.filter((el) => id !== el.id),
+    });
+  };
+
+  const increase = (id) => {
+    initialState.cartItems.map((el) => {
+      if (el.id === id) {
+        // setInitialState({
+        //   cartItems: initialState.cartItems.map((el) => {}),
+        // });
+        console.log(el.count);
+      }
     });
   };
 
   return (
     <CartContext.Provider
       value={{
-        cartOpen,
         setCartOpen,
+        increase,
         cartItems: initialState.cartItems,
         removeItem,
         addTo,

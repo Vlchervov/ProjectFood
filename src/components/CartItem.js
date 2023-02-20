@@ -3,7 +3,7 @@ import CartContext from "../context/cart/cartContext";
 import useCounter from "@rooks/use-counter";
 
 export const CartItem = ({ item }) => {
-  const { removeItem } = useContext(CartContext);
+  const { removeItem, increase } = useContext(CartContext);
   const { value, increment, decrement, incrementBy, decrementBy, reset } =
     useCounter(item.count);
 
@@ -26,7 +26,13 @@ export const CartItem = ({ item }) => {
         </div>
         <div>
           Сейчас {item.count}
-          <button>Добавить</button>
+          <button
+            onClick={() => {
+              increase(item.id);
+            }}
+          >
+            Добавить
+          </button>
         </div>
         <button
           className="product__button"
