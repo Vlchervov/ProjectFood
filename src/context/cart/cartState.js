@@ -1,47 +1,51 @@
 import { useState } from "react";
 import CartContext from "./cartContext";
-import data from "../../data/categories.json";
 
 const CartState = ({ children }) => {
   let [cartOpen, setCartOpen] = useState(false);
-  const [state, setState] = useState(data.data);
-  const [initialState, setInitialState] = useState({
-    cartItems: [],
-  });
+  const [initialState, setInitialState] = useState([]);
 
   const addTo = (item) => {
     let isInArray = false;
-    initialState.cartItems.forEach((el) => {
+    initialState.forEach((el) => {
       if (el.id === item.id) isInArray = true;
     });
     if (!isInArray) {
-      setInitialState({ cartItems: [...initialState.cartItems, item] });
+      setInitialState([...initialState, item]);
     }
   };
 
   const removeItem = (id) => {
-    setInitialState({
-      cartItems: initialState.cartItems.filter((el) => id !== el.id),
-    });
+    setInitialState((item) => item.filter((el) => id !== el.id));
   };
 
   const increase = (id) => {
-    initialState.cartItems.map((el) => {
+    initialState.forEach((el) => {
       if (el.id === id) {
-        // setInitialState({
-        //   cartItems: initialState.cartItems.map((el) => {}),
-        // });
-        console.log(el.count);
+        return {
+          ...el,
+          count: ++el.count,
+        };
       }
     });
+    // initialState.map((el) => {
+    //   if (el.id === id) {
+    //     return {
+    //       ...el,
+    //       "count": ++el.count
+    //     };
+    //   }
+    //   return el;
+    // });
   };
 
   return (
     <CartContext.Provider
       value={{
         setCartOpen,
+        cartOpen,
         increase,
-        cartItems: initialState.cartItems,
+        cartItems: initialState,
         removeItem,
         addTo,
       }}

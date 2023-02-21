@@ -25,7 +25,7 @@ export const CartItem = ({ item }) => {
           </div>
         </div>
         <div>
-          Сейчас {item.count}
+          Количество: {item.count}
           <button
             onClick={() => {
               increase(item.id);
