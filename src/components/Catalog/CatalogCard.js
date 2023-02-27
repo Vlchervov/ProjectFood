@@ -3,7 +3,7 @@ import CartContext from "../../context/cart/cartContext";
 
 export const CatalogCard = (props) => {
   const { addTo } = useContext(CartContext);
-  const [state, setState] = useState(false);
+  const [hidden, setHidden] = useState(true);
 
   // useEffect(() => {
   //   setTimeout(() => {
@@ -13,7 +13,10 @@ export const CatalogCard = (props) => {
 
   return (
     <div className="categories__item" key={props.id}>
-      <img src="https://top-fon.com/uploads/posts/2022-09/thumbs/1663730724_3-top-fon-com-p-serii-fon-jpeg-foto-5.jpg"></img>
+      <img
+        src="https://top-fon.com/uploads/posts/2022-09/thumbs/1663730724_3-top-fon-com-p-serii-fon-jpeg-foto-5.jpg"
+        hidden={hidden}
+      />
       <div className="categories__body">
         <p className="categories__title">
           <b>{props.title}</b>
@@ -28,7 +31,6 @@ export const CatalogCard = (props) => {
                 // setState(true);
                 addTo(props);
               }}
-              disabled={state}
             >
               Купить
             </button>

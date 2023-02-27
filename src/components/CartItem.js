@@ -11,7 +11,7 @@ export const CartItem = ({ item }) => {
       </div> */}
       <div className="product__item">
         <div className="product__body">
-        {/* <img src={item.src} /> */}
+          {/* <img src={item.src} /> */}
           <div className="product__content">
             <p className="product__title">{item.title}</p>
             <p className="product__weight">{item.weight}</p>

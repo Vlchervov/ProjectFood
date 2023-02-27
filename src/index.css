@@ -62,8 +62,7 @@ code {
 }
 
 .swiper {
-  height: 450px;
-  width: 850px;
+  height: 250px;
 }
 .swiper:last-child {
   border-bottom: none;
@@ -101,6 +100,7 @@ code {
   display: flex;
   margin-left: 120px;
   margin-top: 0;
+  font-size: 24px;
   font-weight: 400;
   -webkit-user-select: none;
      -moz-user-select: none;
@@ -373,12 +373,16 @@ code {
     margin-left: 0;
   }
 }
+.categories__item.hidden {
+  width: 400px;
+  height: 420px;
+}
 .categories__item {
   -webkit-user-select: none;
      -moz-user-select: none;
           user-select: none;
   width: 400px;
-  height: 413px;
+  height: 220px;
   background-color: white;
   border-top-right-radius: 25px;
   border-bottom-left-radius: 25px;
@@ -432,8 +436,7 @@ code {
   flex-direction: column;
 }
 .categories__title {
-  font-weight: 600;
-  font-size: 24px;
+  font-size: 16px;
   line-height: 20px;
   margin-bottom: 16px;
   margin-top: 0px;

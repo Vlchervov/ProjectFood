@@ -64,8 +64,7 @@ code {
 }
 
 .swiper {
-  height: 450px;
-  width: 850px;
+  height: 250px;
 
   &:last-child {
     border-bottom: none;
@@ -106,6 +105,7 @@ code {
     display: flex;
     margin-left: 120px;
     margin-top: 0;
+    font-size: 24px;
     font-weight: 400;
     user-select: none;
 
@@ -420,10 +420,15 @@ code {
     }
   }
 
+  &__item.hidden {
+    width: 400px;
+    height: 420px;
+  }
+
   &__item {
     user-select: none;
     width: 400px;
-    height: 413px;
+    height: 220px;
     background-color: white;
     border-top-right-radius: 25px;
     border-bottom-left-radius: 25px;
@@ -481,8 +486,7 @@ code {
   }
 
   &__title {
-    font-weight: 600;
-    font-size: 24px;
+    font-size: 16px;
     line-height: 20px;
     margin-bottom: 16px;
     margin-top: 0px;
