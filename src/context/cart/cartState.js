@@ -20,23 +20,35 @@ const CartState = ({ children }) => {
   };
 
   const increase = (id) => {
-    initialState.forEach((el) => {
-      if (el.id === id) {
-        return {
-          ...el,
-          count: ++el.count,
-        };
-      }
+    setInitialState((cart) => {
+      return cart.map((product) => {
+        if (product.id === id) {
+          const objCopy = { ...product };
+          return {
+            ...objCopy,
+            count: ++objCopy.count,
+            priceTotal: objCopy.count * objCopy.price,
+          };
+        }
+        return product;
+      });
     });
-    // initialState.map((el) => {
-    //   if (el.id === id) {
-    //     return {
-    //       ...el,
-    //       "count": ++el.count
-    //     };
-    //   }
-    //   return el;
-    // });
+  };
+
+  const decrease = (id) => {
+    setInitialState((cart) => {
+      return cart.map((product) => {
+        if (product.id === id) {
+          const objCopy = { ...product };
+          return {
+            ...objCopy,
+            count: objCopy.count - 1 > 0 ? --objCopy.count : 1,
+            priceTotal: objCopy.count * objCopy.price,
+          };
+        }
+        return product;
+      });
+    });
   };
 
   return (
@@ -45,6 +57,7 @@ const CartState = ({ children }) => {
         setCartOpen,
         cartOpen,
         increase,
+        decrease,
         cartItems: initialState,
         removeItem,
         addTo,

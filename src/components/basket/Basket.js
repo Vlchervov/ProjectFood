@@ -12,7 +12,7 @@ export const Basket = () => {
     <section className="basketSection">
       <div className="basket">
         <div className="cardWrapper">
-          <div>
+          <>
             {cartItems.length === 0 ? (
               <>
                 <div
@@ -38,24 +38,28 @@ export const Basket = () => {
               </>
             ) : (
               <>
-                <div>
-                  {cartItems.map((item) => (
-                    <CartItem key={item.id} item={item} />
-                  ))}
-                </div>
+                {cartItems.map((item) => (
+                  <CartItem key={item.id} item={item} />
+                ))}
               </>
             )}
-          </div>
+          </>
         </div>
 
         {cartItems.length > 0 ? (
           <>
             <div className="totalAmount">
               <div style={{ fontWeight: "600" }}>Итого:{"\u00A0"}</div>
-              <div>Количество: {cartItems.length}</div>
+              <div>
+                Количество:{" "}
+                {cartItems.reduce((count, item) => item.count + count, 0)}
+              </div>
               <div>
                 К оплате:{" "}
-                {cartItems.reduce((amount, item) => item.price + amount, 0)}
+                {cartItems.reduce(
+                  (amount, item) => item.priceTotal + amount,
+                  0
+                )}
                 {"\u00A0"}₽
               </div>
               <button

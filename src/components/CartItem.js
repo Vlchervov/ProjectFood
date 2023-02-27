@@ -1,17 +1,17 @@
 import { useContext } from "react";
 import CartContext from "../context/cart/cartContext";
-import useCounter from "@rooks/use-counter";
 
 export const CartItem = ({ item }) => {
-  const { removeItem, increase } = useContext(CartContext);
-  const { value, increment, decrement, incrementBy, decrementBy, reset } =
-    useCounter(item.count);
+  const { removeItem, increase, decrease } = useContext(CartContext);
 
   return (
     <div className="product">
-      <div className="product__item">
+      {/* <div className="product__img">
         <img src={item.src} />
+      </div> */}
+      <div className="product__item">
         <div className="product__body">
+        {/* <img src={item.src} /> */}
           <div className="product__content">
             <p className="product__title">{item.title}</p>
             <p className="product__weight">{item.weight}</p>
@@ -20,22 +20,31 @@ export const CartItem = ({ item }) => {
           <div className="product__footer">
             <p className="product__price">
               Цена: {"\u00A0"}
-              {item.price + "₽"}
+              {item.priceTotal + "₽"}
             </p>
+
+            <div
+              className="product__counterDecreaseButton"
+              onClick={() => {
+                decrease(item.id);
+              }}
+            >
+              <span></span>
+            </div>
+            <p className="product__count">{item.count}</p>
+            <div
+              className="product__counterIncreaseButton"
+              onClick={() => {
+                increase(item.id);
+              }}
+            >
+              <span></span>
+              <span></span>
+            </div>
           </div>
         </div>
-        <div>
-          Количество: {item.count}
-          <button
-            onClick={() => {
-              increase(item.id);
-            }}
-          >
-            Добавить
-          </button>
-        </div>
         <button
-          className="product__button"
+          className="product__deleteButton"
           onClick={() => {
             removeItem(item.id);
           }}
