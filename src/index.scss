@@ -197,21 +197,21 @@ code {
       color: #e74c4c;
       cursor: pointer;
     }
+
+    svg {
+      width: 22px;
+      height: 22px;
+    }
   }
 
   &__item {
     @media (max-width: 812px) {
       width: 100%;
     }
-
-    &:nth-child(1) {
-      margin-top: 20px;
-    }
-
-    margin-bottom: 25px;
+    margin-top: 20px;
+    align-items: center;
     display: flex;
     border-radius: 20px;
-
     background-color: white;
     box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.2);
     text-decoration: none;
@@ -232,6 +232,12 @@ code {
   &__content {
     display: flex;
     flex-direction: column;
+  }
+
+  &__icon {
+    width: 48px;
+    height: 48px;
+    padding-left: 10px;
   }
 
   &__title {
@@ -488,7 +494,7 @@ code {
   &__title {
     font-size: 16px;
     line-height: 20px;
-    margin-bottom: 16px;
+    margin-bottom: 0px;
     margin-top: 0px;
   }
 
@@ -599,6 +605,7 @@ code {
     font-weight: bold;
   }
   .GoogleLogo {
+    padding-left: 0px;
     margin-right: 10px;
     // color: rgba(21, 21, 21, 0.3);
     color: #bdbdbd;
@@ -749,7 +756,7 @@ input[type="submit"] {
     &__button {
       cursor: pointer;
       border: none;
-      width: 350px;
+      width: 270px;
       height: 48px;
       margin-bottom: 25px;
       border-radius: 25px;

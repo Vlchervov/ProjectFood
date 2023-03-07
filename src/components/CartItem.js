@@ -1,5 +1,7 @@
 import { useContext } from "react";
 import CartContext from "../context/cart/cartContext";
+import { GoTrashcan } from "react-icons/go";
+import { AiFillPicture } from "react-icons/ai";
 
 export const CartItem = ({ item }) => {
   const { removeItem, increase, decrease } = useContext(CartContext);
@@ -10,6 +12,7 @@ export const CartItem = ({ item }) => {
         <img src={item.src} />
       </div> */}
       <div className="product__item">
+        <AiFillPicture className="product__icon" />
         <div className="product__body">
           {/* <img src={item.src} /> */}
           <div className="product__content">
@@ -19,7 +22,7 @@ export const CartItem = ({ item }) => {
           </div>
           <div className="product__footer">
             <p className="product__price">
-              Цена: {"\u00A0"}
+              {"\u00A0"}
               {item.priceTotal + "₽"}
             </p>
 
@@ -49,7 +52,7 @@ export const CartItem = ({ item }) => {
             removeItem(item.id);
           }}
         >
-          Удалить
+          <GoTrashcan />
         </button>
       </div>
     </div>

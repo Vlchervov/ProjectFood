@@ -2,13 +2,16 @@ body {
   z-index: 10;
   margin: 0;
   background-color: #f1eeee;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
 }
 
 .emptyBasket {
@@ -49,10 +52,6 @@ code {
   .totalAmount {
     display: none;
   }
-}
-.totalAmount button {
-  position: absolute;
-  bottom: 0;
 }
 
 .Cart__cartTotal {
@@ -103,8 +102,8 @@ code {
   font-size: 24px;
   font-weight: 400;
   -webkit-user-select: none;
-     -moz-user-select: none;
-          user-select: none;
+  -moz-user-select: none;
+  user-select: none;
 }
 @media (max-width: 812px) {
   .catalog h1 {
@@ -115,15 +114,15 @@ code {
 
 .product {
   -webkit-user-select: none;
-     -moz-user-select: none;
-          user-select: none;
+  -moz-user-select: none;
+  user-select: none;
 }
 .product__img {
   display: flex;
 }
 .product__img img {
   -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   width: 300px;
   border-radius: 20px 0px 0px 0px;
 }
@@ -188,8 +187,13 @@ code {
   color: #e74c4c;
   cursor: pointer;
 }
+.product__deleteButton svg {
+  width: 22px;
+  height: 22px;
+}
 .product__item {
-  margin-bottom: 25px;
+  margin-top: 20px;
+  align-items: center;
   display: flex;
   border-radius: 20px;
   background-color: white;
@@ -200,9 +204,6 @@ code {
   .product__item {
     width: 100%;
   }
-}
-.product__item:nth-child(1) {
-  margin-top: 20px;
 }
 .product__body {
   display: flex;
@@ -217,6 +218,11 @@ code {
 .product__content {
   display: flex;
   flex-direction: column;
+}
+.product__icon {
+  width: 48px;
+  height: 48px;
+  padding-left: 10px;
 }
 .product__title {
   font-weight: 600;
@@ -251,8 +257,8 @@ code {
 
 .header {
   -webkit-user-select: none;
-     -moz-user-select: none;
-          user-select: none;
+  -moz-user-select: none;
+  user-select: none;
   position: fixed;
   width: 100%;
   display: flex;
@@ -379,8 +385,8 @@ code {
 }
 .categories__item {
   -webkit-user-select: none;
-     -moz-user-select: none;
-          user-select: none;
+  -moz-user-select: none;
+  user-select: none;
   width: 400px;
   height: 220px;
   background-color: white;
@@ -404,7 +410,7 @@ code {
 .categories img {
   max-height: 205px;
   -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   border-top-right-radius: 25px;
 }
 .categories__body {
@@ -423,8 +429,8 @@ code {
   background-color: white;
   border: none;
   -webkit-user-select: none;
-     -moz-user-select: none;
-          user-select: none;
+  -moz-user-select: none;
+  user-select: none;
   border-top-right-radius: 8px;
   border-bottom-left-radius: 8px;
   background-color: #478dff;
@@ -438,7 +444,7 @@ code {
 .categories__title {
   font-size: 16px;
   line-height: 20px;
-  margin-bottom: 16px;
+  margin-bottom: 0px;
   margin-top: 0px;
 }
 .categories__description {
@@ -487,8 +493,8 @@ code {
   width: 146px;
   padding-top: 10px;
   -webkit-user-select: none;
-     -moz-user-select: none;
-          user-select: none;
+  -moz-user-select: none;
+  user-select: none;
 }
 @media (max-width: 812px) {
   .footer .footerDelivery {
@@ -497,8 +503,8 @@ code {
 }
 .footer .footerDelivery a {
   -webkit-user-select: none;
-     -moz-user-select: none;
-          user-select: none;
+  -moz-user-select: none;
+  user-select: none;
   font-size: 16px;
   line-height: 20px;
   color: #bdbdbd;
@@ -542,6 +548,7 @@ code {
   font-weight: bold;
 }
 .footer .GoogleLogo {
+  padding-left: 0px;
   margin-right: 10px;
   color: #bdbdbd;
 }
@@ -559,7 +566,7 @@ code {
 .PasswordCheckEye {
   position: relative;
 }
-.PasswordCheckEye input[type=text] {
+.PasswordCheckEye input[type="text"] {
   display: block;
   border-radius: 4px;
   margin-left: 39px;
@@ -571,7 +578,7 @@ code {
   outline: none;
 }
 @media (max-width: 812px) {
-  .PasswordCheckEye input[type=text] {
+  .PasswordCheckEye input[type="text"] {
     margin-left: 25px;
   }
 }
@@ -634,7 +641,7 @@ code {
   font-size: 14px;
 }
 
-input[type=email] {
+input[type="email"] {
   display: block;
   border-radius: 4px;
   margin-left: 39px;
@@ -646,12 +653,12 @@ input[type=email] {
   outline: none;
 }
 @media (max-width: 812px) {
-  input[type=email] {
+  input[type="email"] {
     margin-left: 25px;
   }
 }
 
-input[type=password] {
+input[type="password"] {
   display: block;
   border-radius: 4px;
   margin-left: 39px;
@@ -663,12 +670,12 @@ input[type=password] {
   outline: none;
 }
 @media (max-width: 812px) {
-  input[type=password] {
+  input[type="password"] {
     margin-left: 25px;
   }
 }
 
-input[type=submit] {
+input[type="submit"] {
   margin: 16px auto 10px;
   padding: 14px;
   display: block;
@@ -683,7 +690,7 @@ input[type=submit] {
   cursor: pointer;
 }
 @media (max-width: 812px) {
-  input[type=submit] {
+  input[type="submit"] {
     margin-left: 25px;
   }
 }
@@ -699,10 +706,23 @@ input[type=submit] {
   display: flex;
   justify-content: space-evenly;
 }
+
+.basket__totalAmountButton {
+  position: absolute;
+  bottom: 0;
+  cursor: pointer;
+  border: none;
+  width: 270px;
+  height: 48px;
+  margin-bottom: 25px;
+  border-radius: 25px;
+  background-color: #478dff;
+  color: white;
+}
 .basketSection .basket__button {
   cursor: pointer;
   border: none;
-  width: 350px;
+  width: 270px;
   height: 48px;
   margin-bottom: 25px;
   border-radius: 25px;
@@ -730,4 +750,4 @@ input[type=submit] {
   width: 60%;
   justify-content: center;
   align-items: flex-end;
-}/*# sourceMappingURL=index.css.map */
+} /*# sourceMappingURL=index.css.map */

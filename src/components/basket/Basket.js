@@ -62,8 +62,13 @@ export const Basket = () => {
                 )}
                 {"\u00A0"}₽
               </div>
+              <div className="">
+                <button type="radio"></button>
+                <button type="radio"></button>
+                <button type="radio"></button>
+              </div>
               <button
-                className="basket__button"
+                className="basket__totalAmountButton"
                 disabled={state}
                 onClick={() => {
                   setState(true);
