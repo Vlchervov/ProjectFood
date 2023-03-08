@@ -6,7 +6,7 @@ const CartState = ({ children }) => {
   const [initialState, setInitialState] = useState([]);
 
   const addTo = (item) => {
-    let isInArray = false;
+    let isInArray;
     initialState.forEach((el) => {
       if (el.id === item.id) isInArray = true;
     });

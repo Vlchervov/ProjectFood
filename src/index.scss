@@ -37,6 +37,7 @@ code {
 .totalAmount {
   position: sticky;
   display: flex;
+  margin-bottom: 25px;
   top: 125px;
   margin-left: 0;
   flex-direction: column;
@@ -49,11 +50,6 @@ code {
 
   @media (max-width: 812px) {
     display: none;
-  }
-
-  button {
-    position: absolute;
-    bottom: 0;
   }
 }
 
@@ -434,7 +430,6 @@ code {
   &__item {
     user-select: none;
     width: 400px;
-    height: 220px;
     background-color: white;
     border-top-right-radius: 25px;
     border-bottom-left-radius: 25px;
@@ -754,6 +749,19 @@ input[type="submit"] {
     justify-content: space-evenly;
 
     &__button {
+      cursor: pointer;
+      border: none;
+      width: 270px;
+      height: 48px;
+      margin-bottom: 25px;
+      border-radius: 25px;
+      background-color: #478dff;
+      color: white;
+    }
+
+    &__totalAmountButton {
+      position: absolute;
+      bottom: 0;
       cursor: pointer;
       border: none;
       width: 270px;

@@ -7,9 +7,11 @@ import CartState from "./context/cart/cartState";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-  <BrowserRouter>
-    <CartState>
-      <App />
-    </CartState>
-  </BrowserRouter>
+  <React.StrictMode>
+    <BrowserRouter>
+      <CartState>
+        <App />
+      </CartState>
+    </BrowserRouter>
+  </React.StrictMode>
 );
