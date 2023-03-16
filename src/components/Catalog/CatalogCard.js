@@ -1,4 +1,4 @@
-import { useState, useContext, useEffect } from "react";
+import { useState, useContext } from "react";
 import CartContext from "../../context/cart/cartContext";
 
 export const CatalogCard = (props) => {
@@ -36,7 +36,7 @@ export const CatalogCard = (props) => {
               style={{backgroundColor: "gray"}}
               onClick={() => {
                 addTo(props);
-                setButton('inBasked');
+                setButton('inBasket');
               }}
             >
               В корзине
