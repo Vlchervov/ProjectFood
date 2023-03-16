@@ -1,15 +1,9 @@
-import { useEffect, useState, useContext } from "react";
+import { useState, useContext } from "react";
 import CartContext from "../../context/cart/cartContext";
 
 export const CatalogCard = (props) => {
   const { addTo } = useContext(CartContext);
   const [hidden, setHidden] = useState(true);
-
-  // useEffect(() => {
-  //   setTimeout(() => {
-  //     setState(false);
-  //   }, 4000);
-  // }, [state]);
 
   return (
     <div className="categories__item" key={props.id}>
@@ -28,7 +22,7 @@ export const CatalogCard = (props) => {
           <div className="categories__button">
             <button
               onClick={() => {
-                // setState(true);
+                // props.switchName(props.id); 
                 addTo(props);
               }}
             >

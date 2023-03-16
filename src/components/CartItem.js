@@ -8,9 +8,6 @@ export const CartItem = ({ item }) => {
 
   return (
     <div className="product">
-      {/* <div className="product__img">
-        <img src={item.src} />
-      </div> */}
       <div className="product__item">
         <AiFillPicture className="product__icon" />
         <div className="product__body">
