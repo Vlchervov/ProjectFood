@@ -30,7 +30,7 @@ export const CatalogCard = (props) => {
         <p className="categories__description">{props.descr}</p>
         <div className="categories__footer">
           <p className="categories__price">{props.price} ₽</p>
-        {cartItems.length !== 0 && checkCart(props.id) || button !== 'default' ? 
+        {(cartItems.length !== 0 && checkCart(props.id)) || button !== 'default' ? 
         <div className="categories__button">
             <button
               style={{backgroundColor: "gray"}}
