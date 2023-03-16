@@ -1,0 +1,100 @@
+.basketSection {
+  flex: 1 1 auto;
+  padding-top: 100px;
+  display: flex;
+  justify-content: center;
+
+  .basket {
+    width: 100%;
+    display: flex;
+
+    justify-content: space-evenly;
+
+    &__button {
+      cursor: pointer;
+      border: none;
+      width: 270px;
+      height: 48px;
+      margin-bottom: 25px;
+      border-radius: 25px;
+      background-color: #478dff;
+      color: white;
+    }
+
+    &__totalAmountButton {
+      position: absolute;
+      bottom: 0;
+      cursor: pointer;
+      border: none;
+      width: 270px;
+      height: 48px;
+      margin-bottom: 25px;
+      border-radius: 25px;
+      background-color: #478dff;
+      color: white;
+
+      &:disabled {
+        background-color: #d3d3d3;
+        color: black;
+        cursor: default;
+      }
+    }
+  }
+}
+
+.emptyBasket {
+  width: 150px;
+  height: 150px;
+  color: #bebebe;
+}
+
+.cardWrapper {
+  display: flex;
+  align-items: center;
+  border-radius: 25px;
+  margin-bottom: 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  @media (max-width: 812px) {
+    width: 100%;
+  }
+}
+
+.totalAmount {
+  position: sticky;
+  display: flex;
+  margin-bottom: 25px;
+  top: 125px;
+  margin-left: 0;
+  flex-direction: column;
+  align-items: center;
+  background-color: white;
+  border-radius: 25px;
+  width: 363px;
+  height: 550px;
+  margin-left: 0px;
+
+  @media (max-width: 812px) {
+    display: none;
+  }
+}
+
+.basketPaySection {
+  flex: 1 1 auto;
+  padding: 100px;
+  display: flex;
+  justify-content: center;
+
+  .basketPay {
+    background-color: white;
+    box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.2);
+    border-radius: 25px;
+    display: flex;
+    height: 80%;
+    width: 60%;
+    justify-content: center;
+    align-items: flex-end;
+  }
+}

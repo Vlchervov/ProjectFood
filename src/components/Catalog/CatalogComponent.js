@@ -1,5 +1,6 @@
 import { CategoryComponent } from "./CategoryComponent";
 import data from "../../data/categories.json";
+import "./_catalog.scss";
 
 export const CatalogComponent = () => {
   return (

@@ -11,8 +11,7 @@
           "weight": "100 гр",
           "count": 1,
           "price": 2650,
-          "priceTotal": 2650,
-          "checkArray": "Купить"
+          "priceTotal": 2650
         },
         {
           "id": 1,
@@ -22,8 +21,7 @@
           "weight": "560 гр",
           "count": 1,
           "price": 1500,
-          "priceTotal": 1500,
-          "checkArray": "Купить"
+          "priceTotal": 1500
         },
         {
           "id": 2,
@@ -33,8 +31,7 @@
           "weight": "643 гр",
           "count": 1,
           "price": 550,
-          "priceTotal": 550,
-          "checkArray": "Купить"
+          "priceTotal": 550
         },
         {
           "id": 3,
@@ -44,8 +41,7 @@
           "weight": "156 гр",
           "count": 1,
           "price": 350,
-          "priceTotal": 350,
-          "checkArray": "Купить"
+          "priceTotal": 350
         }
       ]
     },
@@ -60,8 +56,7 @@
           "weight": "234 гр",
           "count": 1,
           "price": 890,
-          "priceTotal": 890,
-          "checkArray": "Купить"
+          "priceTotal": 890
         },
         {
           "id": 5,
@@ -71,8 +66,7 @@
           "weight": "358 гр",
           "count": 1,
           "price": 449,
-          "priceTotal": 449,
-          "checkArray": "Купить"
+          "priceTotal": 449
         },
         {
           "id": 6,
@@ -82,8 +76,7 @@
           "weight": "777 гр",
           "count": 1,
           "price": 290,
-          "priceTotal": 290,
-          "checkArray": "Купить"
+          "priceTotal": 290
         },
         {
           "id": 7,
@@ -93,8 +86,7 @@
           "weight": "178 гр",
           "count": 1,
           "price": 230,
-          "priceTotal": 230,
-          "checkArray": "Купить"
+          "priceTotal": 230
         },
         {
           "id": 8,
@@ -104,8 +96,7 @@
           "weight": "297 гр",
           "count": 1,
           "price": 100,
-          "priceTotal": 100,
-          "checkArray": "Купить"
+          "priceTotal": 100
         },
         {
           "id": 9,
@@ -115,8 +106,7 @@
           "weight": "297 гр",
           "count": 1,
           "price": 325,
-          "priceTotal": 100,
-          "checkArray": "Купить"
+          "priceTotal": 100
         },
         {
           "id": 10,
@@ -126,8 +116,7 @@
           "weight": "297 гр",
           "count": 1,
           "price": 770,
-          "priceTotal": 770,
-          "checkArray": "Купить"
+          "priceTotal": 770
         },
         {
           "id": 11,
@@ -137,8 +126,7 @@
           "weight": "297 гр",
           "count": 1,
           "price": 99,
-          "priceTotal": 99,
-          "checkArray": "Купить"
+          "priceTotal": 99
         }
       ]
     }

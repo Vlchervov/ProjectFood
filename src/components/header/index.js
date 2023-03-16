@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import CartContext from "../../context/cart/cartContext";
 import { FaShoppingCart } from "react-icons/fa";
 import { BiMenu } from "react-icons/bi";
+import "./_header.scss";
 export const HeaderComponent = () => {
   const { cartItems, cartOpen, setCartOpen } = useContext(CartContext);
 

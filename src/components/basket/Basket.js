@@ -1,9 +1,10 @@
 import { useContext, useState } from "react";
 import CartContext from "../../context/cart/cartContext";
-import { CartItem } from "../CartItem";
+import { CartItem } from "./item/CartItem";
 import "swiper/css/scrollbar";
 import { Link } from "react-router-dom";
 import { FaShoppingBasket } from "react-icons/fa";
+import "./_basket.scss";
 
 export const Basket = () => {
   const [state, setState] = useState(false);
