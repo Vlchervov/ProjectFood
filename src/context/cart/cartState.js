@@ -2,7 +2,6 @@ import { useState } from "react";
 import CartContext from "./cartContext";
 
 const CartState = ({ children }) => {
-  let [cartOpen, setCartOpen] = useState(false);
   const [initialState, setInitialState] = useState([]);
 
   const addTo = (item) => {
@@ -54,8 +53,6 @@ const CartState = ({ children }) => {
   return (
     <CartContext.Provider
       value={{
-        setCartOpen,
-        cartOpen,
         increase,
         decrease,
         cartItems: initialState,

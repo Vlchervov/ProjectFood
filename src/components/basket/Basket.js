@@ -8,7 +8,7 @@ import "./_basket.scss";
 
 export const Basket = () => {
   const [state, setState] = useState(false);
-  const { cartItems, cartOpen, setCartOpen } = useContext(CartContext);
+  const { cartItems } = useContext(CartContext);
   return (
     <section className="basketSection">
       <div className="basket">
@@ -28,12 +28,7 @@ export const Basket = () => {
                   <h4>Корзина пуста</h4>
                   Добавьте товар из меню, чтобы сделать заказ
                 </div>
-                <Link
-                  to="/catalog"
-                  onClick={() =>
-                    setCartOpen(cartOpen === cartOpen ? false : true)
-                  }
-                >
+                <Link to="/catalog">
                   <button className="basket__button">Перейти в каталог</button>
                 </Link>
               </>
@@ -79,28 +74,7 @@ export const Basket = () => {
               </button>
             </div>
           </>
-        ) : (
-          <></>
-        )}
-
-        {/* {cartItems.length === 0 ? (
-          <Link
-            to="/catalog"
-            onClick={() => setCartOpen(cartOpen === cartOpen ? false : true)}
-          >
-            <button className="basket__button">Перейти в каталог</button>
-          </Link>
-        ) : (
-          <button
-            className="basket__button"
-            disabled={state}
-            onClick={() => {
-              setState(true);
-            }}
-          >
-            Перейти к оформлению заказа
-          </button>
-        )} */}
+        ) : null}
       </div>
     </section>
   );
