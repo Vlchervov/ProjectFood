@@ -2,6 +2,7 @@
   "data": [
     {
       "name": "Категория 1",
+      "anchor": "category1",
       "cards": [
         {
           "id": 0,
@@ -47,6 +48,7 @@
     },
     {
       "name": "Категория 2",
+      "anchor": "category2",
       "cards": [
         {
           "id": 4,
@@ -127,6 +129,92 @@
           "count": 1,
           "price": 99,
           "priceTotal": 99
+        }
+      ]
+    },
+    {
+      "name": "Категория 3",
+      "anchor": "category3",
+      "cards": [
+        {
+          "id": 12,
+          "title": "Наименование товара №1",
+          "src": "https://top-fon.com/uploads/posts/2022-09/thumbs/1663730724_3-top-fon-com-p-serii-fon-jpeg-foto-5.jpg",
+          "descr": "Описание товара №1 третья категория",
+          "weight": "200 гр",
+          "count": 1,
+          "price": 120,
+          "priceTotal": 120
+        },
+        {
+          "id": 13,
+          "title": "Наименование товара №2",
+          "src": "https://top-fon.com/uploads/posts/2022-09/thumbs/1663730724_3-top-fon-com-p-serii-fon-jpeg-foto-5.jpg",
+          "descr": "Описание товара №2 третья категория",
+          "weight": "349 гр",
+          "count": 1,
+          "price": 300,
+          "priceTotal": 300
+        },
+        {
+          "id": 14,
+          "title": "Наименование товара №3",
+          "src": "https://top-fon.com/uploads/posts/2022-09/thumbs/1663730724_3-top-fon-com-p-serii-fon-jpeg-foto-5.jpg",
+          "descr": "Описание товара №3 третья категория",
+          "weight": "999 гр",
+          "count": 1,
+          "price": 999,
+          "priceTotal": 999
+        },
+        {
+          "id": 15,
+          "title": "Наименование товара №4",
+          "src": "https://top-fon.com/uploads/posts/2022-09/thumbs/1663730724_3-top-fon-com-p-serii-fon-jpeg-foto-5.jpg",
+          "descr": "Описание товара №4 третья категория",
+          "weight": "178 гр",
+          "count": 1,
+          "price": 230,
+          "priceTotal": 230
+        },
+        {
+          "id": 16,
+          "title": "Наименование товара №5",
+          "src": "https://top-fon.com/uploads/posts/2022-09/thumbs/1663730724_3-top-fon-com-p-serii-fon-jpeg-foto-5.jpg",
+          "descr": "Описание товара №5 третья категория",
+          "weight": "155 гр",
+          "count": 1,
+          "price": 99,
+          "priceTotal": 99
+        },
+        {
+          "id": 17,
+          "title": "Наименование товара №6",
+          "src": "https://top-fon.com/uploads/posts/2022-09/thumbs/1663730724_3-top-fon-com-p-serii-fon-jpeg-foto-5.jpg",
+          "descr": "Описание товара №6 третья категория",
+          "weight": "315 гр",
+          "count": 1,
+          "price": 299,
+          "priceTotal": 299
+        },
+        {
+          "id": 18,
+          "title": "Наименование товара №7",
+          "src": "https://top-fon.com/uploads/posts/2022-09/thumbs/1663730724_3-top-fon-com-p-serii-fon-jpeg-foto-5.jpg",
+          "descr": "Описание товара №7 третья категория",
+          "weight": "100 гр",
+          "count": 1,
+          "price": 211,
+          "priceTotal": 211
+        },
+        {
+          "id": 19,
+          "title": "Наименование товара №8",
+          "src": "https://top-fon.com/uploads/posts/2022-09/thumbs/1663730724_3-top-fon-com-p-serii-fon-jpeg-foto-5.jpg",
+          "descr": "Описание товара №8 третья категория",
+          "weight": "50 гр",
+          "count": 1,
+          "price": 10,
+          "priceTotal": 10
         }
       ]
     }

@@ -23,7 +23,9 @@ export const CategoryComponent = (props) => {
     <>
       {isMobile && (
         <>
-          <h1 className="categories">{props.name}</h1>
+          <h1 id={props.anchor} className="categories">
+            {props.name}
+          </h1>
           <Swiper
             modules={[Navigation, Pagination, Scrollbar, A11y]}
             spaceBetween={55}
@@ -41,8 +43,7 @@ export const CategoryComponent = (props) => {
       )}
       {!isMobile && (
         <>
-          <h1>{props.name}</h1>
-
+          <h1 id={props.anchor}>{props.name}</h1>
           <section className="categories">
             {props.cards.map((e) => (
               <CatalogCard {...e} key={e.id} />

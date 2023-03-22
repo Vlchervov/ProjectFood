@@ -1,16 +1,13 @@
 .catalog {
   display: flex;
   flex-direction: column;
-  padding-top: 130px;
+  padding-top: 100px;
 
   h1 {
-    display: flex;
-    margin-left: 120px;
-    margin-top: 0;
     font-size: 24px;
     font-weight: 400;
     user-select: none;
-
+    margin-left: 110px;
     @media (max-width: 812px) {
       justify-content: center;
       margin-left: 0;
@@ -30,17 +27,6 @@
     margin-left: 55px;
     margin-top: 125px;
     cursor: pointer;
-
-    // ::before {
-    //   display: block;
-    //   content: "";
-    //   height: 135px;
-    //   margin: -100px 0 0;
-
-    //   @media (max-width: 812px) {
-    //     height: 155px;
-    //   }
-    // }
 
     @media (max-width: 812px) {
       margin-left: 0;

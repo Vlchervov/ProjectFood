@@ -45,8 +45,18 @@ export const HeaderComponent = () => {
       {useLocation().pathname === "/catalog" ? (
         <div className="underHeader">
           <ul>
-            <li>Категория 1</li>
-            <li>Категория 2</li>
+            <li>
+              <a href="#category1">Категория 1</a>
+            </li>
+            <li>
+              <a href="#category2">Категория 2</a>
+            </li>
+            <li>
+              <a href="#category3">Категория 3</a>
+            </li>
+            {/* <li>
+              <a>Категория 4</a>
+            </li> */}
           </ul>
         </div>
       ) : null}
