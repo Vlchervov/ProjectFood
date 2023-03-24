@@ -21,23 +21,26 @@ export const Basket = () => {
                     display: "flex",
                     flexDirection: "column",
                     alignItems: "center",
-                    marginBottom: 20,
+                    marginBottom: 25,
+                    alignSelf: "center",
                   }}
                 >
                   <FaShoppingBasket className="emptyBasket" />
                   <h4>Корзина пуста</h4>
                   Добавьте товар из меню, чтобы сделать заказ
+                  <Link to="/catalog">
+                    <button className="basket__button">
+                      Перейти в каталог
+                    </button>
+                  </Link>
                 </div>
-                <Link to="/catalog">
-                  <button className="basket__button">Перейти в каталог</button>
-                </Link>
               </>
             ) : (
-              <>
+              <div className="listWrapper">
                 {cartItems.map((item) => (
                   <CartItem key={item.id} item={item} />
                 ))}
-              </>
+              </div>
             )}
           </>
         </div>

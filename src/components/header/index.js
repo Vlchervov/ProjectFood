@@ -1,11 +1,19 @@
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import CartContext from "../../context/cart/cartContext";
 import { FaShoppingCart } from "react-icons/fa";
 import { BiMenu } from "react-icons/bi";
+import data from "../../data/categories.json";
 import "./_header.scss";
+
 export const HeaderComponent = () => {
   const { cartItems } = useContext(CartContext);
+
+  useEffect(() => {
+    let scrollDistance = window.scrollY;
+
+    console.log(scrollDistance);
+  }, [window.scrollY]);
 
   return (
     <header className="header">
@@ -45,18 +53,16 @@ export const HeaderComponent = () => {
       {useLocation().pathname === "/catalog" ? (
         <div className="underHeader">
           <ul>
-            <li>
-              <a href="#category1">Категория 1</a>
-            </li>
-            <li>
-              <a href="#category2">Категория 2</a>
-            </li>
-            <li>
-              <a href="#category3">Категория 3</a>
-            </li>
-            {/* <li>
-              <a>Категория 4</a>
-            </li> */}
+            {data.data.map((item) => (
+              <li
+                key={item.name}
+                className={`underHeaderButton ${
+                  window.location.hash === item.anchorID && "enabled"
+                }`}
+              >
+                <a href={item.anchorID}>{item.name}</a>
+              </li>
+            ))}
           </ul>
         </div>
       ) : null}

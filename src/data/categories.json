@@ -3,6 +3,7 @@
     {
       "name": "Категория 1",
       "anchor": "category1",
+      "anchorID": "#category1",
       "cards": [
         {
           "id": 0,
@@ -49,6 +50,7 @@
     {
       "name": "Категория 2",
       "anchor": "category2",
+      "anchorID": "#category2",
       "cards": [
         {
           "id": 4,
@@ -135,6 +137,7 @@
     {
       "name": "Категория 3",
       "anchor": "category3",
+      "anchorID": "#category3",
       "cards": [
         {
           "id": 12,
