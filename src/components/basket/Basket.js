@@ -5,10 +5,12 @@ import "swiper/css/scrollbar";
 import { Link } from "react-router-dom";
 import { FaShoppingBasket } from "react-icons/fa";
 import "./_basket.scss";
+import { MobileForm } from "../mask";
 
 export const Basket = () => {
   const [state, setState] = useState(false);
   const { cartItems } = useContext(CartContext);
+
   return (
     <section className="basketSection">
       <div className="basket">
@@ -36,7 +38,7 @@ export const Basket = () => {
                 </div>
               </>
             ) : (
-              <div className="listWrapper">
+              <div>
                 {cartItems.map((item) => (
                   <CartItem key={item.id} item={item} />
                 ))}
@@ -48,23 +50,21 @@ export const Basket = () => {
         {cartItems.length > 0 ? (
           <>
             <div className="totalAmount">
-              <div style={{ fontWeight: "600" }}>Итого:{"\u00A0"}</div>
-              <div>
-                Количество:{" "}
-                {cartItems.reduce((count, item) => item.count + count, 0)}
-              </div>
-              <div>
-                К оплате:{" "}
-                {cartItems.reduce(
-                  (amount, item) => item.priceTotal + amount,
-                  0
-                )}
-                {"\u00A0"}₽
-              </div>
-              <div className="">
-                <button type="radio"></button>
-                <button type="radio"></button>
-                <button type="radio"></button>
+              <MobileForm />
+              <div style={{ paddingLeft: "15px" }}>
+                <div style={{ fontWeight: "600" }}>Итого:{"\u00A0"}</div>
+                <div>
+                  Количество:{" "}
+                  {cartItems.reduce((count, item) => item.count + count, 0)}
+                </div>
+                <div>
+                  К оплате:{" "}
+                  {cartItems.reduce(
+                    (amount, item) => item.priceTotal + amount,
+                    0
+                  )}
+                  {"\u00A0"}₽
+                </div>
               </div>
               <button
                 className="basket__totalAmountButton"

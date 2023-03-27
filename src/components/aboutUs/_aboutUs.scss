@@ -1,0 +1,26 @@
+.aboutUsSection {
+  flex: 1 1 auto;
+  display: flex;
+  padding-top: 60px;
+  justify-content: center;
+  background-color: white;
+
+  div {
+    // border-radius: 0px 0px 15px 15px;
+
+    h2 {
+      user-select: none;
+      display: flex;
+      justify-content: flex-start;
+      padding-left: 12px;
+      font-weight: 500;
+      font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+      color: #585858;
+    }
+
+    p {
+      color: rgb(0, 0, 0);
+      padding: 0px 12px 4px 12px;
+    }
+  }
+}

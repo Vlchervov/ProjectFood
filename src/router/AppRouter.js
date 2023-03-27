@@ -1,4 +1,5 @@
 import { Routes, Route, Navigate } from "react-router-dom";
+import { AboutUs } from "../components/aboutUs";
 import { AuthComponent } from "../components/Auth/AuthComponent";
 import { Basket } from "../components/basket/Basket";
 import { Catalog, Singlepage } from "../components/Catalog";
@@ -12,6 +13,7 @@ export const AppRouter = () => {
       {/* <Route path="posts" element={<Blogpage />}></Route> */}
       <Route path="catalog/:id" element={<Singlepage />} />
       <Route path="basket" element={<Basket />} />
+      <Route path="about-us" element={<AboutUs />}/>
       <Route path="Authorization" element={<AuthComponent />} />
     </Routes>
   );

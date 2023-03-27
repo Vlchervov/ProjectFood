@@ -70,6 +70,23 @@
   border-bottom: 1px solid #ebeff0;
   z-index: 25;
 
+  &__aboutUs {
+    a {
+      text-decoration: none;
+      color: #8a9094;
+      &:hover {
+        color: #dc3d3d;
+      }
+    }
+  }
+
+  &__aboutUs.active {
+    a {
+      color: #dc3d3d;
+      text-decoration: underline;
+    }
+  }
+
   &__shopCartButton {
     cursor: pointer;
     transition: color 500ms ease;
@@ -113,7 +130,6 @@
     ul {
       display: flex;
       list-style: none;
-      color: black;
       padding: 0;
       margin: 0;
 
@@ -121,15 +137,9 @@
         display: flex;
         align-items: center;
         padding: 10px 15px;
-        font-size: 20px;
+        font-size: 14px;
         margin-left: 5px;
         cursor: pointer;
-        font-weight: 400;
-      }
-
-      a {
-        color: black;
-        text-decoration: none;
       }
     }
   }

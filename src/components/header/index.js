@@ -1,4 +1,4 @@
-import { useContext, useEffect } from "react";
+import { useContext } from "react";
 import { Link, useLocation } from "react-router-dom";
 import CartContext from "../../context/cart/cartContext";
 import { FaShoppingCart } from "react-icons/fa";
@@ -9,19 +9,13 @@ import "./_header.scss";
 export const HeaderComponent = () => {
   const { cartItems } = useContext(CartContext);
 
-  useEffect(() => {
-    let scrollDistance = window.scrollY;
-
-    console.log(scrollDistance);
-  }, [window.scrollY]);
-
   return (
     <header className="header">
       <div className="appHeader">
         <div className="appHeader__section">
           <ul>
             <li>
-              <Link to="catalog">
+              <Link style={{ color: "black" }} to="catalog">
                 <BiMenu
                   className={`appHeader__BiMenu ${
                     useLocation().pathname === "/catalog" && "active"
@@ -33,6 +27,13 @@ export const HeaderComponent = () => {
         </div>
         <div className="appHeader__section">
           <ul>
+            <li
+              className={`appHeader__aboutUs ${
+                useLocation().pathname === "/about-us" && "active"
+              }`}
+            >
+              <Link to="about-us">О компании</Link>
+            </li>
             <li>
               <Link style={{ color: "black" }} to="basket">
                 {cartItems.length > 0 && (
