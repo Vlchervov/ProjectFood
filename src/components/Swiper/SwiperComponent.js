@@ -1,14 +1,11 @@
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Pagination, Scrollbar, A11y } from "swiper";
-import SwiperCore, { Keyboard } from "swiper";
+import { Pagination } from "swiper";
 import "swiper/css";
 import "swiper/css/pagination";
-import { useState } from "react";
-import { SwiperOptionsMobile } from "./SwiperOptions";
 
 export const SwiperComponent = (props) => {
   const SwiperOptions = {
-    speed: 1000,
+    speed: 800,
     slidesPerView: 1,
     loop: "enabled",
 

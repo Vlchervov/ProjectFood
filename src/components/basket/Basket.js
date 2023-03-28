@@ -37,7 +37,7 @@ export const Basket = () => {
                 </div>
               </>
             ) : (
-              <div>
+              <div className="listWrapper">
                 {cartItems.map((item) => (
                   <CartItem key={item.id} item={item} />
                 ))}

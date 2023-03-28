@@ -1,13 +1,10 @@
 import { useState, useContext } from "react";
-import { Swiper, SwiperSlide } from "swiper/react";
 import CartContext from "../../context/cart/cartContext";
 import "./_catalog.scss";
-import { SwiperOptions, SwiperOptionsMobile } from "../Swiper/SwiperOptions";
 import { SwiperComponent } from "../Swiper/SwiperComponent";
 
 export const CatalogCard = (props) => {
   const { addTo, cartItems } = useContext(CartContext);
-  const [hidden, setHidden] = useState(true);
   const [button, setButton] = useState("default");
 
   const checkCart = (id) => {
@@ -20,7 +17,7 @@ export const CatalogCard = (props) => {
 
   return (
     <div className="categories__item" key={props.id}>
-      <SwiperComponent img={props.src}/>
+      <SwiperComponent img={props.src} />
       <div className="categories__body">
         <p className="categories__title">
           <b>{props.title}</b>
