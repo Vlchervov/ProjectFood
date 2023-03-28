@@ -16,13 +16,14 @@ code {
 }
 
 .swiper {
-  height: 250px;
+  height: 200px;
+  width: 400px;
 }
 .swiper:last-child {
   border-bottom: none;
 }
 .swiper img {
-  border-top-left-radius: 25px;
+  width: 100%;
 }
 @media (max-width: 812px) {
   .swiper img {

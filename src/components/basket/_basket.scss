@@ -85,7 +85,7 @@
       cursor: pointer;
       border: none;
       width: 270px;
-      height: 48px;
+      height: 38px;
       margin-bottom: 25px;
       border-radius: 25px;
       background-color: #478dff;
@@ -98,13 +98,12 @@
       align-items: center;
       justify-content: center;
       border: none;
-      width: 270px;
-      height: 48px;
-      display: flex;
-      margin-bottom: 25px;
-      border-radius: 25px;
       position: absolute;
-      bottom: 0;
+      bottom: 15px;
+      width: 270px;
+      height: 38px;
+      display: flex;
+      border-radius: 25px;
       left: 40px;
       background-color: #478dff;
       color: white;

@@ -3,9 +3,10 @@ import validator from "validator";
 
 export const MobileForm = () => {
   const [telState, setTelState] = useState({
-    phone: "+7",
+    phone: "",
     isValidPhone: false,
   });
+  const [errorState, setErrorState] = useState("");
 
   const HandlerSubmit = (e) => {
     e.preventDefault();
@@ -17,41 +18,44 @@ export const MobileForm = () => {
       const value =
         name !== "phone"
           ? e.value
-          : e.value.replace(/\D/g, "").replace(/^7/, "8");
+          : e.value.replace(/\D/g, "").replace(/^7/, "+7").replace(/^8/, "+7");
       arrDataFromForm[name] = value;
     });
-
     if (validator.isMobilePhone(arrDataFromForm["phone"], ["ru-RU"])) {
       setTelState({
         isValidPhone: true,
         phone: arrDataFromForm["phone"],
       });
     } else {
-      alert("неверный номер");
+      setTelState({
+        isValidPhone: false,
+        phone: "",
+      });
+      setErrorState("Проверьте правильность введённого номера");
     }
   };
 
   return (
     <form onSubmit={HandlerSubmit}>
-      Выберите способ оформления:
+      Выберите способ оформления заказа:
       <ul>
         <li>
           <label>
-            <input type="radio" name="browser" required />
+            <input type="radio" name="order" required />
             Доставка
           </label>
         </li>
         <li>
           {" "}
           <label>
-            <input type="radio" name="browser" required />
+            <input type="radio" name="order" required />
             Самовывоз
           </label>
         </li>
         <li>
           {" "}
           <label>
-            <input type="radio" name="browser" required />В заведении
+            <input type="radio" name="order" required />В заведении
           </label>
         </li>
       </ul>
@@ -60,12 +64,15 @@ export const MobileForm = () => {
         <input
           type="tel"
           id="name"
+          placeholder="например: +79999999999"
           name="phone"
           value={telState.phone}
           onChange={(event) => {
-            setTelState(event.target.value);
+            setTelState({ phone: event.target.value });
+            setErrorState("");
           }}
         />
+        {<i style={{ color: "#CD3737" }}>{errorState}</i>}
       </label>
       <label>
         Комментарий к заказу:
@@ -74,9 +81,14 @@ export const MobileForm = () => {
           placeholder="Напишите нам что-нибудь..."
         ></textarea>
       </label>
-      {/* <div>
-          <input type="reset" value="Очистить" />
-        </div> */}
+      <div>
+        <input
+          className="basket__totalAmountButton"
+          type="submit"
+          disabled={!telState.phone}
+          value="Перейти к оформлению заказа"
+        />
+      </div>
     </form>
   );
 };

@@ -1,7 +1,6 @@
 import { useContext } from "react";
 import CartContext from "../../../context/cart/cartContext";
 import { GoTrashcan } from "react-icons/go";
-import { AiFillPicture } from "react-icons/ai";
 import "./_cartItem.scss";
 
 export const CartItem = ({ item }) => {
@@ -10,9 +9,8 @@ export const CartItem = ({ item }) => {
   return (
     <div className="product">
       <div className="product__item">
-        <AiFillPicture className="product__icon" />
+        <img src={item.src.image_1} />
         <div className="product__body">
-          {/* <img src={item.src} /> */}
           <div className="product__content">
             <p className="product__title">{item.title}</p>
             <p className="product__weight">{item.weight}</p>

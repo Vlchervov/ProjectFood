@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import { useContext } from "react";
 import CartContext from "../../context/cart/cartContext";
 import { CartItem } from "./item/CartItem";
 import "swiper/css/scrollbar";
@@ -8,7 +8,6 @@ import "./_basket.scss";
 import { MobileForm } from "../mask";
 
 export const Basket = () => {
-  const [state, setState] = useState(false);
   const { cartItems } = useContext(CartContext);
 
   return (
@@ -66,15 +65,6 @@ export const Basket = () => {
                   {"\u00A0"}₽
                 </div>
               </div>
-              <button
-                className="basket__totalAmountButton"
-                disabled={state}
-                onClick={() => {
-                  setState(true);
-                }}
-              >
-                Перейти к оформлению заказа
-              </button>
             </div>
           </>
         ) : null}

@@ -1,6 +1,9 @@
 import { useState, useContext } from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
 import CartContext from "../../context/cart/cartContext";
 import "./_catalog.scss";
+import { SwiperOptions, SwiperOptionsMobile } from "../Swiper/SwiperOptions";
+import { SwiperComponent } from "../Swiper/SwiperComponent";
 
 export const CatalogCard = (props) => {
   const { addTo, cartItems } = useContext(CartContext);
@@ -17,10 +20,7 @@ export const CatalogCard = (props) => {
 
   return (
     <div className="categories__item" key={props.id}>
-      <img
-        src="https://top-fon.com/uploads/posts/2022-09/thumbs/1663730724_3-top-fon-com-p-serii-fon-jpeg-foto-5.jpg"
-        hidden={hidden}
-      />
+      <SwiperComponent img={props.src}/>
       <div className="categories__body">
         <p className="categories__title">
           <b>{props.title}</b>

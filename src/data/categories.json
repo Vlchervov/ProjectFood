@@ -8,7 +8,11 @@
         {
           "id": 0,
           "title": "Наименование товара №1",
-          "src": "https://top-fon.com/uploads/posts/2022-09/thumbs/1663730724_3-top-fon-com-p-serii-fon-jpeg-foto-5.jpg",
+          "src": {
+            "image_1": "https://s0.rbk.ru/v6_top_pics/resized/1200xH/media/img/7/74/755614628166747.jpg",
+            "image_2": "https://aif-s3.aif.ru/images/014/240/65b1370d25e958d92c8f3b7a8ba43341.jpg",
+            "image_3": "https://www.gazeta.uz/media/img/2022/06/497sWK16548414563450_l.jpg"
+          },
           "descr": "Описание товара №1 первая категория",
           "weight": "100 гр",
           "count": 1,
@@ -18,7 +22,11 @@
         {
           "id": 1,
           "title": "Наименование товара №2",
-          "src": "https://top-fon.com/uploads/posts/2022-09/thumbs/1663730724_3-top-fon-com-p-serii-fon-jpeg-foto-5.jpg",
+          "src": {
+            "image_1": "https://cdnn21.img.ria.ru/images/98976/61/989766135_0:105:2000:1230_600x0_80_0_0_22f73da863b108382af02825eddc84f0.jpg",
+            "image_2": "https://www.gastronom.ru/binfiles/images/20191113/bd570867.jpg",
+            "image_3": "https://roll-club.kh.ua/wp-content/uploads/2021/06/pizza.jpg"
+          },
           "descr": "Описание товара №2 первая категория",
           "weight": "560 гр",
           "count": 1,
@@ -28,7 +36,11 @@
         {
           "id": 2,
           "title": "Наименование товара №3",
-          "src": "https://top-fon.com/uploads/posts/2022-09/thumbs/1663730724_3-top-fon-com-p-serii-fon-jpeg-foto-5.jpg",
+          "src": {
+            "image_1": "https://www.koolinar.ru/all_image/recipes/85/85023/recipe_2b26c60f-3719-4319-9653-3651b19608e3_w450.jpg",
+            "image_2": "https://www.koolinar.ru/all_image/recipes/143/143160/recipe_0491929a-a369-4a43-8559-cbde88d37a63_w450.jpg",
+            "image_3": "https://sovkusom.ru/wp-content/uploads/recepty/b/bulochki-s-makom/thumb1-840x440.jpg"
+          },
           "descr": "Описание товара №3 первая категория",
           "weight": "643 гр",
           "count": 1,
@@ -38,12 +50,16 @@
         {
           "id": 3,
           "title": "Наименование товара №4",
-          "src": "https://top-fon.com/uploads/posts/2022-09/thumbs/1663730724_3-top-fon-com-p-serii-fon-jpeg-foto-5.jpg",
+          "src": {
+            "image_1": "https://sberbusiness.live/uploads/media/post_detail/0001/13/thumb_12299_post_detail_tablet.png",
+            "image_2": "https://s0.rbk.ru/v6_top_pics/media/img/3/39/756738625992393.webp",
+            "image_3": "https://img.freepik.com/premium-photo/splashing-coffee-on-black-background_250469-8188.jpg"
+          },
           "descr": "Описание товара №4 первая категория",
-          "weight": "156 гр",
+          "weight": "0.2 мл",
           "count": 1,
-          "price": 350,
-          "priceTotal": 350
+          "price": 99,
+          "priceTotal": 99
         }
       ]
     },
@@ -55,7 +71,11 @@
         {
           "id": 4,
           "title": "Наименование товара №1",
-          "src": "https://top-fon.com/uploads/posts/2022-09/thumbs/1663730724_3-top-fon-com-p-serii-fon-jpeg-foto-5.jpg",
+          "src": {
+            "image_1": "https://s0.rbk.ru/v6_top_pics/media/img/5/03/756710018675035.webp",
+            "image_2": "https://suvorovcandies.ru/files/blog_resized/shokolad-plyusy-i-minusy.900x600.jpg",
+            "image_3": "https://fbc.ua/wp-content/uploads/2021/01/15-26.jpg"
+          },
           "descr": "Описание товара №1 вторая категория",
           "weight": "234 гр",
           "count": 1,
@@ -65,7 +85,11 @@
         {
           "id": 5,
           "title": "Наименование товара №2",
-          "src": "https://top-fon.com/uploads/posts/2022-09/thumbs/1663730724_3-top-fon-com-p-serii-fon-jpeg-foto-5.jpg",
+          "src": {
+            "image_1": "https://resizer.mail.ru/p/083fe3e5-6920-520e-a615-cc428ff3c43d/AAAcjXqsavsNPQPfw8sz4Q5wHG-Dcr1HeTbtVo_4w3TRRydCukIHCe2cfC9FYHfQTaoWnxiq-6vMgZKjRJjpK1FhUbU.jpg",
+            "image_2": "https://api.magonline.ru/thumbnail/740x494/28/504/28504.png",
+            "image_3": "https://tengrinews.kz/userdata/news/2020/news_411581/resize/photo_331318.jpeg"
+          },
           "descr": "Описание товара №2 вторая категория",
           "weight": "358 гр",
           "count": 1,
@@ -75,7 +99,11 @@
         {
           "id": 6,
           "title": "Наименование товара №3",
-          "src": "https://top-fon.com/uploads/posts/2022-09/thumbs/1663730724_3-top-fon-com-p-serii-fon-jpeg-foto-5.jpg",
+          "src": {
+            "image_1": "https://proxy12.online.ua/news/r2-c299a95df8/6144490072370",
+            "image_2": "https://vsluh.ru/upload/iblock/b30/cvs8t31eviffhsyz6l3d7d39q7ygdy4b.jpg",
+            "image_3": "https://edaplus.info/food_pictures/banana.jpg"
+          },
           "descr": "Описание товара №3 вторая категория",
           "weight": "777 гр",
           "count": 1,
@@ -85,7 +113,11 @@
         {
           "id": 7,
           "title": "Наименование товара №4",
-          "src": "https://top-fon.com/uploads/posts/2022-09/thumbs/1663730724_3-top-fon-com-p-serii-fon-jpeg-foto-5.jpg",
+          "src": {
+            "image_1": "https://lifeglobe.net/x/entry/6259/1a-0.jpg",
+            "image_2": "http://receptov.net/uploads/posts/2014-12/1417988705_yabloko.jpg",
+            "image_3": "https://cross.expert/wp-content/uploads/2019/02/jabloki.jpg"
+          },
           "descr": "Описание товара №4 вторая категория",
           "weight": "178 гр",
           "count": 1,
@@ -95,7 +127,11 @@
         {
           "id": 8,
           "title": "Наименование товара №5",
-          "src": "https://top-fon.com/uploads/posts/2022-09/thumbs/1663730724_3-top-fon-com-p-serii-fon-jpeg-foto-5.jpg",
+          "src": {
+            "image_1": "https://grandkulinar.ru/uploads/posts/2014-06/1402344400_grushi.jpg",
+            "image_2": "https://bonduelle.ru/upload/iblock/281/281025795b3ce202ec9b691799fe582f.jpg",
+            "image_3": "https://m.vest-news.ru/files/article_images/2017/11/17/105065_103138.jpg"
+          },
           "descr": "Описание товара №5 вторая категория",
           "weight": "297 гр",
           "count": 1,
@@ -105,7 +141,11 @@
         {
           "id": 9,
           "title": "Наименование товара №6",
-          "src": "https://top-fon.com/uploads/posts/2022-09/thumbs/1663730724_3-top-fon-com-p-serii-fon-jpeg-foto-5.jpg",
+          "src": {
+            "image_1": "https://www.gastronom.ru/binfiles/images/20141015/b842eff6.jpg",
+            "image_2": "https://api.magonline.ru/thumbnail/740x494/28/673/28673.png",
+            "image_3": "https://avatars.dzeninfra.ru/get-zen_doc/153246/pub_5a308c518139ba7d264aca41_5a308c8d48c85ecd30041e42/scale_1200"
+          },
           "descr": "Описание товара №6 вторая категория",
           "weight": "297 гр",
           "count": 1,
@@ -115,7 +155,11 @@
         {
           "id": 10,
           "title": "Наименование товара №7",
-          "src": "https://top-fon.com/uploads/posts/2022-09/thumbs/1663730724_3-top-fon-com-p-serii-fon-jpeg-foto-5.jpg",
+          "src": {
+            "image_1": "https://m.dom-eda.com/uploads/images/catalog/item/dfc9a3e974/3cbf3bd41c_1000.jpg",
+            "image_2": "https://www.gastronom.ru/binfiles/images/20141003/m3c0313e.jpg",
+            "image_3": "https://ic.pics.livejournal.com/p_syutkin/64914398/5223694/5223694_1000.jpg"
+          },
           "descr": "Описание товара №7 вторая категория",
           "weight": "297 гр",
           "count": 1,
@@ -125,7 +169,11 @@
         {
           "id": 11,
           "title": "Наименование товара №8",
-          "src": "https://top-fon.com/uploads/posts/2022-09/thumbs/1663730724_3-top-fon-com-p-serii-fon-jpeg-foto-5.jpg",
+          "src": {
+            "image_1": "https://upload.wikimedia.org/wikipedia/commons/4/45/Cherry_fruit_on_white_background.jpg",
+            "image_2": "https://vkusvill.ru/upload/resize/481187/481187_1200x600x70_c.webp",
+            "image_3": "https://aif-s3.aif.ru/images/014/797/f292c63d5073b1e0ccefad3d64ee77b2.jpg"
+          },
           "descr": "Описание товара №8 вторая категория",
           "weight": "297 гр",
           "count": 1,
@@ -142,7 +190,11 @@
         {
           "id": 12,
           "title": "Наименование товара №1",
-          "src": "https://top-fon.com/uploads/posts/2022-09/thumbs/1663730724_3-top-fon-com-p-serii-fon-jpeg-foto-5.jpg",
+          "src": {
+            "image_1": "https://s15.stc.all.kpcdn.net/family/wp-content/uploads/2022/01/chernika_polza_i_vred_oblogka-960x540.jpg",
+            "image_2": "https://www.gastronom.ru/binfiles/images/20141006/b5dd3ff8.jpg",
+            "image_3": "https://pravoslavie.ru/sas/image/103098/309855.p.jpg?mtime=1548249181"
+          },
           "descr": "Описание товара №1 третья категория",
           "weight": "200 гр",
           "count": 1,
@@ -152,7 +204,11 @@
         {
           "id": 13,
           "title": "Наименование товара №2",
-          "src": "https://top-fon.com/uploads/posts/2022-09/thumbs/1663730724_3-top-fon-com-p-serii-fon-jpeg-foto-5.jpg",
+          "src": {
+            "image_1": "https://s0.rbk.ru/v6_top_pics/media/img/8/96/756590951572968.jpeg",
+            "image_2": "https://market-da.ru/assets/cache/images/news/2019/11/745x-shutterstock_391474411.b9b.jpg",
+            "image_3": "https://www.supersadovnik.ru/binfiles/images/20160301/bbdecb8e.jpg"
+          },
           "descr": "Описание товара №2 третья категория",
           "weight": "349 гр",
           "count": 1,
@@ -162,7 +218,11 @@
         {
           "id": 14,
           "title": "Наименование товара №3",
-          "src": "https://top-fon.com/uploads/posts/2022-09/thumbs/1663730724_3-top-fon-com-p-serii-fon-jpeg-foto-5.jpg",
+          "src": {
+            "image_1": "https://s10.stc.all.kpcdn.net/family/wp-content/uploads/2022/10/kokos-polza-i-vred-dlya-organizma-1-960x540.jpg",
+            "image_2": "https://cdn.informator.ua/@ua/media/2021/10/04/615adeaeee5ed6.46501910.jpg",
+            "image_3": "https://fruitnews.ru/images/jch-optimize/ng/images_2020_10_photo-1580984969071-a8da5656c2fb__p98397.webp"
+          },
           "descr": "Описание товара №3 третья категория",
           "weight": "999 гр",
           "count": 1,
@@ -172,7 +232,11 @@
         {
           "id": 15,
           "title": "Наименование товара №4",
-          "src": "https://top-fon.com/uploads/posts/2022-09/thumbs/1663730724_3-top-fon-com-p-serii-fon-jpeg-foto-5.jpg",
+          "src": {
+            "image_1": "https://s0.rbk.ru/v6_top_pics/media/img/2/63/756324748637632.jpg",
+            "image_2": "https://www.gastronom.ru/binfiles/images/20210908/b27bdc0b.jpg",
+            "image_3": "https://rskrf.ru/upload/iblock/d17/d176c4f16217948968e4345705aec4c1.jpg"
+          },
           "descr": "Описание товара №4 третья категория",
           "weight": "178 гр",
           "count": 1,
@@ -182,7 +246,11 @@
         {
           "id": 16,
           "title": "Наименование товара №5",
-          "src": "https://top-fon.com/uploads/posts/2022-09/thumbs/1663730724_3-top-fon-com-p-serii-fon-jpeg-foto-5.jpg",
+          "src": {
+            "image_1": "https://www.gastronom.ru/binfiles/images/20160329/b4cd7935.jpg",
+            "image_2": "https://img.7dach.ru/image/600/03/64/88/2016/02/12/d4f1a1.jpg",
+            "image_3": "https://rastenievod.com/wp-content/uploads/2018/08/1-1-700x685.jpg"
+          },
           "descr": "Описание товара №5 третья категория",
           "weight": "155 гр",
           "count": 1,
@@ -192,7 +260,11 @@
         {
           "id": 17,
           "title": "Наименование товара №6",
-          "src": "https://top-fon.com/uploads/posts/2022-09/thumbs/1663730724_3-top-fon-com-p-serii-fon-jpeg-foto-5.jpg",
+          "src": {
+            "image_1": "https://n1s1.hsmedia.ru/1a/b2/e5/1ab2e53493a99ddc41f3072abfb2d2a6/728x542_1_ef80479b9da1e3d40c3545ca46eddf2b@1200x894_0xac120003_8396897381645801824.jpeg",
+            "image_2": "https://object.pscloud.io/cms/cms/Uploads/receptiy_blinov_k_maslenice.jpg",
+            "image_3": "https://kopilka-kulinara.ru/upload/information_system_46/4/0/3/item_4034/item_4034.webp"
+          },
           "descr": "Описание товара №6 третья категория",
           "weight": "315 гр",
           "count": 1,
@@ -202,7 +274,11 @@
         {
           "id": 18,
           "title": "Наименование товара №7",
-          "src": "https://top-fon.com/uploads/posts/2022-09/thumbs/1663730724_3-top-fon-com-p-serii-fon-jpeg-foto-5.jpg",
+          "src": {
+            "image_1": "https://static.1000.menu/res/640/img/content-v2/eb/79/19516/salat-cezar-klassicheskii-s-kuricei_1611309331_16_max.jpg",
+            "image_2": "https://www.kulina.ru/images/docs/Image/zes(6).jpg",
+            "image_3": "https://lifehacker.ru/wp-content/uploads/2018/12/shutterstock_648745414-1_1608532113.jpg"
+          },
           "descr": "Описание товара №7 третья категория",
           "weight": "100 гр",
           "count": 1,
@@ -212,7 +288,11 @@
         {
           "id": 19,
           "title": "Наименование товара №8",
-          "src": "https://top-fon.com/uploads/posts/2022-09/thumbs/1663730724_3-top-fon-com-p-serii-fon-jpeg-foto-5.jpg",
+          "src": {
+            "image_1": "https://images.unian.net/photos/2020_04/thumb_files/1200_0_1588081977-7108.jpg",
+            "image_2": "https://lifehacker.ru/wp-content/uploads/2014/12/ob-05_1568611223.jpg",
+            "image_3": "https://img.delo-vcusa.ru/2020/11/Borshh-s-yablokami.jpg"
+          },
           "descr": "Описание товара №8 третья категория",
           "weight": "50 гр",
           "count": 1,

@@ -1,14 +1,17 @@
 .product {
   user-select: none;
-  width: 400px;
-  &__img {
-    display: flex;
-    img {
-      object-fit: cover;
-      width: 300px;
-      border-radius: 20px 0px 0px 0px;
-      @media (max-width: 812px) {
-      }
+  width: 460px;
+
+  @media (max-width: 812px) {
+    width: 100%;
+  }
+
+  img {
+    object-fit: cover;
+    width: 145px;
+    height: 217px;
+    border-radius: 20px 0px 0px 20px;
+    @media (max-width: 812px) {
     }
   }
 
