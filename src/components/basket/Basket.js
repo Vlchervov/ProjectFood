@@ -5,7 +5,8 @@ import "swiper/css/scrollbar";
 import { Link } from "react-router-dom";
 import { FaShoppingBasket } from "react-icons/fa";
 import "./_basket.scss";
-import { MobileForm } from "../mask";
+import { OrderForm } from "../basketOrderForm";
+import { ValidateOrderForm } from "../basketOrderForm/mask";
 
 export const Basket = () => {
   const { cartItems } = useContext(CartContext);
@@ -37,11 +38,11 @@ export const Basket = () => {
                 </div>
               </>
             ) : (
-              <div className="listWrapper">
+              <>
                 {cartItems.map((item) => (
                   <CartItem key={item.id} item={item} />
                 ))}
-              </div>
+              </>
             )}
           </>
         </div>
@@ -49,7 +50,7 @@ export const Basket = () => {
         {cartItems.length > 0 ? (
           <>
             <div className="totalAmount">
-              <MobileForm />
+              <ValidateOrderForm />
               <div style={{ paddingLeft: "15px" }}>
                 <div style={{ fontWeight: "600" }}>Итого:{"\u00A0"}</div>
                 <div>
