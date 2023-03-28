@@ -27,10 +27,6 @@ export const MobileForm = () => {
         phone: arrDataFromForm["phone"],
       });
     } else {
-      setTelState({
-        isValidPhone: false,
-        phone: "",
-      });
       setErrorState("Проверьте правильность введённого номера");
     }
   };
