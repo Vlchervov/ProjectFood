@@ -5,7 +5,6 @@ import "swiper/css/scrollbar";
 import { Link } from "react-router-dom";
 import { FaShoppingBasket } from "react-icons/fa";
 import "./_basket.scss";
-import { OrderForm } from "../basketOrderForm";
 import { ValidateOrderForm } from "../basketOrderForm/mask";
 
 export const Basket = () => {

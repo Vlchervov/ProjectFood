@@ -4,7 +4,7 @@ import { OrderForm } from "..";
 
 export const ValidateOrderForm = () => {
   const [telState, setTelState] = useState({
-    phone: "",
+    phone: "+7",
     isValidPhone: false,
   });
   const [errorState, setErrorState] = useState("");
@@ -21,6 +21,8 @@ export const ValidateOrderForm = () => {
           ? e.value
           : e.value.replace(/\D/g, "").replace(/^7/, "+7").replace(/^8/, "+7");
       arrDataFromForm[name] = value;
+
+      return value;
     });
     if (validator.isMobilePhone(arrDataFromForm["phone"], ["ru-RU"])) {
       setTelState({

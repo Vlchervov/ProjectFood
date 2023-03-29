@@ -30,6 +30,7 @@ export const OrderForm = (props) => {
           id="name"
           placeholder="например: +79999999999"
           name="phone"
+          minLength="11"
           value={props.telState.phone}
           onChange={(event) => {
             props.setTelState({ phone: event.target.value });
