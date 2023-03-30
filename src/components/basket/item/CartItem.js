@@ -9,7 +9,7 @@ export const CartItem = ({ item }) => {
   return (
     <div className="product">
       <div className="product__item">
-        <img src={item.src.image_1} />
+        <img src={item.src.image_1} alt="фото товара" />
         <div className="product__body">
           <div className="product__content">
             <p className="product__title">{item.title}</p>

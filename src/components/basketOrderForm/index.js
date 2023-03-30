@@ -1,48 +1,101 @@
+import { useForm } from "react-hook-form";
+
 export const OrderForm = (props) => {
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm({ mode: "onChange" });
+
   return (
-    <form onSubmit={props.HandlerSubmit}>
+    <form onSubmit={handleSubmit(props.onSubmit)}>
       Выберите способ оформления заказа:
       <ul>
         <li>
           <label>
-            <input type="radio" name="order" required />
+            <input
+              {...register("order", {
+                value: true,
+                required: {
+                  value: true,
+                },
+              })}
+              type="radio"
+              value="Доставка"
+              name="order"
+            />
             Доставка
           </label>
         </li>
         <li>
           {" "}
           <label>
-            <input type="radio" name="order" required />
+            <input
+              {...register("order", {
+                value: true,
+                required: {
+                  value: true,
+                },
+              })}
+              type="radio"
+              name="order"
+              value="Самовывоз"
+              required
+            />
             Самовывоз
           </label>
         </li>
         <li>
           {" "}
           <label>
-            <input type="radio" name="order" required />В заведении
+            <input
+              {...register("order", {
+                value: true,
+                required: {
+                  value: true,
+                },
+              })}
+              type="radio"
+              value="В заведении"
+              name="order"
+            />
+            В заведении
           </label>
         </li>
       </ul>
       <label>
         Ваш номер телефона:{" "}
         <input
-          type="tel"
+          type="text"
           id="name"
           placeholder="например: +79999999999"
           name="phone"
-          minLength="11"
-          value={props.telState.phone}
-          onChange={(event) => {
-            props.setTelState({ phone: event.target.value });
+          {...register("phone", {
+            minLength: {
+              value: 11,
+              message: "Минимум 11 символов",
+            },
+            required: {
+              value: true,
+              message: "Поле обязательно для заполнения",
+            },
+          })}
+          onInput={props.changeHandler}
+          onChange={() => {
             props.setErrorState("");
           }}
         />
+        {errors.phone?.message && (
+          <i style={{ color: "#CD3737" }}>{errors.phone?.message}</i>
+        )}
         {<i style={{ color: "#CD3737" }}>{props.errorState}</i>}
       </label>
       <label>
         Комментарий к заказу:
         <textarea
-          name="comment"
+          maxLength="540"
+          name="commentForOrder"
+          {...register("commentForOrder")}
           placeholder="Напишите нам что-нибудь..."
         ></textarea>
       </label>
@@ -50,7 +103,6 @@ export const OrderForm = (props) => {
         <input
           className="basket__totalAmountButton"
           type="submit"
-          disabled={!props.telState.phone}
           value="Перейти к оформлению заказа"
         />
       </div>

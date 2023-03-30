@@ -18,6 +18,10 @@ const CartState = ({ children }) => {
     setInitialState((item) => item.filter((el) => id !== el.id));
   };
 
+  const cleanArray = () => {
+    setInitialState([]);
+  };
+
   const increase = (id) => {
     setInitialState((cart) => {
       return cart.map((product) => {
@@ -55,6 +59,7 @@ const CartState = ({ children }) => {
       value={{
         increase,
         decrease,
+        cleanArray,
         cartItems: initialState,
         removeItem,
         addTo,

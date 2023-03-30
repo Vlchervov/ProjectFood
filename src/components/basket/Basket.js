@@ -8,7 +8,7 @@ import "./_basket.scss";
 import { ValidateOrderForm } from "../basketOrderForm/mask";
 
 export const Basket = () => {
-  const { cartItems } = useContext(CartContext);
+  const { cartItems, cleanArray } = useContext(CartContext);
 
   return (
     <section className="basketSection">
@@ -49,7 +49,10 @@ export const Basket = () => {
         {cartItems.length > 0 ? (
           <>
             <div className="totalAmount">
-              <ValidateOrderForm />
+              <ValidateOrderForm
+                cartItems={cartItems}
+                cleanArray={cleanArray}
+              />
               <div style={{ paddingLeft: "15px" }}>
                 <div style={{ fontWeight: "600" }}>Итого:{"\u00A0"}</div>
                 <div>
