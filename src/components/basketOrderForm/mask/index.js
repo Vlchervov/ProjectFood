@@ -22,7 +22,7 @@ export const ValidateOrderForm = (props) => {
         props.cleanArray();
       }, 1000);
     } else {
-      setErrorState("Некорректный номер");
+      setErrorState("Формат номера должен быть: +79");
     }
   };
 

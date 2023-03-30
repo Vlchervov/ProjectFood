@@ -1,11 +1,22 @@
-import { useForm } from "react-hook-form";
+import { useForm, Controller } from "react-hook-form";
+import { isValidPhoneNumber } from "react-phone-number-input";
+import ru from "react-phone-number-input/locale/ru.json";
+import PhoneInput from "react-phone-number-input/react-hook-form-input";
+import "react-phone-number-input/style.css";
 
 export const OrderForm = (props) => {
   const {
     register,
     handleSubmit,
+    clearErrors,
     formState: { errors },
-  } = useForm({ mode: "onChange" });
+    control,
+  } = useForm({
+    mode: "all",
+    defaultValues: {
+      phone: "+7",
+    },
+  });
 
   return (
     <form onSubmit={handleSubmit(props.onSubmit)}>
@@ -63,7 +74,27 @@ export const OrderForm = (props) => {
           </label>
         </li>
       </ul>
-      <label>
+      <label htmlFor="phoneInput"> Ваш номер телефона:</label>
+      <Controller
+        name="phoneInput"
+        control={control}
+        rules={{
+          validate: (value) => {
+            isValidPhoneNumber(value);
+          },
+        }}
+        render={({ field: { onChange, value } }) => (
+          <PhoneInput
+            value={value}
+            onChange={onChange}
+            defaultCountry="RU"
+            id="phoneInput"
+            {...register("phoneInput")}
+            control={control}
+          />
+        )}
+      />
+      {/* <label>
         Ваш номер телефона:{" "}
         <input
           type="text"
@@ -72,8 +103,8 @@ export const OrderForm = (props) => {
           name="phone"
           {...register("phone", {
             minLength: {
-              value: 11,
-              message: "Минимум 11 символов",
+              value: 12,
+              message: "Минимум 12 символов",
             },
             required: {
               value: true,
@@ -83,13 +114,14 @@ export const OrderForm = (props) => {
           onInput={props.changeHandler}
           onChange={() => {
             props.setErrorState("");
+            clearErrors(["phone"]);
           }}
         />
         {errors.phone?.message && (
           <i style={{ color: "#CD3737" }}>{errors.phone?.message}</i>
         )}
         {<i style={{ color: "#CD3737" }}>{props.errorState}</i>}
-      </label>
+      </label> */}
       <label>
         Комментарий к заказу:
         <textarea
