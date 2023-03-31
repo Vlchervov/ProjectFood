@@ -1,11 +1,11 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import CartContext from "../../context/cart/cartContext";
 import { CartItem } from "./item/CartItem";
 import "swiper/css/scrollbar";
 import { Link } from "react-router-dom";
 import { FaShoppingBasket } from "react-icons/fa";
 import "./_basket.scss";
-import { ValidateOrderForm } from "../basketOrderForm/mask";
+import { ValidateOrderForm } from "../basketOrderForm/validator";
 
 export const Basket = () => {
   const { cartItems, cleanArray } = useContext(CartContext);
@@ -53,21 +53,6 @@ export const Basket = () => {
                 cartItems={cartItems}
                 cleanArray={cleanArray}
               />
-              <div style={{ paddingLeft: "15px" }}>
-                <div style={{ fontWeight: "600" }}>Итого:{"\u00A0"}</div>
-                <div>
-                  Количество:{" "}
-                  {cartItems.reduce((count, item) => item.count + count, 0)}
-                </div>
-                <div>
-                  К оплате:{" "}
-                  {cartItems.reduce(
-                    (amount, item) => item.priceTotal + amount,
-                    0
-                  )}
-                  {"\u00A0"}₽
-                </div>
-              </div>
             </div>
           </>
         ) : null}

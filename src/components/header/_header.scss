@@ -59,6 +59,16 @@
   }
 }
 
+.react-select {
+  &__menu {
+    background-color: white;
+    padding: 12px;
+    border-radius: 15px;
+    box-shadow: 0px 0px 5px 5px rgba(0, 0, 0, 0.2);
+  }
+
+}
+
 .appHeader {
   user-select: none;
   position: fixed;
@@ -78,6 +88,17 @@
         color: #dc3d3d;
       }
     }
+  }
+
+  select {
+    border: none;
+    outline: none;
+    cursor: pointer;
+  }
+
+  option {
+    border-radius: 25px;
+    border: 1px solid #e2e8eb;
   }
 
   &__aboutUs.active {

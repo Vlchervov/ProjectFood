@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import CartContext from "../../context/cart/cartContext";
 import { FaShoppingCart } from "react-icons/fa";
@@ -23,6 +23,7 @@ export const HeaderComponent = () => {
                 />
               </Link>
             </li>
+            <li></li>
           </ul>
         </div>
         <div className="appHeader__section">

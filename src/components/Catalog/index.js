@@ -1,5 +1,5 @@
 import { useParams } from "react-router";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 const Singlepage = () => {
   const { id } = useParams();
   const [product, setProduct] = useState(null);

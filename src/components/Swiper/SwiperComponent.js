@@ -20,13 +20,13 @@ export const SwiperComponent = (props) => {
   return (
     <Swiper {...SwiperOptions} spaceBetween={25} modules={[Pagination]}>
       <SwiperSlide>
-        <img src={props.img.image_1} />
+        <img src={props.img.image_1} alt="фото товара" />
       </SwiperSlide>
       <SwiperSlide>
-        <img src={props.img.image_2} />
+        <img src={props.img.image_2} alt="фото товара" />
       </SwiperSlide>
       <SwiperSlide>
-        <img src={props.img.image_3} />
+        <img src={props.img.image_3} alt="фото товара" />
       </SwiperSlide>
     </Swiper>
   );
