@@ -5,7 +5,8 @@ import "swiper/css/scrollbar";
 import { Link } from "react-router-dom";
 import { FaShoppingBasket } from "react-icons/fa";
 import "./_basket.scss";
-import { ValidateOrderForm } from "../basketOrderForm/validator";
+import { ValidateOrderForm } from "../basketOrderForm/validateOrderForm";
+
 
 export const Basket = () => {
   const { cartItems, cleanArray } = useContext(CartContext);

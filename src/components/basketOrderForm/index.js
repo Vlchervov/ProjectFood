@@ -27,14 +27,7 @@ export const OrderForm = (props) => {
         errorState={props.errorState}
       />
       <div style={{ paddingLeft: "15px" }}>
-        <div
-          onClick={() => {
-            props.setTotal({ totalCount: 222 });
-          }}
-          style={{ fontWeight: "600" }}
-        >
-          Итого:{"\u00A0"}
-        </div>
+        <div style={{ fontWeight: "600" }}>Итого:{"\u00A0"}</div>
         <div>Количество: {props.totalCount}</div>
         <div>
           К оплате: {props.totalPrice}

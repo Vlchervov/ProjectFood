@@ -1,0 +1,12 @@
+{
+  "orders": [
+    {
+      "orderType": "В заведении",
+      "phone": "79963310471",
+      "commentForOrder": "testMessage for first order :)",
+      "totalCount": 2,
+      "totalPrice": 2050,
+      "id": 1
+    }
+  ]
+}   
