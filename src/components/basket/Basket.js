@@ -6,10 +6,14 @@ import { Link } from "react-router-dom";
 import { FaShoppingBasket } from "react-icons/fa";
 import "./_basket.scss";
 import { ValidateOrderForm } from "../basketOrderForm/validateOrderForm";
-
+import { fetcher } from "../fetcher";
+import useSWR from "swr";
 
 export const Basket = () => {
   const { cartItems, cleanArray } = useContext(CartContext);
+  const { data, error } = useSWR("/orders", fetcher);
+
+  console.log();
 
   return (
     <section className="basketSection">
@@ -39,6 +43,15 @@ export const Basket = () => {
               </>
             ) : (
               <>
+                <h1
+                  style={{
+                    background: "#d7d7d7",
+                    width: "100%",
+                    textAlign: "center",
+                  }}
+                >
+                  Заказ №{data.title}
+                </h1>
                 {cartItems.map((item) => (
                   <CartItem key={item.id} item={item} />
                 ))}

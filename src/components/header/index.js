@@ -29,6 +29,13 @@ export const HeaderComponent = () => {
         <div className="appHeader__section">
           <ul>
             <li
+              className={`appHeader__orders ${
+                useLocation().pathname === "/orders" && "active"
+              }`}
+            >
+              <Link to="orders">Заказы</Link>
+            </li>
+            <li
               className={`appHeader__aboutUs ${
                 useLocation().pathname === "/about-us" && "active"
               }`}

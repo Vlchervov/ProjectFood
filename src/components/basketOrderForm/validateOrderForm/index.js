@@ -28,6 +28,9 @@ export const ValidateOrderForm = (props) => {
             commentForOrder: data.commentForOrder,
             totalCount: totalCount,
             totalPrice: totalPrice,
+            infoAboutOrder: {
+              ...props.cartItems,
+            },
           })
           .then(() => {
             setDisabledSatte({ disabled: true });
