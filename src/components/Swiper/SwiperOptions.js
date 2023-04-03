@@ -1,23 +1,33 @@
-import SwiperCore, { Keyboard } from "swiper";
-
-SwiperCore.use([Keyboard]);
+import { Autoplay, EffectFade, Pagination } from "swiper";
 
 export const SwiperOptions = {
-  speed: 300,
+  speed: 600,
   slidesPerView: 1,
-  keyboard: {
-    enabled: true,
-  },
-  mousewheel: {
-    enabled: true,
-  },
+  loop: "enabled",
+  modules: [Pagination],
   pagination: {
-    clickable: false,
+    clickable: true,
+    dynamicBullets: true,
+  },
+  // effect: "fade",
+  grabCursor: true,
+};
+
+export const SwiperOptionsForCatalog = {
+  speed: 600,
+  slidesPerView: 1,
+  loop: "enabled",
+  autoplay: {
+    delay: 2500,
+    disableOnInteraction: false,
+  },
+  modules: [Pagination, EffectFade, Autoplay],
+  pagination: {
+    clickable: true,
+    dynamicBullets: true,
   },
   effect: "fade",
-  fadeEffect: {
-    crossFade: true,
-  },
+  grabCursor: true,
 };
 
 export const SwiperOptionsMobile = {

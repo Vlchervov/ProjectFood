@@ -86,7 +86,7 @@ export const OrderInput = ({
                 autoFocus: true,
               }}
               country={"ru"}
-              onlyCountries={["ru", "kz", "by"]}
+              onlyCountries={["ru", "by"]}
               preferredCountries={["ru"]}
               localization={ru}
               name="phone"

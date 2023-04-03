@@ -1,24 +1,12 @@
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Pagination } from "swiper";
+import { SwiperOptions } from "./SwiperOptions";
 import "swiper/css";
+import "swiper/css/effect-fade";
 import "swiper/css/pagination";
 
 export const SwiperComponent = (props) => {
-  const SwiperOptions = {
-    speed: 800,
-    slidesPerView: 1,
-    loop: "enabled",
-
-    pagination: {
-      clickable: true,
-    },
-    effect: "fade",
-    fadeEffect: {
-      crossFade: true,
-    },
-  };
   return (
-    <Swiper {...SwiperOptions} spaceBetween={25} modules={[Pagination]}>
+    <Swiper {...SwiperOptions} spaceBetween={25}>
       <SwiperSlide>
         <img src={props.img.image_1} alt="фото товара" />
       </SwiperSlide>

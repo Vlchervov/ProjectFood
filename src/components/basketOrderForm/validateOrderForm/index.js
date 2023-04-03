@@ -43,7 +43,7 @@ export const ValidateOrderForm = (props) => {
         setErrorState("Неправильный номер");
       }
     } catch (err) {
-      console.log(err.data.response);
+      console.log(err.data);
     }
   }
 

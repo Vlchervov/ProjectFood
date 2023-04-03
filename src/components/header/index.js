@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import { useContext } from "react";
 import { Link, useLocation } from "react-router-dom";
 import CartContext from "../../context/cart/cartContext";
 import { FaShoppingCart } from "react-icons/fa";

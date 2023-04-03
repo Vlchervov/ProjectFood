@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import { useContext, useLayoutEffect, useRef } from "react";
 import CartContext from "../../context/cart/cartContext";
 import { CartItem } from "./item/CartItem";
 import "swiper/css/scrollbar";
@@ -6,17 +6,17 @@ import { Link } from "react-router-dom";
 import { FaShoppingBasket } from "react-icons/fa";
 import "./_basket.scss";
 import { ValidateOrderForm } from "../basketOrderForm/validateOrderForm";
-import { fetcher } from "../fetcher";
-import useSWR from "swr";
 
 export const Basket = () => {
+  const h2ref = useRef(null);
   const { cartItems, cleanArray } = useContext(CartContext);
-  const { data, error } = useSWR("/orders", fetcher);
 
-  console.log();
+  useLayoutEffect(() => {
+    h2ref.current.scrollIntoView();
+  }, []);
 
   return (
-    <section className="basketSection">
+    <section className="basketSection" ref={h2ref}>
       <div className="basket">
         <div className="cardWrapper">
           <>
@@ -43,15 +43,7 @@ export const Basket = () => {
               </>
             ) : (
               <>
-                <h1
-                  style={{
-                    background: "#d7d7d7",
-                    width: "100%",
-                    textAlign: "center",
-                  }}
-                >
-                  Заказ №{data.title}
-                </h1>
+                <h1>Корзина товаров</h1>
                 {cartItems.map((item) => (
                   <CartItem key={item.id} item={item} />
                 ))}
