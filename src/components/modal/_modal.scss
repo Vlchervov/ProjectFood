@@ -1,0 +1,71 @@
+.modal {
+  display: flex;
+
+  &__body {
+    padding: 2rem;
+    width: 375px;
+    background-color: #fff;
+    height: 162px;
+    z-index: 4;
+    border-radius: 0px;
+  }
+
+  &__wrapper {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+  }
+
+  &__bodyFooter {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-around;
+  }
+
+  &__aceptButton {
+    color: white;
+    border-radius: 10px;
+    width: 137px;
+    height: 40px;
+    margin-top: 5px;
+    margin-left: 7px;
+    background-color: #f2f2f2;
+    border: 1px solid rgba(255, 255, 255, 0);
+    margin-left: 17px;
+    color: black;
+    font-size: 16px;
+    cursor: pointer;
+
+    &:hover {
+      transition: 0.3s ease;
+      color: white;
+      background-color: rgb(47, 179, 47);
+    }
+  }
+
+  &__cancelButton {
+    margin-left: 4px;
+    border-radius: 10px;
+    width: 137px;
+    cursor: pointer;
+    height: 40px;
+    margin-top: 25px;
+    background-color: #f2f2f2;
+    color: #4d4d4d;
+    border: 1px solid rgba(255, 255, 255, 0);
+    font-size: 16px;
+
+    &:hover {
+      background-color: rgb(218, 31, 31);
+      color: white;
+      transition: 0.5s ease;
+    }
+  }
+}

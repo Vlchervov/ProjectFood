@@ -19,9 +19,6 @@ code {
   scroll-margin-top: 120px;
 }
 
-:root {
-  --PhoneInputCountryFlag-aspectRatio: 9.233;
-}
 :root::-webkit-scrollbar {
   width: 10px;
   height: 8px;

@@ -25,6 +25,7 @@ export const OrderForm = (props) => {
         Controller={Controller}
         disabledState={props.disabledState}
         errorState={props.errorState}
+        currentCity={props.currentCity}
       />
       <div style={{ paddingLeft: "15px" }}>
         <div style={{ fontWeight: "600" }}>Итого:{"\u00A0"}</div>

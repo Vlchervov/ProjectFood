@@ -1,13 +1,12 @@
 import { Autoplay, EffectFade, Pagination } from "swiper";
 
 export const SwiperOptions = {
-  speed: 600,
+  speed: 500,
   slidesPerView: 1,
   loop: "enabled",
   modules: [Pagination],
   pagination: {
     clickable: true,
-    dynamicBullets: true,
   },
   // effect: "fade",
   grabCursor: true,

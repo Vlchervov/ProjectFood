@@ -28,6 +28,7 @@ export const ValidateOrderForm = (props) => {
             commentForOrder: data.commentForOrder,
             totalCount: totalCount,
             totalPrice: totalPrice,
+            city: props.currentCity,
             infoAboutOrder: {
               ...props.cartItems,
             },
@@ -55,6 +56,7 @@ export const ValidateOrderForm = (props) => {
       disabledState={disabledState}
       totalCount={totalCount}
       totalPrice={totalPrice}
+      currentCity={props.currentCity}
     />
   );
 };

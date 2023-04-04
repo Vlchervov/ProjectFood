@@ -4,7 +4,7 @@ import "./_catalog.scss";
 import { SwiperComponent } from "../Swiper/SwiperComponent";
 
 export const CatalogCard = (props) => {
-  const { addTo, cartItems } = useContext(CartContext);
+  const { addTo, cartItems, decrease, increase } = useContext(CartContext);
   const [button, setButton] = useState("default");
 
   const checkCart = (id) => {
@@ -25,30 +25,47 @@ export const CatalogCard = (props) => {
         <p className="categories__weight">{props.weight}</p>
         <p className="categories__description">{props.descr}</p>
         <div className="categories__footer">
-          <p className="categories__price">{props.price} ₽</p>
           {(cartItems.length !== 0 && checkCart(props.id)) ||
           button !== "default" ? (
-            <div className="categories__button">
-              <button
-                style={{ backgroundColor: "gray", cursor: "default" }}
+            <div className="product__footer">
+              <p className="product__price">
+                {"\u00A0"}
+                {props.priceTotal + "₽"}
+              </p>
+
+              <div
+                className="product__counterDecreaseButton"
                 onClick={() => {
-                  addTo(props);
-                  setButton("inBasket");
+                  decrease(props.id);
                 }}
               >
-                В корзине
-              </button>
+                <span></span>
+              </div>
+              <p className="product__count">{props.count}</p>
+              <div
+                className="product__counterIncreaseButton"
+                onClick={() => {
+                  increase(props.id);
+                }}
+              >
+                <span></span>
+                <span></span>
+              </div>
             </div>
           ) : (
-            <div className="categories__button">
-              <button
-                onClick={() => {
-                  addTo(props);
-                }}
-              >
-                Купить
-              </button>
-            </div>
+            <>
+              <p className="categories__price">{props.price} ₽</p>
+              <div className="categories__button">
+                <button
+                  onClick={() => {
+                    setButton("inBasket");
+                    addTo(props);
+                  }}
+                >
+                  Купить
+                </button>
+              </div>
+            </>
           )}
         </div>
       </div>

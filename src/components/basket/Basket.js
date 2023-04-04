@@ -1,4 +1,4 @@
-import { useContext, useLayoutEffect, useRef } from "react";
+import { useContext, useLayoutEffect, useRef, useState } from "react";
 import CartContext from "../../context/cart/cartContext";
 import { CartItem } from "./item/CartItem";
 import "swiper/css/scrollbar";
@@ -6,10 +6,12 @@ import { Link } from "react-router-dom";
 import { FaShoppingBasket } from "react-icons/fa";
 import "./_basket.scss";
 import { ValidateOrderForm } from "../basketOrderForm/validateOrderForm";
+import { Modal } from "../modal";
 
 export const Basket = () => {
   const h2ref = useRef(null);
-  const { cartItems, cleanArray } = useContext(CartContext);
+  const [formIsVisible, setFormIsVisivle] = useState(false);
+  const { cartItems, cleanArray, currentCity } = useContext(CartContext);
 
   useLayoutEffect(() => {
     h2ref.current.scrollIntoView();
@@ -44,6 +46,18 @@ export const Basket = () => {
             ) : (
               <>
                 <h1>Корзина товаров</h1>
+                <h6
+                  onClick={() => {
+                    setFormIsVisivle(true);
+                  }}
+                >
+                  Очистить корзину
+                </h6>
+                <Modal
+                  formIsVisible={formIsVisible}
+                  setFormIsVisivle={setFormIsVisivle}
+                  cleanArray={cleanArray}
+                />
                 {cartItems.map((item) => (
                   <CartItem key={item.id} item={item} />
                 ))}
@@ -56,6 +70,7 @@ export const Basket = () => {
           <>
             <div className="totalAmount">
               <ValidateOrderForm
+                currentCity={currentCity}
                 cartItems={cartItems}
                 cleanArray={cleanArray}
               />

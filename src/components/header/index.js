@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import { useContext } from "react";
 import { Link, useLocation } from "react-router-dom";
 import CartContext from "../../context/cart/cartContext";
 import { FaShoppingCart } from "react-icons/fa";
@@ -6,14 +6,20 @@ import { BiMenu } from "react-icons/bi";
 import data from "../../data/categories.json";
 import "./_header.scss";
 import Select from "react-select";
-import { Checkbox, SelectOptions } from "./react-select/react-select.options";
+import { SelectOptions, style } from "./react-select/react-select.options";
 
 export const HeaderComponent = () => {
-  const { cartItems } = useContext(CartContext);
-  const [isClearable, setIsClearable] = useState(true);
-  const [isSearchable, setIsSearchable] = useState(true);
-  const [isDisabled, setIsDisabled] = useState(false);
-  const [isLoading, setIsLoading] = useState(false);
+  const { cartItems, setCurrenCity, currentCity } = useContext(CartContext);
+
+  const getValue = () => {
+    return currentCity
+      ? SelectOptions.find((c) => c.value === currentCity)
+      : "";
+  };
+
+  const onChange = (newValue) => {
+    setCurrenCity(newValue?.value);
+  };
 
   return (
     <header className="header">
@@ -32,22 +38,26 @@ export const HeaderComponent = () => {
             <li>
               <Select
                 classNamePrefix="react-select"
-                unstyled
                 defaultValue={SelectOptions[0]}
                 options={SelectOptions}
+                isSearchable={false}
+                styles={style}
+                placeholder="Выберете город..."
+                value={getValue()}
+                onChange={onChange}
               />
             </li>
           </ul>
         </div>
         <div className="appHeader__section">
           <ul>
-            <li
+            {/* <li
               className={`appHeader__orders ${
                 useLocation().pathname === "/orders" && "active"
               }`}
             >
               <Link to="orders">Заказы</Link>
-            </li>
+            </li> */}
             <li
               className={`appHeader__aboutUs ${
                 useLocation().pathname === "/about-us" && "active"

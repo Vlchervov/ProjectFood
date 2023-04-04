@@ -3,6 +3,7 @@ import CartContext from "./cartContext";
 
 const CartState = ({ children }) => {
   const [initialState, setInitialState] = useState([]);
+  const [currentCity, setCurrenCity] = useState("Новокузнецк");
 
   const addTo = (item) => {
     let isInArray;
@@ -57,6 +58,8 @@ const CartState = ({ children }) => {
   return (
     <CartContext.Provider
       value={{
+        currentCity,
+        setCurrenCity,
         increase,
         decrease,
         cleanArray,

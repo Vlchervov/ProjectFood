@@ -9,6 +9,7 @@ export const OrderInput = ({
   Controller,
   disabledState,
   errorState,
+  currentCity,
 }) => {
   return (
     <>
@@ -26,6 +27,7 @@ export const OrderInput = ({
               type="radio"
               value="Доставка"
               name="orderType"
+              disabled
             />
             Доставка
           </label>
@@ -66,6 +68,9 @@ export const OrderInput = ({
           </label>
         </li>
       </ul>
+      <label>
+        Город: <input type="text" disabled value={currentCity} />
+      </label>
       <label>
         Ваш номер телефона:
         <Controller
