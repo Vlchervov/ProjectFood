@@ -25,7 +25,7 @@
           "src": {
             "image_1": "https://cdnn21.img.ria.ru/images/98976/61/989766135_0:105:2000:1230_600x0_80_0_0_22f73da863b108382af02825eddc84f0.jpg",
             "image_2": "https://www.gastronom.ru/binfiles/images/20191113/bd570867.jpg",
-            "image_3": "https://roll-club.kh.ua/wp-content/uploads/2021/06/pizza.jpg"
+            "image_3": ""
           },
           "descr": "Описание товара №2 первая категория",
           "weight": "560 гр",
@@ -220,7 +220,7 @@
           "title": "Наименование товара №3",
           "src": {
             "image_1": "https://s10.stc.all.kpcdn.net/family/wp-content/uploads/2022/10/kokos-polza-i-vred-dlya-organizma-1-960x540.jpg",
-            "image_2": "https://cdn.informator.ua/@ua/media/2021/10/04/615adeaeee5ed6.46501910.jpg",
+            "image_2": "",
             "image_3": "https://fruitnews.ru/images/jch-optimize/ng/images_2020_10_photo-1580984969071-a8da5656c2fb__p98397.webp"
           },
           "descr": "Описание товара №3 третья категория",
@@ -289,7 +289,7 @@
           "id": 19,
           "title": "Наименование товара №8",
           "src": {
-            "image_1": "https://images.unian.net/photos/2020_04/thumb_files/1200_0_1588081977-7108.jpg",
+            "image_1": "",
             "image_2": "https://lifehacker.ru/wp-content/uploads/2014/12/ob-05_1568611223.jpg",
             "image_3": "https://img.delo-vcusa.ru/2020/11/Borshh-s-yablokami.jpg"
           },

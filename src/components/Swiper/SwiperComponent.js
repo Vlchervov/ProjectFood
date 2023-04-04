@@ -6,7 +6,7 @@ import "swiper/css/pagination";
 
 export const SwiperComponent = (props) => {
   return (
-    <Swiper {...SwiperOptions} spaceBetween={25}>
+    <Swiper className="swiperCard" {...SwiperOptions} spaceBetween={25}>
       <SwiperSlide>
         <img src={props.img.image_1} alt="фото товара" />
       </SwiperSlide>

@@ -1,13 +1,19 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import CartContext from "../../context/cart/cartContext";
 import { FaShoppingCart } from "react-icons/fa";
 import { BiMenu } from "react-icons/bi";
 import data from "../../data/categories.json";
 import "./_header.scss";
+import Select from "react-select";
+import { Checkbox, SelectOptions } from "./react-select/react-select.options";
 
 export const HeaderComponent = () => {
   const { cartItems } = useContext(CartContext);
+  const [isClearable, setIsClearable] = useState(true);
+  const [isSearchable, setIsSearchable] = useState(true);
+  const [isDisabled, setIsDisabled] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
 
   return (
     <header className="header">
@@ -23,7 +29,14 @@ export const HeaderComponent = () => {
                 />
               </Link>
             </li>
-            <li></li>
+            <li>
+              <Select
+                classNamePrefix="react-select"
+                unstyled
+                defaultValue={SelectOptions[0]}
+                options={SelectOptions}
+              />
+            </li>
           </ul>
         </div>
         <div className="appHeader__section">
