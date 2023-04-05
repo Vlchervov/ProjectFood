@@ -30,8 +30,8 @@ const CartState = ({ children }) => {
           const objCopy = { ...product };
           return {
             ...objCopy,
-            count: ++objCopy.count,
-            priceTotal: objCopy.count * objCopy.price,
+            count: objCopy.count + 1,
+            priceTotal: (objCopy.count + 1) * objCopy.price,
           };
         }
         return product;
@@ -44,10 +44,11 @@ const CartState = ({ children }) => {
       return cart.map((product) => {
         if (product.id === id) {
           const objCopy = { ...product };
+          const newCount = objCopy.count - 1 > 0 ? objCopy.count - 1 : 1;
           return {
             ...objCopy,
-            count: objCopy.count - 1 > 0 ? --objCopy.count : 1,
-            priceTotal: objCopy.count * objCopy.price,
+            count: newCount,
+            priceTotal: newCount * objCopy.price,
           };
         }
         return product;

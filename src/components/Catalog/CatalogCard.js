@@ -4,7 +4,8 @@ import "./_catalog.scss";
 import { SwiperComponent } from "../Swiper/SwiperComponent";
 
 export const CatalogCard = (props) => {
-  const { addTo, cartItems, decrease, increase } = useContext(CartContext);
+  const { addTo, cartItems, decrease, increase, removeItem } =
+    useContext(CartContext);
   const [button, setButton] = useState("default");
   useEffect(() => {
     checkCart(props.id);
@@ -34,15 +35,13 @@ export const CatalogCard = (props) => {
               if (item.id === props.id) {
                 return (
                   <div key={item.id} className="product__footer">
-                    <p className="product__price">
-                      {"\u00A0"}
-                      {item.priceTotal + "₽"}
-                    </p>
+                    <p className="product__price">{item.priceTotal} ₽</p>
                     <div
                       className="product__counterDecreaseButton"
                       onClick={() => {
                         decrease(item.id);
                         setButton("default");
+                        if (item.count === 1) removeItem(item.id);
                       }}
                     >
                       <span></span>
