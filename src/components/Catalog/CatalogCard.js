@@ -1,4 +1,4 @@
-import { useState, useContext } from "react";
+import { useState, useContext, useEffect } from "react";
 import CartContext from "../../context/cart/cartContext";
 import "./_catalog.scss";
 import { SwiperComponent } from "../Swiper/SwiperComponent";
@@ -6,6 +6,9 @@ import { SwiperComponent } from "../Swiper/SwiperComponent";
 export const CatalogCard = (props) => {
   const { addTo, cartItems, decrease, increase } = useContext(CartContext);
   const [button, setButton] = useState("default");
+  useEffect(() => {
+    checkCart(props.id);
+  }, [cartItems]);
 
   const checkCart = (id) => {
     let result = false;
@@ -27,31 +30,37 @@ export const CatalogCard = (props) => {
         <div className="categories__footer">
           {(cartItems.length !== 0 && checkCart(props.id)) ||
           button !== "default" ? (
-            <div className="product__footer">
-              <p className="product__price">
-                {"\u00A0"}
-                {props.priceTotal + "₽"}
-              </p>
-
-              <div
-                className="product__counterDecreaseButton"
-                onClick={() => {
-                  decrease(props.id);
-                }}
-              >
-                <span></span>
-              </div>
-              <p className="product__count">{props.count}</p>
-              <div
-                className="product__counterIncreaseButton"
-                onClick={() => {
-                  increase(props.id);
-                }}
-              >
-                <span></span>
-                <span></span>
-              </div>
-            </div>
+            cartItems.map((item) => {
+              if (item.id === props.id) {
+                return (
+                  <div key={item.id} className="product__footer">
+                    <p className="product__price">
+                      {"\u00A0"}
+                      {item.priceTotal + "₽"}
+                    </p>
+                    <div
+                      className="product__counterDecreaseButton"
+                      onClick={() => {
+                        decrease(item.id);
+                        setButton("default");
+                      }}
+                    >
+                      <span></span>
+                    </div>
+                    <p className="product__count">{item.count}</p>
+                    <div
+                      className="product__counterIncreaseButton"
+                      onClick={() => {
+                        increase(item.id);
+                      }}
+                    >
+                      <span></span>
+                      <span></span>
+                    </div>
+                  </div>
+                );
+              }
+            })
           ) : (
             <>
               <p className="categories__price">{props.price} ₽</p>

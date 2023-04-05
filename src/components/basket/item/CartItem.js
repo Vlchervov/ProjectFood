@@ -21,7 +21,6 @@ export const CartItem = ({ item }) => {
               {"\u00A0"}
               {item.priceTotal + "₽"}
             </p>
-
             <div
               className="product__counterDecreaseButton"
               onClick={() => {
