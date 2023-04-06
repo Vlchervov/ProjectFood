@@ -13,7 +13,7 @@ export const Orders = () => {
   return (
     <section className="ordersSection">
       <h1>Совершённые заказы</h1>
-      {data.map((data) => (
+      {data.map((data: string | boolean) => (
         <>
           {/* <div>{data.orderType}</div>
           <div>{data.phone}</div>

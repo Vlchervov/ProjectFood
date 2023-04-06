@@ -17,7 +17,7 @@ export const HeaderComponent = () => {
       : "";
   };
 
-  const onChange = (newValue) => {
+  const onChange = (newValue: any) => {
     setCurrenCity(newValue?.value);
   };
 
@@ -29,9 +29,8 @@ export const HeaderComponent = () => {
             <li>
               <Link style={{ color: "black" }} to="catalog">
                 <BiMenu
-                  className={`appHeader__BiMenu ${
-                    useLocation().pathname === "/catalog" && "active"
-                  }`}
+                  className={`appHeader__BiMenu ${useLocation().pathname === "/catalog" && "active"
+                    }`}
                 />
               </Link>
             </li>
@@ -59,9 +58,8 @@ export const HeaderComponent = () => {
               <Link to="orders">Заказы</Link>
             </li> */}
             <li
-              className={`appHeader__aboutUs ${
-                useLocation().pathname === "/about-us" && "active"
-              }`}
+              className={`appHeader__aboutUs ${useLocation().pathname === "/about-us" && "active"
+                }`}
             >
               <Link to="about-us">О компании</Link>
             </li>
@@ -73,9 +71,8 @@ export const HeaderComponent = () => {
                   </div>
                 )}
                 <FaShoppingCart
-                  className={`appHeader__shopCartButton ${
-                    useLocation().pathname === "/basket" && "active"
-                  }`}
+                  className={`appHeader__shopCartButton ${useLocation().pathname === "/basket" && "active"
+                    }`}
                 />
               </Link>
             </li>
@@ -88,9 +85,8 @@ export const HeaderComponent = () => {
             {data.data.map((item) => (
               <li
                 key={item.name}
-                className={`underHeaderButton ${
-                  window.location.hash === item.anchorID && "enabled"
-                }`}
+                className={`underHeaderButton ${window.location.hash === item.anchorID && "enabled"
+                  }`}
               >
                 <a href={item.anchorID}>{item.name}</a>
               </li>

@@ -7,6 +7,7 @@ import { FaShoppingBasket } from "react-icons/fa";
 import "./_basket.scss";
 import { ValidateOrderForm } from "../basketOrderForm/validateOrderForm";
 import { Modal } from "../modal";
+import { Cards } from "../Catalog/interfaces/CatalogInterfaces";
 
 export const Basket = () => {
   const h2ref = useRef(null);

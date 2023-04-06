@@ -4,7 +4,7 @@ export const SelectOptions = [
 ];
 
 export const style = {
-  dropdownIndicator: (provided) => ({
+  dropdownIndicator: (provided: any) => ({
     ...provided,
     svg: {
       width: "30px",
@@ -14,7 +14,7 @@ export const style = {
   }),
 };
 
-export const Checkbox = ({ children, ...props }) => (
+export const Checkbox = ({ children, ...props }: JSX.IntrinsicElements['input']) => (
   <label style={{ marginRight: "1em" }}>
     <input type="checkbox" {...props} />
     {children}

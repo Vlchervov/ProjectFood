@@ -1,7 +1,8 @@
 import { useForm, Controller } from "react-hook-form";
 import { OrderInput } from "./orderInput";
 
-export const OrderForm = (props) => {
+
+export const OrderForm = (props: any) => {
   const {
     register,
     handleSubmit,

@@ -2,7 +2,8 @@ import { Transition } from "react-transition-group";
 import "./_modal.scss";
 import { useRef } from "react";
 
-export const Modal = (props) => {
+
+export const Modal = (props: any) => {
   const nodeRef = useRef(null);
   return (
     <section className="modal">

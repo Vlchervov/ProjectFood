@@ -2,8 +2,10 @@ import { useState, useContext, useEffect } from "react";
 import CartContext from "../../context/cart/cartContext";
 import "./_catalog.scss";
 import { SwiperComponent } from "../Swiper/SwiperComponent";
+import { Cards } from "./interfaces/CatalogInterfaces";
 
-export const CatalogCard = (props) => {
+
+export const CatalogCard = (props: Cards) => {
   const { addTo, cartItems, decrease, increase, removeItem } =
     useContext(CartContext);
   const [button, setButton] = useState("default");
@@ -11,9 +13,9 @@ export const CatalogCard = (props) => {
     checkCart(props.id);
   }, [cartItems]);
 
-  const checkCart = (id) => {
+  const checkCart = (id: number) => {
     let result = false;
-    cartItems.forEach((element) => {
+    cartItems.forEach((element: any) => {
       if (element.id === id) result = true;
     });
     return result;
@@ -30,8 +32,8 @@ export const CatalogCard = (props) => {
         <p className="categories__description">{props.descr}</p>
         <div className="categories__footer">
           {(cartItems.length !== 0 && checkCart(props.id)) ||
-          button !== "default" ? (
-            cartItems.map((item) => {
+            button !== "default" ? (
+            cartItems.map((item: any) => {
               if (item.id === props.id) {
                 return (
                   <div key={item.id} className="product__footer">
