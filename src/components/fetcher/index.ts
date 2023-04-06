@@ -6,7 +6,7 @@ export const fetcher = async () => {
   if (responce.statusText !== "OK") {
     const error = new Error();
 
-    error.message = "An error occured while fetching the data...";
+    error.message = "Произошла ошибка во время загрузки данных...";
     throw error;
   }
   return responce.data;

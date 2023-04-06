@@ -2,7 +2,7 @@ import { useContext } from "react";
 import CartContext from "../../../context/cart/cartContext";
 import { GoTrashcan } from "react-icons/go";
 import "./_cartItem.scss";
-import { Cards } from "../../Catalog/interfaces/CatalogInterfaces";
+import { Cards } from "../../../interfaces";
 
 export const CartItem = ({ item }) => {
   const { removeItem, increase, decrease } = useContext(CartContext);

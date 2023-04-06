@@ -14,7 +14,10 @@ export const style = {
   }),
 };
 
-export const Checkbox = ({ children, ...props }: JSX.IntrinsicElements['input']) => (
+export const Checkbox = ({
+  children,
+  ...props
+}: JSX.IntrinsicElements["input"]) => (
   <label style={{ marginRight: "1em" }}>
     <input type="checkbox" {...props} />
     {children}

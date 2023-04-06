@@ -4,6 +4,7 @@ import "swiper/css";
 import "swiper/css/effect-fade";
 import "swiper/css/pagination";
 
+
 export const SwiperComponent = (props) => {
   return (
     <Swiper className="swiperCard" {...SwiperOptions} spaceBetween={25}>
