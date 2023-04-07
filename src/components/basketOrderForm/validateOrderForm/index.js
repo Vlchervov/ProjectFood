@@ -3,31 +3,23 @@ import validator from "validator";
 import { OrderForm } from "..";
 import { newAxiosInstance } from "../../API/Api";
 
-export const ValidateOrderForm = (props: any) => {
+export const ValidateOrderForm = (props) => {
   const [errorState, setErrorState] = useState("");
   const [disabledState, setDisabledSatte] = useState({
     disabled: false,
   });
 
   const totalCount = props.cartItems.reduce(
-    (count: number, item: any) => item.count + count,
+    (count, item) => item.count + count,
     0
   );
   const totalPrice = props.cartItems.reduce(
-    (amount:number, item: any) => item.priceTotal + amount,
+    (amount, item) => item.priceTotal + amount,
     0
   );
 
-  interface Data {
-    orderType: string,
-    phone: string,
-    commentForOrder: string,
-    totalCount: number,
-    totalPrice: number,
-    city: string,
-  }
 
-  async function onSubmit(data: Data) {
+  async function onSubmit(data) {
     try {
       if (validator.isMobilePhone(data.phone, ["ru-RU"])) {
         await newAxiosInstance
@@ -52,7 +44,7 @@ export const ValidateOrderForm = (props: any) => {
       } else {
         setErrorState("Неправильный номер");
       }
-    } catch (err: any) {
+    } catch (err) {
       console.log(err.data);
     }
   }

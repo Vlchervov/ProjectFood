@@ -1,22 +1,24 @@
 import { CategoryComponent } from "./CategoryComponent";
 import data from "../../data/categories.json";
 import "./_catalog.scss";
-import { useLayoutEffect, useRef } from "react";
+import { useLayoutEffect, useRef, useEffect } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { SwiperOptionsForCatalog } from "../Swiper/SwiperOptions";
+import { SwiperOptions, SwiperOptionsForCatalog } from "../Swiper/SwiperOptions";
 import "swiper/css";
 import "swiper/css/effect-fade";
 import "swiper/css/pagination";
 
+
+
 export const CatalogComponent = () => {
-  const h3ref = useRef(null);
+  const h3ref = useRef<HTMLInputElement>(null);
   useLayoutEffect(() => {
-    h3ref.current.scrollIntoView();
+    h3ref.current!.scrollIntoView();
   }, []);
 
   return (
     <div className="catalog" ref={h3ref}>
-      <Swiper className="catalog__swiper" {...SwiperOptionsForCatalog}>
+      <Swiper className="catalog__swiper">
         <SwiperSlide>
           <img src="https://resizer.mail.ru/p/083fe3e5-6920-520e-a615-cc428ff3c43d/AAAcjXqsavsNPQPfw8sz4Q5wHG-Dcr1HeTbtVo_4w3TRRydCukIHCe2cfC9FYHfQTaoWnxiq-6vMgZKjRJjpK1FhUbU.jpg" />
         </SwiperSlide>
