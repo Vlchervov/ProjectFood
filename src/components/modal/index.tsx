@@ -1,12 +1,12 @@
 import { Transition } from "react-transition-group";
-import "./_modal.scss";
 import { useRef } from "react";
 import { IModal } from "../../interfaces";
+import { AceptButton, DeclineButton, ModalBody, ModalFooter, ModalWrapper, Section } from "./Modal.Styled";
 
 export const Modal = (props: IModal) => {
   const nodeRef = useRef(null);
   return (
-    <section className="modal">
+    <Section>
       <Transition
         nodeRef={nodeRef}
         in={props.formIsVisible}
@@ -15,32 +15,31 @@ export const Modal = (props: IModal) => {
         unmountOnExit
       >
         {() => (
-          <div className="modal__wrapper">
-            <div className="modal__body">
+          <ModalWrapper>
+            <ModalBody>
               <h1>Вы уверены?</h1>
-              <div className="modal__bodyFooter">
-                <button
-                  className="modal__aceptButton"
+              <ModalFooter>
+                <AceptButton
                   onClick={() => {
                     props.cleanArray();
                     props.setFormIsVisivle(false);
                   }}
                 >
                   Да
-                </button>
-                <button
+                </AceptButton>
+                <DeclineButton
                   className="modal__cancelButton"
                   onClick={() => {
                     props.setFormIsVisivle(false);
                   }}
                 >
                   Нет
-                </button>
-              </div>
-            </div>
-          </div>
+                </DeclineButton>
+              </ModalFooter>
+            </ModalBody>
+          </ModalWrapper>
         )}
       </Transition>
-    </section>
+    </Section>
   );
 };

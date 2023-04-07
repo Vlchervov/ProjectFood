@@ -1,16 +1,10 @@
-.modal {
-  display: flex;
+import styled from 'styled-components';
 
-  &__body {
-    padding: 2rem;
-    width: 375px;
-    background-color: #fff;
-    height: 162px;
-    z-index: 4;
-    border-radius: 0px;
-  }
+export const Section = styled.section`
+display: flex;
+`
 
-  &__wrapper {
+export const ModalWrapper = styled.div`
     position: fixed;
     top: 0;
     right: 0;
@@ -21,15 +15,24 @@
     justify-content: center;
     align-items: center;
     z-index: 2;
-  }
+`
 
-  &__bodyFooter {
+export const ModalBody = styled.div`
+    padding: 2rem;
+    width: 375px;
+    background-color: #fff;
+    height: 162px;
+    z-index: 4;
+    border-radius: 0px;
+`
+
+export const ModalFooter = styled.div`
     display: flex;
     align-items: flex-end;
     justify-content: space-around;
-  }
+`
 
-  &__aceptButton {
+export const AceptButton = styled.button`
     color: white;
     border-radius: 10px;
     width: 137px;
@@ -43,14 +46,13 @@
     font-size: 16px;
     cursor: pointer;
 
-    &:hover {
+    :hover {
       transition: 0.3s ease;
       color: white;
       background-color: rgb(47, 179, 47);
     }
-  }
-
-  &__cancelButton {
+`
+export const DeclineButton = styled.button`
     margin-left: 4px;
     border-radius: 10px;
     width: 137px;
@@ -62,10 +64,9 @@
     border: 1px solid rgba(255, 255, 255, 0);
     font-size: 16px;
 
-    &:hover {
+    :hover {
       background-color: rgb(218, 31, 31);
       color: white;
       transition: 0.5s ease;
     }
-  }
-}
+`

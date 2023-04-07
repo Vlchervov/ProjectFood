@@ -4,9 +4,9 @@ import CartContext from "../../context/cart/cartContext";
 import { FaShoppingCart } from "react-icons/fa";
 import { BiMenu } from "react-icons/bi";
 import data from "../../data/categories.json";
-import "./_header.scss";
 import Select from "react-select";
 import { SelectOptions, style } from "./react-select/react-select.options";
+import { AppHeader, AppHeaderSecondSection, AppHeaderSection, Header, ItemCount, StyledLink, UnderHeader } from "./Header.styled";
 
 export const HeaderComponent = () => {
   const { cartItems, setCurrenCity, currentCity } = useContext(CartContext);
@@ -22,14 +22,14 @@ export const HeaderComponent = () => {
   };
 
   return (
-    <header className="header">
-      <div className="appHeader">
-        <div className="appHeader__section">
+    <Header>
+      <AppHeader>
+        <AppHeaderSection>
           <ul>
             <li>
               <Link style={{ color: "black" }} to="catalog">
                 <BiMenu
-                  className={`appHeader__BiMenu ${useLocation().pathname === "/catalog" && "active"
+                  className={`BiMenu ${useLocation().pathname === "/catalog" && "active"
                     }`}
                 />
               </Link>
@@ -47,53 +47,48 @@ export const HeaderComponent = () => {
               />
             </li>
           </ul>
-        </div>
-        <div className="appHeader__section">
+        </AppHeaderSection>
+        <AppHeaderSecondSection>
           <ul>
-            {/* <li
-              className={`appHeader__orders ${
-                useLocation().pathname === "/orders" && "active"
-              }`}
-            >
-              <Link to="orders">Заказы</Link>
-            </li> */}
-            <li
-              className={`appHeader__aboutUs ${useLocation().pathname === "/about-us" && "active"
-                }`}
-            >
-              <Link to="about-us">О компании</Link>
+            <li>
+              <StyledLink className={`${useLocation().pathname === "/orders" && "active"
+                }`} to="orders">Заказы</StyledLink>
+            </li>
+            <li>
+              <StyledLink className={`${useLocation().pathname === "/about-us" && "active"
+                }`} to="about-us">О компании</StyledLink>
             </li>
             <li>
               <Link style={{ color: "black" }} to="basket">
                 {cartItems.length > 0 && (
-                  <div className="item__count">
+                  <ItemCount>
                     <span>{cartItems.length}</span>
-                  </div>
+                  </ItemCount>
                 )}
                 <FaShoppingCart
-                  className={`appHeader__shopCartButton ${useLocation().pathname === "/basket" && "active"
+                  className={`shopCartButton ${useLocation().pathname === "/basket" && "active"
                     }`}
                 />
               </Link>
             </li>
           </ul>
-        </div>
-      </div>
+        </AppHeaderSecondSection>
+      </AppHeader>
       {useLocation().pathname === "/catalog" ? (
-        <div className="underHeader">
+        <UnderHeader>
           <ul>
             {data.data.map((item) => (
               <li
-                key={item.name}
-                className={`underHeaderButton ${window.location.hash === item.anchorID && "enabled"
+                className={`${window.location.hash === item.anchorID && "enabled"
                   }`}
+                key={item.name}
               >
                 <a href={item.anchorID}>{item.name}</a>
               </li>
             ))}
           </ul>
-        </div>
+        </UnderHeader>
       ) : null}
-    </header>
+    </Header>
   );
 };
