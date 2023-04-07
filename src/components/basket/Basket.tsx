@@ -7,14 +7,15 @@ import { FaShoppingBasket } from "react-icons/fa";
 import "./_basket.scss";
 import { ValidateOrderForm } from "../basketOrderForm/validateOrderForm";
 import { Modal } from "../modal";
+import { IBasketItem } from "../../interfaces";
 
 export const Basket = () => {
-  const h2ref = useRef(null);
+  const h2ref = useRef<HTMLInputElement>(null);
   const [formIsVisible, setFormIsVisivle] = useState(false);
   const { cartItems, cleanArray, currentCity } = useContext(CartContext);
 
   useLayoutEffect(() => {
-    h2ref.current.scrollIntoView();
+    h2ref.current!.scrollIntoView();
   }, []);
 
   return (
@@ -58,7 +59,7 @@ export const Basket = () => {
                   setFormIsVisivle={setFormIsVisivle}
                   cleanArray={cleanArray}
                 />
-                {cartItems.map((item) => (
+                {cartItems.map((item: IBasketItem) => (
                   <CartItem key={item.id} item={item} />
                 ))}
               </>

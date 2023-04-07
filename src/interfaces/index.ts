@@ -21,5 +21,19 @@ export interface IDataContent {
 export interface IModal {
   formIsVisible: boolean;
   setFormIsVisivle: any;
-  cleanArray: () => {};
+  cleanArray: () => void;
+}
+
+export interface IBasketItem {
+  id: number;
+  src: {
+    image_1?: string;
+    image_2?: string;
+    image_3?: string;
+  };
+  title: string;
+  weight: string;
+  descr: string;
+  priceTotal: number;
+  count: number;
 }

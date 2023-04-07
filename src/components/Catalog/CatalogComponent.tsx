@@ -1,14 +1,11 @@
 import { CategoryComponent } from "./CategoryComponent";
 import data from "../../data/categories.json";
 import "./_catalog.scss";
-import { useLayoutEffect, useRef, useEffect } from "react";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { SwiperOptions, SwiperOptionsForCatalog } from "../Swiper/SwiperOptions";
+import { useLayoutEffect, useRef } from "react";
+import { SwiperSlide, Swiper } from "swiper/react";
 import "swiper/css";
 import "swiper/css/effect-fade";
 import "swiper/css/pagination";
-
-
 
 export const CatalogComponent = () => {
   const h3ref = useRef<HTMLInputElement>(null);

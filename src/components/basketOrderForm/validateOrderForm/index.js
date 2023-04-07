@@ -18,7 +18,6 @@ export const ValidateOrderForm = (props) => {
     0
   );
 
-
   async function onSubmit(data) {
     try {
       if (validator.isMobilePhone(data.phone, ["ru-RU"])) {

@@ -3,17 +3,13 @@ import "./_modal.scss";
 import { useRef } from "react";
 import { IModal } from "../../interfaces";
 
-interface PropsModal {
-  modal: IModal;
-}
-
-export const Modal = (props: PropsModal) => {
+export const Modal = (props: IModal) => {
   const nodeRef = useRef(null);
   return (
     <section className="modal">
       <Transition
         nodeRef={nodeRef}
-        in={props.modal.formIsVisible}
+        in={props.formIsVisible}
         timeout={2}
         mountOnEnter
         unmountOnExit
@@ -26,8 +22,8 @@ export const Modal = (props: PropsModal) => {
                 <button
                   className="modal__aceptButton"
                   onClick={() => {
-                    props.modal.cleanArray();
-                    props.modal.setFormIsVisivle(false);
+                    props.cleanArray();
+                    props.setFormIsVisivle(false);
                   }}
                 >
                   Да
@@ -35,7 +31,7 @@ export const Modal = (props: PropsModal) => {
                 <button
                   className="modal__cancelButton"
                   onClick={() => {
-                    props.modal.setFormIsVisivle(false);
+                    props.setFormIsVisivle(false);
                   }}
                 >
                   Нет
