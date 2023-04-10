@@ -1,16 +1,16 @@
 import styled from "styled-components";
 
 export const CategoryName = styled.h1`
-    color: ${(props) => props.theme.color};
-    font-size: 24px;
-    font-weight: 400;
-    user-select: none;
-    margin-left: 110px;
-    @media (max-width: 812px) {
-      justify-content: center;
-      margin-left: 0;
-    }
-`
+  color: ${(props) => props.theme.color};
+  font-size: 24px;
+  font-weight: 400;
+  user-select: none;
+  margin-left: 110px;
+  @media (max-width: 812px) {
+    justify-content: center;
+    margin-left: 0;
+  }
+`;
 
 export const Categories = styled.section`
   display: flex;
@@ -27,40 +27,39 @@ export const Categories = styled.section`
     padding-top: 0px;
     justify-content: center;
   }
-`
+`;
 
 export const CategoriesItem = styled.div`
-    user-select: none;
-    width: 400px;
-    background-color: ${(props) => props.theme.background.color};
-    border-top-right-radius: 25px;
-    border-bottom-left-radius: 25px;
+  user-select: none;
+  width: 400px;
+  background-color: ${(props) => props.theme.background.color};
+  border-top-right-radius: 25px;
+  border-bottom-left-radius: 25px;
+  flex-direction: column;
+  margin-left: 40px;
+  display: flex;
+  margin-bottom: 30px;
+
+  box-shadow: 0px 11px 13px 8px rgba(0, 0, 0, 0.2);
+
+  @media (max-width: 812px) {
+    margin-left: 0px;
+    padding-left: 0px;
+    margin-right: 0px;
+    width: 100%;
     flex-direction: column;
-    margin-left: 40px;
-    display: flex;
-    margin-bottom: 30px;
+    justify-content: center;
+  }
 
-    box-shadow: 0px 11px 13px 8px rgba(0, 0, 0, 0.2);
-
-    @media (max-width: 812px) {
-      margin-left: 0px;
-      padding-left: 0px;
-      margin-right: 0px;
-      width: 100%;
-      flex-direction: column;
-      justify-content: center;
-    }
-
-    .categories__description {
+  .categories__description {
     font-family: sans-serif;
     font-size: 12px;
     line-height: 17px;
     color: ${(props) => props.theme.color};
     display: flex;
-      }
+  }
 
-
-      .categories__body {
+  .categories__body {
     border-bottom-left-radius: 25px;
     display: flex;
     flex-direction: column;
@@ -114,6 +113,4 @@ export const CategoriesItem = styled.div`
   .categories__weight {
     color: ${(props) => props.theme.color};
   }
-
-
-`
+`;

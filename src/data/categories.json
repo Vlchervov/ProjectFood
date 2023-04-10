@@ -1,6 +1,7 @@
 {
   "data": [
     {
+      "city": "Новокузнецк",
       "name": "Категория 1",
       "anchor": "category1",
       "anchorID": "#category1",
@@ -64,6 +65,7 @@
       ]
     },
     {
+      "city": "Калтан",
       "name": "Категория 2",
       "anchor": "category2",
       "anchorID": "#category2",
@@ -183,6 +185,7 @@
       ]
     },
     {
+      "city": "Новокузнецк",
       "name": "Категория 3",
       "anchor": "category3",
       "anchorID": "#category3",

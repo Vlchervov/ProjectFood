@@ -1,13 +1,12 @@
 import { Swiper, SwiperSlide } from "swiper/react";
-import { ISwiperOptions, SwiperOptions } from "./SwiperOptions";
 import "swiper/css";
 import "swiper/css/effect-fade";
 import "swiper/css/pagination";
-
+import { SwiperParamsForCatalogCard } from "./SwiperOptions";
 
 export const SwiperComponent = (props) => {
   return (
-    <Swiper className="swiperCard" {...SwiperOptions}>
+    <Swiper className="swiperCard" {...SwiperParamsForCatalogCard}>
       <SwiperSlide>
         <img src={props.img.image_1} alt="фото товара" />
       </SwiperSlide>

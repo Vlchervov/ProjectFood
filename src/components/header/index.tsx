@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import CartContext from "../../context/cart/cartContext";
 import { FaShoppingCart } from "react-icons/fa";
@@ -7,8 +7,15 @@ import data from "../../data/categories.json";
 import Select from "react-select";
 import { SelectOptions, style } from "./react-select/react-select.options";
 import { HiMoon } from "react-icons/hi2";
-import { AppHeader, AppHeaderSecondSection, AppHeaderSection, Header, ItemCount, StyledLink, UnderHeader } from "./Header.styled";
-import { IDataContent } from "../../interfaces";
+import {
+  AppHeader,
+  AppHeaderSecondSection,
+  AppHeaderSection,
+  Header,
+  ItemCount,
+  StyledLink,
+  UnderHeader,
+} from "./Header.styled";
 
 interface IProps {
   toggleTheme(): void;
@@ -17,6 +24,10 @@ interface IProps {
 
 export const HeaderComponent = (props: IProps) => {
   const { cartItems, setCurrenCity, currentCity } = useContext(CartContext);
+
+  useEffect(() => {
+    localStorage.setItem("theme", props.theme.title);
+  }, [props.theme]);
 
   const getValue = () => {
     return currentCity
@@ -34,8 +45,12 @@ export const HeaderComponent = (props: IProps) => {
         <AppHeaderSection>
           <ul>
             <li>
-              <StyledLink className={`BiMenu ${useLocation().pathname === "/catalog" && "active"
-                }`} to="catalog">
+              <StyledLink
+                className={`BiMenu ${
+                  useLocation().pathname === "/catalog" && "active"
+                }`}
+                to="catalog"
+              >
                 <BiMenu />
               </StyledLink>
             </li>
@@ -51,22 +66,41 @@ export const HeaderComponent = (props: IProps) => {
                 onChange={onChange}
               />
             </li>
-            <li><HiMoon onClick={props.toggleTheme} className="switchTheme" /><h6 onClick={props.toggleTheme}>{props.theme.title}</h6></li>
+            <li>
+              <HiMoon onClick={props.toggleTheme} className="switchTheme" />
+              <h6 onClick={props.toggleTheme}>{props.theme.title}</h6>
+            </li>
           </ul>
         </AppHeaderSection>
         <AppHeaderSecondSection>
           <ul>
             <li>
-              <StyledLink className={`${useLocation().pathname === "/orders" && "active"
-                }`} to="orders">Заказы</StyledLink>
+              <StyledLink
+                className={`${
+                  useLocation().pathname === "/orders" && "active"
+                }`}
+                to="orders"
+              >
+                Заказы
+              </StyledLink>
             </li>
             <li>
-              <StyledLink className={`${useLocation().pathname === "/about-us" && "active"
-                }`} to="about-us">О компании</StyledLink>
+              <StyledLink
+                className={`${
+                  useLocation().pathname === "/about-us" && "active"
+                }`}
+                to="about-us"
+              >
+                О компании
+              </StyledLink>
             </li>
             <li>
-              <StyledLink className={`shopCartButton ${useLocation().pathname === "/basket" && "active"
-                }`} to="basket">
+              <StyledLink
+                className={`shopCartButton ${
+                  useLocation().pathname === "/basket" && "active"
+                }`}
+                to="basket"
+              >
                 {cartItems.length > 0 && (
                   <ItemCount>
                     <span>{cartItems.length}</span>
@@ -81,15 +115,20 @@ export const HeaderComponent = (props: IProps) => {
       {useLocation().pathname === "/catalog" ? (
         <UnderHeader>
           <ul>
-            {data.data.map((item) => (
-              <li
-                className={`${window.location.hash === item.anchorID && "enabled"
-                  }`}
-                key={item.name}
-              >
-                <a href={item.anchorID}>{item.name}</a>
-              </li>
-            ))}
+            {data.data.map((item) => {
+              if (item.city == currentCity) {
+                return (
+                  <li
+                    className={`${
+                      window.location.hash === item.anchorID && "enabled"
+                    }`}
+                    key={item.name}
+                  >
+                    <a href={item.anchorID}>{item.name}</a>
+                  </li>
+                );
+              }
+            })}
           </ul>
         </UnderHeader>
       ) : null}

@@ -1,13 +1,14 @@
 import { CategoryComponent } from "./CategoryComponent";
 import data from "../../data/categories.json";
 import "./_catalog.scss";
-import { useLayoutEffect, useRef } from "react";
+import { useContext, useLayoutEffect, useRef, useState } from "react";
 import { SwiperSlide, Swiper } from "swiper/react";
-import "swiper/css";
-import "swiper/css/effect-fade";
-import "swiper/css/pagination";
+import { SwiperParamsForCatalog } from "../Swiper/SwiperOptions";
+import CartContext from "../../context/cart/cartContext";
 
 export const CatalogComponent = () => {
+  const { currentCity } = useContext(CartContext);
+  const [state] = useState(data.data);
   const h3ref = useRef<HTMLInputElement>(null);
   useLayoutEffect(() => {
     h3ref.current!.scrollIntoView();
@@ -15,7 +16,7 @@ export const CatalogComponent = () => {
 
   return (
     <div className="catalog" ref={h3ref}>
-      <Swiper className="catalog__swiper">
+      <Swiper className="catalog__swiper" {...SwiperParamsForCatalog}>
         <SwiperSlide>
           <img src="https://resizer.mail.ru/p/083fe3e5-6920-520e-a615-cc428ff3c43d/AAAcjXqsavsNPQPfw8sz4Q5wHG-Dcr1HeTbtVo_4w3TRRydCukIHCe2cfC9FYHfQTaoWnxiq-6vMgZKjRJjpK1FhUbU.jpg" />
         </SwiperSlide>
@@ -26,9 +27,11 @@ export const CatalogComponent = () => {
           <img src="https://s0.rbk.ru/v6_top_pics/resized/1200xH/media/img/7/74/755614628166747.jpg" />
         </SwiperSlide>
       </Swiper>
-      {data.data.map((e) => (
-        <CategoryComponent {...e} key={e.name} />
-      ))}
+      {state.map((e) => {
+        if (e.city == currentCity) {
+          return <CategoryComponent {...e} key={e.name} />;
+        }
+      })}
     </div>
   );
 };

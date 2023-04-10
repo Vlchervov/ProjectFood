@@ -1,5 +1,6 @@
 export interface IDataContent {
   name: string;
+  city: string;
   anchor: string;
   anchorID: string;
   cards: {

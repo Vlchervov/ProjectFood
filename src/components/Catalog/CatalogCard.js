@@ -3,7 +3,6 @@ import CartContext from "../../context/cart/cartContext";
 import "./_catalog.scss";
 import { SwiperComponent } from "../Swiper/SwiperComponent";
 import { CategoriesItem } from "./Catalog.styled";
-import { IDataContent } from "../../interfaces";
 
 export const CatalogCard = (props) => {
   const { addTo, cartItems, decrease, increase, removeItem } =

@@ -1,27 +1,9 @@
-import { Autoplay, EffectFade, Pagination } from "swiper";
-import { SwiperModule } from "swiper/types";
+import { Autoplay, EffectFade, Pagination, SwiperOptions } from "swiper";
 
-export interface ISwiperOptions {
-  speed: number;
-  slidesPerView: number;
-  loop: string;
-  autoplay: {
-    delay: number;
-    disableOnInteraction: boolean;
-  };
-  modules: SwiperModule[];
-  pagination: {
-    clickable: boolean;
-    dynamicBullets: boolean;
-  };
-  effect: string;
-  grabCursor: boolean;
-}
-
-export const SwiperOptions = {
+export const SwiperParamsForCatalogCard: SwiperOptions = {
   speed: 500,
   slidesPerView: 1,
-  loop: "enabled",
+  loop: true,
   modules: [Pagination],
   pagination: {
     clickable: true,
@@ -30,10 +12,10 @@ export const SwiperOptions = {
   grabCursor: true,
 };
 
-export const SwiperOptionsForCatalog = {
+export const SwiperParamsForCatalog: SwiperOptions = {
   speed: 600,
   slidesPerView: 1,
-  loop: "enabled",
+  loop: true,
   autoplay: {
     delay: 2500,
     disableOnInteraction: false,
@@ -47,22 +29,22 @@ export const SwiperOptionsForCatalog = {
   grabCursor: true,
 };
 
-export const SwiperOptionsMobile = {
-  speed: 500,
-  slidesPerView: 1,
-  loop: "enabled",
-  keyboard: {
-    onlyInViewport: false,
-    enabled: false,
-  },
-  mousewheel: {
-    enabled: true,
-  },
-  pagination: {
-    clickable: true,
-  },
-  effect: "fade",
-  fadeEffect: {
-    crossFade: true,
-  },
-};
+// export const SwiperOptionsMobile = {
+//   speed: 500,
+//   slidesPerView: 1,
+//   loop: "enabled",
+//   keyboard: {
+//     onlyInViewport: false,
+//     enabled: false,
+//   },
+//   mousewheel: {
+//     enabled: true,
+//   },
+//   pagination: {
+//     clickable: true,
+//   },
+//   effect: "fade",
+//   fadeEffect: {
+//     crossFade: true,
+//   },
+// };
