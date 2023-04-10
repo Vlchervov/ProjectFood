@@ -1,13 +1,13 @@
-.aboutUsSection {
+import styled from "styled-components";
+
+export const AboutUsSection = styled.section`
   flex: 1 1 auto;
   display: flex;
   padding-top: 60px;
   justify-content: center;
-  background-color: white;
+  background-color: white;    
 
   div {
-    // border-radius: 0px 0px 15px 15px;
-
     h2 {
       user-select: none;
       display: flex;
@@ -19,8 +19,8 @@
     }
 
     p {
-      color: rgb(0, 0, 0);
+      color: black;
       padding: 0px 12px 4px 12px;
     }
   }
-}
+`

@@ -2,6 +2,8 @@ import { useState, useContext } from "react";
 import CartContext from "../../context/cart/cartContext";
 import "./_catalog.scss";
 import { SwiperComponent } from "../Swiper/SwiperComponent";
+import { CategoriesItem } from "./Catalog.styled";
+import { IDataContent } from "../../interfaces";
 
 export const CatalogCard = (props) => {
   const { addTo, cartItems, decrease, increase, removeItem } =
@@ -16,11 +18,11 @@ export const CatalogCard = (props) => {
   };
 
   return (
-    <div className="categories__item" key={props.id}>
+    <CategoriesItem key={props.id}>
       <SwiperComponent img={props.src} />
       <div className="categories__body">
         <p className="categories__title">
-          <b>{props.title}</b>
+          <b>{props.name}</b>
         </p>
         <p className="categories__weight">{props.weight}</p>
         <p className="categories__description">{props.descr}</p>
@@ -31,7 +33,7 @@ export const CatalogCard = (props) => {
               if (item.id === props.id) {
                 return (
                   <div key={item.id} className="product__footer">
-                    <p className="product__price">{item.priceTotal} ₽</p>
+                    <p className="categories__price">{item.priceTotal} ₽</p>
                     <div
                       className="product__counterDecreaseButton"
                       onClick={() => {
@@ -73,6 +75,6 @@ export const CatalogCard = (props) => {
           )}
         </div>
       </div>
-    </div>
+    </CategoriesItem>
   );
 };

@@ -6,9 +6,16 @@ import { BiMenu } from "react-icons/bi";
 import data from "../../data/categories.json";
 import Select from "react-select";
 import { SelectOptions, style } from "./react-select/react-select.options";
+import { HiMoon } from "react-icons/hi2";
 import { AppHeader, AppHeaderSecondSection, AppHeaderSection, Header, ItemCount, StyledLink, UnderHeader } from "./Header.styled";
+import { IDataContent } from "../../interfaces";
 
-export const HeaderComponent = () => {
+interface IProps {
+  toggleTheme(): void;
+  theme: any;
+}
+
+export const HeaderComponent = (props: IProps) => {
   const { cartItems, setCurrenCity, currentCity } = useContext(CartContext);
 
   const getValue = () => {
@@ -27,12 +34,10 @@ export const HeaderComponent = () => {
         <AppHeaderSection>
           <ul>
             <li>
-              <Link style={{ color: "black" }} to="catalog">
-                <BiMenu
-                  className={`BiMenu ${useLocation().pathname === "/catalog" && "active"
-                    }`}
-                />
-              </Link>
+              <StyledLink className={`BiMenu ${useLocation().pathname === "/catalog" && "active"
+                }`} to="catalog">
+                <BiMenu />
+              </StyledLink>
             </li>
             <li>
               <Select
@@ -46,6 +51,7 @@ export const HeaderComponent = () => {
                 onChange={onChange}
               />
             </li>
+            <li><HiMoon onClick={props.toggleTheme} className="switchTheme" /><h6 onClick={props.toggleTheme}>{props.theme.title}</h6></li>
           </ul>
         </AppHeaderSection>
         <AppHeaderSecondSection>
@@ -59,17 +65,15 @@ export const HeaderComponent = () => {
                 }`} to="about-us">О компании</StyledLink>
             </li>
             <li>
-              <Link style={{ color: "black" }} to="basket">
+              <StyledLink className={`shopCartButton ${useLocation().pathname === "/basket" && "active"
+                }`} to="basket">
                 {cartItems.length > 0 && (
                   <ItemCount>
                     <span>{cartItems.length}</span>
                   </ItemCount>
                 )}
-                <FaShoppingCart
-                  className={`shopCartButton ${useLocation().pathname === "/basket" && "active"
-                    }`}
-                />
-              </Link>
+                <FaShoppingCart />
+              </StyledLink>
             </li>
           </ul>
         </AppHeaderSecondSection>

@@ -1,7 +1,10 @@
+import { createGlobalStyle } from "styled-components";
+
+export default createGlobalStyle`
 body {
+  background-color: ${(props) => props.theme.background.color};
   z-index: 10;
   margin: 0;
-  background-color: white;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
@@ -23,13 +26,14 @@ code {
 }
 
 :root {
-  &::-webkit-scrollbar {
+  ::-webkit-scrollbar {
     width: 10px;
     height: 8px;
   }
 
-  &::-webkit-scrollbar-thumb {
+  ::-webkit-scrollbar-thumb {
     border-radius: 25px;
     background: #d2d2d2;
   }
 }
+`;

@@ -1,8 +1,8 @@
-import "./_aboutUs.scss";
+import { AboutUsSection } from "./AboutUs.styled";
 
 export const AboutUs = () => {
   return (
-    <section className="aboutUsSection">
+    <AboutUsSection>
       <div>
         <h2>О компании</h2>
         <p>
@@ -45,6 +45,6 @@ export const AboutUs = () => {
           leo. Nullam at tortor diam.
         </p>
       </div>
-    </section>
+    </AboutUsSection>
   );
 };

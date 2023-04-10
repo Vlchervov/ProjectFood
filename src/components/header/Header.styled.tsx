@@ -2,11 +2,11 @@ import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
 export const StyledLink = styled(Link)`
-        color: #8a9094;
+        color: ${(props) => props.theme.color};
        text-decoration: none;
        
        :hover {
-        color: #dc3d3d;
+        color: ${(props) => props.theme.hover.background.color};
        }
 `
 
@@ -14,7 +14,7 @@ export const Header = styled.header`
     display: flex;
 
     .active {
-        color: #dc3d3d;
+        color: ${(props) => props.theme.active.color};
     }
 
     .enabled {
@@ -32,27 +32,27 @@ export const AppHeader = styled.div`
   display: flex;
   justify-content: space-between;
   margin: 0;
-  background-color: white;
-  border-bottom: 1px solid #ebeff0;
+  background-color: ${(props) => props.theme.background.color};
+  border-bottom: ${(props) => props.theme.border.bottom};
   z-index: 25;
 
   .BiMenu {
     cursor: pointer;
     transition: color 500ms ease;
     display: flex;
-
-    :hover {
-        color: #dc3d3d;
-    }
   }
+
+  .switchTheme {
+    cursor: pointer;
+      width: 24px;
+      height: 30px;
+      color: ${(props) => props.theme.switchTheme.color};
+  }
+
 
   .shopCartButton {
     cursor: pointer;
     transform: color 500ms ease;
-
-    :hover {
-        color: #dc3d3d;
-    }
   }
 
   ul {
@@ -67,6 +67,13 @@ export const AppHeader = styled.div`
         padding: 10px 15px;
         font-size: 14px;
         margin-left: 5px;
+
+        h6 {
+        color: ${(props) => props.theme.switchTheme.color};
+        cursor: pointer;
+        font-weight: 400;
+        margin: 0;
+      }
       }
     }
 `
@@ -97,9 +104,8 @@ export const UnderHeader = styled.div`
   position: fixed;
   display: flex;
   justify-content: space-between;
-  background-color: white;
-  border-right: 1px solid #ebeff0;
-  border-bottom: 1px solid #e2e8eb;
+  background-color: ${(props) => props.theme.background.color};
+  border-bottom: ${(props) => props.theme.border.bottom};
   z-index: 24;
   border-bottom-left-radius: 15px;
   
@@ -112,20 +118,19 @@ export const UnderHeader = styled.div`
 
   li {
     :hover {
-        color: white;
-        background-color: #dc3d3d;
+        background-color: ${(props) => props.theme.hover.background.color};
         transition: background-color 1s;
     }
     :nth-child(1) {
         border-bottom-left-radius: 15px;
     }
     :not(:nth-child(3)) {
-        border-right: 1px solid #ebeff0;
+      border-right: ${(props) => props.theme.border.right};
     }
   }
 
   a {
-     color: black;
+     color: ${(props) => props.theme.color};
     text-decoration: none;
     display: flex;
     padding: 12px 15px;
@@ -134,7 +139,7 @@ export const UnderHeader = styled.div`
     font-weight: 400;
 
     &:hover {
-      color: white;
+      color: ${(props) => props.theme.hover.color.color};
     }
   }
 `

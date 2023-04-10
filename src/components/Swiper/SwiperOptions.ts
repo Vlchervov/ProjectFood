@@ -1,4 +1,22 @@
 import { Autoplay, EffectFade, Pagination } from "swiper";
+import { SwiperModule } from "swiper/types";
+
+export interface ISwiperOptions {
+  speed: number;
+  slidesPerView: number;
+  loop: string;
+  autoplay: {
+    delay: number;
+    disableOnInteraction: boolean;
+  };
+  modules: SwiperModule[];
+  pagination: {
+    clickable: boolean;
+    dynamicBullets: boolean;
+  };
+  effect: string;
+  grabCursor: boolean;
+}
 
 export const SwiperOptions = {
   speed: 500,

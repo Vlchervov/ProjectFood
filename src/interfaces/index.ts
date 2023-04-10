@@ -37,3 +37,11 @@ export interface IBasketItem {
   priceTotal: number;
   count: number;
 }
+
+export interface ITheme {
+  backgroundColor: string;
+  color: string;
+  borderBottom: string;
+  activeColor: string;
+  hoveColor: string;
+}

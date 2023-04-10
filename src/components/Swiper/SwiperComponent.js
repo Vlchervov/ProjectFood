@@ -1,5 +1,5 @@
 import { Swiper, SwiperSlide } from "swiper/react";
-import { SwiperOptions } from "./SwiperOptions";
+import { ISwiperOptions, SwiperOptions } from "./SwiperOptions";
 import "swiper/css";
 import "swiper/css/effect-fade";
 import "swiper/css/pagination";
@@ -7,7 +7,7 @@ import "swiper/css/pagination";
 
 export const SwiperComponent = (props) => {
   return (
-    <Swiper className="swiperCard" {...SwiperOptions} spaceBetween={25}>
+    <Swiper className="swiperCard" {...SwiperOptions}>
       <SwiperSlide>
         <img src={props.img.image_1} alt="фото товара" />
       </SwiperSlide>
