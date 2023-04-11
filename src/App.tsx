@@ -12,7 +12,7 @@ const App = () => {
   const [theme, setTheme] = useState(LightTheme);
 
   const toggleTheme = () => {
-    setTheme(theme.title == "LightTheme" ? DarkTheme : LightTheme);
+    setTheme(theme.title === "LightTheme" ? DarkTheme : LightTheme);
   };
   return (
     <ThemeProvider theme={theme}>

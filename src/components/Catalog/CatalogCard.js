@@ -56,6 +56,7 @@ export const CatalogCard = (props) => {
                   </div>
                 );
               }
+              return props;
             })
           ) : (
             <>

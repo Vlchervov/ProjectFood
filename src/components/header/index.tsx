@@ -1,5 +1,5 @@
-import { useContext, useEffect } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { useContext, useEffect, useState } from "react";
+import { useLocation } from "react-router-dom";
 import CartContext from "../../context/cart/cartContext";
 import { FaShoppingCart } from "react-icons/fa";
 import { BiMenu } from "react-icons/bi";
@@ -24,6 +24,7 @@ interface IProps {
 
 export const HeaderComponent = (props: IProps) => {
   const { cartItems, setCurrenCity, currentCity } = useContext(CartContext);
+  const [state] = useState(data.data);
 
   useEffect(() => {
     localStorage.setItem("theme", props.theme.title);
@@ -115,8 +116,8 @@ export const HeaderComponent = (props: IProps) => {
       {useLocation().pathname === "/catalog" ? (
         <UnderHeader>
           <ul>
-            {data.data.map((item) => {
-              if (item.city == currentCity) {
+            {state.map((item) => {
+              if (item.city === currentCity) {
                 return (
                   <li
                     className={`${
@@ -128,6 +129,7 @@ export const HeaderComponent = (props: IProps) => {
                   </li>
                 );
               }
+              return;
             })}
           </ul>
         </UnderHeader>

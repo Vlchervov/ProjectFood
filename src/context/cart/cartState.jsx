@@ -3,7 +3,7 @@ import CartContext from "./cartContext";
 
 const CartState = ({ children }) => {
   const [initialState, setInitialState] = useState([]);
-  const [currentCity, setCurrenCity] = useState("Новокузнецк");
+  const [currentCity, setCurrenCity] = useState("");
 
   const addTo = (item) => {
     let isInArray;
