@@ -25,7 +25,7 @@ export interface IModal {
   cleanArray: () => void;
 }
 
-export interface IBasketItem {
+export interface ICartItem {
   id: number;
   src: {
     image_1?: string;

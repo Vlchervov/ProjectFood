@@ -3,14 +3,19 @@ import CartContext from "../../context/cart/cartContext";
 import "./_catalog.scss";
 import { SwiperComponent } from "../Swiper/SwiperComponent";
 import { CategoriesItem } from "./Catalog.styled";
+import { ICartItem } from "../../interfaces";
 
-export const CatalogCard = (props) => {
+interface IPropsCard extends ICartItem {
+  price: number;
+}
+
+export const CatalogCard = (props: IPropsCard) => {
   const { addTo, cartItems, decrease, increase, removeItem } =
     useContext(CartContext);
   const [button, setButton] = useState("default");
-  const checkCart = (id) => {
+  const checkCart = (id: number) => {
     let result = false;
-    cartItems.forEach((element) => {
+    cartItems.forEach((element: IPropsCard) => {
       if (element.id === id) result = true;
     });
     return result;
@@ -21,14 +26,14 @@ export const CatalogCard = (props) => {
       <SwiperComponent img={props.src} />
       <div className="categories__body">
         <p className="categories__title">
-          <b>{props.name}</b>
+          <b>{props.title}</b>
         </p>
         <p className="categories__weight">{props.weight}</p>
         <p className="categories__description">{props.descr}</p>
         <div className="categories__footer">
           {(cartItems.length !== 0 && checkCart(props.id)) ||
           button !== "default" ? (
-            cartItems.map((item) => {
+            cartItems.map((item: IPropsCard) => {
               if (item.id === props.id) {
                 return (
                   <div key={item.id} className="product__footer">
@@ -56,7 +61,7 @@ export const CatalogCard = (props) => {
                   </div>
                 );
               }
-              return props;
+              return null;
             })
           ) : (
             <>

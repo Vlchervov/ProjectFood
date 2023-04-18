@@ -2,10 +2,10 @@ import { useContext } from "react";
 import CartContext from "../../../context/cart/cartContext";
 import { GoTrashcan } from "react-icons/go";
 import "./_cartItem.scss";
-import { IBasketItem } from "../../../interfaces";
+import { ICartItem } from "../../../interfaces";
 
 interface PropsCart {
-  item: IBasketItem;
+  item: ICartItem;
 }
 
 export const CartItem = (props: PropsCart) => {

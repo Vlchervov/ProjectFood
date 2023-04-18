@@ -28,7 +28,7 @@ export const CatalogComponent = () => {
         </SwiperSlide>
       </Swiper>
       {state.map((e) => {
-        if (e.city == currentCity) {
+        if (e.city === currentCity) {
           return <CategoryComponent {...e} key={e.name} />;
         }
       })}

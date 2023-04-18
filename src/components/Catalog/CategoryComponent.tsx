@@ -8,7 +8,7 @@ export const CategoryComponent = (props: IDataContent) => {
   const [state] = useState(props);
   return (
     <>
-      <CategoryName id={props.anchor}>{props.name}</CategoryName>
+      <CategoryName id={state.anchor}>{state.name}</CategoryName>
       <Categories>
         {state.cards.map((item) => (
           <CatalogCard {...item} key={item.id} />

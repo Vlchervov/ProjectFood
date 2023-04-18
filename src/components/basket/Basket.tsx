@@ -7,7 +7,7 @@ import { FaShoppingBasket } from "react-icons/fa";
 import "./_basket.scss";
 import { ValidateOrderForm } from "../basketOrderForm/validateOrderForm";
 import { Modal } from "../modal";
-import { IBasketItem } from "../../interfaces";
+import { ICartItem } from "../../interfaces";
 
 export const Basket = () => {
   const h2ref = useRef<HTMLInputElement>(null);
@@ -59,7 +59,7 @@ export const Basket = () => {
                   setFormIsVisivle={setFormIsVisivle}
                   cleanArray={cleanArray}
                 />
-                {cartItems.map((item: IBasketItem) => (
+                {cartItems.map((item: ICartItem) => (
                   <CartItem key={item.id} item={item} />
                 ))}
               </>
