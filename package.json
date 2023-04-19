@@ -24,6 +24,7 @@
     "react-select": "^5.7.2",
     "react-transition-group": "^4.4.5",
     "sass": "^1.56.2",
+    "styled-breakpoints": "^11.1.2",
     "styled-components": "^5.3.9",
     "swiper": "^8.4.7",
     "swr": "^2.1.2",

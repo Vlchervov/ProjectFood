@@ -7,6 +7,7 @@ import data from "../../data/categories.json";
 import Select from "react-select";
 import { SelectOptions, style } from "./react-select/react-select.options";
 import { HiMoon } from "react-icons/hi2";
+import { BiUser } from "react-icons/bi";
 import {
   AppHeader,
   AppHeaderSecondSection,
@@ -57,6 +58,7 @@ export const HeaderComponent = (props: IProps) => {
             </li>
             <li>
               <Select
+                className="react-select-container"
                 classNamePrefix="react-select"
                 defaultValue={SelectOptions[0]}
                 options={SelectOptions}
@@ -75,17 +77,7 @@ export const HeaderComponent = (props: IProps) => {
         </AppHeaderSection>
         <AppHeaderSecondSection>
           <ul>
-            <li>
-              <StyledLink
-                className={`${
-                  useLocation().pathname === "/orders" && "active"
-                }`}
-                to="orders"
-              >
-                Заказы
-              </StyledLink>
-            </li>
-            <li>
+            {/* <li>
               <StyledLink
                 className={`${
                   useLocation().pathname === "/about-us" && "active"
@@ -93,6 +85,11 @@ export const HeaderComponent = (props: IProps) => {
                 to="about-us"
               >
                 О компании
+              </StyledLink>
+            </li> */}
+            <li>
+              <StyledLink to="#">
+                <BiUser />
               </StyledLink>
             </li>
             <li>

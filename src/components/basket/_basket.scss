@@ -149,6 +149,14 @@
     width: 100%;
   }
 
+  > div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 25px;
+    align-self: center;
+  }
+
   h6 {
     cursor: pointer;
     &:hover {

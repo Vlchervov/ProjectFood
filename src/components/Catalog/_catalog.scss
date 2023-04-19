@@ -22,17 +22,6 @@
       height: 200px;
     }
   }
-
-  h1 {
-    font-size: 24px;
-    font-weight: 400;
-    user-select: none;
-    margin-left: 110px;
-    @media (max-width: 812px) {
-      justify-content: center;
-      margin-left: 0;
-    }
-  }
 }
 
 .swiperCard {

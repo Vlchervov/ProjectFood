@@ -3,12 +3,12 @@ import { Autoplay, EffectFade, Pagination, SwiperOptions } from "swiper";
 export const SwiperParamsForCatalogCard: SwiperOptions = {
   speed: 500,
   slidesPerView: 1,
+  spaceBetween: 25,
   loop: true,
   modules: [Pagination],
   pagination: {
     clickable: true,
   },
-  // effect: "fade",
   grabCursor: true,
 };
 

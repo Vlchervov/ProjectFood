@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { down } from "styled-breakpoints";
 
 export const CategoryName = styled.h1`
   color: ${(props) => props.theme.color};
@@ -6,9 +7,12 @@ export const CategoryName = styled.h1`
   font-weight: 400;
   user-select: none;
   margin-left: 110px;
-  @media (max-width: 812px) {
+  display: flex;
+
+  ${down("sm")} {
     justify-content: center;
     margin-left: 0;
+    font-size: 20px;
   }
 `;
 
@@ -23,7 +27,8 @@ export const Categories = styled.section`
   &:not(:nth-of-type(3)) {
     border-bottom: ${(props) => props.theme.border.bottom};
   }
-  @media (max-width: 812px) {
+
+  ${down("sm")} {
     padding-top: 0px;
     justify-content: center;
   }
@@ -42,7 +47,7 @@ export const CategoriesItem = styled.div`
 
   box-shadow: 0px 11px 13px 8px rgba(0, 0, 0, 0.2);
 
-  @media (max-width: 812px) {
+  ${down("sm")} {
     margin-left: 0px;
     padding-left: 0px;
     margin-right: 0px;
@@ -50,6 +55,8 @@ export const CategoriesItem = styled.div`
     flex-direction: column;
     justify-content: center;
   }
+
+
 
   .categories__description {
     font-family: sans-serif;

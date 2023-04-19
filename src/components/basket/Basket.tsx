@@ -25,15 +25,7 @@ export const Basket = () => {
           <>
             {cartItems.length === 0 ? (
               <>
-                <div
-                  style={{
-                    display: "flex",
-                    flexDirection: "column",
-                    alignItems: "center",
-                    marginBottom: 25,
-                    alignSelf: "center",
-                  }}
-                >
+                <div>
                   <FaShoppingBasket className="emptyBasket" />
                   <h4>Корзина пуста</h4>
                   Добавьте товар из меню, чтобы сделать заказ
