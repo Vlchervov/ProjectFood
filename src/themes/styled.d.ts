@@ -22,6 +22,7 @@ declare module "styled-components" {
       color: string;
     };
     border: {
+      border: string;
       right: string;
       top: string;
       bottom: string;

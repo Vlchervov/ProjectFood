@@ -20,6 +20,7 @@ export default {
     color: "#dc3d3d",
   },
   border: {
+    border: "0.5px solid #383b3b",
     right: "1px solid #383b3b",
     top: "1px solid #383b3b",
     bottom: "1px solid #383b3b",

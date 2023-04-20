@@ -36,15 +36,7 @@ export const AppHeader = styled.div`
   border-bottom: ${(props) => props.theme.border.bottom};
   z-index: 25;
 
-  .react-select-container {
-    ${down("sm")} {
-      width: 100%;
-    }
-  }
-
   .react-select {
-    display: none;
-
     &__control {
       background-color: ${(props) => props.theme.background.color};
       color: white;
@@ -56,6 +48,10 @@ export const AppHeader = styled.div`
 
     &__value-containe {
       color: white;
+    }
+
+    &__option {
+      cursor: pointer;
     }
   }
 
@@ -81,22 +77,22 @@ export const AppHeader = styled.div`
     transform: color 500ms ease;
   }
 
-  ul {
+  .menu {
     display: flex;
-    list-style: none;
-    padding: 0;
     margin: 0;
-
+    padding: 0;
+    align-items: center;
     li {
-      display: flex;
+      list-style: none;
       align-items: center;
-      padding: 10px 15px;
+      padding: 10px 12px;
       font-size: 14px;
-      margin-left: 5px;
 
-      ${down("sm")} {
-        font-size: 12px;
-        padding: 10px 0px;
+      :not(:nth-child(1)) {
+        ${down("sm")} {
+          font-size: 12px;
+          padding: 10px 0px;
+        }
       }
 
       h6 {
@@ -131,6 +127,27 @@ export const AppHeaderSecondSection = styled.div`
 
     ${down("sm")} {
       width: 18px;
+    }
+  }
+
+  .dropDown {
+    right: 25px;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    width: 120px;
+    position: absolute;
+    border-radius: 12px;
+    border: ${(props) => props.theme.border.border};
+    background-color: ${(props) => props.theme.background.color};
+
+    li {
+      cursor: pointer;
+      color: ${(props) => props.theme.color};
+
+      :hover {
+        color: ${(props) => props.theme.hover.background.color};
+      }
     }
   }
 `;

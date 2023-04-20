@@ -26,6 +26,7 @@ interface IProps {
 export const HeaderComponent = (props: IProps) => {
   const { cartItems, setCurrenCity, currentCity } = useContext(CartContext);
   const [state] = useState(data.data);
+  const [hidden, setHidden] = useState(true);
 
   useEffect(() => {
     localStorage.setItem("theme", props.theme.title);
@@ -45,7 +46,7 @@ export const HeaderComponent = (props: IProps) => {
     <Header>
       <AppHeader>
         <AppHeaderSection>
-          <ul>
+          <ul className="menu">
             <li>
               <StyledLink
                 className={`BiMenu ${
@@ -69,28 +70,34 @@ export const HeaderComponent = (props: IProps) => {
                 onChange={onChange}
               />
             </li>
-            <li>
-              <HiMoon onClick={props.toggleTheme} className="switchTheme" />
-              <h6 onClick={props.toggleTheme}>{props.theme.title}</h6>
-            </li>
           </ul>
         </AppHeaderSection>
         <AppHeaderSecondSection>
-          <ul>
-            {/* <li>
-              <StyledLink
-                className={`${
-                  useLocation().pathname === "/about-us" && "active"
-                }`}
-                to="about-us"
-              >
-                О компании
-              </StyledLink>
-            </li> */}
+          <ul className="menu">
             <li>
-              <StyledLink to="#">
-                <BiUser />
+              <StyledLink to="#" className={`${!hidden && "active"}`}>
+                <BiUser onMouseEnter={() => setHidden(false)} />
               </StyledLink>
+              <ul
+                className="dropDown"
+                hidden={hidden}
+                onMouseLeave={() => setHidden(true)}
+              >
+                <li>
+                  <StyledLink
+                    className={`${
+                      useLocation().pathname === "/about-us" && "active"
+                    }`}
+                    to="about-us"
+                  >
+                    О компании
+                  </StyledLink>
+                </li>
+                <li>
+                  <HiMoon onClick={props.toggleTheme} className="switchTheme" />
+                  <h6 onClick={props.toggleTheme}>{props.theme.title}</h6>
+                </li>
+              </ul>
             </li>
             <li>
               <StyledLink
@@ -126,7 +133,7 @@ export const HeaderComponent = (props: IProps) => {
                   </li>
                 );
               }
-              return;
+              return null;
             })}
           </ul>
         </UnderHeader>
