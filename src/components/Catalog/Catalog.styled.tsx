@@ -1,6 +1,32 @@
 import styled from "styled-components";
 import { down } from "styled-breakpoints";
 
+export const Catalog = styled.div`
+  display: flex;
+  flex-direction: column;
+  padding-top: 100px;
+  flex: 1 0 auto;
+
+  .catalog__swiper {
+    height: 205px;
+    width: 60%;
+    margin-top: 25px;
+    border-radius: 25px;
+    box-shadow: 4px 5px 10px 0px rgba(0, 0, 0, 0.4);
+
+    img {
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+    }
+
+    @media (max-width: 812px) {
+      width: 100%;
+      height: 200px;
+    }
+  }
+`;
+
 export const CategoryName = styled.h1`
   color: ${(props) => props.theme.color};
   font-size: 24px;
@@ -36,7 +62,7 @@ export const Categories = styled.section`
 
 export const CategoriesItem = styled.div`
   user-select: none;
-  width: 400px;
+  width: 350px;
   background-color: ${(props) => props.theme.background.color};
   border-top-right-radius: 25px;
   border-bottom-left-radius: 25px;
@@ -44,7 +70,6 @@ export const CategoriesItem = styled.div`
   margin-left: 40px;
   display: flex;
   margin-bottom: 30px;
-
   box-shadow: 0px 11px 13px 8px rgba(0, 0, 0, 0.2);
 
   ${down("sm")} {
@@ -56,7 +81,25 @@ export const CategoriesItem = styled.div`
     justify-content: center;
   }
 
+  .swiperCard {
+    height: 200px;
+    width: 350px;
+    &:last-child {
+      border-bottom: none;
+    }
 
+    img {
+      width: 100%;
+      @media (max-width: 812px) {
+        border-top-right-radius: 25px;
+        width: 100%;
+      }
+    }
+
+    ${down("sm")} {
+      width: 100%;
+    }
+  }
 
   .categories__description {
     font-family: sans-serif;
@@ -78,12 +121,23 @@ export const CategoriesItem = styled.div`
       background-color: white;
       border: none;
       user-select: none;
-      border-top-right-radius: 8px;
-      border-bottom-left-radius: 8px;
-      background-color: #478dff;
-      width: 100px;
-      color: white;
+      border-radius: 8px;
+      background-color: ${(props) => props.theme.background.color};
+      width: 110px;
+      height: 25px;
+      color: ${(props) => props.theme.color};
+      text-decoration: underline;
+      font-weight: 500;
+      transition: all 0.366s;
       cursor: pointer;
+
+      :hover {
+        transition: all 0.400s;
+        color: white;
+        text-decoration: none;
+        background-color: #4e9edf;
+        /* background-color: #cf2900; */
+      }
     }
   }
 

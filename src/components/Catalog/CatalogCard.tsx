@@ -1,6 +1,5 @@
 import { useState, useContext } from "react";
 import CartContext from "../../context/cart/cartContext";
-import "./_catalog.scss";
 import { SwiperComponent } from "../Swiper/SwiperComponent";
 import { CategoriesItem } from "./Catalog.styled";
 import { ICartItem } from "../../interfaces";

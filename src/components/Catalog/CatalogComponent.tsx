@@ -1,10 +1,10 @@
 import { CategoryComponent } from "./CategoryComponent";
 import data from "../../data/categories.json";
-import "./_catalog.scss";
 import { useContext, useLayoutEffect, useRef, useState } from "react";
 import { SwiperSlide, Swiper } from "swiper/react";
 import { SwiperParamsForCatalog } from "../Swiper/SwiperOptions";
 import CartContext from "../../context/cart/cartContext";
+import { Catalog } from "./Catalog.styled";
 
 export const CatalogComponent = () => {
   const { currentCity } = useContext(CartContext);
@@ -15,7 +15,7 @@ export const CatalogComponent = () => {
   }, []);
 
   return (
-    <div className="catalog" ref={h3ref}>
+    <Catalog ref={h3ref}>
       <Swiper className="catalog__swiper" {...SwiperParamsForCatalog}>
         <SwiperSlide>
           <img src="https://resizer.mail.ru/p/083fe3e5-6920-520e-a615-cc428ff3c43d/AAAcjXqsavsNPQPfw8sz4Q5wHG-Dcr1HeTbtVo_4w3TRRydCukIHCe2cfC9FYHfQTaoWnxiq-6vMgZKjRJjpK1FhUbU.jpg" />
@@ -32,6 +32,6 @@ export const CatalogComponent = () => {
           return <CategoryComponent {...e} key={e.name} />;
         }
       })}
-    </div>
+    </Catalog>
   );
 };

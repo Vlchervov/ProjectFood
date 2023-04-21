@@ -1,4 +1,4 @@
-import { useContext, useEffect, useState } from "react";
+import { useContext, useState } from "react";
 import { useLocation } from "react-router-dom";
 import CartContext from "../../context/cart/cartContext";
 import { FaShoppingCart } from "react-icons/fa";
@@ -27,10 +27,6 @@ export const HeaderComponent = (props: IProps) => {
   const { cartItems, setCurrenCity, currentCity } = useContext(CartContext);
   const [state] = useState(data.data);
   const [hidden, setHidden] = useState(true);
-
-  useEffect(() => {
-    localStorage.setItem("theme", props.theme.title);
-  }, [props.theme]);
 
   const getValue = () => {
     return currentCity
@@ -76,13 +72,9 @@ export const HeaderComponent = (props: IProps) => {
           <ul className="menu">
             <li>
               <StyledLink to="#" className={`${!hidden && "active"}`}>
-                <BiUser onMouseEnter={() => setHidden(false)} />
+                <BiUser onClick={() => setHidden(!hidden)} />
               </StyledLink>
-              <ul
-                className="dropDown"
-                hidden={hidden}
-                onMouseLeave={() => setHidden(true)}
-              >
+              <ul className="dropDown" hidden={hidden}>
                 <li>
                   <StyledLink
                     className={`${
