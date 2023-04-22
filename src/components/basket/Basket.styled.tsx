@@ -1,4 +1,6 @@
-.basketSection {
+import styled from "styled-components";
+
+export const BasketSection = styled.section`
   flex: 1 1 auto;
   padding-bottom: 100px;
   padding-top: 125px;
@@ -47,7 +49,7 @@
     border: 2px solid #e6e6e6;
     border-radius: 10px;
 
-    ::placeholder {
+    :placeholder {
       width: 255px;
       height: 22px;
       left: 50px;
@@ -118,18 +120,18 @@
       background-color: #478dff;
       color: white;
 
-      &:hover {
+      :hover {
         box-shadow: 4px 5px 10px 0px rgba(0, 0, 0, 0.4);
       }
 
-      &:disabled {
+      :disabled {
         background-color: #d3d3d3;
         color: black;
         cursor: default;
       }
     }
   }
-}
+
 
 .emptyBasket {
   width: 150px;
@@ -155,10 +157,12 @@
     align-items: center;
     margin-bottom: 25px;
     align-self: center;
+    color: ${(props) => props.theme.color};
   }
 
   h6 {
     cursor: pointer;
+    color: ${(props) => props.theme.color} ;
     &:hover {
       color: rgb(202, 42, 42);
     }
@@ -196,7 +200,8 @@
   height: 540px;
   margin-left: 0px;
 
-  @media (max-width: 812px) {
+   @media (max-width: 812px) {
     display: none;
   }
 }
+`

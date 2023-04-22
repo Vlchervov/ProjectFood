@@ -4,10 +4,11 @@ import { CartItem } from "./item/CartItem";
 import "swiper/css/scrollbar";
 import { Link } from "react-router-dom";
 import { FaShoppingBasket } from "react-icons/fa";
-import "./_basket.scss";
 import { ValidateOrderForm } from "../basketOrderForm/validateOrderForm";
 import { Modal } from "../modal";
 import { ICartItem } from "../../interfaces";
+import { BasketSection } from "./Basket.styled";
+import { down } from "styled-breakpoints";
 
 export const Basket = () => {
   const h2ref = useRef<HTMLInputElement>(null);
@@ -19,7 +20,7 @@ export const Basket = () => {
   }, []);
 
   return (
-    <section className="basketSection" ref={h2ref}>
+    <BasketSection ref={h2ref}>
       <div className="basket">
         <div className="cardWrapper">
           <>
@@ -61,16 +62,17 @@ export const Basket = () => {
 
         {cartItems.length > 0 ? (
           <>
-            <div className="totalAmount">
+            {down("sm") ? <div className="totalAmount">
               <ValidateOrderForm
                 currentCity={currentCity}
                 cartItems={cartItems}
                 cleanArray={cleanArray}
               />
-            </div>
+            </div> : null}
+
           </>
         ) : null}
       </div>
-    </section>
+    </BasketSection>
   );
 };
