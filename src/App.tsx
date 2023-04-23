@@ -1,4 +1,3 @@
-import "./App.css";
 import { useState } from "react";
 import { FooterComponent } from "./components/footer";
 import { HeaderComponent } from "./components/header";

@@ -4,7 +4,7 @@ import { IModal } from "../../interfaces";
 import { AceptButton, DeclineButton, ModalBody, ModalFooter, ModalWrapper, Section } from "./Modal.Styled";
 
 export const Modal = (props: IModal) => {
-  const nodeRef = useRef(null);
+  const nodeRef = useRef<HTMLInputElement>(null);
   return (
     <Section>
       <Transition

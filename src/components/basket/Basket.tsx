@@ -12,7 +12,7 @@ import { down } from "styled-breakpoints";
 
 export const Basket = () => {
   const h2ref = useRef<HTMLInputElement>(null);
-  const [formIsVisible, setFormIsVisivle] = useState(false);
+  const [formIsVisible, setFormIsVisivle] = useState<boolean>(false);
   const { cartItems, cleanArray, currentCity } = useContext(CartContext);
 
   useLayoutEffect(() => {

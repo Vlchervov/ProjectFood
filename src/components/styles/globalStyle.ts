@@ -12,6 +12,35 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+.App {
+  text-align: flex-start;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+
+  
+}
+
+.GoogleLogo::before {
+  content: url("../img/google-play-5.svg");
+}
+
+.AppleLogo::before {
+  content: url("../img/icons8-apple-logo.svg");
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+
+
 html {
   scroll-behavior: smooth;
 }

@@ -11,9 +11,9 @@ interface IPropsCard extends ICartItem {
 export const CatalogCard = (props: IPropsCard) => {
   const { addTo, cartItems, decrease, increase, removeItem } =
     useContext(CartContext);
-  const [button, setButton] = useState("default");
+  const [button, setButton] = useState<string>("default");
   const checkCart = (id: number) => {
-    let result = false;
+    let result: boolean = false;
     cartItems.forEach((element: IPropsCard) => {
       if (element.id === id) result = true;
     });
@@ -31,7 +31,7 @@ export const CatalogCard = (props: IPropsCard) => {
         <p className="categories__description">{props.descr}</p>
         <div className="categories__footer">
           {(cartItems.length !== 0 && checkCart(props.id)) ||
-          button !== "default" ? (
+            button !== "default" ? (
             cartItems.map((item: IPropsCard) => {
               if (item.id === props.id) {
                 return (
