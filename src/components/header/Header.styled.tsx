@@ -134,6 +134,7 @@ export const AppHeaderSecondSection = styled.div`
     border: none;
     height: 30px;
     width: 80px;
+    border-radius: 6px;
     color: #413e3e;
     cursor: pointer;
     margin-right: 12px;
@@ -146,7 +147,7 @@ export const AppHeaderSecondSection = styled.div`
     }
 
     :hover {
-      color: #000;
+      color: #000000;
     }
   }
 

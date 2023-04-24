@@ -14,31 +14,29 @@ export const Modal = (props: IModal) => {
         mountOnEnter
         unmountOnExit
       >
-        {() => (
-          <ModalWrapper>
-            <ModalBody>
-              <h1>Вы уверены?</h1>
-              <ModalFooter>
-                <AceptButton
-                  onClick={() => {
-                    props.cleanArray();
-                    props.setFormIsVisivle(false);
-                  }}
-                >
-                  Да
-                </AceptButton>
-                <DeclineButton
-                  className="modal__cancelButton"
-                  onClick={() => {
-                    props.setFormIsVisivle(false);
-                  }}
-                >
-                  Нет
-                </DeclineButton>
-              </ModalFooter>
-            </ModalBody>
-          </ModalWrapper>
-        )}
+        <ModalWrapper>
+          <ModalBody>
+            <h1>Вы уверены?</h1>
+            <ModalFooter>
+              <AceptButton
+                onClick={() => {
+                  props.cleanArray();
+                  props.setFormIsVisivle(false);
+                }}
+              >
+                Да
+              </AceptButton>
+              <DeclineButton
+                className="modal__cancelButton"
+                onClick={() => {
+                  props.setFormIsVisivle(false);
+                }}
+              >
+                Нет
+              </DeclineButton>
+            </ModalFooter>
+          </ModalBody>
+        </ModalWrapper>
       </Transition>
     </Section>
   );

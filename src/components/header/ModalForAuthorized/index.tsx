@@ -1,9 +1,10 @@
 import { Transition } from "react-transition-group";
 import { useRef } from "react";
-import { ModalForAuthorizationBody, ModalForAuthorizationSection, ModalForAuthorizationWrapper } from "./ModalForAuthorized.styled";
+import { ModalForAuthorizationBody, ModalForAuthorizationHeader, ModalForAuthorizationSection, ModalForAuthorizationWindow } from "./ModalForAuthorized.styled";
 
 interface IPropsModalForAuthorized {
     isModalForAuthorizationVisible: boolean;
+    setIsModalForAuthorizationVisible: Function;
 }
 
 export const ModalForAuthorization = (props: IPropsModalForAuthorized) => {
@@ -15,11 +16,22 @@ export const ModalForAuthorization = (props: IPropsModalForAuthorized) => {
                 nodeRef={nodeRef}
                 mountOnEnters
                 unmountOnExit>
-                <ModalForAuthorizationWrapper>
+                <ModalForAuthorizationWindow>
+                    <ModalForAuthorizationHeader>
+                        <div onClick={() => props.setIsModalForAuthorizationVisible(false)}>
+                            <span></span>
+                            <span></span>
+                        </div>
+                    </ModalForAuthorizationHeader>
                     <ModalForAuthorizationBody>
-
+                        <h1>Вход в аккаунт</h1>
+                        <div className="AuthContent">
+                            <input placeholder="Почта" type="email" />
+                            <input placeholder="Пароль" type="password" />
+                            <button>Войти</button>
+                        </div>
                     </ModalForAuthorizationBody>
-                </ModalForAuthorizationWrapper>
+                </ModalForAuthorizationWindow>
             </Transition>
         </ModalForAuthorizationSection>
     )

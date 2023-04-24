@@ -95,7 +95,7 @@ export const HeaderComponent = (props: IProps) => {
             </li> :
               <>
                 <button className="AppHeaderSection__ButtonAuthorized" onClick={() => setIsModalForAuthorizationVisible(true)}>Войти</button>
-                <ModalForAuthorization isModalForAuthorizationVisible={isModalForAuthorizationVisible} />
+                <ModalForAuthorization isModalForAuthorizationVisible={isModalForAuthorizationVisible} setIsModalForAuthorizationVisible={setIsModalForAuthorizationVisible} />
               </>}
 
             <li>
