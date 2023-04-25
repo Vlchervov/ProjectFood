@@ -1,16 +1,18 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 import validator from "validator";
 import { OrderForm } from "..";
 import { newAxiosInstance } from "../../API/Api";
-import { useDispatch } from "react-redux";
-import { actions } from "../../../store/cart/cart.slice";
+import CartContext from "../../../context/cart/cartContext";
+import { useActions } from "../../../hooks/useActions";
 
 export const ValidateOrderForm = (props) => {
-  const dispatch = useDispatch();
+  const { cleanArray } = useActions();
   const [errorState, setErrorState] = useState("");
   const [disabledState, setDisabledSatte] = useState({
     disabled: false,
   });
+  const { currentCity, isAuthorized, setIsModalForAuthorizationVisible } =
+    useContext(CartContext);
 
   const totalCount = props.cart.reduce((count, item) => item.count + count, 0);
   const totalPrice = props.cart.reduce(
@@ -21,25 +23,28 @@ export const ValidateOrderForm = (props) => {
   async function onSubmit(data) {
     try {
       if (validator.isMobilePhone(data.phone, ["ru-RU"])) {
-        await newAxiosInstance
-          .post("/orders", {
-            orderType: data.orderType,
-            phone: data.phone,
-            commentForOrder: data.commentForOrder,
-            totalCount: totalCount,
-            totalPrice: totalPrice,
-            city: props.currentCity,
-            infoAboutOrder: {
-              ...props.cart,
-            },
-          })
-          .then(() => {
-            setDisabledSatte({ disabled: true });
-            setTimeout(() => {
-              dispatch(actions.cleanArray(null));
-              alert("Заказ создан успешно. Order create succefully!");
-            }, 1200);
-          });
+        if (isAuthorized) {
+          await newAxiosInstance
+            .post("/orders", {
+              orderType: data.orderType,
+              phone: data.phone,
+              commentForOrder: data.commentForOrder,
+              totalCount: totalCount,
+              totalPrice: totalPrice,
+              city: currentCity,
+              infoAboutOrder: {
+                ...props.cart,
+              },
+            })
+            .then(() => {
+              setDisabledSatte({ disabled: true });
+              setTimeout(() => {
+                cleanArray(null);
+                alert("Заказ создан успешно. Order create succefully!");
+              }, 1200);
+            });
+        }
+        setIsModalForAuthorizationVisible(true);
       } else {
         setErrorState("Неправильный номер");
       }
@@ -56,7 +61,7 @@ export const ValidateOrderForm = (props) => {
       disabledState={disabledState}
       totalCount={totalCount}
       totalPrice={totalPrice}
-      currentCity={props.currentCity}
+      currentCity={currentCity}
     />
   );
 };

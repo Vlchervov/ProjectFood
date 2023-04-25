@@ -2,13 +2,20 @@ import { useState } from "react";
 import CartContext from "./cartContext";
 
 const CartState = ({ children }) => {
-  const [currentCity, setCurrenCity] = useState("");
+  const [currentCity, setCurrentCity] = useState("Новокузнецк");
+  const [isAuthorized, setIsAuthorized] = useState(false);
+  const [isModalForAuthorizationVisible, setIsModalForAuthorizationVisible] =
+    useState(false);
 
   return (
     <CartContext.Provider
       value={{
         currentCity,
-        setCurrenCity,
+        setCurrentCity,
+        isAuthorized,
+        setIsAuthorized,
+        isModalForAuthorizationVisible,
+        setIsModalForAuthorizationVisible,
       }}
     >
       {children}

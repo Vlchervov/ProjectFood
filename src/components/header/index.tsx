@@ -18,7 +18,7 @@ import {
   UnderHeader,
 } from "./Header.styled";
 import { ModalForAuthorization } from "./ModalForAuthorized";
-import { useSelector } from "react-redux"
+import { useSelector } from "react-redux";
 
 interface IProps {
   toggleTheme(): void;
@@ -26,13 +26,16 @@ interface IProps {
 }
 
 export const HeaderComponent = (props: IProps) => {
-  const { setCurrenCity, currentCity } = useContext(CartContext);
+  const {
+    setCurrentCity,
+    currentCity,
+    isAuthorized,
+    isModalForAuthorizationVisible,
+    setIsModalForAuthorizationVisible,
+  } = useContext(CartContext);
   const [state] = useState(data.data);
   const [hidden, setHidden] = useState<boolean>(true);
-  const [isAuthorized, setIsAuthorized] = useState<boolean>(false);
-  const [isModalForAuthorizationVisible, setIsModalForAuthorizationVisible] = useState<boolean>(false);
-
-  const { cart }: any = useSelector(state => state);
+  const { cart }: any = useSelector((state) => state);
 
   const getValue = () => {
     return currentCity
@@ -41,7 +44,7 @@ export const HeaderComponent = (props: IProps) => {
   };
 
   const onChange = (newValue: any) => {
-    setCurrenCity(newValue?.value);
+    setCurrentCity(newValue?.value);
   };
 
   return (
@@ -51,8 +54,9 @@ export const HeaderComponent = (props: IProps) => {
           <ul className="menu">
             <li>
               <StyledLink
-                className={`BiMenu ${useLocation().pathname === "/catalog" && "active"
-                  }`}
+                className={`BiMenu ${
+                  useLocation().pathname === "/catalog" && "active"
+                }`}
                 to="catalog"
               >
                 <BiMenu />
@@ -75,36 +79,56 @@ export const HeaderComponent = (props: IProps) => {
         </AppHeaderSection>
         <AppHeaderSecondSection>
           <ul className="menu">
-            {isAuthorized ? <li>
-              <StyledLink to="#" className={`${!hidden && "active"}`}>
-                <BiUser onClick={() => setHidden(!hidden)} />
-              </StyledLink>
-              <ul className="dropDown" hidden={hidden}>
-                <li>
-                  <StyledLink
-                    className={`${window.location.pathname === "/about-us" && "active"
+            {isAuthorized ? (
+              <li>
+                <StyledLink to="#" className={`${!hidden && "active"}`}>
+                  <BiUser onClick={() => setHidden(!hidden)} />
+                </StyledLink>
+                <ul className="dropDown" hidden={hidden}>
+                  <li>
+                    <StyledLink
+                      className={`${
+                        window.location.pathname === "/about-us" && "active"
                       }`}
-                    to="about-us"
-                  >
-                    О компании
-                  </StyledLink>
-                </li>
+                      to="about-us"
+                    >
+                      О компании
+                    </StyledLink>
+                  </li>
 
-                <li>
-                  <HiMoon onClick={props.toggleTheme} className="switchTheme" />
-                  <h6 onClick={props.toggleTheme}>{props.theme.title}</h6>
-                </li>
-              </ul>
-            </li> :
+                  <li>
+                    <HiMoon
+                      onClick={props.toggleTheme}
+                      className="switchTheme"
+                    />
+                    <h6 onClick={props.toggleTheme}>{props.theme.title}</h6>
+                  </li>
+                </ul>
+              </li>
+            ) : (
               <>
-                <button className="AppHeaderSection__ButtonAuthorized" onClick={() => setIsModalForAuthorizationVisible(true)}>Войти</button>
-                <ModalForAuthorization isModalForAuthorizationVisible={isModalForAuthorizationVisible} setIsModalForAuthorizationVisible={setIsModalForAuthorizationVisible} />
-              </>}
+                <button
+                  className="AppHeaderSection__ButtonAuthorized"
+                  onClick={() => setIsModalForAuthorizationVisible(true)}
+                >
+                  Войти
+                </button>
+                <ModalForAuthorization
+                  isModalForAuthorizationVisible={
+                    isModalForAuthorizationVisible
+                  }
+                  setIsModalForAuthorizationVisible={
+                    setIsModalForAuthorizationVisible
+                  }
+                />
+              </>
+            )}
 
             <li>
               <StyledLink
-                className={`shopCartButton ${useLocation().pathname === "/basket" && "active"
-                  }`}
+                className={`shopCartButton ${
+                  useLocation().pathname === "/basket" && "active"
+                }`}
                 to="basket"
               >
                 {cart.length > 0 && (
@@ -125,8 +149,9 @@ export const HeaderComponent = (props: IProps) => {
               if (item.city === currentCity) {
                 return (
                   <li
-                    className={`${window.location.hash === item.anchorID && "enabled"
-                      }`}
+                    className={`${
+                      window.location.hash === item.anchorID && "enabled"
+                    }`}
                     key={item.name}
                   >
                     <a href={item.anchorID}>{item.name}</a>

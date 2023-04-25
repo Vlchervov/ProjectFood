@@ -1,5 +1,4 @@
-import { useContext, useLayoutEffect, useRef, useState } from "react";
-import CartContext from "../../context/cart/cartContext";
+import { useLayoutEffect, useRef, useState } from "react";
 import { CartItem } from "./item/CartItem";
 import "swiper/css/scrollbar";
 import { Link } from "react-router-dom";
@@ -14,7 +13,6 @@ import { useSelector } from "react-redux";
 export const Basket = () => {
   const h2ref = useRef<HTMLInputElement>(null);
   const [formIsVisible, setFormIsVisivle] = useState<boolean>(false);
-  const { currentCity } = useContext(CartContext);
 
   useLayoutEffect(() => {
     h2ref.current!.scrollIntoView();
@@ -66,7 +64,7 @@ export const Basket = () => {
           <>
             {down("sm") ? (
               <div className="totalAmount">
-                <ValidateOrderForm currentCity={currentCity} cart={cart} />
+                <ValidateOrderForm cart={cart} />
               </div>
             ) : null}
           </>

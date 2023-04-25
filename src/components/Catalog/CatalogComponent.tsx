@@ -5,7 +5,6 @@ import { SwiperSlide, Swiper } from "swiper/react";
 import { SwiperParamsForCatalog } from "../Swiper/SwiperOptions";
 import CartContext from "../../context/cart/cartContext";
 import { Catalog } from "./Catalog.styled";
-import React from "react";
 
 export const CatalogComponent = () => {
   const { currentCity } = useContext(CartContext);

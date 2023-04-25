@@ -132,76 +132,75 @@ export const BasketSection = styled.section`
     }
   }
 
-
-.emptyBasket {
-  width: 150px;
-  height: 150px;
-  color: #bebebe;
-}
-
-.cardWrapper {
-  display: flex;
-  align-items: flex-end;
-  border-radius: 25px;
-  margin-bottom: 25px;
-  display: flex;
-  flex-direction: column;
-
-  @media (max-width: 812px) {
-    width: 100%;
+  .emptyBasket {
+    width: 150px;
+    height: 150px;
+    color: #bebebe;
   }
 
-  > div {
+  .cardWrapper {
+    display: flex;
+    align-items: flex-end;
+    border-radius: 25px;
+    margin-bottom: 25px;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    margin-bottom: 25px;
-    align-self: center;
-    color: ${(props) => props.theme.color};
-  }
-
-  h6 {
-    cursor: pointer;
-    color: ${(props) => props.theme.color} ;
-    &:hover {
-      color: rgb(202, 42, 42);
-    }
 
     @media (max-width: 812px) {
-      padding-right: 10px;
+      width: 100%;
+    }
+
+    > div {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 25px;
+      align-self: center;
+      color: ${(props) => props.theme.color};
+    }
+
+    h6 {
+      cursor: pointer;
+      color: ${(props) => props.theme.color};
+      &:hover {
+        color: rgb(202, 42, 42);
+      }
+
+      @media (max-width: 812px) {
+        padding-right: 10px;
+      }
+    }
+
+    h1 {
+      width: 100%;
+      font-size: 18px;
+      user-select: none;
+      background-color: #f5f4f4;
+      text-align: center;
+      display: flex;
+      align-items: center;
+      height: 30px;
+      justify-content: center;
     }
   }
 
-  h1 {
-    width: 100%;
-    font-size: 18px;
-    user-select: none;
-    background-color: #f5f4f4;
-    text-align: center;
+  .totalAmount {
+    box-shadow: 0px 10px 10px 15px rgba(0, 0, 0, 0.2);
+    position: sticky;
     display: flex;
-    align-items: center;
-    height: 30px;
-    justify-content: center;
+    margin-bottom: 0px;
+    top: 120px;
+    margin-left: 0;
+    flex-direction: column;
+    background-color: white;
+    border-radius: 0px 25px 25px 25px;
+
+    width: 363px;
+    height: 540px;
+    margin-left: 0px;
+
+    @media (max-width: 812px) {
+      display: none;
+    }
   }
-}
-
-.totalAmount {
-  box-shadow: 0px 10px 10px 15px rgba(0, 0, 0, 0.2);
-  position: sticky;
-  display: flex;
-  margin-bottom: 0px;
-  top: 120px;
-  margin-left: 0;
-  flex-direction: column;
-  background-color: white;
-  border-radius: 0px 25px 25px 25px;
-
-  width: 363px;
-  height: 540px;
-  margin-left: 0px;
-
-   @media (max-width: 812px) {
-    display: none;
-  }
-}
-`
+`;
