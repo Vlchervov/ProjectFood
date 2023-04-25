@@ -1,8 +1,8 @@
 export interface IDataContent {
   name: string;
   city: string;
-  key: string;
   anchor: string;
+  key: string | number;
   anchorID: string;
   cards: {
     id: number;

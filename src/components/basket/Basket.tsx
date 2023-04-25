@@ -9,7 +9,7 @@ import { Modal } from "../modal";
 import { ICartItem } from "../../interfaces";
 import { BasketSection } from "./Basket.styled";
 import { down } from "styled-breakpoints";
-import { useSelector } from "react-redux"
+import { useSelector } from "react-redux";
 
 export const Basket = () => {
   const h2ref = useRef<HTMLInputElement>(null);
@@ -20,7 +20,7 @@ export const Basket = () => {
     h2ref.current!.scrollIntoView();
   }, []);
 
-  const { cart }: any = useSelector(state => state);
+  const { cart }: any = useSelector((state) => state);
 
   return (
     <BasketSection ref={h2ref}>
@@ -55,7 +55,7 @@ export const Basket = () => {
                   setFormIsVisivle={setFormIsVisivle}
                 />
                 {cart.map((item: ICartItem) => (
-                  <CartItem item={item} />
+                  <CartItem key={item.id} item={item} />
                 ))}
               </>
             )}
@@ -64,13 +64,11 @@ export const Basket = () => {
 
         {cart.length > 0 ? (
           <>
-            {down("sm") ? <div className="totalAmount">
-              <ValidateOrderForm
-                currentCity={currentCity}
-                cart={cart}
-              />
-            </div> : null}
-
+            {down("sm") ? (
+              <div className="totalAmount">
+                <ValidateOrderForm currentCity={currentCity} cart={cart} />
+              </div>
+            ) : null}
           </>
         ) : null}
       </div>

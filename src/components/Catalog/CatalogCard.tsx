@@ -10,8 +10,8 @@ interface IPropsCard extends ICartItem {
 }
 
 export const CatalogCard = (props: IPropsCard) => {
-  const { cart }: any = useSelector(state => state);
-  const { decrease, removeItem, increase, addTo } = useActions()
+  const { cart }: any = useSelector((state) => state);
+  const { decrease, removeItem, increase, addTo } = useActions();
   const [button, setButton] = useState<string>("default");
   const checkCart = (id: number) => {
     let result: boolean = false;
@@ -32,11 +32,11 @@ export const CatalogCard = (props: IPropsCard) => {
         <p className="categories__description">{props.descr}</p>
         <div className="categories__footer">
           {(cart.length !== 0 && checkCart(props.id)) ||
-            button !== "default" ? (
+          button !== "default" ? (
             cart.map((item: IPropsCard) => {
               if (item.id === props.id) {
                 return (
-                  <div className="product__footer" key={props.id}>
+                  <div className="product__footer" key={item.id}>
                     <p className="categories__price">{item.priceTotal} ₽</p>
                     <div
                       className="product__counterDecreaseButton"
@@ -69,7 +69,7 @@ export const CatalogCard = (props: IPropsCard) => {
                 <button
                   onClick={() => {
                     setButton("inBasket");
-                    addTo(props)
+                    addTo(props);
                   }}
                 >
                   Купить
