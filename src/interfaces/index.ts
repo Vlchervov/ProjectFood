@@ -1,6 +1,7 @@
 export interface IDataContent {
   name: string;
   city: string;
+  key: string;
   anchor: string;
   anchorID: string;
   cards: {
@@ -22,7 +23,6 @@ export interface IDataContent {
 export interface IModal {
   formIsVisible: boolean;
   setFormIsVisivle: any;
-  cleanArray: () => void;
 }
 
 export interface ICartItem {

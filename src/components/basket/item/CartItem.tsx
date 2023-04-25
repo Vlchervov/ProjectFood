@@ -1,15 +1,14 @@
-import { useContext } from "react";
-import CartContext from "../../../context/cart/cartContext";
 import { GoTrashcan } from "react-icons/go";
 import "./_cartItem.scss";
 import { ICartItem } from "../../../interfaces";
+import { useActions } from "../../../hooks/useActions";
 
 interface PropsCart {
   item: ICartItem;
 }
 
 export const CartItem = (props: PropsCart) => {
-  const { removeItem, increase, decrease } = useContext(CartContext);
+  const { decrease, removeItem, increase } = useActions()
 
   return (
     <div className="product">
@@ -38,7 +37,7 @@ export const CartItem = (props: PropsCart) => {
             <div
               className="product__counterIncreaseButton"
               onClick={() => {
-                increase(props.item.id);
+                increase(props.item.id)
               }}
             >
               <span></span>
@@ -49,7 +48,7 @@ export const CartItem = (props: PropsCart) => {
         <button
           className="product__deleteButton"
           onClick={() => {
-            removeItem(props.item.id);
+            removeItem(props.item.id)
           }}
         >
           <GoTrashcan />

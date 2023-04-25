@@ -18,6 +18,7 @@ import {
   UnderHeader,
 } from "./Header.styled";
 import { ModalForAuthorization } from "./ModalForAuthorized";
+import { useSelector } from "react-redux"
 
 interface IProps {
   toggleTheme(): void;
@@ -25,11 +26,13 @@ interface IProps {
 }
 
 export const HeaderComponent = (props: IProps) => {
-  const { cartItems, setCurrenCity, currentCity } = useContext(CartContext);
+  const { setCurrenCity, currentCity } = useContext(CartContext);
   const [state] = useState(data.data);
   const [hidden, setHidden] = useState<boolean>(true);
   const [isAuthorized, setIsAuthorized] = useState<boolean>(false);
   const [isModalForAuthorizationVisible, setIsModalForAuthorizationVisible] = useState<boolean>(false);
+
+  const { cart }: any = useSelector(state => state);
 
   const getValue = () => {
     return currentCity
@@ -104,9 +107,9 @@ export const HeaderComponent = (props: IProps) => {
                   }`}
                 to="basket"
               >
-                {cartItems.length > 0 && (
+                {cart.length > 0 && (
                   <ItemCount>
-                    <span>{cartItems.length}</span>
+                    <span>{cart.length}</span>
                   </ItemCount>
                 )}
                 <FaShoppingCart />

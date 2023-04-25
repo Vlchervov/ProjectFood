@@ -10,7 +10,7 @@ export const CategoryComponent = (props: IDataContent) => {
       <CategoryName id={state.anchor}>{state.name}</CategoryName>
       <Categories>
         {state.cards.map((item) => (
-          <CatalogCard {...item} key={item.id} />
+          <CatalogCard {...item} key={item.title} />
         ))}
       </Categories>
     </>

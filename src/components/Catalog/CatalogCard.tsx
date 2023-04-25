@@ -1,27 +1,28 @@
-import { useState, useContext } from "react";
-import CartContext from "../../context/cart/cartContext";
+import { useState } from "react";
 import { SwiperComponent } from "../Swiper/SwiperComponent";
 import { CategoriesItem } from "./Catalog.styled";
 import { ICartItem } from "../../interfaces";
+import { useSelector } from "react-redux";
+import { useActions } from "../../hooks/useActions";
 
 interface IPropsCard extends ICartItem {
   price: number;
 }
 
 export const CatalogCard = (props: IPropsCard) => {
-  const { addTo, cartItems, decrease, increase, removeItem } =
-    useContext(CartContext);
+  const { cart }: any = useSelector(state => state);
+  const { decrease, removeItem, increase, addTo } = useActions()
   const [button, setButton] = useState<string>("default");
   const checkCart = (id: number) => {
     let result: boolean = false;
-    cartItems.forEach((element: IPropsCard) => {
+    cart.forEach((element: IPropsCard) => {
       if (element.id === id) result = true;
     });
     return result;
   };
 
   return (
-    <CategoriesItem key={props.id}>
+    <CategoriesItem>
       <SwiperComponent img={props.src} />
       <div className="categories__body">
         <p className="categories__title">
@@ -30,12 +31,12 @@ export const CatalogCard = (props: IPropsCard) => {
         <p className="categories__weight">{props.weight}</p>
         <p className="categories__description">{props.descr}</p>
         <div className="categories__footer">
-          {(cartItems.length !== 0 && checkCart(props.id)) ||
+          {(cart.length !== 0 && checkCart(props.id)) ||
             button !== "default" ? (
-            cartItems.map((item: IPropsCard) => {
+            cart.map((item: IPropsCard) => {
               if (item.id === props.id) {
                 return (
-                  <div key={item.id} className="product__footer">
+                  <div className="product__footer" key={props.id}>
                     <p className="categories__price">{item.priceTotal} ₽</p>
                     <div
                       className="product__counterDecreaseButton"
@@ -60,7 +61,6 @@ export const CatalogCard = (props: IPropsCard) => {
                   </div>
                 );
               }
-              return null;
             })
           ) : (
             <>
@@ -69,7 +69,7 @@ export const CatalogCard = (props: IPropsCard) => {
                 <button
                   onClick={() => {
                     setButton("inBasket");
-                    addTo(props);
+                    addTo(props)
                   }}
                 >
                   Купить

@@ -2,18 +2,18 @@ import { useState } from "react";
 import validator from "validator";
 import { OrderForm } from "..";
 import { newAxiosInstance } from "../../API/Api";
+import { useDispatch } from "react-redux";
+import { actions } from "../../../store/cart/cart.slice";
 
 export const ValidateOrderForm = (props) => {
+  const dispatch = useDispatch();
   const [errorState, setErrorState] = useState("");
   const [disabledState, setDisabledSatte] = useState({
     disabled: false,
   });
 
-  const totalCount = props.cartItems.reduce(
-    (count, item) => item.count + count,
-    0
-  );
-  const totalPrice = props.cartItems.reduce(
+  const totalCount = props.cart.reduce((count, item) => item.count + count, 0);
+  const totalPrice = props.cart.reduce(
     (amount, item) => item.priceTotal + amount,
     0
   );
@@ -30,13 +30,13 @@ export const ValidateOrderForm = (props) => {
             totalPrice: totalPrice,
             city: props.currentCity,
             infoAboutOrder: {
-              ...props.cartItems,
+              ...props.cart,
             },
           })
           .then(() => {
             setDisabledSatte({ disabled: true });
             setTimeout(() => {
-              props.cleanArray();
+              dispatch(actions.cleanArray(null));
               alert("Заказ создан успешно. Order create succefully!");
             }, 1200);
           });
