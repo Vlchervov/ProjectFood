@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { motion } from "framer-motion";
 import { down } from "styled-breakpoints";
 
 export const Catalog = styled.div`

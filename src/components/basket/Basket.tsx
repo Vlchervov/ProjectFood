@@ -9,6 +9,7 @@ import { ICartItem } from "../../interfaces";
 import { BasketSection } from "./Basket.styled";
 import { down } from "styled-breakpoints";
 import { useSelector } from "react-redux";
+import { motion } from "framer-motion";
 
 export const Basket = () => {
   const h2ref = useRef<HTMLInputElement>(null);
@@ -21,7 +22,7 @@ export const Basket = () => {
   const { cart }: any = useSelector((state) => state);
 
   return (
-    <BasketSection ref={h2ref}>
+    <BasketSection as={motion.section} initial={{ opacity: 0 }} animate={{ opacity: 1, }} exit={{ opacity: 0.6 }} transition={{ ease: "easeOut", duration: 1 }} ref={h2ref}>
       <div className="basket">
         <div className="cardWrapper">
           <>

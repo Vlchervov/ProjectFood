@@ -18,11 +18,11 @@ export const ModalForAuthorization = (props: IPropsModalForAuthorized) => {
   return (
     <ModalForAuthorizationSection>
       <Transition
-        timeout={2}
+        timeout={500}
         in={props.isModalForAuthorizationVisible}
         nodeRef={nodeRef}
-        mountOnEnters
         unmountOnExit
+        mountOnEnter
       >
         <ModalForAuthorizationWindow>
           <ModalForAuthorizationHeader>

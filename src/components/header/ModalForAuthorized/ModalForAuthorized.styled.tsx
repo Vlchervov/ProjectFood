@@ -1,7 +1,20 @@
 import styled from "styled-components";
 
+
 export const ModalForAuthorizationSection = styled.section`
   display: flex;
+  @keyframes show-modal {
+    0% {
+      opacity: 0;
+      transform: translateY(-200px);
+    }
+    50%{
+      opacity: 1;
+    }
+    100%{
+      transform: translateY(0px);
+    }
+  }
 `;
 
 export const ModalForAuthorizationWindow = styled.div`
@@ -31,6 +44,8 @@ export const ModalForAuthorizationHeader = styled.div`
     justify-content: center;
     width: 32px;
     height: 32px;
+    animation: show-modal .5s forwards;
+
     :hover {
       transition: background-color 1s;
       border-radius: 25px;
@@ -62,7 +77,7 @@ export const ModalForAuthorizationBody = styled.div`
   height: 262px;
   z-index: 4;
   border-radius: 15px;
-
+  animation: show-modal .5s forwards;
   h1 {
     padding: 0;
     margin: 0;

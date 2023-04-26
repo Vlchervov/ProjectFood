@@ -5,6 +5,7 @@ import { SwiperSlide, Swiper } from "swiper/react";
 import { SwiperParamsForCatalog } from "../Swiper/SwiperOptions";
 import CartContext from "../../context/cart/cartContext";
 import { Catalog } from "./Catalog.styled";
+import { motion } from "framer-motion";
 
 export const CatalogComponent = () => {
   const { currentCity } = useContext(CartContext);
@@ -15,7 +16,7 @@ export const CatalogComponent = () => {
   }, []);
 
   return (
-    <Catalog ref={h3ref}>
+    <Catalog as={motion.div} initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} transition={{ ease: "easeOut", duration: .9 }} ref={h3ref}>
       <Swiper className="catalog__swiper" {...SwiperParamsForCatalog}>
         <SwiperSlide>
           <img src="https://resizer.mail.ru/p/083fe3e5-6920-520e-a615-cc428ff3c43d/AAAcjXqsavsNPQPfw8sz4Q5wHG-Dcr1HeTbtVo_4w3TRRydCukIHCe2cfC9FYHfQTaoWnxiq-6vMgZKjRJjpK1FhUbU.jpg" />
