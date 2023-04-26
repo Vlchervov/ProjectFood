@@ -1,8 +1,19 @@
 import { createSlice } from "@reduxjs/toolkit";
 
+interface ICart {
+  id: number;
+  count: number;
+  price: number;
+  priceTotal: number;
+}
+
+export type CartState = ICart[];
+
+const initialState: CartState = [];
+
 export const cartSlice = createSlice({
   name: "cart",
-  initialState: [],
+  initialState,
   reducers: {
     addTo: (state, { payload: item }) => {
       let isInArray;
@@ -19,11 +30,10 @@ export const cartSlice = createSlice({
     increase: (state, { payload: id }) => {
       return state.map((product) => {
         if (product.id === id) {
-          const objCopy = { ...product };
           return {
-            ...objCopy,
-            count: objCopy.count + 1,
-            priceTotal: (objCopy.count + 1) * objCopy.price,
+            ...product,
+            count: product.count + 1,
+            priceTotal: (product.count + 1) * product.price,
           };
         }
         return product;
@@ -32,12 +42,11 @@ export const cartSlice = createSlice({
     decrease: (state, { payload: id }) => {
       return state.map((product) => {
         if (product.id === id) {
-          const objCopy = { ...product };
-          const newCount = objCopy.count - 1 > 0 ? objCopy.count - 1 : 1;
+          const newCount = product.count - 1 > 0 ? product.count - 1 : 1;
           return {
-            ...objCopy,
+            ...product,
             count: newCount,
-            priceTotal: newCount * objCopy.price,
+            priceTotal: newCount * product.price,
           };
         }
         return product;

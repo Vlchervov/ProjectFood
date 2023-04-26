@@ -1,12 +1,19 @@
 import { Transition } from "react-transition-group";
 import { useRef } from "react";
 import { IModal } from "../../interfaces";
-import { AceptButton, DeclineButton, ModalBody, ModalFooter, ModalWrapper, Section } from "./Modal.Styled";
+import {
+  AceptButton,
+  DeclineButton,
+  ModalBody,
+  ModalFooter,
+  ModalWrapper,
+  Section,
+} from "./Modal.Styled";
 import { useActions } from "../../hooks/useActions";
 
 export const Modal = (props: IModal) => {
   const nodeRef = useRef<HTMLInputElement>(null);
-  const { cleanArray } = useActions()
+  const { cleanArray } = useActions();
   return (
     <Section>
       <Transition
@@ -23,7 +30,7 @@ export const Modal = (props: IModal) => {
               <AceptButton
                 onClick={() => {
                   props.setFormIsVisivle(false);
-                  cleanArray(null)
+                  cleanArray();
                 }}
               >
                 Да

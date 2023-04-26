@@ -32,6 +32,7 @@ export const HeaderComponent = (props: IProps) => {
     isAuthorized,
     isModalForAuthorizationVisible,
     setIsModalForAuthorizationVisible,
+    setIsAuthorized,
   } = useContext(CartContext);
   const [state] = useState(data.data);
   const [hidden, setHidden] = useState<boolean>(true);
@@ -79,6 +80,14 @@ export const HeaderComponent = (props: IProps) => {
         </AppHeaderSection>
         <AppHeaderSecondSection>
           <ul className="menu">
+            <li>
+              <button
+                onClick={() => setIsAuthorized(!isAuthorized)}
+                className="AppHeaderSection__ButtonIsAuthorized"
+              >
+                {isAuthorized ? "Выйти" : "FakeAuth"}
+              </button>
+            </li>
             {isAuthorized ? (
               <li>
                 <StyledLink to="#" className={`${!hidden && "active"}`}>

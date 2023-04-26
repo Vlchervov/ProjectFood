@@ -130,6 +130,28 @@ export const AppHeaderSecondSection = styled.div`
     }
   }
 
+  .AppHeaderSection__ButtonIsAuthorized {
+    border-radius: 6px;
+    color: #413e3e;
+    background-color: #f0f0f0;
+    border: none;
+    width: 80px;
+    height: 30px;
+    cursor: pointer;
+    font-weight: 700;
+
+    :hover {
+      color: white;
+      background-color: #d84242;
+    }
+
+    ${down("sm")} {
+      font-size: 10px;
+      height: 25px;
+      width: 70px;
+    }
+  }
+
   @keyframes show-dropDown {
     0% {
       opacity: 0;

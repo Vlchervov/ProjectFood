@@ -13,23 +13,46 @@ export const NewSection = styled.section`
   font-weight: 700;
   font-family: "Inter-Bold", "Inter", sans-serif;
   color: rgba(255, 255, 255, 0.9);
-  font-size: 44px;
+  font-size: 42px;
   letter-spacing: -1px;
 
-  ${down("sm")} {
+  ${down("xl")} {
     font-size: 28px;
+  }
+
+  ${down("sm")} {
+    font-size: 25px;
   }
 
   p {
     padding: 0px 14px 4px 14px;
+    user-select: none;
   }
 
   b {
-    background-color: #000000;
+    background-color: #0c8f00;
   }
 
   b:nth-child(2) {
+    background-color: #ff0055;
+  }
+
+  b:nth-child(1) {
+    background-color: #0051ff;
+  }
+  b:nth-child(4) {
     background-color: #00ddc0;
+
+    strong {
+      background-color: #bd19c8;
+    }
+  }
+  b:nth-child(7) {
+    background-color: #000000;
+  }
+  b:nth-child(9) {
+    background-color: #fffb00;
+    color: #000000;
   }
 
   span {
