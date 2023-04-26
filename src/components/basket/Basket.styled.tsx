@@ -17,6 +17,12 @@ export const BasketSection = styled.section`
     flex-direction: column;
   }
 
+  .listItem {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+  }
+
   label {
     user-select: none;
     cursor: pointer;
@@ -140,7 +146,6 @@ export const BasketSection = styled.section`
 
   .cardWrapper {
     display: flex;
-    align-items: flex-end;
     border-radius: 25px;
     margin-bottom: 25px;
     display: flex;
@@ -150,10 +155,11 @@ export const BasketSection = styled.section`
       width: 100%;
     }
 
-    > div {
+    .wrapperEmptyBasket {
       display: flex;
       flex-direction: column;
       align-items: center;
+      margin-top: 150px;
       margin-bottom: 25px;
       align-self: center;
       color: ${(props) => props.theme.color};

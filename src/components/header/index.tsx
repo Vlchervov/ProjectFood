@@ -95,7 +95,6 @@ export const HeaderComponent = (props: IProps) => {
                       О компании
                     </StyledLink>
                   </li>
-
                   <li>
                     <HiMoon
                       onClick={props.toggleTheme}

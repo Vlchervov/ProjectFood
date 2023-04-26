@@ -22,25 +22,28 @@ export const Basket = () => {
   const { cart }: any = useSelector((state) => state);
 
   return (
-    <BasketSection as={motion.section} initial={{ opacity: 0 }} animate={{ opacity: 1, }} exit={{ opacity: 0.6 }} transition={{ ease: "easeOut", duration: 1 }} ref={h2ref}>
+    <BasketSection
+      as={motion.section}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0.6 }}
+      transition={{ ease: "easeOut", duration: 1 }}
+      ref={h2ref}
+    >
       <div className="basket">
         <div className="cardWrapper">
           <>
             {cart.length === 0 ? (
-              <>
-                <div>
-                  <FaShoppingBasket className="emptyBasket" />
-                  <h4>Корзина пуста</h4>
-                  Добавьте товар из меню, чтобы сделать заказ
-                  <Link to="/catalog">
-                    <button className="basket__button">
-                      Перейти в каталог
-                    </button>
-                  </Link>
-                </div>
-              </>
+              <div className="wrapperEmptyBasket">
+                <FaShoppingBasket className="emptyBasket" />
+                <h4>Корзина пуста</h4>
+                Добавьте товар из меню, чтобы сделать заказ
+                <Link to="/catalog">
+                  <button className="basket__button">Перейти в каталог</button>
+                </Link>
+              </div>
             ) : (
-              <>
+              <div className="listItem">
                 <h1>Корзина товаров</h1>
                 <h6
                   onClick={() => {
@@ -56,7 +59,7 @@ export const Basket = () => {
                 {cart.map((item: ICartItem) => (
                   <CartItem key={item.id} item={item} />
                 ))}
-              </>
+              </div>
             )}
           </>
         </div>

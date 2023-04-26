@@ -130,6 +130,19 @@ export const AppHeaderSecondSection = styled.div`
     }
   }
 
+  @keyframes show-dropDown {
+    0% {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    50% {
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(0px);
+    }
+  }
+
   .AppHeaderSection__ButtonAuthorized {
     border: none;
     height: 30px;
@@ -160,6 +173,7 @@ export const AppHeaderSecondSection = styled.div`
     position: absolute;
     border-radius: 12px;
     border: ${(props) => props.theme.border.border};
+    animation: show-dropDown 1s forwards;
     background-color: ${(props) => props.theme.background.color};
 
     li {
