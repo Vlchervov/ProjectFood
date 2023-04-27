@@ -7,7 +7,6 @@ import {
   ModalForAuthorizationWindow,
 } from "./ModalForAuthorized.styled";
 import { AuthorizationForm } from "./AuthorizationForm";
-
 interface IPropsModalForAuthorized {
   isModalForAuthorizationVisible: boolean;
   setIsModalForAuthorizationVisible: Function;

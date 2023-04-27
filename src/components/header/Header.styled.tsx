@@ -42,6 +42,14 @@ export const AppHeader = styled.div`
       color: white;
     }
 
+    &-container {
+      svg {
+      width: 30px;
+      height: 20px;
+      cursor: pointer;
+    }
+    }
+
     &__single-value {
       color: ${(props) => props.theme.color};
     }
@@ -105,7 +113,7 @@ export const AppHeader = styled.div`
   }
 `;
 
-export const AppHeaderSection = styled.div`
+export const HeaderLeftSection = styled.div`
   display: flex;
   svg {
     width: 55px;
@@ -117,7 +125,7 @@ export const AppHeaderSection = styled.div`
   }
 `;
 
-export const AppHeaderSecondSection = styled.div`
+export const HeaderRightSection = styled.div`
   padding-right: 15px;
   display: flex;
   margin: 0;

@@ -1,6 +1,5 @@
 import { useLayoutEffect, useRef, useState } from "react";
 import { CartItem } from "./item/CartItem";
-import "swiper/css/scrollbar";
 import { Link } from "react-router-dom";
 import { FaShoppingBasket } from "react-icons/fa";
 import { ValidateOrderForm } from "../basketOrderForm/validateOrderForm";
@@ -63,7 +62,6 @@ export const Basket = () => {
             )}
           </>
         </div>
-
         {cart.length > 0 ? (
           <>
             {down("sm") ? (

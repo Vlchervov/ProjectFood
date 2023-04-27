@@ -5,7 +5,7 @@ import { CatalogCard } from "./CatalogCard";
 import { useState } from "react";
 
 export const CategoryComponent = (props: IDataContent) => {
-  const [state] = useState(props);
+  const [state] = useState<IDataContent>(props);
   return (
     <>
       <CategoryName id={state.anchor}>{state.name}</CategoryName>

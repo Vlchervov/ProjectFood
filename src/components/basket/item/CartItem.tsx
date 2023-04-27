@@ -2,14 +2,13 @@ import { GoTrashcan } from "react-icons/go";
 import "./_cartItem.scss";
 import { ICartItem } from "../../../interfaces";
 import { useActions } from "../../../hooks/useActions";
-
 interface PropsCart {
   item: ICartItem;
 }
 
 export const CartItem = (props: PropsCart) => {
   const { decrease, removeItem, increase } = useActions()
-
+  
   return (
     <div className="product">
       <div className="product__item">

@@ -13,7 +13,6 @@ export const ValidateOrderForm = (props) => {
   });
   const { currentCity, isAuthorized, setIsModalForAuthorizationVisible } =
     useContext(CartContext);
-
   const totalCount = props.cart.reduce((count, item) => item.count + count, 0);
   const totalPrice = props.cart.reduce(
     (amount, item) => item.priceTotal + amount,
