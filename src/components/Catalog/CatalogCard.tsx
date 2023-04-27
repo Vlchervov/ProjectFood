@@ -4,6 +4,7 @@ import { CategoriesItem } from "./Catalog.styled";
 import { ICartItem } from "../../interfaces";
 import { useSelector } from "react-redux";
 import { useActions } from "../../hooks/useActions";
+import { motion } from "framer-motion";
 
 interface IPropsCard extends ICartItem {
   price: number;
@@ -22,7 +23,11 @@ export const CatalogCard = (props: IPropsCard) => {
   };
 
   return (
-    <CategoriesItem>
+    <CategoriesItem
+      as={motion.div}
+      whileHover={{ scale: 1.05 }}
+      whileTap={{ scale: 1.05 }}
+    >
       <SwiperComponent img={props.src} />
       <div className="categories__body">
         <p className="categories__title">
@@ -61,6 +66,7 @@ export const CatalogCard = (props: IPropsCard) => {
                   </div>
                 );
               }
+              return null;
             })
           ) : (
             <>

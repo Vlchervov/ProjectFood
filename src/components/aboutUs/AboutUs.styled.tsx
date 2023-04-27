@@ -15,7 +15,6 @@ export const NewSection = styled.section`
   color: rgba(255, 255, 255, 0.9);
   font-size: 42px;
   letter-spacing: -1px;
-
   ${down("xl")} {
     font-size: 28px;
   }
@@ -61,7 +60,7 @@ export const NewSection = styled.section`
     opacity: 0;
   }
 
-  :nth-child(2) {
+  :nth-child(3) {
     margin: 0;
     background: #ffffff;
 
@@ -95,12 +94,12 @@ export const NewSection = styled.section`
     }
   }
 
-  :nth-child(3) {
+  :nth-child(4) {
     background: #bd19c8;
     text-decoration: underline;
   }
 
-  :nth-child(4) {
+  :nth-child(5) {
     background: #0077ff;
   }
 `;

@@ -19,6 +19,7 @@ import {
 } from "./Header.styled";
 import { ModalForAuthorization } from "./ModalForAuthorized";
 import { useSelector } from "react-redux";
+import Scrollspy from "react-scrollspy";
 
 interface IProps {
   toggleTheme(): void;
@@ -157,9 +158,9 @@ export const HeaderComponent = (props: IProps) => {
               if (item.city === currentCity) {
                 return (
                   <li
-                    className={`${
-                      window.location.hash === item.anchorID && "enabled"
-                    }`}
+                    // className={`${
+                    //   window.location.hash === item.anchorID && "enabled"
+                    // }`}
                     key={item.name}
                   >
                     <a href={item.anchorID}>{item.name}</a>

@@ -6,9 +6,10 @@ import { SwiperParamsForCatalog } from "../Swiper/SwiperOptions";
 import CartContext from "../../context/cart/cartContext";
 import { Catalog } from "./Catalog.styled";
 import { motion } from "framer-motion";
+import { AiOutlineArrowUp } from "react-icons/ai";
 
 export const CatalogComponent = () => {
-  const { currentCity } = useContext(CartContext);
+  const { currentCity, scroll, handleButton } = useContext(CartContext);
   const [state] = useState(data.data);
   const h3ref = useRef<HTMLInputElement>(null);
   useLayoutEffect(() => {
@@ -16,7 +17,18 @@ export const CatalogComponent = () => {
   }, []);
 
   return (
-    <Catalog as={motion.div} initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} transition={{ ease: "easeOut", duration: .9 }} ref={h3ref}>
+    <Catalog
+      as={motion.div}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      transition={{ ease: "easeOut", duration: 0.9 }}
+      ref={h3ref}
+    >
+      <AiOutlineArrowUp
+        onClick={handleButton}
+        className={`arrowUp ${scroll > 700 && "show"}`}
+      />
       <Swiper className="catalog__swiper" {...SwiperParamsForCatalog}>
         <SwiperSlide>
           <img src="https://resizer.mail.ru/p/083fe3e5-6920-520e-a615-cc428ff3c43d/AAAcjXqsavsNPQPfw8sz4Q5wHG-Dcr1HeTbtVo_4w3TRRydCukIHCe2cfC9FYHfQTaoWnxiq-6vMgZKjRJjpK1FhUbU.jpg" />
@@ -32,6 +44,7 @@ export const CatalogComponent = () => {
         if (e.city === currentCity) {
           return <CategoryComponent {...e} key={e.name} />;
         }
+        return null;
       })}
     </Catalog>
   );

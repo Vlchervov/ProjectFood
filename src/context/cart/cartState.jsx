@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import CartContext from "./cartContext";
 
 const CartState = ({ children }) => {
@@ -6,6 +6,25 @@ const CartState = ({ children }) => {
   const [isAuthorized, setIsAuthorized] = useState(false);
   const [isModalForAuthorizationVisible, setIsModalForAuthorizationVisible] =
     useState(false);
+
+  const [scroll, setScroll] = useState(0);
+
+  const handleScroll = () => {
+    setScroll(window.scrollY);
+  };
+
+  const handleButton = () => {
+    window.scrollTo(0, 0);
+  };
+
+  const refHandler = (ref) => {
+    ref.current.scrollIntoView();
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
     <CartContext.Provider
@@ -16,6 +35,9 @@ const CartState = ({ children }) => {
         setIsAuthorized,
         isModalForAuthorizationVisible,
         setIsModalForAuthorizationVisible,
+        handleButton,
+        scroll,
+        refHandler,
       }}
     >
       {children}

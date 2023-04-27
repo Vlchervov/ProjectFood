@@ -18,7 +18,7 @@ export function AnimationSection({ children }: IAnimation) {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0.6 }}
-      transition={{ ease: "easeOut", duration: 1 }}
+      transition={{ ease: "easeOut", duration: 0.6 }}
     >
       <span
         style={{

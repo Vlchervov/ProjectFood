@@ -73,6 +73,8 @@ export const CategoriesItem = styled.div`
   margin-bottom: 30px;
   box-shadow: 0px 11px 13px 8px rgba(0, 0, 0, 0.2);
 
+
+
   ${down("sm")} {
     margin-left: 0px;
     padding-left: 0px;
@@ -133,7 +135,7 @@ export const CategoriesItem = styled.div`
       cursor: pointer;
 
       :hover {
-        transition: all 0.400s;
+        transition: all 0.4s;
         color: white;
         text-decoration: none;
         background-color: #4e9edf;

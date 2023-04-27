@@ -1,8 +1,17 @@
+import { useContext } from "react";
 import { AnimationSection } from "./animation";
+import { AiOutlineArrowUp } from "react-icons/ai";
+import CartContext from "../../context/cart/cartContext";
 
 export const AboutUs = () => {
+  const { scroll, handleButton } = useContext(CartContext);
+
   return (
     <>
+      <AiOutlineArrowUp
+        onClick={handleButton}
+        className={`arrowUp ${scroll > 700 && "show"}`}
+      />
       <AnimationSection>
         <h2>О компании</h2>
         <p>

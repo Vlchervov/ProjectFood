@@ -1,4 +1,5 @@
 import { createGlobalStyle } from "styled-components";
+import { down } from "styled-breakpoints";
 
 export default createGlobalStyle`
 body {
@@ -11,6 +12,35 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+.arrowUp {
+  position: fixed;
+  width: 45px;
+  height: 45px;
+  cursor: pointer;
+  top: 90%;
+  right: 30px;
+  opacity: 0;
+  transition: ease-out opacity .2s;
+  color: #4C4C4C;
+  background-color: #F3EBEB;
+  border-radius: 25px;
+  z-index: 999;
+
+  ${down("sm")} {
+   right: 20px;
+  }
+}
+
+.show {
+    opacity: 0.8;
+    transition: ease-in opacity .3s;
+    :hover {
+    opacity: 1;
+    background-color: white;
+    color: #000;
+  }
+  }
 
 .App {
   text-align: flex-start;
@@ -48,11 +78,13 @@ body {
   color: #61dafb;
 }
 
-
-
-html {
-  scroll-behavior: smooth;
-}
+.enabled {
+    color: white;
+    background: #dc3d3d;
+    a {
+      color: white;
+    }
+  }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
