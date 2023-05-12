@@ -32,9 +32,6 @@ export const ModalForAuthorization = (props: IPropsModalForAuthorized) => {
           </ModalForAuthorizationHeader>
           <ModalForAuthorizationBody>
             <AuthorizationForm />
-            <h6>
-              Ещё не зарегистрированы? <strong>Получить аккаунт</strong>
-            </h6>
           </ModalForAuthorizationBody>
         </ModalForAuthorizationWindow>
       </Transition>

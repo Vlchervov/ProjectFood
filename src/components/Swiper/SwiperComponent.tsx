@@ -4,7 +4,15 @@ import "swiper/css/effect-fade";
 import "swiper/css/pagination";
 import { SwiperParamsForCatalogCard } from "./SwiperOptions";
 
-export const SwiperComponent = (props) => {
+interface IProps {
+  img: {
+    image_1?: string;
+    image_2?: string;
+    image_3?: string;
+  };
+}
+
+export const SwiperComponent = (props: IProps) => {
   return (
     <Swiper className="swiperCard" {...SwiperParamsForCatalogCard}>
       <SwiperSlide>

@@ -44,10 +44,10 @@ export const AppHeader = styled.div`
 
     &-container {
       svg {
-      width: 30px;
-      height: 20px;
-      cursor: pointer;
-    }
+        width: 30px;
+        height: 20px;
+        cursor: pointer;
+      }
     }
 
     &__single-value {

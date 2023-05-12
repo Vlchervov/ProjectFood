@@ -1,6 +1,5 @@
 import styled from "styled-components";
 
-
 export const ModalForAuthorizationSection = styled.section`
   display: flex;
   @keyframes show-modal {
@@ -8,10 +7,10 @@ export const ModalForAuthorizationSection = styled.section`
       opacity: 0;
       transform: translateY(-200px);
     }
-    50%{
+    50% {
       opacity: 1;
     }
-    100%{
+    100% {
       transform: translateY(0px);
     }
   }
@@ -44,7 +43,7 @@ export const ModalForAuthorizationHeader = styled.div`
     justify-content: center;
     width: 32px;
     height: 32px;
-    animation: show-modal .5s forwards;
+    animation: show-modal 0.5s forwards;
 
     :hover {
       transition: background-color 1s;
@@ -74,10 +73,10 @@ export const ModalForAuthorizationBody = styled.div`
   padding: 2rem;
   width: 375px;
   background-color: #fff;
-  height: 262px;
+  height: 222px;
   z-index: 4;
   border-radius: 15px;
-  animation: show-modal .5s forwards;
+  animation: show-modal 0.5s forwards;
   h1 {
     padding: 0;
     margin: 0;
@@ -104,12 +103,59 @@ export const ModalForAuthorizationBody = styled.div`
     }
   }
 
+  .AuthPhoneContent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 42px;
+
+    input {
+      outline: none;
+      border-radius: 2px;
+      border: none;
+      background-color: #ecebeb;
+    }
+
+    button {
+      background-color: #307df0;
+      color: white;
+      border: none;
+      padding: 12px 15px 15px 15px;
+      width: 65%;
+      height: 48px;
+      margin: 25px 0px 15px 0px;
+      border-radius: 12px;
+      cursor: pointer;
+
+      :hover {
+        background-color: #2d75e0;
+      }
+
+      :disabled {
+        color: #000;
+        background-color: #a7a7a7;
+      }
+    }
+  }
+
   .AuthContent {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     padding-top: 12px;
+
+    .otpAuth {
+      margin: 0;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .otpInputAuth {
+      :not(:nth-child(1)) {
+        margin-left: 10px;
+      }
+    }
 
     input {
       padding: 12px 15px 15px 15px;

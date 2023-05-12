@@ -41,8 +41,9 @@ export const HeaderComponent = (props: IProps) => {
           <ul className="menu">
             <li>
               <StyledLink
-                className={`BiMenu ${useLocation().pathname === "/catalog" && "active"
-                  }`}
+                className={`BiMenu ${
+                  useLocation().pathname === "/catalog" && "active"
+                }`}
                 to="catalog"
               >
                 <BiMenu />
@@ -71,8 +72,9 @@ export const HeaderComponent = (props: IProps) => {
               if (item.city === currentCity) {
                 return (
                   <li
-                    className={`${window.location.hash === item.anchorID && "enabled"
-                      }`}
+                    className={`${
+                      window.location.hash === item.anchorID && "enabled"
+                    }`}
                     key={item.name}
                   >
                     <a href={item.anchorID}>{item.name}</a>
