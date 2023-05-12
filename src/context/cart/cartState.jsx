@@ -3,9 +3,11 @@ import CartContext from "./cartContext";
 
 const CartState = ({ children }) => {
   const [currentCity, setCurrentCity] = useState("Новокузнецк");
-  const [isAuthorized, setIsAuthorized] = useState(false);
+  const [isAuthorized, setIsAuthorized] = useState(null);
   const [isModalForAuthorizationVisible, setIsModalForAuthorizationVisible] =
     useState(false);
+  const [phoneNumber, setPhoneNumber] = useState("");
+  const [ShowOTP, setShowOTP] = useState(false);
 
   const [scroll, setScroll] = useState(0);
 

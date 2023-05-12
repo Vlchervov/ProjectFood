@@ -1,5 +1,5 @@
 import { Transition } from "react-transition-group";
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import {
   ModalForAuthorizationBody,
   ModalForAuthorizationHeader,
@@ -9,11 +9,14 @@ import {
 import { AuthorizationForm } from "./AuthorizationForm";
 interface IPropsModalForAuthorized {
   isModalForAuthorizationVisible: boolean;
+  isAuthorized: string;
   setIsModalForAuthorizationVisible: Function;
+  setIsAuthorized: Function;
 }
 
 export const ModalForAuthorization = (props: IPropsModalForAuthorized) => {
   const nodeRef = useRef<HTMLInputElement>(null);
+
   return (
     <ModalForAuthorizationSection>
       <Transition
@@ -31,7 +34,14 @@ export const ModalForAuthorization = (props: IPropsModalForAuthorized) => {
             </div>
           </ModalForAuthorizationHeader>
           <ModalForAuthorizationBody>
-            <AuthorizationForm />
+            <div id="recaptcha-container" className="CAPTCHA"></div>
+            {!props.isAuthorized ? (
+              <AuthorizationForm setIsAuthorized={props.setIsAuthorized} />
+            ) : (
+              <>
+                <h1>Профиль</h1>
+              </>
+            )}
           </ModalForAuthorizationBody>
         </ModalForAuthorizationWindow>
       </Transition>

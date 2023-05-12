@@ -85,6 +85,18 @@ export const ModalForAuthorizationBody = styled.div`
     font-size: 18px;
   }
 
+  .CAPTCHA {
+    .grecaptcha-badge {
+      position: fixed;
+      bottom: 0px;
+    }
+  }
+
+  .grecaptcha-badge {
+      position: fixed;
+      bottom: 0px;
+    }
+
   h6 {
     padding: 0;
     margin: 0;

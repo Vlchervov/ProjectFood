@@ -27,14 +27,7 @@ export const HeaderRight = (props: IProps) => {
   return (
     <HeaderRightSection>
       <ul className="menu">
-        <li>
-          <button
-            onClick={() => setIsAuthorized(!isAuthorized)}
-            className="AppHeaderSection__ButtonIsAuthorized"
-          >
-            {isAuthorized ? "Выйти" : "FakeAuth"}
-          </button>
-        </li>
+        <li></li>
         {isAuthorized ? (
           <li>
             <StyledLink to="#" className={`${!hidden && "active"}`}>
@@ -66,6 +59,8 @@ export const HeaderRight = (props: IProps) => {
               Войти
             </button>
             <ModalForAuthorization
+              isAuthorized={isAuthorized}
+              setIsAuthorized={setIsAuthorized}
               isModalForAuthorizationVisible={isModalForAuthorizationVisible}
               setIsModalForAuthorizationVisible={
                 setIsModalForAuthorizationVisible

@@ -2,17 +2,61 @@ import { useState } from "react";
 import OTPInput from "react-otp-input";
 import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
+import { signInWithPhoneNumber, RecaptchaVerifier } from "firebase/auth";
 import ru from "react-phone-input-2/lang/ru.json";
+import { auth } from "../../../../firebase.config";
 
-export const AuthorizationForm = () => {
+export const AuthorizationForm = (props) => {
   const [otpState, setOtpState] = useState("");
   const [phoneNumber, setPhoneNumber] = useState("");
   const [ShowOTP, setShowOTP] = useState(false);
-  console.log(phoneNumber.length);
+
+  function onCapthVerify() {
+    if (!window.recaptchaVerifier) {
+      window.recaptchaVerifier = new RecaptchaVerifier(
+        "recaptcha-container",
+        {
+          size: "invisible",
+          callback: (response) => {
+            onSignUp();
+          },
+          "expired-callback": () => {},
+        },
+        auth
+      );
+    }
+  }
+
+  function onSignUp() {
+    onCapthVerify();
+
+    const appVerifier = window.recaptchaVerifier;
+    const fortmatPh = "+" + phoneNumber;
+    signInWithPhoneNumber(auth, fortmatPh, appVerifier)
+      .then((confirmationResult) => {
+        window.confirmationResult = confirmationResult;
+        setShowOTP(true);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }
+
+  function onOTPVerify() {
+    window.confirmationResult
+      .confirm(otpState)
+      .then(async (result) => {
+        props.setIsAuthorized(result);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }
+
   return (
     <>
       {ShowOTP ? (
-        <form>
+        <>
           <div className="AuthContent">
             <h1>Вход в аккаунт</h1>
             <OTPInput
@@ -23,9 +67,9 @@ export const AuthorizationForm = () => {
               containerStyle="otpAuth"
               inputStyle="otpInputAuth"
             ></OTPInput>
-            <button>Войти</button>
+            <button onClick={onOTPVerify}>Войти</button>
           </div>
-        </form>
+        </>
       ) : (
         <div className="AuthPhoneContent">
           <label>
@@ -40,14 +84,7 @@ export const AuthorizationForm = () => {
               onChange={setPhoneNumber}
             />
           </label>
-          <button
-            disabled={phoneNumber.length < 11}
-            onClick={() =>
-              setTimeout(() => {
-                setShowOTP(true);
-              }, 1000)
-            }
-          >
+          <button disabled={phoneNumber.length < 11} onClick={onSignUp}>
             Получить код
           </button>
         </div>
