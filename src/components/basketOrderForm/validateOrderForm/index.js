@@ -4,6 +4,7 @@ import { OrderForm } from "..";
 import { newAxiosInstance } from "../../API/Api";
 import CartContext from "../../../context/cart/cartContext";
 import { useActions } from "../../../hooks/useActions";
+import { useNavigate } from "react-router";
 
 export const ValidateOrderForm = (props) => {
   const { cleanArray } = useActions();
@@ -11,13 +12,14 @@ export const ValidateOrderForm = (props) => {
   const [disabledState, setDisabledSatte] = useState({
     disabled: false,
   });
-  const { currentCity, isAuthorized, setIsModalForAuthorizationVisible } =
-    useContext(CartContext);
+  const { currentCity, isAuthorized } = useContext(CartContext);
   const totalCount = props.cart.reduce((count, item) => item.count + count, 0);
   const totalPrice = props.cart.reduce(
     (amount, item) => item.priceTotal + amount,
     0
   );
+
+  const navigate = useNavigate();
 
   async function onSubmit(data) {
     try {
@@ -43,7 +45,7 @@ export const ValidateOrderForm = (props) => {
               }, 1200);
             });
         }
-        setIsModalForAuthorizationVisible(true);
+        navigate("/authorization");
       } else {
         setErrorState("Неправильный номер");
       }

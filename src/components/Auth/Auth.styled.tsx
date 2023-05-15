@@ -1,7 +1,13 @@
 import styled from "styled-components";
 
-export const ModalForAuthorizationSection = styled.section`
+export const AuthSection = styled.section`
+  flex: 1 1 auto;
+  padding-bottom: 100px;
+  padding-top: 125px;
   display: flex;
+  align-items: center;
+  justify-content: center;
+
   @keyframes show-modal {
     0% {
       opacity: 0;
@@ -16,21 +22,17 @@ export const ModalForAuthorizationSection = styled.section`
   }
 `;
 
-export const ModalForAuthorizationWindow = styled.div`
-  position: fixed;
+export const AuthorizationWindow = styled.div`
+  box-shadow: 4px 5px 10px 0px rgba(0, 0, 0, 0.4);
+  border-radius: 8px;
   display: grid;
   justify-content: center;
   align-content: center;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  background: rgba(0, 0, 0, 0.2);
-  backdrop-filter: blur(4px);
   z-index: 2;
+  animation: show-modal 0.5s forwards;
 `;
 
-export const ModalForAuthorizationHeader = styled.div`
+export const AuthorizationHeader = styled.div`
   display: flex;
   justify-content: flex-end;
   div {
@@ -43,7 +45,6 @@ export const ModalForAuthorizationHeader = styled.div`
     justify-content: center;
     width: 32px;
     height: 32px;
-    animation: show-modal 0.5s forwards;
 
     :hover {
       transition: background-color 1s;
@@ -69,7 +70,7 @@ export const ModalForAuthorizationHeader = styled.div`
   }
 `;
 
-export const ModalForAuthorizationBody = styled.div`
+export const AuthorizationBody = styled.div`
   padding: 2rem;
   width: 375px;
   background-color: #fff;
@@ -93,9 +94,9 @@ export const ModalForAuthorizationBody = styled.div`
   }
 
   .grecaptcha-badge {
-      position: fixed;
-      bottom: 0px;
-    }
+    position: fixed;
+    bottom: 0px;
+  }
 
   h6 {
     padding: 0;

@@ -4,7 +4,7 @@ import "./_footer.scss";
 export const FooterComponent = () => {
   return (
     <>
-      {useLocation().pathname !== "/basket" ? (
+      {useLocation().pathname === "/catalog" ? (
         <div className="footer">
           <div className="footer__section">
             <div className="footer__item footerLogo">#LOGO</div>

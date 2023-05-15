@@ -1,15 +1,18 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import OTPInput from "react-otp-input";
 import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
 import { signInWithPhoneNumber, RecaptchaVerifier } from "firebase/auth";
 import ru from "react-phone-input-2/lang/ru.json";
-import { auth } from "../../../../firebase.config";
+import { auth } from "../../../firebase.config";
+import CartContext from "../../../context/cart/cartContext";
+import { redirect } from "react-router";
 
-export const AuthorizationForm = (props) => {
+export const AuthorizationForm = () => {
   const [otpState, setOtpState] = useState("");
   const [phoneNumber, setPhoneNumber] = useState("");
   const [ShowOTP, setShowOTP] = useState(false);
+  const { setIsAuthorized } = useContext(CartContext);
 
   function onCapthVerify() {
     if (!window.recaptchaVerifier) {
@@ -46,7 +49,9 @@ export const AuthorizationForm = (props) => {
     window.confirmationResult
       .confirm(otpState)
       .then(async (result) => {
-        props.setIsAuthorized(result);
+        console.log(result.user);
+        setIsAuthorized(true);
+        localStorage.setItem("user", result.user.phoneNumber);
       })
       .catch((err) => {
         console.log(err);

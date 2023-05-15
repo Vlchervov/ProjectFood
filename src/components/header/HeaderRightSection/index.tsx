@@ -6,7 +6,6 @@ import CartContext from "../../../context/cart/cartContext";
 import { HiMoon } from "react-icons/hi2";
 import { BiUser } from "react-icons/bi";
 import { FaShoppingCart } from "react-icons/fa";
-import { ModalForAuthorization } from "../ModalForAuthorized";
 import { DefaultTheme } from "styled-components";
 
 interface IProps {
@@ -17,55 +16,50 @@ interface IProps {
 export const HeaderRight = (props: IProps) => {
   const { cart }: any = useSelector((state) => state);
   const [hidden, setHidden] = useState<boolean>(true);
-  const {
-    isAuthorized,
-    isModalForAuthorizationVisible,
-    setIsModalForAuthorizationVisible,
-    setIsAuthorized,
-  } = useContext(CartContext);
+  const { isAuthorized, setIsAuthorized } = useContext(CartContext);
 
   return (
     <HeaderRightSection>
       <ul className="menu">
-        <li></li>
         {isAuthorized ? (
-          <li>
-            <StyledLink to="#" className={`${!hidden && "active"}`}>
-              <BiUser onClick={() => setHidden(!hidden)} />
-            </StyledLink>
-            <ul className="dropDown" hidden={hidden}>
-              <li>
-                <StyledLink
-                  className={`${
-                    window.location.pathname === "/about-us" && "active"
-                  }`}
-                  to="about-us"
-                >
-                  О компании
-                </StyledLink>
-              </li>
-              <li>
-                <HiMoon onClick={props.toggleTheme} className="switchTheme" />
-                <h6 onClick={props.toggleTheme}>{props.theme.title}</h6>
-              </li>
-            </ul>
-          </li>
-        ) : (
           <>
             <button
-              className="AppHeaderSection__ButtonAuthorized"
-              onClick={() => setIsModalForAuthorizationVisible(true)}
+              onClick={() => {
+                localStorage.removeItem("user");
+                setIsAuthorized(false);
+              }}
             >
-              Войти
+              Выйти
             </button>
-            <ModalForAuthorization
-              isAuthorized={isAuthorized}
-              setIsAuthorized={setIsAuthorized}
-              isModalForAuthorizationVisible={isModalForAuthorizationVisible}
-              setIsModalForAuthorizationVisible={
-                setIsModalForAuthorizationVisible
-              }
-            />
+            <li>
+              <StyledLink to="#" className={`${!hidden && "active"}`}>
+                <BiUser onClick={() => setHidden(!hidden)} />
+              </StyledLink>
+              <ul className="dropDown" hidden={hidden}>
+                <li>
+                  <StyledLink
+                    className={`${
+                      window.location.pathname === "/about-us" && "active"
+                    }`}
+                    to="about-us"
+                  >
+                    О компании
+                  </StyledLink>
+                </li>
+                <li>
+                  <HiMoon onClick={props.toggleTheme} className="switchTheme" />
+                  <h6 onClick={props.toggleTheme}>{props.theme.title}</h6>
+                </li>
+              </ul>
+            </li>
+          </>
+        ) : (
+          <>
+            <StyledLink to="authorization">
+              <button className="AppHeaderSection__ButtonAuthorized">
+                Войти
+              </button>
+            </StyledLink>
           </>
         )}
         <li>

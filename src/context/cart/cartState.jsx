@@ -1,13 +1,13 @@
 import { useState, useEffect } from "react";
 import CartContext from "./cartContext";
+import { redirect, useNavigate } from "react-router";
 
 const CartState = ({ children }) => {
   const [currentCity, setCurrentCity] = useState("Новокузнецк");
-  const [isAuthorized, setIsAuthorized] = useState(null);
+  const [isAuthorized, setIsAuthorized] = useState(false);
   const [isModalForAuthorizationVisible, setIsModalForAuthorizationVisible] =
     useState(false);
-  const [phoneNumber, setPhoneNumber] = useState("");
-  const [ShowOTP, setShowOTP] = useState(false);
+  const navigate = useNavigate();
 
   const [scroll, setScroll] = useState(0);
 
@@ -26,6 +26,13 @@ const CartState = ({ children }) => {
   useEffect(() => {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  useEffect(() => {
+    if (localStorage.getItem("user")) {
+      setIsAuthorized(true);
+      navigate("/profile");
+    }
   }, []);
 
   return (

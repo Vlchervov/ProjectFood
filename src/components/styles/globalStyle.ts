@@ -50,7 +50,6 @@ html {
   text-align: flex-start;
   display: flex;
   flex-direction: column;
-  
 }
 
 @font-face {
