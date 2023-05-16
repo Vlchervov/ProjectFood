@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { AnimationSection } from "./animation";
 import { AiOutlineArrowUp } from "react-icons/ai";
-import CartContext from "../../context/cart/cartContext";
+import CartContext from "../../context/global/globalContext";
 
 export const AboutUs = () => {
   const { scroll, handleButton } = useContext(CartContext);

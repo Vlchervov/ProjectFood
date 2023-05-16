@@ -1,6 +1,6 @@
 import { useContext, useState } from "react";
 import { useLocation } from "react-router-dom";
-import CartContext from "../../context/cart/cartContext";
+import CartContext from "../../context/global/globalContext";
 import { BiMenu } from "react-icons/bi";
 import data from "../../data/categories.json";
 import Select from "react-select";

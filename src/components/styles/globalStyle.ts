@@ -24,6 +24,7 @@ html {
   cursor: pointer;
   top: 90%;
   right: 30px;
+  display: none;
   opacity: 0;
   transition: ease-out opacity .2s;
   color: #4C4C4C;
@@ -37,6 +38,7 @@ html {
 }
 
 .show {
+    display: block;
     opacity: 0.8;
     transition: ease-in opacity .3s;
     :hover {

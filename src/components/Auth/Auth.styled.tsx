@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 export const AuthSection = styled.section`
   flex: 1 1 auto;
+  width: 100%;
   padding-bottom: 100px;
   padding-top: 125px;
   display: flex;
@@ -24,6 +25,7 @@ export const AuthSection = styled.section`
 
 export const AuthorizationWindow = styled.div`
   box-shadow: 4px 5px 10px 0px rgba(0, 0, 0, 0.4);
+  margin-top: 150px;
   border-radius: 8px;
   display: grid;
   justify-content: center;

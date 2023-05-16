@@ -2,7 +2,7 @@ import { useState, useContext } from "react";
 import validator from "validator";
 import { OrderForm } from "..";
 import { newAxiosInstance } from "../../API/Api";
-import CartContext from "../../../context/cart/cartContext";
+import CartContext from "../../../context/global/globalContext";
 import { useActions } from "../../../hooks/useActions";
 import { useNavigate } from "react-router";
 

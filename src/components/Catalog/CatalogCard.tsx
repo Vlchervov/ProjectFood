@@ -25,8 +25,8 @@ export const CatalogCard = (props: IPropsCard) => {
   return (
     <CategoriesItem
       as={motion.div}
-      whileHover={{ scale: 1.05 }}
-      whileTap={{ scale: 1.05 }}
+      whileHover={{ scale: 1.02 }}
+      whileTap={{ scale: 1.02 }}
     >
       <SwiperComponent img={props.src} />
       <div className="categories__body">

@@ -5,8 +5,7 @@ import "react-phone-input-2/lib/style.css";
 import { signInWithPhoneNumber, RecaptchaVerifier } from "firebase/auth";
 import ru from "react-phone-input-2/lang/ru.json";
 import { auth } from "../../../firebase.config";
-import CartContext from "../../../context/cart/cartContext";
-import { redirect } from "react-router";
+import CartContext from "../../../context/global/globalContext";
 
 export const AuthorizationForm = () => {
   const [otpState, setOtpState] = useState("");

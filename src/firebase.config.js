@@ -13,17 +13,11 @@ import { getAuth } from "firebase/auth";
 
 const firebaseConfig = {
   apiKey: "AIzaSyBlst9dINQARvSfN5VDHemniy9KZN03FIo",
-
   authDomain: "projectfood-95943.firebaseapp.com",
-
   projectId: "projectfood-95943",
-
   storageBucket: "projectfood-95943.appspot.com",
-
   messagingSenderId: "149893063487",
-
   appId: "1:149893063487:web:58fba977a70971017ca98a",
-
   measurementId: "G-8LY5CHDV43",
 };
 

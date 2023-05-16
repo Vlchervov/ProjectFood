@@ -1,13 +1,11 @@
 import { useState, useEffect } from "react";
-import CartContext from "./cartContext";
-import { redirect, useNavigate } from "react-router";
+import GlobalContext from "./globalContext";
 
-const CartState = ({ children }) => {
+const GlobalState = ({ children }) => {
   const [currentCity, setCurrentCity] = useState("Новокузнецк");
   const [isAuthorized, setIsAuthorized] = useState(false);
   const [isModalForAuthorizationVisible, setIsModalForAuthorizationVisible] =
     useState(false);
-  const navigate = useNavigate();
 
   const [scroll, setScroll] = useState(0);
 
@@ -31,12 +29,11 @@ const CartState = ({ children }) => {
   useEffect(() => {
     if (localStorage.getItem("user")) {
       setIsAuthorized(true);
-      navigate("/profile");
     }
   }, []);
 
   return (
-    <CartContext.Provider
+    <GlobalContext.Provider
       value={{
         currentCity,
         setCurrentCity,
@@ -50,8 +47,8 @@ const CartState = ({ children }) => {
       }}
     >
       {children}
-    </CartContext.Provider>
+    </GlobalContext.Provider>
   );
 };
 
-export default CartState;
+export default GlobalState;

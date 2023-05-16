@@ -2,11 +2,11 @@ import { useSelector } from "react-redux";
 import { HeaderRightSection, StyledLink, ItemCount } from "../Header.styled";
 import { useContext, useState } from "react";
 import { useLocation } from "react-router-dom";
-import CartContext from "../../../context/cart/cartContext";
 import { HiMoon } from "react-icons/hi2";
 import { BiUser } from "react-icons/bi";
 import { FaShoppingCart } from "react-icons/fa";
 import { DefaultTheme } from "styled-components";
+import GlobalContext from "../../../context/global/globalContext";
 
 interface IProps {
   toggleTheme(): void;
@@ -16,7 +16,7 @@ interface IProps {
 export const HeaderRight = (props: IProps) => {
   const { cart }: any = useSelector((state) => state);
   const [hidden, setHidden] = useState<boolean>(true);
-  const { isAuthorized, setIsAuthorized } = useContext(CartContext);
+  const { isAuthorized, setIsAuthorized } = useContext(GlobalContext);
 
   return (
     <HeaderRightSection>
