@@ -1,4 +1,14 @@
-import { Autoplay, EffectFade, Pagination, SwiperOptions } from "swiper";
+import {
+  Autoplay,
+  EffectFade,
+  Navigation,
+  Pagination,
+  Scrollbar,
+  SwiperOptions,
+} from "swiper";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import "swiper/css/scrollbar";
 
 export const SwiperParamsForCatalogCard: SwiperOptions = {
   speed: 500,
@@ -8,6 +18,16 @@ export const SwiperParamsForCatalogCard: SwiperOptions = {
   modules: [Pagination],
   pagination: {
     clickable: true,
+  },
+  grabCursor: true,
+};
+
+export const SwiperOptionsForBasket: SwiperOptions = {
+  slidesPerView: 2,
+  spaceBetween: 0,
+  modules: [Navigation, Scrollbar],
+  scrollbar: {
+    draggable: true,
   },
   grabCursor: true,
 };

@@ -2,9 +2,9 @@ import { useState, useContext } from "react";
 import validator from "validator";
 import { OrderForm } from "..";
 import { newAxiosInstance } from "../../API/Api";
-import CartContext from "../../../context/global/globalContext";
 import { useActions } from "../../../hooks/useActions";
 import { useNavigate } from "react-router";
+import GlobalContext from "../../../context/global/globalContext";
 
 export const ValidateOrderForm = (props) => {
   const { cleanArray } = useActions();
@@ -12,7 +12,7 @@ export const ValidateOrderForm = (props) => {
   const [disabledState, setDisabledSatte] = useState({
     disabled: false,
   });
-  const { currentCity, isAuthorized } = useContext(CartContext);
+  const { currentCity, isAuthorized } = useContext(GlobalContext);
   const totalCount = props.cart.reduce((count, item) => item.count + count, 0);
   const totalPrice = props.cart.reduce(
     (amount, item) => item.priceTotal + amount,

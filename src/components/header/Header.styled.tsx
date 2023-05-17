@@ -72,7 +72,7 @@ export const AppHeader = styled.div`
   .switchTheme {
     cursor: pointer;
     width: 24px;
-    height: 30px;
+    height: 24px;
     color: ${(props) => props.theme.switchTheme.color};
 
     ${down("sm")} {

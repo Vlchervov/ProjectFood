@@ -118,7 +118,7 @@ export const OrderInput = ({
           disabled={disabledState.disabled}
           className="basket__totalAmountButton"
           type="submit"
-          value="Перейти к оформлению заказа"
+          value="Оформить"
         />
       </div>
     </>

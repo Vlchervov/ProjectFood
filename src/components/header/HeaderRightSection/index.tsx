@@ -31,9 +31,12 @@ export const HeaderRight = (props: IProps) => {
             >
               Выйти
             </button>
-            <li>
+            <li
+              onPointerEnter={() => setHidden(false)}
+              onPointerLeave={() => setHidden(true)}
+            >
               <StyledLink to="#" className={`${!hidden && "active"}`}>
-                <BiUser onClick={() => setHidden(!hidden)} />
+                <BiUser />
               </StyledLink>
               <ul className="dropDown" hidden={hidden}>
                 <li>

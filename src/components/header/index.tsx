@@ -1,6 +1,5 @@
 import { useContext, useState } from "react";
 import { useLocation } from "react-router-dom";
-import CartContext from "../../context/global/globalContext";
 import { BiMenu } from "react-icons/bi";
 import data from "../../data/categories.json";
 import Select from "react-select";
@@ -14,6 +13,7 @@ import {
 } from "./Header.styled";
 import { HeaderRight } from "./HeaderRightSection";
 import { DefaultTheme } from "styled-components";
+import GlobalContext from "../../context/global/globalContext";
 
 interface IProps {
   toggleTheme(): void;
@@ -21,8 +21,9 @@ interface IProps {
 }
 
 export const HeaderComponent = (props: IProps) => {
-  const { setCurrentCity, currentCity } = useContext(CartContext);
+  const { setCurrentCity, currentCity } = useContext(GlobalContext);
   const [state] = useState(data.data);
+  const location = useLocation();
 
   const getValue = () => {
     return currentCity
@@ -42,7 +43,7 @@ export const HeaderComponent = (props: IProps) => {
             <li>
               <StyledLink
                 className={`BiMenu ${
-                  useLocation().pathname === "/catalog" && "active"
+                  location.pathname === "/catalog" && "active"
                 }`}
                 to="catalog"
               >
@@ -65,7 +66,7 @@ export const HeaderComponent = (props: IProps) => {
         </HeaderLeftSection>
         <HeaderRight theme={props.theme} toggleTheme={props.toggleTheme} />
       </AppHeader>
-      {useLocation().pathname === "/catalog" ? (
+      {location.pathname === "/catalog" ? (
         <UnderHeader>
           <ul>
             {state.map((item) => {
@@ -73,7 +74,7 @@ export const HeaderComponent = (props: IProps) => {
                 return (
                   <li
                     className={`${
-                      window.location.hash === item.anchorID && "enabled"
+                      location.hash === item.anchorID && "enabled"
                     }`}
                     key={item.name}
                   >

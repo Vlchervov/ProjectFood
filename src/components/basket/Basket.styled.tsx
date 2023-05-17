@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { down } from "styled-breakpoints";
 
 export const BasketSection = styled.section`
   flex: 1 1 auto;
@@ -6,6 +7,19 @@ export const BasketSection = styled.section`
   padding-top: 125px;
   display: flex;
   align-items: center;
+
+  .basketSwiper {
+    width: 490px;
+    height: 485px;
+    border-radius: 8px;
+    padding-left: 16px;
+    background-color: white;
+    box-shadow: none;
+
+    ${down("sm")} {
+      padding: 0;
+    }
+  }
 
   .listWrapper {
     background-color: #fdfcfc;
@@ -86,8 +100,9 @@ export const BasketSection = styled.section`
   .basket {
     width: 100%;
     display: flex;
-    justify-content: space-evenly;
-    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
 
     &__checkbox {
       label {
@@ -95,7 +110,8 @@ export const BasketSection = styled.section`
       }
     }
 
-    &__button {
+    &__returnToCatalogButton,
+    &__goToOrder {
       cursor: pointer;
       border: none;
       width: 270px;
@@ -107,7 +123,7 @@ export const BasketSection = styled.section`
       margin-top: 25px;
 
       &:hover {
-        box-shadow: 4px 5px 10px 0px rgba(0, 0, 0, 0.4);
+        background-color: #2d75e0;
       }
     }
 

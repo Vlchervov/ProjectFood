@@ -5,13 +5,13 @@ import "react-phone-input-2/lib/style.css";
 import { signInWithPhoneNumber, RecaptchaVerifier } from "firebase/auth";
 import ru from "react-phone-input-2/lang/ru.json";
 import { auth } from "../../../firebase.config";
-import CartContext from "../../../context/global/globalContext";
+import GlobalContext from "../../../context/global/globalContext";
 
 export const AuthorizationForm = () => {
   const [otpState, setOtpState] = useState("");
   const [phoneNumber, setPhoneNumber] = useState("");
   const [ShowOTP, setShowOTP] = useState(false);
-  const { setIsAuthorized } = useContext(CartContext);
+  const { setIsAuthorized } = useContext(GlobalContext);
 
   function onCapthVerify() {
     if (!window.recaptchaVerifier) {
