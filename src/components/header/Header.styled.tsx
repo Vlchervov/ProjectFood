@@ -138,7 +138,7 @@ export const HeaderRightSection = styled.div`
     }
   }
 
-  .AppHeaderSection__ButtonIsAuthorized {
+  .AppHeaderSection__buttonLogOut {
     border-radius: 6px;
     color: #413e3e;
     background-color: #f0f0f0;

@@ -1,7 +1,17 @@
-import { useForm, Controller } from "react-hook-form";
+import { useForm, Controller, UseFormRegister } from "react-hook-form";
 import { OrderInput } from "./orderInput";
 
-export const OrderForm = (props) => {
+interface IPropsOrderForm {
+  onSubmit: () => void;
+  setErrorState: Function;
+  disabledState: boolean;
+  errorState: string;
+  currentCity: string;
+  totalCount: number;
+  totalPrice: number;
+}
+
+export const OrderForm = (props: IPropsOrderForm) => {
   const {
     register,
     handleSubmit,

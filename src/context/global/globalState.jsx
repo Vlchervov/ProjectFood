@@ -3,11 +3,14 @@ import GlobalContext from "./globalContext";
 
 const GlobalState = ({ children }) => {
   const [currentCity, setCurrentCity] = useState("Новокузнецк");
-  const [isAuthorized, setIsAuthorized] = useState(false);
   const [isModalForAuthorizationVisible, setIsModalForAuthorizationVisible] =
     useState(false);
-
+  const [user, setUser] = useState(null);
   const [scroll, setScroll] = useState(0);
+  const [isAuthorized, setIsAuthorized] = useState(false);
+  const [otpState, setOtpState] = useState("");
+  const [phoneNumber, setPhoneNumber] = useState("");
+  const [ShowOTP, setShowOTP] = useState(false);
 
   const handleScroll = () => {
     setScroll(window.scrollY);
@@ -29,21 +32,44 @@ const GlobalState = ({ children }) => {
   useEffect(() => {
     if (localStorage.getItem("user")) {
       setIsAuthorized(true);
+      setUser(localStorage.getItem("user"))
     }
-  }, []);
+  }, [])
+
+  const signin = (newUser, cb) => {
+    setUser(newUser);
+    localStorage.setItem("user", newUser);
+    setUser(newUser);
+    setIsAuthorized(true);
+    cb();
+  }
+
+  const signout = (cb) => {
+    setUser(null);
+    setIsAuthorized(false);
+    cb();
+  }
 
   return (
     <GlobalContext.Provider
       value={{
         currentCity,
         setCurrentCity,
-        isAuthorized,
-        setIsAuthorized,
         isModalForAuthorizationVisible,
         setIsModalForAuthorizationVisible,
         handleButton,
         scroll,
         refHandler,
+        isAuthorized,
+        otpState,
+        setOtpState,
+        phoneNumber,
+        setPhoneNumber,
+        ShowOTP,
+        setShowOTP,
+        user,
+        signin,
+        signout
       }}
     >
       {children}

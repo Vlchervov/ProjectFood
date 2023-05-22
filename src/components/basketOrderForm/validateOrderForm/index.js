@@ -1,24 +1,23 @@
-import { useState, useContext } from "react";
+import { useState } from "react";
 import validator from "validator";
 import { OrderForm } from "..";
 import { newAxiosInstance } from "../../API/Api";
 import { useActions } from "../../../hooks/useActions";
 import { useNavigate } from "react-router";
-import GlobalContext from "../../../context/global/globalContext";
+import { useGlobalContext } from "../../../hooks/useGlobalContext";
 
 export const ValidateOrderForm = (props) => {
   const { cleanArray } = useActions();
   const [errorState, setErrorState] = useState("");
-  const [disabledState, setDisabledSatte] = useState({
+  const [disabledState, setDisabledState] = useState({
     disabled: false,
   });
-  const { currentCity, isAuthorized } = useContext(GlobalContext);
+  const { currentCity, isAuthorized } = useGlobalContext();
   const totalCount = props.cart.reduce((count, item) => item.count + count, 0);
   const totalPrice = props.cart.reduce(
     (amount, item) => item.priceTotal + amount,
     0
   );
-
   const navigate = useNavigate();
 
   async function onSubmit(data) {
@@ -34,18 +33,20 @@ export const ValidateOrderForm = (props) => {
               totalPrice: totalPrice,
               city: currentCity,
               infoAboutOrder: {
-                ...props.cart,
+                ...props.cart
               },
             })
             .then(() => {
-              setDisabledSatte({ disabled: true });
+              console.log(props.cart);
+              setDisabledState({ disabled: true });
               setTimeout(() => {
                 cleanArray(null);
                 alert("Заказ создан успешно. Order create succefully!");
               }, 1200);
             });
+        } else {
+          navigate("/authorization");
         }
-        navigate("/authorization");
       } else {
         setErrorState("Неправильный номер");
       }

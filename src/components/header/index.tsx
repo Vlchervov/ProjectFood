@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import { useState } from "react";
 import { useLocation } from "react-router-dom";
 import { BiMenu } from "react-icons/bi";
 import data from "../../data/categories.json";
@@ -13,7 +13,7 @@ import {
 } from "./Header.styled";
 import { HeaderRight } from "./HeaderRightSection";
 import { DefaultTheme } from "styled-components";
-import GlobalContext from "../../context/global/globalContext";
+import { useGlobalContext } from "../../hooks/useGlobalContext";
 
 interface IProps {
   toggleTheme(): void;
@@ -21,7 +21,7 @@ interface IProps {
 }
 
 export const HeaderComponent = (props: IProps) => {
-  const { setCurrentCity, currentCity } = useContext(GlobalContext);
+  const { setCurrentCity, currentCity } = useGlobalContext();
   const [state] = useState(data.data);
   const location = useLocation();
 
@@ -42,12 +42,16 @@ export const HeaderComponent = (props: IProps) => {
           <ul className="menu">
             <li>
               <StyledLink
-                className={`BiMenu ${
-                  location.pathname === "/catalog" && "active"
-                }`}
+                className={`BiMenu ${location.pathname === "/catalog" && "active"
+                  }`}
                 to="catalog"
               >
                 <BiMenu />
+              </StyledLink>
+            </li>
+            <li>
+              <StyledLink to="catalog" className={`${location.pathname === "/catalog" && "active"}`}>
+                // LOGOTYPE //
               </StyledLink>
             </li>
             <li>
@@ -73,9 +77,8 @@ export const HeaderComponent = (props: IProps) => {
               if (item.city === currentCity) {
                 return (
                   <li
-                    className={`${
-                      location.hash === item.anchorID && "enabled"
-                    }`}
+                    className={`${location.hash === item.anchorID && "enabled"
+                      }`}
                     key={item.name}
                   >
                     <a href={item.anchorID}>{item.name}</a>

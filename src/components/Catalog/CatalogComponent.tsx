@@ -1,15 +1,15 @@
 import { CategoryComponent } from "./CategoryComponent";
 import data from "../../data/categories.json";
-import { useContext, useLayoutEffect, useRef, useState } from "react";
+import { useLayoutEffect, useRef, useState } from "react";
 import { SwiperSlide, Swiper } from "swiper/react";
 import { SwiperParamsForCatalog } from "../Swiper/SwiperOptions";
 import { Catalog } from "./Catalog.styled";
 import { motion } from "framer-motion";
 import { AiOutlineArrowUp } from "react-icons/ai";
-import GlobalContext from "../../context/global/globalContext";
+import { useGlobalContext } from "../../hooks/useGlobalContext";
 
 export const CatalogComponent = () => {
-  const { currentCity, scroll, handleButton } = useContext(GlobalContext);
+  const { currentCity, scroll, handleButton } = useGlobalContext();
   const [state] = useState(data.data);
   const h3ref = useRef<HTMLInputElement>(null);
   useLayoutEffect(() => {

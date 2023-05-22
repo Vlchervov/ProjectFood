@@ -1,17 +1,22 @@
-import { useContext, useState } from "react";
+import { useState } from "react";
 import OTPInput from "react-otp-input";
 import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
 import { signInWithPhoneNumber, RecaptchaVerifier } from "firebase/auth";
 import ru from "react-phone-input-2/lang/ru.json";
 import { auth } from "../../../firebase.config";
-import GlobalContext from "../../../context/global/globalContext";
+import { useGlobalContext } from "../../../hooks/useGlobalContext";
+import { useLocation, useNavigate } from "react-router";
 
 export const AuthorizationForm = () => {
   const [otpState, setOtpState] = useState("");
   const [phoneNumber, setPhoneNumber] = useState("");
   const [ShowOTP, setShowOTP] = useState(false);
-  const { setIsAuthorized } = useContext(GlobalContext);
+  const { signin } = useGlobalContext()
+  const navigate = useNavigate()
+  const location = useLocation()
+
+  const fromPage = location.state?.from?.pathname || "/profile";
 
   function onCapthVerify() {
     if (!window.recaptchaVerifier) {
@@ -22,7 +27,7 @@ export const AuthorizationForm = () => {
           callback: (response) => {
             onSignUp();
           },
-          "expired-callback": () => {},
+          "expired-callback": () => { },
         },
         auth
       );
@@ -48,9 +53,7 @@ export const AuthorizationForm = () => {
     window.confirmationResult
       .confirm(otpState)
       .then(async (result) => {
-        console.log(result.user);
-        setIsAuthorized(true);
-        localStorage.setItem("user", result.user.phoneNumber);
+        signin(result.user.phoneNumber, navigate(fromPage, { replace: true }));
       })
       .catch((err) => {
         console.log(err);

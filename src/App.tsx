@@ -6,6 +6,7 @@ import { ThemeProvider } from "styled-components";
 import GlobalStyle from "./components/styles/globalStyle";
 import LightTheme from "./themes/LightTheme";
 import DarkTheme from "./themes/DarkTheme";
+import GlobalState from "./context/global/globalState";
 
 const App = () => {
   const [theme, setTheme] = useState(LightTheme);
@@ -14,14 +15,16 @@ const App = () => {
     setTheme(theme.title === "LightTheme" ? DarkTheme : LightTheme);
   };
   return (
-    <ThemeProvider theme={theme}>
-      <GlobalStyle />
-      <div className="App">
-        <HeaderComponent toggleTheme={toggleTheme} theme={theme} />
-        <AppRouter />
-        <FooterComponent />
-      </div>
-    </ThemeProvider>
+    <GlobalState>
+      <ThemeProvider theme={theme}>
+        <GlobalStyle />
+        <div className="App">
+          <HeaderComponent toggleTheme={toggleTheme} theme={theme} />
+          <AppRouter />
+          <FooterComponent />
+        </div>
+      </ThemeProvider>
+    </GlobalState>
   );
 };
 

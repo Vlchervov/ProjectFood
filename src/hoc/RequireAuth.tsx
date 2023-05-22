@@ -1,14 +1,25 @@
-import { useContext } from "react";
 import { Navigate, useLocation } from "react-router";
-import GlobalContext from "../context/global/globalContext";
 
-export const RequireAuth = ({ children }: any) => {
+interface IChild {
+  children: JSX.Element;
+}
+
+export const RequireProfile = ({ children }: IChild) => {
   const location = useLocation();
-  const { isAuthorized } = useContext(GlobalContext);
 
-  if (!isAuthorized) {
+  if (!localStorage.getItem("user")) {
     return <Navigate to="/authorization" state={{ from: location }} />;
   }
 
   return children;
 };
+
+export const RequireAuthorization = ({ children }: IChild) => {
+  const location = useLocation()
+
+  if (localStorage.getItem("user")) {
+    return <Navigate to="/profile" state={{ from: location }} />
+  }
+
+  return children;
+}

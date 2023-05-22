@@ -65,8 +65,8 @@ export const Basket = () => {
                       className="basketSwiper"
                     >
                       {cart.map((item: ICartItem) => (
-                        <SwiperSlide>
-                          <CartItem key={item.id} item={item} />
+                        <SwiperSlide key={item.id}>
+                          <CartItem item={item} />
                         </SwiperSlide>
                       ))}
                     </Swiper>
