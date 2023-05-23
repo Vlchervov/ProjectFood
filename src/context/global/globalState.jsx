@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import GlobalContext from "./globalContext";
+import { useActions } from "../../hooks/useActions";
 
 const GlobalState = ({ children }) => {
   const [currentCity, setCurrentCity] = useState("Новокузнецк");
@@ -11,6 +12,7 @@ const GlobalState = ({ children }) => {
   const [otpState, setOtpState] = useState("");
   const [phoneNumber, setPhoneNumber] = useState("");
   const [ShowOTP, setShowOTP] = useState(false);
+  const { isAuthProfile } = useActions();
 
   const handleScroll = () => {
     setScroll(window.scrollY);
@@ -32,23 +34,23 @@ const GlobalState = ({ children }) => {
   useEffect(() => {
     if (localStorage.getItem("user")) {
       setIsAuthorized(true);
-      setUser(localStorage.getItem("user"))
+      setUser(localStorage.getItem("user"));
     }
-  }, [])
+  }, []);
 
   const signin = (newUser, cb) => {
     setUser(newUser);
     localStorage.setItem("user", newUser);
-    setUser(newUser);
     setIsAuthorized(true);
+    isAuthProfile(newUser);
     cb();
-  }
+  };
 
   const signout = (cb) => {
     setUser(null);
     setIsAuthorized(false);
     cb();
-  }
+  };
 
   return (
     <GlobalContext.Provider
@@ -69,7 +71,7 @@ const GlobalState = ({ children }) => {
         setShowOTP,
         user,
         signin,
-        signout
+        signout,
       }}
     >
       {children}

@@ -12,9 +12,9 @@ export const AuthorizationForm = () => {
   const [otpState, setOtpState] = useState("");
   const [phoneNumber, setPhoneNumber] = useState("");
   const [ShowOTP, setShowOTP] = useState(false);
-  const { signin } = useGlobalContext()
-  const navigate = useNavigate()
-  const location = useLocation()
+  const { signin } = useGlobalContext();
+  const navigate = useNavigate();
+  const location = useLocation();
 
   const fromPage = location.state?.from?.pathname || "/profile";
 
@@ -27,7 +27,7 @@ export const AuthorizationForm = () => {
           callback: (response) => {
             onSignUp();
           },
-          "expired-callback": () => { },
+          "expired-callback": () => {},
         },
         auth
       );

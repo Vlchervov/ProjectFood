@@ -16,13 +16,9 @@ export const cartSlice = createSlice({
   initialState,
   reducers: {
     addTo: (state, { payload: item }) => {
-      let isInArray;
-      state.some((el) => {
-        if (el.id === item.id) isInArray = true;
-      });
-      if (!isInArray) {
-        state.push(item);
-      }
+      const isExists = state.some((el) => el.id === item.id);
+      if (isExists) state = state.filter((el) => el.id !== item.id);
+      else state.push(item);
     },
     removeItem: (state, { payload: id }) => {
       return state.filter((item) => id !== item.id);

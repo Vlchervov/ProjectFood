@@ -1,12 +1,12 @@
 import { useState } from "react";
-import { FooterComponent } from "./components/footer";
-import { HeaderComponent } from "./components/header";
 import { AppRouter } from "./router/AppRouter";
 import { ThemeProvider } from "styled-components";
 import GlobalStyle from "./components/styles/globalStyle";
 import LightTheme from "./themes/LightTheme";
 import DarkTheme from "./themes/DarkTheme";
 import GlobalState from "./context/global/globalState";
+import { HeaderComponent } from "./components/header/HeaderComponent";
+import { FooterComponent } from "./components/footer/FooterComponent";
 
 const App = () => {
   const [theme, setTheme] = useState(LightTheme);

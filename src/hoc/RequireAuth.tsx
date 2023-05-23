@@ -15,11 +15,11 @@ export const RequireProfile = ({ children }: IChild) => {
 };
 
 export const RequireAuthorization = ({ children }: IChild) => {
-  const location = useLocation()
+  const location = useLocation();
 
   if (localStorage.getItem("user")) {
-    return <Navigate to="/profile" state={{ from: location }} />
+    return <Navigate to="/profile" state={{ from: location }} />;
   }
 
   return children;
-}
+};

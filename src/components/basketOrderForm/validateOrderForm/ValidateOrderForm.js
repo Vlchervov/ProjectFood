@@ -1,10 +1,10 @@
 import { useState } from "react";
 import validator from "validator";
-import { OrderForm } from "..";
 import { newAxiosInstance } from "../../API/Api";
 import { useActions } from "../../../hooks/useActions";
 import { useNavigate } from "react-router";
 import { useGlobalContext } from "../../../hooks/useGlobalContext";
+import { OrderForm } from "../OrderFormComponent";
 
 export const ValidateOrderForm = (props) => {
   const { cleanArray } = useActions();

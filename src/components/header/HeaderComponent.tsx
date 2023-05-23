@@ -11,9 +11,9 @@ import {
   StyledLink,
   UnderHeader,
 } from "./Header.styled";
-import { HeaderRight } from "./HeaderRightSection";
 import { DefaultTheme } from "styled-components";
 import { useGlobalContext } from "../../hooks/useGlobalContext";
+import { HeaderRight } from "./HeaderRightSection/HeaderRightSectionComponent";
 
 interface IProps {
   toggleTheme(): void;

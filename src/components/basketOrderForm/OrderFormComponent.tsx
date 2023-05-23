@@ -1,5 +1,5 @@
-import { useForm, Controller, UseFormRegister } from "react-hook-form";
-import { OrderInput } from "./orderInput";
+import { useForm, Controller } from "react-hook-form";
+import { OrderInput } from "./orderInput/OrderInputComponent";
 
 interface IPropsOrderForm {
   onSubmit: () => void;

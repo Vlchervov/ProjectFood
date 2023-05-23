@@ -4,7 +4,7 @@ import {
   AuthorizationHeader,
   AuthorizationWindow,
 } from "./Auth.styled";
-import { AuthorizationForm } from "./AuthForm";
+import { AuthorizationForm } from "./AuthForm/AuthorizationFormComponent";
 
 export const AuthComponent = () => {
   return (

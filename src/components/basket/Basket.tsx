@@ -2,7 +2,6 @@ import { useState } from "react";
 import { CartItem } from "./item/CartItem";
 import { Link } from "react-router-dom";
 import { FaShoppingBasket } from "react-icons/fa";
-import { Modal } from "../modal";
 import { ICartItem } from "../../interfaces";
 import { BasketSection } from "./Basket.styled";
 import { useSelector } from "react-redux";
@@ -10,6 +9,7 @@ import { motion } from "framer-motion";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { SwiperOptionsForBasket } from "../Swiper/SwiperOptions";
 import SwiperCore, { Mousewheel } from "swiper";
+import { Modal } from "../modal/ModalComponent";
 import { BasketPaymentForm } from "./PaymentForm";
 
 SwiperCore.use([Mousewheel]);

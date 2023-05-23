@@ -3,10 +3,10 @@ import { AboutUs } from "../components/aboutUs";
 import { Basket } from "../components/basket/Basket";
 import { CatalogComponent } from "../components/Catalog/CatalogComponent";
 import { AnimatePresence } from "framer-motion";
-import { AuthComponent } from "../components/Auth";
 import { RequireProfile, RequireAuthorization } from "../hoc/RequireAuth";
-import { UserProfile } from "../components/Profile";
-import { NotFoundPage } from "../components/NotFoundPage";
+import { UserProfile } from "../components/Profile/UserProfileComponent";
+import { NotFoundPage } from "../components/NotFoundPage/NotFoundPageComponent";
+import { AuthComponent } from "../components/Auth/AuthComponent";
 
 export const AppRouter = () => {
   return (
@@ -14,10 +14,14 @@ export const AppRouter = () => {
       <Routes>
         <Route path="/catalog" element={<CatalogComponent />} />
         <Route path="/" element={<Navigate to="/catalog" />} />
-        <Route path="/authorization" element={
-          <RequireAuthorization>
-            <AuthComponent />
-          </RequireAuthorization>} />
+        <Route
+          path="/authorization"
+          element={
+            <RequireAuthorization>
+              <AuthComponent />
+            </RequireAuthorization>
+          }
+        />
         <Route
           path="/profile"
           element={
