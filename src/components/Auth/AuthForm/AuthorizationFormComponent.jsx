@@ -27,7 +27,7 @@ export const AuthorizationForm = () => {
           callback: (response) => {
             onSignUp();
           },
-          "expired-callback": () => {},
+          "expired-callback": () => { },
         },
         auth
       );

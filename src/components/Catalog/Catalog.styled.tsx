@@ -32,14 +32,13 @@ export const CategoryName = styled.h1`
   font-size: 24px;
   font-weight: 400;
   user-select: none;
-  margin-left: 110px;
   display: flex;
-
+  justify-content: center;
+  
   ${down("sm")} {
-    justify-content: center;
     margin-left: 0;
     font-size: 20px;
-  }
+  } 
 `;
 
 export const Categories = styled.section`

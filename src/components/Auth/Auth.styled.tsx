@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { down } from "styled-breakpoints";
 
 export const AuthSection = styled.section`
   flex: 1 1 auto;
@@ -87,6 +88,10 @@ export const AuthorizationBody = styled.div`
     color: ${(props) => props.theme.color};
     font-size: 18px;
   }
+
+  ${down("sm")} {
+    width: 300px;
+    }
 
   .CAPTCHA {
     .grecaptcha-badge {

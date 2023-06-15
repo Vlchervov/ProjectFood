@@ -29,7 +29,7 @@ export const AppHeader = styled.div`
   user-select: none;
   position: fixed;
   width: 100%;
-  display: flex;
+  display: ${({ hidden }) => (hidden ? "none" : "flex")};
   justify-content: space-between;
   margin: 0;
   background-color: ${(props) => props.theme.background.color};
@@ -222,7 +222,7 @@ export const UnderHeader = styled.div`
   width: 100%;
   margin-top: 65px;
   position: fixed;
-  display: flex;
+  display: ${({ hidden }) => (hidden ? "none" : "flex")};
   justify-content: space-between;
   background-color: ${(props) => props.theme.background.color};
   border-bottom: ${(props) => props.theme.border.bottom};

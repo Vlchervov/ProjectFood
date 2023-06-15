@@ -8,7 +8,7 @@ interface PropsCart {
 
 export const CartItem = (props: PropsCart) => {
   const { decrease, removeItem, increase } = useActions()
-  
+
   return (
     <div className="product">
       <div className="product__item">

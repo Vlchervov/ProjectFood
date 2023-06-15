@@ -1,7 +1,6 @@
 import { Transition } from "react-transition-group";
 import { ValidateOrderForm } from "../../basketOrderForm/validateOrderForm/ValidateOrderForm";
 
-
 interface IProps {
   cart: any;
   ShowOrderPayment: boolean;

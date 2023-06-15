@@ -142,8 +142,8 @@ export const BasketSection = styled.section`
       background-color: #478dff;
       color: white;
 
-      :hover {
-        box-shadow: 4px 5px 10px 0px rgba(0, 0, 0, 0.4);
+      &:hover {
+        background-color: #2d75e0;
       }
 
       :disabled {
@@ -220,9 +220,5 @@ export const BasketSection = styled.section`
     width: 363px;
     height: 540px;
     margin-left: 0px;
-
-    @media (max-width: 812px) {
-      display: none;
-    }
   }
 `;

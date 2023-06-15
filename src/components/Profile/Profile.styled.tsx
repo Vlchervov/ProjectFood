@@ -10,8 +10,6 @@ export const ProfileSection = styled.section`
         align-items: center;
         display: flex;
     }
-
-   
 `
 
 export const WrapperAboutUser = styled.div`

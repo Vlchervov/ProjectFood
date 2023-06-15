@@ -7,6 +7,7 @@ const GlobalState = ({ children }) => {
   const [isModalForAuthorizationVisible, setIsModalForAuthorizationVisible] =
     useState(false);
   const [user, setUser] = useState(null);
+  const [isHeaderIsHidden, setIsHeaderIsHidden] = useState(false);
   const [scroll, setScroll] = useState(0);
   const [isAuthorized, setIsAuthorized] = useState(false);
   const [otpState, setOtpState] = useState("");
@@ -22,20 +23,12 @@ const GlobalState = ({ children }) => {
     window.scrollTo(0, 0);
   };
 
-  const refHandler = (ref) => {
-    ref.current.scrollIntoView();
-  };
-
-  useEffect(() => {
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
   useEffect(() => {
     if (localStorage.getItem("user")) {
       setIsAuthorized(true);
       setUser(localStorage.getItem("user"));
     }
+    window.addEventListener("scroll", handleScroll);
   }, []);
 
   const signin = (newUser, cb) => {
@@ -61,7 +54,6 @@ const GlobalState = ({ children }) => {
         setIsModalForAuthorizationVisible,
         handleButton,
         scroll,
-        refHandler,
         isAuthorized,
         otpState,
         setOtpState,
@@ -72,6 +64,7 @@ const GlobalState = ({ children }) => {
         user,
         signin,
         signout,
+        isHeaderIsHidden,
       }}
     >
       {children}

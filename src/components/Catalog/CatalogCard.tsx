@@ -26,7 +26,6 @@ export const CatalogCard = (props: IPropsCard) => {
     <CategoriesItem
       as={motion.div}
       whileHover={{ scale: 1.02 }}
-      whileTap={{ scale: 1.02 }}
     >
       <SwiperComponent img={props.src} />
       <div className="categories__body">
@@ -37,7 +36,7 @@ export const CatalogCard = (props: IPropsCard) => {
         <p className="categories__description">{props.descr}</p>
         <div className="categories__footer">
           {(cart.length !== 0 && checkCart(props.id)) ||
-          button !== "default" ? (
+            button !== "default" ? (
             cart.map((item: IPropsCard) => {
               if (item.id === props.id) {
                 return (
