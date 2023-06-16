@@ -4,7 +4,7 @@ import { down } from "styled-breakpoints";
 export const Catalog = styled.div`
   display: flex;
   flex-direction: column;
-  padding-top: 100px;
+  padding-top: 160px;
   flex: 1 0 auto;
 
   .catalog__swiper {
@@ -20,8 +20,8 @@ export const Catalog = styled.div`
       object-fit: cover;
     }
 
-    @media (max-width: 812px) {
-      width: 100%;
+    ${down("sm")} {
+      width: 95%;
       height: 200px;
     }
   }
@@ -34,11 +34,11 @@ export const CategoryName = styled.h1`
   user-select: none;
   display: flex;
   justify-content: center;
-  
+
   ${down("sm")} {
     margin-left: 0;
     font-size: 20px;
-  } 
+  }
 `;
 
 export const Categories = styled.section`
@@ -61,21 +61,20 @@ export const Categories = styled.section`
 
 export const CategoriesItem = styled.div`
   user-select: none;
-  width: 350px;
   background-color: ${(props) => props.theme.background.color};
-  border-top-right-radius: 25px;
-  border-bottom-left-radius: 25px;
-  flex-direction: column;
+  border-radius: 25px;
   margin-left: 40px;
+  flex-direction: column;
   display: flex;
   margin-bottom: 30px;
   box-shadow: 0px 11px 13px 8px rgba(0, 0, 0, 0.2);
+
 
   ${down("sm")} {
     margin-left: 0px;
     padding-left: 0px;
     margin-right: 0px;
-    width: 100%;
+    width: 95%;
     flex-direction: column;
     justify-content: center;
   }
@@ -90,7 +89,6 @@ export const CategoriesItem = styled.div`
     img {
       width: 100%;
       @media (max-width: 812px) {
-        border-top-right-radius: 25px;
         width: 100%;
       }
     }
@@ -109,7 +107,6 @@ export const CategoriesItem = styled.div`
   }
 
   .categories__body {
-    border-bottom-left-radius: 25px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -160,7 +157,7 @@ export const CategoriesItem = styled.div`
   img {
     max-height: 205px;
     object-fit: cover;
-    border-top-right-radius: 25px;
+    border-radius: 20px;
   }
 
   .categories__price {

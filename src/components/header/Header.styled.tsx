@@ -13,6 +13,7 @@ export const StyledLink = styled(Link)`
 
 export const Header = styled.header`
   display: flex;
+  justify-content: center;
   .active {
     color: ${(props) => props.theme.active.color};
   }
@@ -28,13 +29,21 @@ export const Header = styled.header`
 export const AppHeader = styled.div`
   user-select: none;
   position: fixed;
-  width: 100%;
+  width: 80%;
+  margin-left: 40px;
   display: ${({ hidden }) => (hidden ? "none" : "flex")};
   justify-content: space-between;
-  margin: 0;
+  margin-top: 25px;
+  border-radius: 8px;
   background-color: ${(props) => props.theme.background.color};
+  border-top: ${(props) => props.theme.border.top};
   border-bottom: ${(props) => props.theme.border.bottom};
   z-index: 25;
+
+  ${down("sm")} {
+    width: 90%;
+    margin-left: 0px;
+  }
 
   .react-select {
     &__control {
@@ -219,15 +228,22 @@ export const HeaderRightSection = styled.div`
 
 export const UnderHeader = styled.div`
   user-select: none;
-  width: 100%;
-  margin-top: 65px;
+  width: 80%;
+  margin-top: 95px;
+  margin-left: 40px;
   position: fixed;
+  border-radius: 0px 0 8px 0px;
   display: ${({ hidden }) => (hidden ? "none" : "flex")};
   justify-content: space-between;
   background-color: ${(props) => props.theme.background.color};
   border-bottom: ${(props) => props.theme.border.bottom};
   z-index: 24;
   border-bottom-left-radius: 15px;
+
+  ${down("sm")} {
+    width: 90%;
+    margin-left: 0px;
+  }
 
   ul {
     display: flex;

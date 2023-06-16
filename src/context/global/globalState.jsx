@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import GlobalContext from "./globalContext";
-import { useActions } from "../../hooks/useActions";
 
 const GlobalState = ({ children }) => {
   const [currentCity, setCurrentCity] = useState("Новокузнецк");
@@ -13,7 +12,8 @@ const GlobalState = ({ children }) => {
   const [otpState, setOtpState] = useState("");
   const [phoneNumber, setPhoneNumber] = useState("");
   const [ShowOTP, setShowOTP] = useState(false);
-  const { isAuthProfile } = useActions();
+  const [visible, setVisible] = useState(true);
+  const [position, setPosition] = useState(window.scrollY);
 
   const handleScroll = () => {
     setScroll(window.scrollY);
@@ -31,11 +31,23 @@ const GlobalState = ({ children }) => {
     window.addEventListener("scroll", handleScroll);
   }, []);
 
+  useEffect(() => {
+    const handleScroll = () => {
+      setVisible(position > scroll);
+      setPosition(scroll);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  });
+
+  const hidden = visible ? "visible" : "hidden";
+
   const signin = (newUser, cb) => {
     setUser(newUser);
     localStorage.setItem("user", newUser);
     setIsAuthorized(true);
-    isAuthProfile(newUser);
     cb();
   };
 
@@ -65,6 +77,8 @@ const GlobalState = ({ children }) => {
         signin,
         signout,
         isHeaderIsHidden,
+        setIsHeaderIsHidden,
+        hidden,
       }}
     >
       {children}

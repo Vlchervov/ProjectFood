@@ -21,7 +21,7 @@ interface IProps {
 }
 
 export const HeaderComponent = (props: IProps) => {
-  const { setCurrentCity, currentCity, isHeaderIsHidden } = useGlobalContext();
+  const { setCurrentCity, currentCity, hidden } = useGlobalContext();
   const [state] = useState(data.data);
   const location = useLocation();
 
@@ -37,13 +37,14 @@ export const HeaderComponent = (props: IProps) => {
 
   return (
     <Header>
-      <AppHeader hidden={isHeaderIsHidden}>
+      <AppHeader className={hidden}>
         <HeaderLeftSection>
           <ul className="menu">
             <li>
               <StyledLink
-                className={`BiMenu ${location.pathname === "/catalog" && "active"
-                  }`}
+                className={`BiMenu ${
+                  location.pathname === "/catalog" && "active"
+                }`}
                 to="catalog"
               >
                 <BiMenu />
@@ -71,14 +72,15 @@ export const HeaderComponent = (props: IProps) => {
         <HeaderRight theme={props.theme} toggleTheme={props.toggleTheme} />
       </AppHeader>
       {location.pathname === "/catalog" ? (
-        <UnderHeader hidden={isHeaderIsHidden}>
+        <UnderHeader className={hidden}>
           <ul>
             {state.map((item) => {
               if (item.city === currentCity) {
                 return (
                   <li
-                    className={`${location.hash === item.anchorID && "enabled"
-                      }`}
+                    className={`${
+                      location.hash === item.anchorID && "enabled"
+                    }`}
                     key={item.name}
                   >
                     <a href={item.anchorID}>{item.name}</a>

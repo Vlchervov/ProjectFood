@@ -8,7 +8,7 @@ export const NewSection = styled.section`
   display: flex;
   justify-content: flex-start;
   overflow: hidden;
-  padding: 100px 0px 0px 50px;
+  padding: 130px 0px 0px 50px;
   background: #ff0055;
   font-weight: 700;
   font-family: "Inter-Bold", "Inter", sans-serif;

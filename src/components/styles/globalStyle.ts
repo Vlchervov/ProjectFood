@@ -17,6 +17,36 @@ html {
   scroll-behavior: smooth;
 }
 
+@keyframes HideHeader {
+  0% {
+    top: 0px;
+  }
+  100% {
+    top: -145px;
+  }
+}
+
+@keyframes OpenHeader {
+  0% {
+    top: -120px;
+  }
+  100% {
+    top: 0;
+  }
+}
+
+.visible {
+  /* display: flex; */
+  top: 0;
+  animation: OpenHeader 0.7s ease;
+}
+
+.hidden {
+  /* display: none; */
+  top: -145px;
+  animation: HideHeader 0.7s ease;
+}
+
 .arrowUp {
   position: fixed;
   width: 45px;
@@ -97,18 +127,18 @@ code {
 }
 
 :target {
-  scroll-margin-top: 120px;
+  scroll-margin-top: 0px;
 }
 
 :root {
   ::-webkit-scrollbar {
-    width: 10px;
+    width: 6px;
     height: 8px;
   }
 
   ::-webkit-scrollbar-thumb {
     border-radius: 25px;
-    background: #d2d2d2;
+    background-color: #dc3d3d;
   }
 }
 `;
