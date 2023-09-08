@@ -7,7 +7,7 @@ interface PropsCart {
 }
 
 export const CartItem = (props: PropsCart) => {
-  const { decrease, removeItem, increase } = useActions()
+  const { decrease, removeItem, increase } = useActions();
 
   return (
     <div className="product">
@@ -28,6 +28,7 @@ export const CartItem = (props: PropsCart) => {
               className="product__counterDecreaseButton"
               onClick={() => {
                 decrease(props.item.id);
+                if (props.item.count === 1) removeItem(props.item.id);
               }}
             >
               <span></span>
@@ -36,7 +37,7 @@ export const CartItem = (props: PropsCart) => {
             <div
               className="product__counterIncreaseButton"
               onClick={() => {
-                increase(props.item.id)
+                increase(props.item.id);
               }}
             >
               <span></span>
@@ -47,7 +48,7 @@ export const CartItem = (props: PropsCart) => {
         <button
           className="product__deleteButton"
           onClick={() => {
-            removeItem(props.item.id)
+            removeItem(props.item.id);
           }}
         >
           <GoTrashcan />

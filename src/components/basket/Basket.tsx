@@ -11,13 +11,14 @@ import { SwiperOptionsForBasket } from "../Swiper/SwiperOptions";
 import SwiperCore, { Mousewheel } from "swiper";
 import { Modal } from "../modal/ModalComponent";
 import { BasketPaymentForm } from "./PaymentForm";
+import { useGlobalContext } from "../../hooks/useGlobalContext";
 
 SwiperCore.use([Mousewheel]);
 
 export const Basket = () => {
-  const [formIsVisible, setFormIsVisivle] = useState<boolean>(false);
   const [ShowOrderPayment, setShowOrderPayment] = useState<boolean>(false);
-
+  const { setIsModalForCleanBasketVisible, isModalForCleanBasketVisible } =
+    useGlobalContext();
   const { cart }: any = useSelector((state) => state);
 
   return (
@@ -47,14 +48,14 @@ export const Basket = () => {
                 <h1>Корзина товаров</h1>
                 <h6
                   onClick={() => {
-                    setFormIsVisivle(true);
+                    setIsModalForCleanBasketVisible(true);
                   }}
                 >
                   Очистить корзину
                 </h6>
                 <Modal
-                  formIsVisible={formIsVisible}
-                  setFormIsVisivle={setFormIsVisivle}
+                  setIsModalForCleanBasketVisible={setIsModalForCleanBasketVisible}
+                  isModalForCleanBasketVisible={isModalForCleanBasketVisible}
                 />
                 {!ShowOrderPayment ? (
                   <>

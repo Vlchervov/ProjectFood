@@ -21,8 +21,8 @@ export interface IDataContent {
 }
 
 export interface IModal {
-  formIsVisible: boolean;
-  setFormIsVisivle: any;
+  isModalForCleanBasketVisible: boolean;
+  setIsModalForCleanBasketVisible: Function;
 }
 
 export interface ICartItem {

@@ -5,6 +5,8 @@ const GlobalState = ({ children }) => {
   const [currentCity, setCurrentCity] = useState("Новокузнецк");
   const [isModalForAuthorizationVisible, setIsModalForAuthorizationVisible] =
     useState(false);
+  const [isModalForCleanBasketVisible, setIsModalForCleanBasketVisible] =
+    useState(false);
   const [user, setUser] = useState(null);
   const [isHeaderIsHidden, setIsHeaderIsHidden] = useState(false);
   const [scroll, setScroll] = useState(0);
@@ -14,6 +16,13 @@ const GlobalState = ({ children }) => {
   const [ShowOTP, setShowOTP] = useState(false);
   const [visible, setVisible] = useState(true);
   const [position, setPosition] = useState(window.scrollY);
+  const body = document.querySelector("body");
+
+  const changeOverflowForCleanBasketModal = () => {
+    return isModalForCleanBasketVisible
+      ? (body.style.overflow = "hidden")
+      : (body.style.overflow = "");
+  };
 
   const handleScroll = () => {
     setScroll(window.scrollY);
@@ -22,6 +31,10 @@ const GlobalState = ({ children }) => {
   const handleButton = () => {
     window.scrollTo(0, 0);
   };
+
+  useEffect(() => {
+    changeOverflowForCleanBasketModal();
+  }, [isModalForCleanBasketVisible]);
 
   useEffect(() => {
     if (localStorage.getItem("user")) {
@@ -60,6 +73,8 @@ const GlobalState = ({ children }) => {
   return (
     <GlobalContext.Provider
       value={{
+        isModalForCleanBasketVisible,
+        setIsModalForCleanBasketVisible,
         currentCity,
         setCurrentCity,
         isModalForAuthorizationVisible,

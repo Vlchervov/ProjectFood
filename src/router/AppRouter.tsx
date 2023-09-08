@@ -31,7 +31,14 @@ export const AppRouter = () => {
           }
         />
         <Route path="/basket" element={<Basket />} />
-        <Route path="/about-us" element={<AboutUs />} />
+        <Route
+          path="/about-us"
+          element={
+            <RequireProfile>
+              <AboutUs />
+            </RequireProfile>
+          }
+        />
         <Route path="*" element={<NotFoundPage />} />
       </Routes>
     </AnimatePresence>

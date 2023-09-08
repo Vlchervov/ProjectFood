@@ -29,11 +29,10 @@ export const Header = styled.header`
 export const AppHeader = styled.div`
   user-select: none;
   position: fixed;
-  width: 80%;
-  margin-left: 40px;
+  width: 100%;
   display: ${({ hidden }) => (hidden ? "none" : "flex")};
   justify-content: space-between;
-  margin-top: 25px;
+  /* margin-top: 25px; */
   border-radius: 8px;
   background-color: ${(props) => props.theme.background.color};
   border-top: ${(props) => props.theme.border.top};
@@ -228,9 +227,8 @@ export const HeaderRightSection = styled.div`
 
 export const UnderHeader = styled.div`
   user-select: none;
-  width: 80%;
-  margin-top: 95px;
-  margin-left: 40px;
+  width: 60%;
+  margin-top: 65px;
   position: fixed;
   border-radius: 0px 0 8px 0px;
   display: ${({ hidden }) => (hidden ? "none" : "flex")};

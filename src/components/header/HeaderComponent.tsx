@@ -37,7 +37,7 @@ export const HeaderComponent = (props: IProps) => {
 
   return (
     <Header>
-      <AppHeader className={hidden}>
+      <AppHeader>
         <HeaderLeftSection>
           <ul className="menu">
             <li>

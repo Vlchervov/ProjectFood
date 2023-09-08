@@ -18,18 +18,18 @@ export const Modal = (props: IModal) => {
     <Section>
       <Transition
         nodeRef={nodeRef}
-        in={props.formIsVisible}
+        in={props.isModalForCleanBasketVisible}
         timeout={2}
         mountOnEnter
         unmountOnExit
       >
-        <ModalWrapper>
+        <ModalWrapper className="ModalCleanWrapper">
           <ModalBody>
             <h1>Вы уверены?</h1>
             <ModalFooter>
               <AceptButton
                 onClick={() => {
-                  props.setFormIsVisivle(false);
+                  props.setIsModalForCleanBasketVisible(false);
                   cleanArray();
                 }}
               >
@@ -38,7 +38,7 @@ export const Modal = (props: IModal) => {
               <DeclineButton
                 className="modal__cancelButton"
                 onClick={() => {
-                  props.setFormIsVisivle(false);
+                  props.setIsModalForCleanBasketVisible(false);
                 }}
               >
                 Нет

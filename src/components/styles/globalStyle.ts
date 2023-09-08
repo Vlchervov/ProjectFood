@@ -38,13 +38,13 @@ html {
 .visible {
   /* display: flex; */
   top: 0;
-  animation: OpenHeader 0.7s ease;
+  animation: OpenHeader 0.4s ease;
 }
 
 .hidden {
   /* display: none; */
   top: -145px;
-  animation: HideHeader 0.7s ease;
+  animation: HideHeader 0.5s ease;
 }
 
 .arrowUp {
@@ -127,7 +127,7 @@ code {
 }
 
 :target {
-  scroll-margin-top: 0px;
+  scroll-margin-top: 110px;
 }
 
 :root {
