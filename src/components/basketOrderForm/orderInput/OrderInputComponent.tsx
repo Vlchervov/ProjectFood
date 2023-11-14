@@ -9,8 +9,7 @@ export const OrderInput = ({
   Controller,
   disabledState,
   errorState,
-  currentCity,
-}) => {
+}: any) => {
   return (
     <>
       Выберите способ оформления заказа:
@@ -69,7 +68,7 @@ export const OrderInput = ({
         </li>
       </ul>
       <label>
-        Город: <input type="text" disabled value={currentCity} />
+        Город: <input type="text" disabled value='none' />
       </label>
       <label>
         Ваш номер телефона:
@@ -82,7 +81,7 @@ export const OrderInput = ({
               message: "Обязательное поле",
             },
           }}
-          render={({ field: { ref, ...field } }) => (
+          render={({ field: { ref, ...field } }: any) => (
             <ReactPhoneInput
               {...field}
               inputProps={{

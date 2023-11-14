@@ -19,7 +19,7 @@ export const ModalWrapper = styled.div`
 
 export const ModalBody = styled.div`
   padding: 2rem;
-  width: 375px;
+  width: 400px;
   background-color: #fff;
   height: 162px;
   z-index: 4;
@@ -29,7 +29,8 @@ export const ModalBody = styled.div`
 export const ModalFooter = styled.div`
   display: flex;
   align-items: flex-end;
-  justify-content: space-around;
+  justify-content: space-evenly;
+  margin-top: 55px;
 `;
 
 export const AceptButton = styled.button`
@@ -37,11 +38,8 @@ export const AceptButton = styled.button`
   border-radius: 10px;
   width: 137px;
   height: 40px;
-  margin-top: 5px;
-  margin-left: 7px;
   background-color: #f2f2f2;
   border: 1px solid rgba(255, 255, 255, 0);
-  margin-left: 17px;
   color: black;
   font-size: 16px;
   cursor: pointer;
@@ -53,12 +51,10 @@ export const AceptButton = styled.button`
   }
 `;
 export const DeclineButton = styled.button`
-  margin-left: 4px;
   border-radius: 10px;
   width: 137px;
   cursor: pointer;
   height: 40px;
-  margin-top: 25px;
   background-color: #f2f2f2;
   color: #4d4d4d;
   border: 1px solid rgba(255, 255, 255, 0);

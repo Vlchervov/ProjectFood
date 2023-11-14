@@ -5,6 +5,7 @@ import { ICartItem } from "../../interfaces";
 import { useSelector } from "react-redux";
 import { useActions } from "../../hooks/useActions";
 import { motion } from "framer-motion";
+import { CheckCart } from "./CheckCart";
 
 interface IPropsCard extends ICartItem {
   price: number;
@@ -14,13 +15,6 @@ export const CatalogCard = (props: IPropsCard) => {
   const { cart }: any = useSelector((state) => state);
   const { decrease, removeItem, increase, addTo } = useActions();
   const [button, setButton] = useState<string>("default");
-  const checkCart = (id: number) => {
-    let result: boolean = false;
-    cart.forEach((element: IPropsCard) => {
-      if (element.id === id) result = true;
-    });
-    return result;
-  };
 
   return (
     <CategoriesItem
@@ -35,7 +29,7 @@ export const CatalogCard = (props: IPropsCard) => {
         <p className="categories__weight">{props.weight}</p>
         <p className="categories__description">{props.descr}</p>
         <div className="categories__footer">
-          {(cart.length !== 0 && checkCart(props.id)) ||
+          {(cart.length !== 0 && CheckCart(cart, props.id)) ||
             button !== "default" ? (
             cart.map((item: IPropsCard) => {
               if (item.id === props.id) {

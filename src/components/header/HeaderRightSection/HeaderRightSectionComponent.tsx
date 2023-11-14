@@ -16,14 +16,15 @@ interface IProps {
 export const HeaderRight = (props: IProps) => {
   const { cart }: any = useSelector((state) => state);
   const [hidden, setHidden] = useState<boolean>(true);
-  const { signout, isAuthorized } = useGlobalContext();
+  const { signout } = useGlobalContext();
   const navigate = useNavigate();
   const location = useLocation();
+  const storageValue = localStorage.getItem("user");
 
   return (
     <HeaderRightSection>
       <ul className="menu">
-        {isAuthorized ? (
+        {storageValue ? (
           <>
             <li
               onPointerEnter={() => setHidden(false)}

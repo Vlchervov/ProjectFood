@@ -3,16 +3,15 @@ import validator from "validator";
 import { newAxiosInstance } from "../../API/Api";
 import { useActions } from "../../../hooks/useActions";
 import { useNavigate } from "react-router";
-import { useGlobalContext } from "../../../hooks/useGlobalContext";
 import { OrderForm } from "../OrderFormComponent";
 
 export const ValidateOrderForm = (props) => {
   const { cleanArray } = useActions();
   const [errorState, setErrorState] = useState("");
+  const storageValue = localStorage.getItem("user");
   const [disabledState, setDisabledState] = useState({
     disabled: false,
   });
-  const { currentCity, isAuthorized } = useGlobalContext();
   const totalCount = props.cart.reduce((count, item) => item.count + count, 0);
   const totalPrice = props.cart.reduce(
     (amount, item) => item.priceTotal + amount,
@@ -23,7 +22,7 @@ export const ValidateOrderForm = (props) => {
   async function onSubmit(data) {
     try {
       if (validator.isMobilePhone(data.phone, ["ru-RU"])) {
-        if (isAuthorized) {
+        if (storageValue) {
           await newAxiosInstance
             .post("/orders", {
               orderType: data.orderType,
@@ -31,7 +30,6 @@ export const ValidateOrderForm = (props) => {
               commentForOrder: data.commentForOrder,
               totalCount: totalCount,
               totalPrice: totalPrice,
-              city: currentCity,
               infoAboutOrder: {
                 ...props.cart
               },
@@ -63,7 +61,6 @@ export const ValidateOrderForm = (props) => {
       disabledState={disabledState}
       totalCount={totalCount}
       totalPrice={totalPrice}
-      currentCity={currentCity}
     />
   );
 };

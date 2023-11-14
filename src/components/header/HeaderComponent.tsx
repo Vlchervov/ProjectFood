@@ -2,8 +2,6 @@ import { useState } from "react";
 import { useLocation } from "react-router-dom";
 import { BiMenu } from "react-icons/bi";
 import data from "../../data/categories.json";
-import Select from "react-select";
-import { SelectOptions } from "./react-select/react-select.options";
 import {
   AppHeader,
   HeaderLeftSection,
@@ -14,80 +12,56 @@ import {
 import { DefaultTheme } from "styled-components";
 import { useGlobalContext } from "../../hooks/useGlobalContext";
 import { HeaderRight } from "./HeaderRightSection/HeaderRightSectionComponent";
-
+import { ModalSelectCity } from "./ModalSelectCity/ModalSelectCity";
 interface IProps {
   toggleTheme(): void;
   theme: DefaultTheme;
 }
 
 export const HeaderComponent = (props: IProps) => {
-  const { setCurrentCity, currentCity, hidden } = useGlobalContext();
+  const { hidden }: any = useGlobalContext();
+  const [cityModalHidden, setCityModalHidden] = useState(false);
   const [state] = useState(data.data);
   const location = useLocation();
 
-  const getValue = () => {
-    return currentCity
-      ? SelectOptions.find((c) => c.value === currentCity)
-      : "";
-  };
-
-  const onChange = (newValue: any) => {
-    setCurrentCity(newValue?.value);
-  };
-
   return (
     <Header>
-      <AppHeader>
+      <AppHeader className={`${location.pathname === "/about-us" && hidden}`}>
         <HeaderLeftSection>
           <ul className="menu">
             <li>
               <StyledLink
-                className={`BiMenu ${
-                  location.pathname === "/catalog" && "active"
-                }`}
+                className={`BiMenu ${location.pathname === "/catalog" && "active"
+                  }`}
                 to="catalog"
               >
                 <BiMenu />
               </StyledLink>
             </li>
-            {/* <li>
-              <StyledLink to="catalog" className={`${location.pathname === "/catalog" && "active"}`}>
-                // LOGOTYPE //
-              </StyledLink>
-            </li> */}
             <li>
-              <Select
-                className="react-select-container"
-                classNamePrefix="react-select"
-                defaultValue={SelectOptions[0]}
-                options={SelectOptions}
-                isSearchable={false}
-                placeholder="Выберете город..."
-                value={getValue()}
-                onChange={onChange}
-              />
+              LOGOTYPE
             </li>
+            <li onClick={() => setCityModalHidden(true)}>
+              Выберите город
+            </li>
+            <ModalSelectCity cityModalHidden={cityModalHidden} setCityModalHidden={setCityModalHidden} />
           </ul>
         </HeaderLeftSection>
         <HeaderRight theme={props.theme} toggleTheme={props.toggleTheme} />
       </AppHeader>
       {location.pathname === "/catalog" ? (
-        <UnderHeader className={hidden}>
+        <UnderHeader>
           <ul>
             {state.map((item) => {
-              if (item.city === currentCity) {
-                return (
-                  <li
-                    className={`${
-                      location.hash === item.anchorID && "enabled"
-                    }`}
-                    key={item.name}
-                  >
-                    <a href={item.anchorID}>{item.name}</a>
-                  </li>
-                );
-              }
-              return null;
+              return (
+                <li
+                  // className={`${location.hash === item.anchorID && "enabled"
+                  //   }`}
+                  key={item.name}
+                >
+                  <a href={item.anchorID}>{item.name}</a>
+                </li>
+              );
             })}
           </ul>
         </UnderHeader>

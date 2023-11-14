@@ -40,8 +40,8 @@ export const AppHeader = styled.div`
   z-index: 25;
 
   ${down("sm")} {
-    width: 90%;
     margin-left: 0px;
+    z-index: 999;
   }
 
   .react-select {
@@ -103,20 +103,6 @@ export const AppHeader = styled.div`
       align-items: center;
       padding: 10px 12px;
       font-size: 14px;
-
-      :not(:nth-child(1)) {
-        ${down("sm")} {
-          font-size: 12px;
-          padding: 10px 0px;
-        }
-      }
-
-      h6 {
-        color: ${(props) => props.theme.switchTheme.color};
-        cursor: pointer;
-        font-weight: 400;
-        margin: 0;
-      }
     }
   }
 `;
@@ -129,6 +115,16 @@ export const HeaderLeftSection = styled.div`
 
     ${down("sm")} {
       width: 40px;
+    }
+  }
+
+  li {
+    cursor: pointer;
+    color: ${(props) => props.theme.color};
+    :hover {
+      text-decoration: underline;
+      text-decoration-color: ${(props) => props.theme.active.color};
+      text-decoration-style: double;
     }
   }
 `;
@@ -217,6 +213,13 @@ export const HeaderRightSection = styled.div`
     li {
       cursor: pointer;
       color: ${(props) => props.theme.color};
+
+      h6 {
+        color: ${(props) => props.theme.switchTheme.color};
+        cursor: pointer;
+        font-weight: 400;
+        margin: 0;
+      }
 
       :hover {
         color: ${(props) => props.theme.hover.background.color};

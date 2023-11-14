@@ -127,7 +127,7 @@ code {
 }
 
 :target {
-  scroll-margin-top: 110px;
+  scroll-margin-top: 160px;
 }
 
 :root {

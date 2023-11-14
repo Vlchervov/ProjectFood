@@ -5,8 +5,7 @@ export const Catalog = styled.div`
   display: flex;
   flex-direction: column;
   padding-top: 160px;
-  flex: 1 0 auto;
-
+  
   .catalog__swiper {
     height: 205px;
     width: 60%;
@@ -100,6 +99,10 @@ export const CategoriesItem = styled.div`
   .categories__description {
     font-family: sans-serif;
     font-size: 12px;
+    width: 300px;
+    height: 30px;
+    overflow: hidden;
+    margin: 0px;
     line-height: 17px;
     color: ${(props) => props.theme.color};
     display: flex;

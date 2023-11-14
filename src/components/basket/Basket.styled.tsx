@@ -125,6 +125,10 @@ export const BasketSection = styled.section`
       &:hover {
         background-color: #2d75e0;
       }
+
+      &:disabled {
+        background-color: #b1b1b1;
+      }
     }
 
     &__totalAmountButton {

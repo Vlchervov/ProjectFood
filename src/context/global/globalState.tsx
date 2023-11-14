@@ -1,27 +1,25 @@
 import { useState, useEffect } from "react";
 import GlobalContext from "./globalContext";
 
-const GlobalState = ({ children }) => {
-  const [currentCity, setCurrentCity] = useState("Новокузнецк");
+const GlobalState = ({ children }: any) => {
   const [isModalForAuthorizationVisible, setIsModalForAuthorizationVisible] =
-    useState(false);
+    useState<boolean>(false);
   const [isModalForCleanBasketVisible, setIsModalForCleanBasketVisible] =
-    useState(false);
-  const [user, setUser] = useState(null);
-  const [isHeaderIsHidden, setIsHeaderIsHidden] = useState(false);
-  const [scroll, setScroll] = useState(0);
-  const [isAuthorized, setIsAuthorized] = useState(false);
-  const [otpState, setOtpState] = useState("");
-  const [phoneNumber, setPhoneNumber] = useState("");
-  const [ShowOTP, setShowOTP] = useState(false);
-  const [visible, setVisible] = useState(true);
-  const [position, setPosition] = useState(window.scrollY);
-  const body = document.querySelector("body");
+    useState<boolean>(false);
+  const [user, setUser] = useState<null | string>(null);
+  const [isHeaderIsHidden, setIsHeaderIsHidden] = useState<boolean>(false);
+  const [scroll, setScroll] = useState<number>(0);
+  const [otpState, setOtpState] = useState<string>("");
+  const [phoneNumber, setPhoneNumber] = useState<string>("");
+  const [ShowOTP, setShowOTP] = useState<boolean>(false);
+  const [visible, setVisible] = useState<boolean>(true);
+  const [position, setPosition] = useState<number>(window.scrollY);
+  const body = document.querySelector<HTMLBodyElement>("body");
 
-  const changeOverflowForCleanBasketModal = () => {
+  const changeOverflowWhenModalIsOpen = () => {
     return isModalForCleanBasketVisible
-      ? (body.style.overflow = "hidden")
-      : (body.style.overflow = "");
+      ? (body!.style.overflow = "hidden")
+      : (body!.style.overflow = "");
   };
 
   const handleScroll = () => {
@@ -33,14 +31,10 @@ const GlobalState = ({ children }) => {
   };
 
   useEffect(() => {
-    changeOverflowForCleanBasketModal();
+    changeOverflowWhenModalIsOpen();
   }, [isModalForCleanBasketVisible]);
 
   useEffect(() => {
-    if (localStorage.getItem("user")) {
-      setIsAuthorized(true);
-      setUser(localStorage.getItem("user"));
-    }
     window.addEventListener("scroll", handleScroll);
   }, []);
 
@@ -55,18 +49,16 @@ const GlobalState = ({ children }) => {
     };
   });
 
-  const hidden = visible ? "visible" : "hidden";
+  const hidden: string = visible ? "visible" : "hidden";
 
-  const signin = (newUser, cb) => {
+  const signin = (newUser: string, cb: Function) => {
     setUser(newUser);
     localStorage.setItem("user", newUser);
-    setIsAuthorized(true);
     cb();
   };
 
-  const signout = (cb) => {
+  const signout = (cb: Function) => {
     setUser(null);
-    setIsAuthorized(false);
     cb();
   };
 
@@ -75,13 +67,10 @@ const GlobalState = ({ children }) => {
       value={{
         isModalForCleanBasketVisible,
         setIsModalForCleanBasketVisible,
-        currentCity,
-        setCurrentCity,
         isModalForAuthorizationVisible,
         setIsModalForAuthorizationVisible,
         handleButton,
         scroll,
-        isAuthorized,
         otpState,
         setOtpState,
         phoneNumber,

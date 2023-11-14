@@ -8,8 +8,8 @@ export const CategoryComponent = (props: IDataContent) => {
   const [state] = useState<IDataContent>(props);
   return (
     <>
-      <CategoryName id={state.anchor}>{state.name}</CategoryName>
-      <Categories>
+      <CategoryName>{state.name}</CategoryName>
+      <Categories id={state.anchor}>
         {state.cards.map((item, index) => (
           <React.Fragment key={index}>
             <CatalogCard {...item} />

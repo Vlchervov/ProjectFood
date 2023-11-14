@@ -9,7 +9,7 @@ import { AiOutlineArrowUp } from "react-icons/ai";
 import { useGlobalContext } from "../../hooks/useGlobalContext";
 
 export const CatalogComponent = () => {
-  const { currentCity, scroll, handleButton } = useGlobalContext();
+  const { scroll, handleButton } = useGlobalContext();
   const [state] = useState(data.data);
   const h3ref = useRef<HTMLInputElement>(null);
   useLayoutEffect(() => {
@@ -41,10 +41,7 @@ export const CatalogComponent = () => {
         </SwiperSlide>
       </Swiper>
       {state.map((e) => {
-        if (e.city === currentCity) {
-          return <CategoryComponent {...e} key={e.name} />;
-        }
-        return null;
+        return <CategoryComponent {...e} key={e.name} />;
       })}
     </Catalog>
   );

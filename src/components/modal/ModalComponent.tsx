@@ -23,7 +23,7 @@ export const Modal = (props: IModal) => {
         mountOnEnter
         unmountOnExit
       >
-        <ModalWrapper className="ModalCleanWrapper">
+        <ModalWrapper>
           <ModalBody>
             <h1>Вы уверены?</h1>
             <ModalFooter>

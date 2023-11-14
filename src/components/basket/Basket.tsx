@@ -6,14 +6,9 @@ import { ICartItem } from "../../interfaces";
 import { BasketSection } from "./Basket.styled";
 import { useSelector } from "react-redux";
 import { motion } from "framer-motion";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { SwiperOptionsForBasket } from "../Swiper/SwiperOptions";
-import SwiperCore, { Mousewheel } from "swiper";
 import { Modal } from "../modal/ModalComponent";
 import { BasketPaymentForm } from "./PaymentForm";
 import { useGlobalContext } from "../../hooks/useGlobalContext";
-
-SwiperCore.use([Mousewheel]);
 
 export const Basket = () => {
   const [ShowOrderPayment, setShowOrderPayment] = useState<boolean>(false);
@@ -59,18 +54,9 @@ export const Basket = () => {
                 />
                 {!ShowOrderPayment ? (
                   <>
-                    <Swiper
-                      direction="vertical"
-                      mousewheel={true}
-                      {...SwiperOptionsForBasket}
-                      className="basketSwiper"
-                    >
-                      {cart.map((item: ICartItem) => (
-                        <SwiperSlide key={item.id}>
-                          <CartItem item={item} />
-                        </SwiperSlide>
-                      ))}
-                    </Swiper>
+                    {cart.map((item: ICartItem): any => (
+                      <CartItem key={item.id} item={item} />
+                    ))}
                     <button
                       className="basket__goToOrder"
                       onClick={() => setShowOrderPayment(!ShowOrderPayment)}
@@ -79,12 +65,10 @@ export const Basket = () => {
                     </button>
                   </>
                 ) : (
-                  <>
-                    <BasketPaymentForm
-                      cart={cart}
-                      ShowOrderPayment={ShowOrderPayment}
-                    />
-                  </>
+                  <BasketPaymentForm
+                    cart={cart}
+                    ShowOrderPayment={ShowOrderPayment}
+                  />
                 )}
               </div>
             )}
