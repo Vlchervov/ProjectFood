@@ -31,17 +31,17 @@ export const CatalogComponent = () => {
       />
       <Swiper className="catalog__swiper" {...SwiperParamsForCatalog}>
         <SwiperSlide>
-          <img src="https://resizer.mail.ru/p/083fe3e5-6920-520e-a615-cc428ff3c43d/AAAcjXqsavsNPQPfw8sz4Q5wHG-Dcr1HeTbtVo_4w3TRRydCukIHCe2cfC9FYHfQTaoWnxiq-6vMgZKjRJjpK1FhUbU.jpg" />
+          <img src="https://resizer.mail.ru/p/083fe3e5-6920-520e-a615-cc428ff3c43d/AAAcjXqsavsNPQPfw8sz4Q5wHG-Dcr1HeTbtVo_4w3TRRydCukIHCe2cfC9FYHfQTaoWnxiq-6vMgZKjRJjpK1FhUbU.jpg" alt="фото баннера" />
         </SwiperSlide>
         <SwiperSlide>
-          <img src="https://s0.rbk.ru/v6_top_pics/media/img/2/63/756324748637632.jpg" />
+          <img src="https://s0.rbk.ru/v6_top_pics/media/img/2/63/756324748637632.jpg" alt="фото баннера" />
         </SwiperSlide>
         <SwiperSlide>
-          <img src="https://s0.rbk.ru/v6_top_pics/resized/1200xH/media/img/7/74/755614628166747.jpg" />
+          <img src="https://s0.rbk.ru/v6_top_pics/resized/1200xH/media/img/7/74/755614628166747.jpg" alt="фото баннера" />
         </SwiperSlide>
       </Swiper>
       {state.map((e) => {
-        return <CategoryComponent {...e} key={e.name} />;
+        return <CategoryComponent  {...e} key={e.name} />;
       })}
     </Catalog>
   );

@@ -8,6 +8,7 @@ import {
   Header,
   StyledLink,
   UnderHeader,
+  UnderHeaderCategory
 } from "./Header.styled";
 import { DefaultTheme } from "styled-components";
 import { useGlobalContext } from "../../hooks/useGlobalContext";
@@ -23,7 +24,7 @@ export const HeaderComponent = (props: IProps) => {
   const [cityModalHidden, setCityModalHidden] = useState(false);
   const [state] = useState(data.data);
   const location = useLocation();
-
+  const categoryName = ["На десерт", "Завтраки", "Новинки", "Салаты", "Супы", "Роллы", "WOK и Мидии", "Пицца", "Дополнительно", "Напитки"];
   return (
     <Header>
       <AppHeader className={`${location.pathname === "/about-us" && hidden}`}>
@@ -38,10 +39,9 @@ export const HeaderComponent = (props: IProps) => {
                 <BiMenu />
               </StyledLink>
             </li>
-            <li>
-              LOGOTYPE
-            </li>
-            <li onClick={() => setCityModalHidden(true)}>
+            <li onClick={() => {
+              setCityModalHidden(true);
+            }}>
               Выберите город
             </li>
             <ModalSelectCity cityModalHidden={cityModalHidden} setCityModalHidden={setCityModalHidden} />
@@ -50,21 +50,30 @@ export const HeaderComponent = (props: IProps) => {
         <HeaderRight theme={props.theme} toggleTheme={props.toggleTheme} />
       </AppHeader>
       {location.pathname === "/catalog" ? (
-        <UnderHeader>
+        <UnderHeaderCategory>
           <ul>
-            {state.map((item) => {
+            {categoryName.map((i) => {
               return (
-                <li
-                  // className={`${location.hash === item.anchorID && "enabled"
-                  //   }`}
-                  key={item.name}
-                >
-                  <a href={item.anchorID}>{item.name}</a>
-                </li>
-              );
+                <li key={i}><a>{i}</a></li>
+              )
             })}
           </ul>
-        </UnderHeader>
+        </UnderHeaderCategory>
+        // <UnderHeader>
+        //   <ul>
+        //     {state.map((item) => {
+        //       return (
+        //         <li
+        //           // className={`${location.hash === item.anchorID && "enabled"
+        //           //   }`}
+        //           key={item.name}
+        //         >
+        //           <a href={item.anchorID}>{item.name}</a>
+        //         </li>
+        //       );
+        //     })}
+        //   </ul>
+        // </UnderHeader>
       ) : null}
     </Header>
   );

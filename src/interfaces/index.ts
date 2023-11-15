@@ -17,6 +17,7 @@ export interface IDataContent {
     count: number;
     price: number;
     priceTotal: number;
+
   }[];
 }
 

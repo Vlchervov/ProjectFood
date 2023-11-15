@@ -8,6 +8,7 @@ export const StyledLink = styled(Link)`
 
   :hover {
     color: ${(props) => props.theme.hover.background.color};
+    transition: color 0.3s;
   }
 `;
 
@@ -29,19 +30,20 @@ export const Header = styled.header`
 export const AppHeader = styled.div`
   user-select: none;
   position: fixed;
-  width: 100%;
+  width: 80%;
+  height: 5rem;
   display: ${({ hidden }) => (hidden ? "none" : "flex")};
   justify-content: space-between;
   /* margin-top: 25px; */
-  border-radius: 8px;
+  border-radius: 0px;
   background-color: ${(props) => props.theme.background.color};
   border-top: ${(props) => props.theme.border.top};
-  border-bottom: ${(props) => props.theme.border.bottom};
+  /* border-bottom: ${(props) => props.theme.border.bottom}; */
   z-index: 25;
 
   ${down("sm")} {
     margin-left: 0px;
-    z-index: 999;
+    z-index: 25;
   }
 
   .react-select {
@@ -94,6 +96,7 @@ export const AppHeader = styled.div`
   }
 
   .menu {
+    z-index: 99;
     display: flex;
     margin: 0;
     padding: 0;
@@ -130,6 +133,7 @@ export const HeaderLeftSection = styled.div`
 `;
 
 export const HeaderRightSection = styled.div`
+  z-index: 99;
   padding-right: 15px;
   display: flex;
   margin: 0;
@@ -228,12 +232,45 @@ export const HeaderRightSection = styled.div`
   }
 `;
 
+export const UnderHeaderCategory = styled.nav`
+  width: 80%;
+  display: flex;
+  align-items: center;
+  z-index: 24;
+  height: 4.5rem;
+  margin-top: 75px;
+  position: fixed;
+  background-color: rgb(70, 70, 70);
+  border-radius: 0px 0px 25px 25px;
+
+  ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    a {
+    color: ${(props) => props.theme.color};
+    text-decoration: none;
+    display: flex;
+    padding: 12px 15px;
+    font-size: 18px;
+    cursor: pointer;
+    font-weight: 500;
+
+    &:hover {
+      color: ${(props) => props.theme.hover.color.color};
+    }
+    }
+  }
+`
+
 export const UnderHeader = styled.div`
   user-select: none;
-  width: 60%;
+  width: 100%;
   margin-top: 65px;
   position: fixed;
-  border-radius: 0px 0 8px 0px;
+  border-radius: 0px 0 0px 0px;
   display: ${({ hidden }) => (hidden ? "none" : "flex")};
   justify-content: space-between;
   background-color: ${(props) => props.theme.background.color};
@@ -242,7 +279,7 @@ export const UnderHeader = styled.div`
   border-bottom-left-radius: 15px;
 
   ${down("sm")} {
-    width: 90%;
+    width: 100%;
     margin-left: 0px;
   }
 
@@ -256,7 +293,7 @@ export const UnderHeader = styled.div`
   li {
     :hover {
       background-color: ${(props) => props.theme.hover.background.color};
-      transition: background-color 1s;
+      transition: background-color 0.3s;
     }
     :nth-child(1) {
       border-bottom-left-radius: 15px;

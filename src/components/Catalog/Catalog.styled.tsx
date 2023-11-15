@@ -8,11 +8,10 @@ export const Catalog = styled.div`
   
   .catalog__swiper {
     height: 205px;
-    width: 60%;
+    width: 80%;
     margin-top: 25px;
     border-radius: 25px;
     box-shadow: 4px 5px 10px 0px rgba(0, 0, 0, 0.4);
-
     img {
       height: 100%;
       width: 100%;
@@ -21,7 +20,7 @@ export const Catalog = styled.div`
 
     ${down("sm")} {
       width: 95%;
-      height: 200px;
+      height: 12.5rem;
     }
   }
 `;
@@ -52,8 +51,8 @@ export const Categories = styled.section`
     border-bottom: ${(props) => props.theme.border.bottom};
   }
 
+
   ${down("sm")} {
-    padding-top: 0px;
     justify-content: center;
   }
 `;
@@ -62,11 +61,12 @@ export const CategoriesItem = styled.div`
   user-select: none;
   background-color: ${(props) => props.theme.background.color};
   border-radius: 25px;
-  margin-left: 40px;
-  flex-direction: column;
+  flex-direction: ${({ change }: any) => (!change ? "column" : "row")}; //Изменить пропом на rowReverse
   display: flex;
+  margin-left: 20px;
+  margin-right: 20px;
   margin-bottom: 30px;
-  box-shadow: 0px 11px 13px 8px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 10px 11px 2px rgba(0, 0, 0, 0.10);
 
   ${down("sm")} {
     margin-left: 0px;
@@ -130,7 +130,7 @@ export const CategoriesItem = styled.div`
       cursor: pointer;
 
       :hover {
-        transition: all 0.4s;
+        transition: all 0.3s;
         color: white;
         text-decoration: none;
         background-color: #4e9edf;
@@ -144,7 +144,13 @@ export const CategoriesItem = styled.div`
     line-height: 20px;
     margin-bottom: 0px;
     margin-top: 0px;
+    cursor: pointer;
     color: ${(props) => props.theme.color};
+
+    &:hover {
+
+      text-decoration: underline;
+    }
   }
 
   .categories__footer {
@@ -159,7 +165,7 @@ export const CategoriesItem = styled.div`
   img {
     max-height: 205px;
     object-fit: cover;
-    border-radius: 20px;
+    border-radius: 20px 20px 0px 0px;
   }
 
   .categories__price {
