@@ -1,3 +1,5 @@
+import { MouseEventHandler } from "react";
+
 export interface IDataContent {
   name: string;
   city: string;
@@ -19,6 +21,27 @@ export interface IDataContent {
     priceTotal: number;
 
   }[];
+}
+
+export interface IGlobalStateContext {
+  isModalForCleanBasketVisible: boolean,
+  setIsModalForCleanBasketVisible: Function,
+  isModalForAuthorizationVisible: boolean,
+  setIsModalForAuthorizationVisible: Function,
+  handleButton: MouseEventHandler,
+  scroll: number,
+  otpState: string,
+  setOtpState: Function,
+  phoneNumber: string,
+  setPhoneNumber: Function,
+  ShowOTP: boolean,
+  setShowOTP: Function,
+  user: null | string,
+  signin: Function,
+  signout: Function,
+  isHeaderIsHidden: boolean,
+  setIsHeaderIsHidden: Function,
+  hidden: any,
 }
 
 export interface IModal {
