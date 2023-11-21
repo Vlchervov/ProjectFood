@@ -2,11 +2,15 @@ import { useState } from "react";
 import OTPInput from "react-otp-input";
 import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
-import { signInWithPhoneNumber, RecaptchaVerifier } from "firebase/auth";
+import { signInWithPhoneNumber, RecaptchaVerifier, User } from "firebase/auth";
 import ru from "react-phone-input-2/lang/ru.json";
 import { auth } from "../../../firebase.config";
 import { useGlobalContext } from "../../../hooks/useGlobalContext";
 import { useLocation, useNavigate } from "react-router";
+
+interface IUser {
+  user: any,
+}
 
 export const AuthorizationForm = () => {
   const [otpState, setOtpState] = useState("");
@@ -24,10 +28,10 @@ export const AuthorizationForm = () => {
         "recaptcha-container",
         {
           size: "invisible",
-          callback: (response) => {
+          callback: () => {
             onSignUp();
           },
-          "expired-callback": () => { },
+          // "expired-callback": () => { },
         },
         auth
       );
@@ -44,7 +48,7 @@ export const AuthorizationForm = () => {
         window.confirmationResult = confirmationResult;
         setShowOTP(true);
       })
-      .catch((error) => {
+      .catch((error: string) => {
         console.log(error);
       });
   }
@@ -52,10 +56,10 @@ export const AuthorizationForm = () => {
   function onOTPVerify() {
     window.confirmationResult
       .confirm(otpState)
-      .then(async (result) => {
+      .then(async (result: IUser) => {
         signin(result.user.phoneNumber, navigate(fromPage, { replace: true }));
       })
-      .catch((err) => {
+      .catch((err: string) => {
         console.log(err);
       });
   }

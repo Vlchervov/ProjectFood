@@ -1,8 +1,9 @@
 import { Transition } from "react-transition-group";
 import { ValidateOrderForm } from "../../basketOrderForm/validateOrderForm/ValidateOrderForm";
+import { ICart } from "../../../store/cart/cart.slice";
 
 interface IProps {
-  cart: any;
+  cart: ICart;
   ShowOrderPayment: boolean;
 }
 

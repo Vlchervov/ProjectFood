@@ -1,11 +1,11 @@
 import { useLocation } from "react-router";
-import "./_footer.scss";
+import { Footer } from "./Footer.styled";
 
 export const FooterComponent = () => {
   return (
     <>
       {useLocation().pathname === "/catalog" ? (
-        <div className="footer">
+        <Footer>
           <div className="footer__section">
             <div className="footer__item footerLogo">#LOGO</div>
           </div>
@@ -30,7 +30,7 @@ export const FooterComponent = () => {
               <a className="footer__itemLogo AppleLogo"> AppStore</a>
             </div>
           </div>
-        </div>
+        </Footer>
       ) : null}
     </>
   );

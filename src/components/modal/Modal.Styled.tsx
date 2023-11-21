@@ -50,6 +50,7 @@ export const AceptButton = styled.button`
     background-color: rgb(47, 179, 47);
   }
 `;
+
 export const DeclineButton = styled.button`
   border-radius: 10px;
   width: 137px;

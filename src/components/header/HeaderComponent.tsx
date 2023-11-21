@@ -20,11 +20,11 @@ interface IProps {
 }
 
 export const HeaderComponent = (props: IProps) => {
-  const { hidden }: any = useGlobalContext();
-  const [cityModalHidden, setCityModalHidden] = useState(false);
+  const { hidden } = useGlobalContext();
+  const [cityModalHidden, setCityModalHidden] = useState<boolean>(false);
   const [state] = useState(data.data);
   const location = useLocation();
-  const categoryName = ["На десерт", "Завтраки", "Новинки", "Салаты", "Супы", "Роллы", "WOK и Мидии", "Пицца", "Дополнительно", "Напитки"];
+  const categoryName: string[] = ["Десерт", "Завтраки", "Новинки", "Салаты", "Супы", "Роллы", "WOK", "Пицца", "Напитки", "Дополнительно"];
   return (
     <Header>
       <AppHeader className={`${location.pathname === "/about-us" && hidden}`}>
@@ -54,7 +54,7 @@ export const HeaderComponent = (props: IProps) => {
           <ul>
             {categoryName.map((i) => {
               return (
-                <li key={i}><a>{i}</a></li>
+                <li key={i}><a href="/#">{i}</a></li>
               )
             })}
           </ul>

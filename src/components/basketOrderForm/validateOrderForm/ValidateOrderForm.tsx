@@ -4,22 +4,28 @@ import { newAxiosInstance } from "../../API/Api";
 import { useActions } from "../../../hooks/useActions";
 import { useNavigate } from "react-router";
 import { OrderForm } from "../OrderFormComponent";
+import { ICartItem } from "../../../interfaces";
+import { PayloadAction } from "@reduxjs/toolkit";
 
-export const ValidateOrderForm = (props) => {
-  const { cleanArray } = useActions();
-  const [errorState, setErrorState] = useState("");
-  const storageValue = localStorage.getItem("user");
+type CleanArrayType = {
+  cleanArray: (state: void) => PayloadAction;
+}
+
+export const ValidateOrderForm = (props: any) => {
+  const { cleanArray }: CleanArrayType = useActions();
+  const [errorState, setErrorState] = useState<string>("");
+  const storageValue: string | null = localStorage.getItem("user");
   const [disabledState, setDisabledState] = useState({
     disabled: false,
   });
-  const totalCount = props.cart.reduce((count, item) => item.count + count, 0);
+  const totalCount = props.cart.reduce((count: number, item: ICartItem): number => item.count + count, 0);
   const totalPrice = props.cart.reduce(
-    (amount, item) => item.priceTotal + amount,
+    (amount: number, item: ICartItem): number => item.priceTotal + amount,
     0
   );
   const navigate = useNavigate();
 
-  async function onSubmit(data) {
+  async function onSubmit(data: any) {
     try {
       if (validator.isMobilePhone(data.phone, ["ru-RU"])) {
         if (storageValue) {
@@ -35,10 +41,9 @@ export const ValidateOrderForm = (props) => {
               },
             })
             .then(() => {
-              console.log(props.cart);
               setDisabledState({ disabled: true });
               setTimeout(() => {
-                cleanArray(null);
+                cleanArray();
                 alert("Заказ создан успешно. Order create succefully!");
               }, 1200);
             });
@@ -48,8 +53,8 @@ export const ValidateOrderForm = (props) => {
       } else {
         setErrorState("Неправильный номер");
       }
-    } catch (err) {
-      console.log(err.data);
+    } catch (e) {
+      console.log(e);
     }
   }
 

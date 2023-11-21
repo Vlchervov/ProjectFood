@@ -2,9 +2,11 @@ import { useForm, Controller } from "react-hook-form";
 import { OrderInput } from "./orderInput/OrderInputComponent";
 
 interface IPropsOrderForm {
-  onSubmit: () => void;
+  onSubmit: (data: any) => Promise<void>,
   setErrorState: Function;
-  disabledState: boolean;
+  disabledState: {
+    disabled: boolean;
+  };
   errorState: string;
   totalCount: number;
   totalPrice: number;

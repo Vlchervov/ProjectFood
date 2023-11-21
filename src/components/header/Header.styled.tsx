@@ -38,12 +38,13 @@ export const AppHeader = styled.div`
   border-radius: 0px;
   background-color: ${(props) => props.theme.background.color};
   border-top: ${(props) => props.theme.border.top};
-  /* border-bottom: ${(props) => props.theme.border.bottom}; */
+  border-bottom: ${(props) => props.theme.border.bottom};
   z-index: 25;
 
   ${down("sm")} {
     margin-left: 0px;
     z-index: 25;
+    width: 100%;
   }
 
   .react-select {
@@ -207,7 +208,7 @@ export const HeaderRightSection = styled.div`
     align-items: center;
     margin: 0;
     padding: 0;
-    width: 120px;
+    width: 110px;
     position: absolute;
     border-radius: 12px;
     border: ${(props) => props.theme.border.border};
@@ -217,12 +218,18 @@ export const HeaderRightSection = styled.div`
     li {
       cursor: pointer;
       color: ${(props) => props.theme.color};
-
+      flex-wrap: nowrap;
+      
+      svg {
+        width: 16px;
+        height: 16px;
+      }
       h6 {
         color: ${(props) => props.theme.switchTheme.color};
         cursor: pointer;
-        font-weight: 400;
-        margin: 0;
+        font-weight: 500;
+        margin: 0px;
+        padding: 0px;
       }
 
       :hover {
@@ -237,29 +244,49 @@ export const UnderHeaderCategory = styled.nav`
   display: flex;
   align-items: center;
   z-index: 24;
-  height: 4.5rem;
-  margin-top: 75px;
+  margin-top: 70px;
   position: fixed;
-  background-color: rgb(70, 70, 70);
-  border-radius: 0px 0px 25px 25px;
+  background-color: ${(props) => props.theme.background.color};
+  border-radius: 0px 0px 8px 8px;
+  overflow-y: hidden;
+  overflow-x: auto;
+  box-shadow: 1px 1px 17px 0px rgba(0, 0, 0, 0.1);
+
+  ${down("sm")} {
+    width: 100%;
+    border-radius: 0px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+    background-color: #dc3d3d;
+  }
+
+  ::-webkit-scrollbar {
+    height: 5px;
+    cursor: pointer;
+  }
 
   ul {
     display: flex;
     list-style: none;
     padding: 0;
     margin: 0;
-
+    align-items: center;
+    
     a {
     color: ${(props) => props.theme.color};
     text-decoration: none;
     display: flex;
-    padding: 12px 15px;
-    font-size: 18px;
+    padding: 15px 15px 10px 15px;
+    margin: 0px;
+    font-size: 16px;
     cursor: pointer;
     font-weight: 500;
-
+    width: 100%;
+  
     &:hover {
-      color: ${(props) => props.theme.hover.color.color};
+      color: ${(props) => props.theme.hover.background.color};
     }
     }
   }

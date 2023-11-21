@@ -34,6 +34,10 @@ export const HeaderRight = (props: IProps) => {
                 <BiUser />
               </StyledLink>
               <ul className="dropDown" hidden={hidden}>
+
+                <li>
+                  <StyledLink to="profile">Профиль</StyledLink>
+                </li>
                 <li>
                   <StyledLink
                     className={`${location.pathname === "/about-us" && "active"
@@ -44,11 +48,7 @@ export const HeaderRight = (props: IProps) => {
                   </StyledLink>
                 </li>
                 <li>
-                  <StyledLink to="profile">Профиль</StyledLink>
-                </li>
-                <li>
-                  <HiMoon onClick={props.toggleTheme} className="switchTheme" />
-                  <h6 onClick={props.toggleTheme}>{props.theme.title}</h6>
+                  <h6 onClick={props.toggleTheme}>{props.theme.title}  <HiMoon onClick={props.toggleTheme} className="switchTheme" /></h6>
                 </li>
                 <li onClick={() => {
                   signout(() => navigate("/", { replace: true }))

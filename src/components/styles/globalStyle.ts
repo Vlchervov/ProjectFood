@@ -103,12 +103,6 @@ html {
   content: url("../img/icons8-apple-logo.svg");
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
 .App-link {
   color: #61dafb;
 }

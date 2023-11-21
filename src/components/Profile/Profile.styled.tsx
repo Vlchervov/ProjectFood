@@ -47,7 +47,7 @@ input {
 export const FooterInfoAboutUser = styled.div`
 display: flex;
 justify-content: center;
-     button {
+    button {
     cursor: pointer;
     border: none;
     width: 270px;

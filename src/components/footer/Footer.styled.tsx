@@ -1,17 +1,20 @@
-.footer {
-  background-color: #141414;
-  box-shadow: 0px 10px 15px rgba(0, 0, 0, 1);
+import { down } from "styled-breakpoints";
+import styled from "styled-components";
 
-  @media (max-width: 812px) {
+export const Footer = styled.footer`
+    background-color: #141414;
+    box-shadow: 0px 10px 15px rgba(0, 0, 0, 1);
+    display: flex;
+    justify-content: space-around;
+    padding-top: 0;
+
+    ${down('sm')} {
     align-items: center;
     flex-direction: column;
     white-space: nowrap;
-  }
-  display: flex;
-  justify-content: space-around;
-  padding-top: 0;
+    }
 
-  &__section {
+    .footer__section {
     padding-top: 25px;
     padding-bottom: 25px;
     // color: #bdbdbd;
@@ -28,15 +31,15 @@
   }
 
   .footerDelivery {
-    @media (max-width: 812px) {
-      text-align: center;
+    ${down('sm')} {
+    text-align: center;
     }
     a {
       user-select: none;
       font-size: 16px;
       line-height: 20px;
       // color: rgba(21, 21, 21, 0.3);
-      color: #bdbdbd;
+      color: #757575;
     }
   }
 
@@ -53,6 +56,7 @@
         font-size: 14px;
         line-height: 20px;
         font-family: sans-serif;
+        color: #bdbdbd;
         &:hover {
           text-decoration: underline;
         }
@@ -61,13 +65,14 @@
   }
 
   .footerAppTitle {
-    @media (max-width: 812px) {
-      text-align: center;
+    ${down("sm")} {
+    text-align: center;
     }
     font-size: 12px;
     line-height: 17px;
     // color: rgba(21, 21, 21, 0.3);
     color: #bdbdbd;
+    
   }
   .footerLogo {
     display: flex;
@@ -87,7 +92,8 @@
     color: #bdbdbd;
     &:hover {
       // border: 1px solid #478DFF;
-      color: #478dff;
+      color: ${(props) => props.theme.active.color}
+      /* color: #478dff; */
     }
   }
   .AppleLogo {
@@ -95,7 +101,8 @@
     // color: rgba(21, 21, 21, 0.3);
     color: #bdbdbd;
     &:hover {
-      color: #478dff;
+      /* color: #478dff; */
+      color: ${(props) => props.theme.active.color}
     }
   }
-}
+`

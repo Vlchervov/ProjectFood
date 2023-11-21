@@ -17,7 +17,6 @@ export const NotFoundPageSection = styled.section`
     color: white;
     font-size: 16px;
    
-
     :hover {
       background-color: #2d75e0;
     }

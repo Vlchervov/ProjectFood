@@ -14,13 +14,6 @@ const GlobalState = ({ children }: any) => {
   const [ShowOTP, setShowOTP] = useState<boolean>(false);
   const [visible, setVisible] = useState<boolean>(true);
   const [position, setPosition] = useState<number>(window.scrollY);
-  const body = document.querySelector<HTMLBodyElement>("body");
-
-  const changeOverflowWhenModalIsOpen = () => {
-    return isModalForCleanBasketVisible
-      ? (body!.style.overflow = "hidden")
-      : (body!.style.overflow = "");
-  };
 
   const handleScroll = () => {
     setScroll(window.scrollY);
@@ -31,6 +24,13 @@ const GlobalState = ({ children }: any) => {
   };
 
   useEffect(() => {
+    const body = document.querySelector<HTMLBodyElement>("body");
+    const changeOverflowWhenModalIsOpen = () => {
+      return isModalForCleanBasketVisible
+        ? (body!.style.overflow = "hidden")
+        : (body!.style.overflow = "");
+    };
+
     changeOverflowWhenModalIsOpen();
   }, [isModalForCleanBasketVisible]);
 
@@ -51,15 +51,13 @@ const GlobalState = ({ children }: any) => {
 
   const hidden: string = visible ? "visible" : "hidden";
 
-  const signin = (newUser: string, cb: Function) => {
+  const signin = (newUser: string) => {
     setUser(newUser);
     localStorage.setItem("user", newUser);
-    cb();
   };
 
-  const signout = (cb: Function) => {
+  const signout = () => {
     setUser(null);
-    cb();
   };
 
   return (

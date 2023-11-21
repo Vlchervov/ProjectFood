@@ -1,6 +1,6 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { Action, AnyAction, CaseReducer, PayloadAction, createSlice } from "@reduxjs/toolkit";
 
-interface ICart {
+export interface ICart {
   id: number;
   count: number;
   price: number;
@@ -21,7 +21,7 @@ export const cartSlice = createSlice({
       else state.push(item);
     },
     removeItem: (state, { payload: id }) => {
-      return state.filter((item) => id !== item.id);
+      return state.filter((item): boolean => id !== item.id);
     },
     increase: (state, { payload: id }) => {
       return state.map((product) => {
