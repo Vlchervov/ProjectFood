@@ -1,4 +1,4 @@
-import { Action, AnyAction, CaseReducer, PayloadAction, createSlice } from "@reduxjs/toolkit";
+import { createSlice } from "@reduxjs/toolkit";
 
 export interface ICart {
   id: number;

@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { down } from "styled-breakpoints";
+import { between, down, up } from "styled-breakpoints";
 
 export const Catalog = styled.div`
   display: flex;
@@ -65,8 +65,8 @@ export const CategoriesItem = styled.div`
   display: flex;
   margin-left: 20px;
   margin-right: 20px;
-  margin-bottom: 30px;
-  box-shadow: 0px 10px 11px 2px rgba(0, 0, 0, 0.10);
+  margin-bottom: 20px;
+  box-shadow: 0px 10px 11px 2px rgba(0, 0, 0, 0.10); 
 
   ${down("sm")} {
     margin-left: 0px;
@@ -77,8 +77,14 @@ export const CategoriesItem = styled.div`
     justify-content: center;
   }
 
+  ${between("xxl", "sm")} {
+    margin-left: 10px;
+    margin-right: 10px;
+    width: 325px;
+  }
+
   .swiperCard {
-    height: 200px;
+    height: 235px;
     width: 350px;
     &:last-child {
       border-bottom: none;
@@ -86,33 +92,38 @@ export const CategoriesItem = styled.div`
 
     img {
       width: 100%;
-      @media (max-width: 812px) {
-        width: 100%;
-      }
     }
 
     ${down("sm")} {
       width: 100%;
     }
+
+    /* ${down("xxl")} {
+    width: 325px;
+  } */
   }
 
   .categories__description {
     font-family: sans-serif;
-    font-size: 12px;
-    width: 300px;
-    height: 30px;
-    overflow: hidden;
+    font-size: 14px;
+    width: 325px;
+    overflow-y: hidden;
+    height: 60px;
     margin: 0px;
     line-height: 17px;
     color: ${(props) => props.theme.color};
     display: flex;
+    border-radius: 6px;
+    ${down("sm")} {
+      width: 100%;
+    }
   }
 
   .categories__body {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    padding: 24px 24px 0px 24px;
+    padding: 12px 12px 0px 12px;
     // box-shadow: 10px 10px 15px rgb(0 0 0 / 20%);
 
     button {
@@ -148,7 +159,6 @@ export const CategoriesItem = styled.div`
     color: ${(props) => props.theme.color};
 
     &:hover {
-
       text-decoration: underline;
     }
   }
@@ -178,4 +188,6 @@ export const CategoriesItem = styled.div`
   .categories__weight {
     color: ${(props) => props.theme.color};
   }
+
+
 `;
