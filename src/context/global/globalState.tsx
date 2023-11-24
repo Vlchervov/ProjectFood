@@ -51,13 +51,15 @@ const GlobalState = ({ children }: any) => {
 
   const hidden: string = visible ? "visible" : "hidden";
 
-  const signin = (newUser: string) => {
+  const signin = (newUser: string, cb: () => {}) => {
     setUser(newUser);
     localStorage.setItem("user", newUser);
+    cb();
   };
 
-  const signout = () => {
+  const signout = (cb: () => {}) => {
     setUser(null);
+    cb();
   };
 
   return (

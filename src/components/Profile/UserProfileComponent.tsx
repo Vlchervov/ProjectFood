@@ -1,5 +1,3 @@
-import { useGlobalContext } from "../../hooks/useGlobalContext";
-import { useState } from "react";
 import {
   WrapperAboutUser,
   ProfileSection,
@@ -8,9 +6,7 @@ import {
 } from "./Profile.styled";
 
 export const UserProfile = () => {
-  const { user } = useGlobalContext();
-  const [firstName, setFirstName] = useState<string>("");
-  const [email, setEmail] = useState<string>("");
+  const user = localStorage.getItem("user");
 
   return (
     <ProfileSection>
@@ -18,17 +14,9 @@ export const UserProfile = () => {
       <WrapperAboutUser>
         <InfoAboutUser>
           <p>Номер телефона: {user} </p>
-          <>
-            <label>
-              Имя: {firstName}
-            </label>
-            <label>
-              Email:{email}
-            </label>
-          </>
         </InfoAboutUser>
         <FooterInfoAboutUser>
-          <button>Редакировать</button>
+          <button disabled>Редакировать</button>
         </FooterInfoAboutUser>
       </WrapperAboutUser>
     </ProfileSection>

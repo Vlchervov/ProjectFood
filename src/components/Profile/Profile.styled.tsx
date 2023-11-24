@@ -1,39 +1,54 @@
+import { down } from "styled-breakpoints";
 import styled from "styled-components";
 
 export const ProfileSection = styled.section`
     display: flex;
     margin-top: 80px;
     flex-direction: column;
-    align-items: center;
-    
+
     h1 {
-        align-items: center;
+        margin-left: auto;
+        margin-right: auto;
+        width: 50%;
         display: flex;
+        text-transform: uppercase;
+        font-style: italic;
+        font-size: 16px;
+        color: ${(props) => props.theme.color};
+
+        ${down("sm")} {
+           justify-content: center;
+        }
     }
 `
 
 export const WrapperAboutUser = styled.div`
-    display: flex;
-    position: sticky;
-    width: 480px;
-    height: 400px;
     border-radius: 12px;
-    box-shadow: rgba(0, 0, 0, 0.15) 0px 4px 13px 2px;   
+    display: flex;
+    flex-direction: column;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    height: 400px;
+    justify-content: space-between;
+    border: ${(props) => props.theme.border.border};
+
+    ${down("sm")} {
+        width: 100%;
+        border-left: none;
+        border-right: none;
+        border-radius: 0;
+    }
 `
 
 export const InfoAboutUser = styled.div`
     display: flex;
+    padding: 10px;
     flex-direction: column;
     p {
     padding-left: 16px;
-    color: black;
+    color: ${(props) => props.theme.color};
     margin: 0px 0px 0px 0px;
-}
-
-label { 
-    margin: 0px 0px 0px 0px;
-    padding-top: 0;
-    padding-left: 16px;
 }
 
 input {
@@ -52,11 +67,6 @@ justify-content: center;
     border: none;
     width: 270px;
     height: 38px;
-    position: absolute;
-    bottom: 0px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     margin-bottom: 25px;
     border-radius: 25px;
     background-color: rgb(71, 141, 255);
@@ -64,6 +74,10 @@ justify-content: center;
 
     :hover {
         background-color: #2d75e0;
+    }
+    
+    :disabled {
+        opacity: 0.8;
     }
     }
 `

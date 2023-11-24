@@ -36,7 +36,8 @@ export const HeaderRight = (props: IProps) => {
               <ul className="dropDown" hidden={hidden}>
 
                 <li>
-                  <StyledLink to="profile">Профиль</StyledLink>
+                  <StyledLink className={`${location.pathname === "/profile" && "active"
+                    }`} to="profile">Профиль</StyledLink>
                 </li>
                 <li>
                   <StyledLink

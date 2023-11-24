@@ -30,7 +30,7 @@ export const Header = styled.header`
 export const AppHeader = styled.div`
   user-select: none;
   position: fixed;
-  width: 80%;
+  width: 100%;
   height: 5rem;
   display: ${({ hidden }) => (hidden ? "none" : "flex")};
   justify-content: space-between;
@@ -240,7 +240,7 @@ export const HeaderRightSection = styled.div`
 `;
 
 export const UnderHeaderCategory = styled.nav`
-  width: 80%;
+  width: 100%;
   display: flex;
   align-items: center;
   z-index: 24;

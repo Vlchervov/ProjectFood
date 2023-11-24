@@ -50,7 +50,7 @@ export const HeaderComponent = (props: IProps) => {
         <HeaderRight theme={props.theme} toggleTheme={props.toggleTheme} />
       </AppHeader>
       {location.pathname === "/catalog" ? (
-        <UnderHeaderCategory>
+        <UnderHeaderCategory className={hidden}>
           <ul>
             {categoryName.map((i) => {
               return (

@@ -85,7 +85,7 @@ export const AuthorizationBody = styled.div`
     padding: 0;
     margin: 0;
     text-align: center;
-    color: ${(props) => props.theme.color};
+    color: #000000;
     font-size: 18px;
   }
 
@@ -128,12 +128,13 @@ export const AuthorizationBody = styled.div`
     flex-direction: column;
     align-items: center;
     padding-top: 42px;
-
+    user-select: none;
     input {
       outline: none;
       border-radius: 2px;
       border: none;
       background-color: #ecebeb;
+      user-select: none;
     }
 
     button {
@@ -164,20 +165,24 @@ export const AuthorizationBody = styled.div`
     justify-content: center;
     align-items: center;
     padding-top: 12px;
+    user-select: none;
 
     .otpAuth {
+      user-select: none;
       margin: 0;
       display: flex;
       justify-content: space-between;
     }
 
     .otpInputAuth {
+      user-select: none;
       :not(:nth-child(1)) {
         margin-left: 10px;
       }
     }
 
     input {
+      user-select: none;
       padding: 12px 15px 15px 15px;
       margin: 15px 0px 15px 0px;
       outline: none;

@@ -7,6 +7,10 @@ export const NotFoundPageSection = styled.section`
   flex-direction: column;
   align-items: center;
 
+  h1 {
+    color: ${(props) => props.theme.color}
+  }
+
   button {
     border: none;
     height: 48px;

@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { between, down, up } from "styled-breakpoints";
+import { between, down } from "styled-breakpoints";
 
 export const Catalog = styled.div`
   display: flex;
@@ -7,7 +7,7 @@ export const Catalog = styled.div`
   padding-top: 160px;
   
   .catalog__swiper {
-    height: 205px;
+    height: 305px;
     width: 80%;
     margin-top: 25px;
     border-radius: 25px;
@@ -28,13 +28,15 @@ export const Catalog = styled.div`
 export const CategoryName = styled.h1`
   color: ${(props) => props.theme.color};
   font-size: 24px;
-  font-weight: 400;
+  font-weight: 600;
   user-select: none;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
+  margin-left: 20px;
+  margin-right: 20px;
 
   ${down("sm")} {
-    margin-left: 0;
+    margin-left: 20px;
     font-size: 20px;
   }
 `;
@@ -42,18 +44,20 @@ export const CategoryName = styled.h1`
 export const Categories = styled.section`
   display: flex;
   background-color: ${(props) => props.theme.background.color};
-  padding-top: 24px;
+  padding-top: 0px;
   flex-wrap: wrap;
-  justify-content: center;
-  border-top: ${(props) => props.theme.border.top};
 
   &:not(:nth-of-type(3)) {
     border-bottom: ${(props) => props.theme.border.bottom};
   }
 
+  ${between("sm", "xxl")} {
+    margin-left: 0px;
+  }
 
   ${down("sm")} {
     justify-content: center;
+    margin-left: 0px;
   }
 `;
 
@@ -64,6 +68,7 @@ export const CategoriesItem = styled.div`
   flex-direction: ${({ change }: any) => (!change ? "column" : "row")}; //Изменить пропом на rowReverse
   display: flex;
   margin-left: 20px;
+  width: 310px;
   margin-right: 20px;
   margin-bottom: 20px;
   box-shadow: 0px 10px 11px 2px rgba(0, 0, 0, 0.10); 
@@ -77,15 +82,9 @@ export const CategoriesItem = styled.div`
     justify-content: center;
   }
 
-  ${between("xxl", "sm")} {
-    margin-left: 10px;
-    margin-right: 10px;
-    width: 325px;
-  }
-
   .swiperCard {
     height: 235px;
-    width: 350px;
+    width: 310px;
     &:last-child {
       border-bottom: none;
     }
@@ -97,10 +96,6 @@ export const CategoriesItem = styled.div`
     ${down("sm")} {
       width: 100%;
     }
-
-    /* ${down("xxl")} {
-    width: 325px;
-  } */
   }
 
   .categories__description {
@@ -127,7 +122,6 @@ export const CategoriesItem = styled.div`
     // box-shadow: 10px 10px 15px rgb(0 0 0 / 20%);
 
     button {
-      background-color: white;
       border: none;
       user-select: none;
       border-radius: 8px;
