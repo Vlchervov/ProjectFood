@@ -1,5 +1,6 @@
 import { useLocation } from "react-router";
 import { Footer } from "./Footer.styled";
+import { Link } from "react-router-dom";
 
 export const FooterComponent = () => {
   return (
@@ -7,11 +8,29 @@ export const FooterComponent = () => {
       {useLocation().pathname === "/catalog" ? (
         <Footer>
           <div className="footer__section">
-            <div className="footer__item footerLogo">#LOGO</div>
+          
+            <div className="footer__item footerPaymentMethods">
+            <h4>Способы оплаты</h4>
+            </div>
+            <div className="footer__item footerPaymentCard">
+              <picture>
+                <img alt="Способ оплаты" src="https://storage.yandexcloud.net/ecomm-storage-dev/images/logoMasterCard-v2.png" />
+                <img alt="Способ оплаты" src="https://storage.yandexcloud.net/ecomm-storage-dev/images/logoVisa-v2.png" />
+                <img alt="Способ оплаты" src="https://storage.yandexcloud.net/ecomm-storage-dev/images/logoJcb-v2.png" />
+                <img alt="Способ оплаты" src="https://storage.yandexcloud.net/ecomm-storage-dev/images/logoMir-v2.png" />
+              </picture>
+            </div>
+            <div className="footer__item footerNav">
+                <ul>
+                  <li>г. Новокузнецк,
+                    пр-кт Н.С.Ермакова д 30</li>
+                  <li>+7(999)-999-99-99</li>
+                </ul>
+              </div>
           </div>
           <div className="footer__section">
             <div className="footer__item footerDelivery">
-              <a>Design by Vladislav Chervov</a>
+              <h4>Title</h4>
             </div>
             <div className="footer__item footerNav">
               <ul>
@@ -22,16 +41,37 @@ export const FooterComponent = () => {
             </div>
           </div>
           <div className="footer__section">
+            <div className="footer__item footerContacts">
+            </div>
+          </div>
+          <div className="footer__section">
             <div className="footer__item footerAppTitle">
               <a>Заказывайте через приложение</a>
             </div>
             <div className="footerLogo">
-              <a className="footer__itemLogo GoogleLogo"> Google Play</a>
-              <a className="footer__itemLogo AppleLogo"> AppStore</a>
+              <div className="footer__itemLogo GoogleLogo">
+                <a>Google Play</a>
+                <picture>
+                  <img src="../img/google-play-5.svg" />
+                </picture>
+              </div>
+              <div className="footer__itemLogo AppleLogo">
+                <a>AppStore</a>
+                <picture>
+                  <img src="../img/icons8-apple-logo.svg" />
+                </picture>
+              </div>
+            </div>
+            <div className="footer__item footerSocial">
+              <a>Мы в социальных сетях</a>
+              <picture>
+                <img alt="Telegram" src="../../img/Telegram.png" />
+                <img alt="Whatsapp" src="../../img/Whatsapp.png" />
+              </picture>
             </div>
           </div>
         </Footer>
       ) : null}
     </>
   );
-};
+}

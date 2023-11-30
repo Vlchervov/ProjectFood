@@ -25,9 +25,10 @@ export const AuthSection = styled.section`
 `;
 
 export const AuthorizationWindow = styled.div`
-  box-shadow: 4px 5px 10px 0px rgba(0, 0, 0, 0.4);
+  /* box-shadow: 4px 5px 10px 0px rgba(0, 0, 0, 0.4); */
+  border: 0.8px solid #d4d4d4c2;
   margin-top: 150px;
-  border-radius: 8px;
+  border-radius: 12px;
   display: grid;
   justify-content: center;
   align-content: center;
@@ -135,16 +136,25 @@ export const AuthorizationBody = styled.div`
       border: none;
       background-color: #ecebeb;
       user-select: none;
+
+    }
+
+    .phoneNumberInput {
+      width: 225px;
+      border-radius: 8px;
+    }
+
+    .phoneNumberDropdown {
+      width: 225px;
     }
 
     button {
       background-color: #307df0;
       color: white;
       border: none;
-      padding: 12px 15px 15px 15px;
-      width: 65%;
-      height: 48px;
-      margin: 25px 0px 15px 0px;
+      width: 225px;
+      height: 37px;
+      margin: 25px 0px 0px 0px;
       border-radius: 12px;
       cursor: pointer;
 

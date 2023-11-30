@@ -69,8 +69,8 @@ export const AuthorizationForm = () => {
     <>
       {ShowOTP ? (
         <>
+          <h1>Вход в аккаунт</h1>
           <div className="AuthContent">
-            <h1>Вход в аккаунт</h1>
             <OTPInput
               value={otpState}
               numInputs={6}
@@ -83,28 +83,32 @@ export const AuthorizationForm = () => {
           </div>
         </>
       ) : (
-        <div className="AuthPhoneContent">
-          <label>
-            Ваш номер телефона:
-            <PhoneInput
-              country={"ru"}
-              onlyCountries={["ru"]}
-              preferredCountries={["ru"]}
-              localization={ru}
-              countryCodeEditable={false}
-              value={phoneNumber}
-              onChange={setPhoneNumber}
-            />
-          </label>
-          <div>
-            <input id="agree" type="checkbox" onChange={(e) => { setIsChecked(e.target.checked) }} checked={checked} />
-            <label htmlFor="agree"> Я согласен
+        <>
+          <h1>Авторизация</h1>
+          <div className="AuthPhoneContent">
+            <label>
+              <PhoneInput
+                country={"ru"}
+                onlyCountries={["ru"]}
+                preferredCountries={["ru"]}
+                inputClass="phoneNumberInput"
+                dropdownClass="phoneNumberDropdown"
+                localization={ru}
+                countryCodeEditable={false}
+                value={phoneNumber}
+                onChange={setPhoneNumber}
+              />
             </label>
+            <div>
+              <input id="agree" type="checkbox" onChange={(e) => { setIsChecked(e.target.checked) }} checked={checked} />
+              <label htmlFor="agree"> Я согласен
+              </label>
+            </div>
+            <button disabled={phoneNumber.length < 11 || !checked} onClick={onSignUp}>
+              Получить код
+            </button>
           </div>
-          <button disabled={phoneNumber.length < 11 || !checked} onClick={onSignUp}>
-            Получить код
-          </button>
-        </div>
+        </>
       )}
     </>
   );

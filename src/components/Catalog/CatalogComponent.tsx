@@ -31,7 +31,7 @@ export const CatalogComponent = () => {
       />
       <Swiper className="catalog__swiper" {...SwiperParamsForCatalog}>
         <SwiperSlide>
-          <img src="https://resizer.mail.ru/p/083fe3e5-6920-520e-a615-cc428ff3c43d/AAAcjXqsavsNPQPfw8sz4Q5wHG-Dcr1HeTbtVo_4w3TRRydCukIHCe2cfC9FYHfQTaoWnxiq-6vMgZKjRJjpK1FhUbU.jpg" alt="фото баннера" />
+          <img src="https://preview.redd.it/made-this-anime-banner-in-pixlr-v0-eni9yujjzvxa1.jpg?auto=webp&s=8b871c713fdb41aaf0c08702857ba0e8464534cf" alt="фото баннера" />
         </SwiperSlide>
         <SwiperSlide>
           <img src="https://s0.rbk.ru/v6_top_pics/media/img/2/63/756324748637632.jpg" alt="фото баннера" />

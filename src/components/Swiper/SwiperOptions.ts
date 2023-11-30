@@ -33,11 +33,12 @@ export const SwiperOptionsForBasket: SwiperOptions = {
 };
 
 export const SwiperParamsForCatalog: SwiperOptions = {
-  speed: 600,
+  speed: 1200,
   slidesPerView: 1,
+  spaceBetween: 1,
   loop: true,
   autoplay: {
-    delay: 2500,
+    delay: 2400,
     disableOnInteraction: false,
   },
   modules: [Pagination, EffectFade, Autoplay],
@@ -45,7 +46,6 @@ export const SwiperParamsForCatalog: SwiperOptions = {
     clickable: true,
     dynamicBullets: true,
   },
-  effect: "fade",
   grabCursor: true,
 };
 

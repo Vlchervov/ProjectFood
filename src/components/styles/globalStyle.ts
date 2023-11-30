@@ -36,23 +36,21 @@ html {
 }
 
 .visible {
-  /* display: flex; */
   top: 0;
   animation: OpenHeader 0.4s ease;
 }
 
 .hidden {
-  /* display: none; */
   top: -145px;
   animation: HideHeader 0.5s ease;
 }
 
 .arrowUp {
   position: fixed;
-  width: 45px;
-  height: 45px;
+  width: 35px;
+  height: 35px;
   cursor: pointer;
-  top: 90%;
+  top: 95%;
   right: 30px;
   display: none;
   opacity: 0;
@@ -63,7 +61,8 @@ html {
   z-index: 999;
 
   ${down("sm")} {
-   right: 20px;
+   right: 15px;
+   top: 90%;
   }
 }
 
@@ -84,24 +83,6 @@ html {
   flex-direction: column;
 }
 
-@font-face {
-  font-family: "Inter";
-  font-style: normal;
-  font-weight: 700;
-  font-display: swap;
-  src: url("https://fonts.gstatic.com/s/inter/v3/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa25L7W0Q5n-wU.woff2")
-    format("woff2");
-  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB,
-    U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
-}
-
-.GoogleLogo::before {
-  content: url("../img/google-play-5.svg");
-}
-
-.AppleLogo::before {
-  content: url("../img/icons8-apple-logo.svg");
-}
 
 .App-link {
   color: #61dafb;

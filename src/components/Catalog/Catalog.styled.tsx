@@ -7,20 +7,22 @@ export const Catalog = styled.div`
   padding-top: 160px;
   
   .catalog__swiper {
-    height: 305px;
-    width: 80%;
-    margin-top: 25px;
-    border-radius: 25px;
+    width: 60%;
+    height: 280px;
+    border-radius: 12px;
+    margin-top: 12px;
+    user-select: none;
     box-shadow: 4px 5px 10px 0px rgba(0, 0, 0, 0.4);
     img {
-      height: 100%;
-      width: 100%;
-      object-fit: cover;
+     width: 100%;
+     height: 100%;
+     object-fit: cover;
     }
 
     ${down("sm")} {
-      width: 95%;
+      width: 96%;
       height: 12.5rem;
+
     }
   }
 `;
@@ -34,6 +36,10 @@ export const CategoryName = styled.h1`
   justify-content: flex-start;
   margin-left: 20px;
   margin-right: 20px;
+
+  ${between("sm", "xl")} {
+    justify-content: center;
+  }
 
   ${down("sm")} {
     margin-left: 20px;
@@ -51,8 +57,9 @@ export const Categories = styled.section`
     border-bottom: ${(props) => props.theme.border.bottom};
   }
 
-  ${between("sm", "xxl")} {
+  ${between("sm", "xl")} {
     margin-left: 0px;
+    justify-content: center;
   }
 
   ${down("sm")} {
@@ -65,7 +72,7 @@ export const CategoriesItem = styled.div`
   user-select: none;
   background-color: ${(props) => props.theme.background.color};
   border-radius: 25px;
-  flex-direction: ${({ change }: any) => (!change ? "column" : "row")}; //Изменить пропом на rowReverse
+  flex-direction: column;
   display: flex;
   margin-left: 20px;
   width: 310px;
@@ -100,15 +107,13 @@ export const CategoriesItem = styled.div`
 
   .categories__description {
     font-family: sans-serif;
-    font-size: 14px;
-    width: 325px;
+    font-size: 12px;
     overflow-y: hidden;
     height: 60px;
     margin: 0px;
     line-height: 17px;
     color: ${(props) => props.theme.color};
     display: flex;
-    border-radius: 6px;
     ${down("sm")} {
       width: 100%;
     }
@@ -119,7 +124,6 @@ export const CategoriesItem = styled.div`
     flex-direction: column;
     justify-content: space-between;
     padding: 12px 12px 0px 12px;
-    // box-shadow: 10px 10px 15px rgb(0 0 0 / 20%);
 
     button {
       border: none;
@@ -139,7 +143,6 @@ export const CategoriesItem = styled.div`
         color: white;
         text-decoration: none;
         background-color: #4e9edf;
-        /* background-color: #cf2900; */
       }
     }
   }
@@ -182,6 +185,4 @@ export const CategoriesItem = styled.div`
   .categories__weight {
     color: ${(props) => props.theme.color};
   }
-
-
 `;

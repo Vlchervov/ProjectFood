@@ -6,6 +6,7 @@ import { useSelector } from "react-redux";
 import { useActions } from "../../hooks/useActions";
 import { motion } from "framer-motion";
 import { CheckCart } from "./CheckCart";
+import { useMediaQuery } from "react-responsive";
 
 interface IPropsCard extends ICartItem {
   price: number;
@@ -15,11 +16,12 @@ export const CatalogCard = (props: IPropsCard) => {
   const { cart }: any = useSelector((state) => state);
   const { decrease, removeItem, increase, addTo } = useActions();
   const [button, setButton] = useState<string>("default");
+  const isMobile = useMediaQuery({ query: '(max-width: 812px)' });
 
   return (
     <CategoriesItem
       as={motion.div}
-      whileHover={{ scale: 1.02 }}
+      whileHover={isMobile ? { scale: 1 } : { scale: 1.02 }}
     >
       <SwiperComponent img={props.src} />
       <div className="categories__body">
