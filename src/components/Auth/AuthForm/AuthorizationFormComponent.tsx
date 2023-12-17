@@ -41,7 +41,6 @@ export const AuthorizationForm = () => {
 
   function onSignUp() {
     onCapthVerify();
-
     const appVerifier = window.recaptchaVerifier;
     const fortmatPh = "+" + phoneNumber;
     signInWithPhoneNumber(auth, fortmatPh, appVerifier)

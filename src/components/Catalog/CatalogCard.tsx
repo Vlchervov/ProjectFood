@@ -2,8 +2,7 @@ import { useState } from "react";
 import { SwiperComponent } from "../Swiper/SwiperComponent";
 import { CategoriesItem } from "./Catalog.styled";
 import { ICartItem } from "../../interfaces";
-import { useSelector } from "react-redux";
-import { useActions } from "../../hooks/useActions";
+import { useActions, useAppSelector } from "../../hooks/useActions";
 import { motion } from "framer-motion";
 import { CheckCart } from "./CheckCart";
 import { useMediaQuery } from "react-responsive";
@@ -13,7 +12,7 @@ interface IPropsCard extends ICartItem {
 }
 
 export const CatalogCard = (props: IPropsCard) => {
-  const { cart }: any = useSelector((state) => state);
+  const { cart } = useAppSelector(state => state)
   const { decrease, removeItem, increase, addTo } = useActions();
   const [button, setButton] = useState<string>("default");
   const isMobile = useMediaQuery({ query: '(max-width: 812px)' });
@@ -33,7 +32,7 @@ export const CatalogCard = (props: IPropsCard) => {
         <div className="categories__footer">
           {(cart.length !== 0 && CheckCart(cart, props.id)) ||
             button !== "default" ? (
-            cart.map((item: IPropsCard) => {
+            cart.map((item) => {
               if (item.id === props.id) {
                 return (
                   <div className="product__footer" key={item.id}>

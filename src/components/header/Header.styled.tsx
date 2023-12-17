@@ -14,7 +14,6 @@ export const StyledLink = styled(Link)`
 
 export const Header = styled.header`
   display: flex;
-  justify-content: center;
   .active {
     color: ${(props) => props.theme.active.color};
   }
@@ -31,7 +30,7 @@ export const AppHeader = styled.div`
   user-select: none;
   position: fixed;
   width: 100%;
-  height: 5rem;
+  height: 55px;
   display: ${({ hidden }) => (hidden ? "none" : "flex")};
   justify-content: space-between;
   /* margin-top: 25px; */
@@ -105,6 +104,7 @@ export const AppHeader = styled.div`
     li {
       list-style: none;
       align-items: center;
+      padding-bottom: 111px;
       padding: 10px 12px;
       font-size: 14px;
     }
@@ -112,14 +112,14 @@ export const AppHeader = styled.div`
 `;
 
 export const HeaderLeftSection = styled.div`
+  margin-left: 125px;
   display: flex;
+  ${down('xl')} {
+    margin-left: 0px;
+  }
   svg {
-    width: 55px;
-    height: 55px;
-
-    ${down("sm")} {
-      width: 40px;
-    }
+    width: 45px;
+    height: 45px;
   }
 
   li {
@@ -134,16 +134,31 @@ export const HeaderLeftSection = styled.div`
 `;
 
 export const HeaderRightSection = styled.div`
-  z-index: 99;
-  padding-right: 15px;
+  margin-right: 125px;
+  padding-right: 0px;
+  z-index: 10;
   display: flex;
-  margin: 0;
+  ${down("xl")} {
+    margin-right: 15px;
+    } 
   svg {
     width: 24px;
     height: 30px;
 
-    ${down("sm")} {
-      width: 18px;
+  }
+
+  .dropDownMenu {
+    z-index: 99;
+    display: flex;
+    margin: 0;
+    padding: 0;
+    align-items: center;
+    li {
+      list-style: none;
+      align-items: center;
+      padding-bottom: 111px;
+      padding: 10px 12px;
+      font-size: 14px;
     }
   }
 
@@ -161,7 +176,6 @@ export const HeaderRightSection = styled.div`
       color: white;
       background-color: #d84242;
     }
-
     ${down("sm")} {
       font-size: 10px;
       height: 25px;
@@ -204,7 +218,7 @@ export const HeaderRightSection = styled.div`
   }
 
   .dropDown {
-    right: 25px;
+    right: 105px;
     align-items: center;
     margin: 0;
     padding: 0;
@@ -215,11 +229,15 @@ export const HeaderRightSection = styled.div`
     animation: show-dropDown 1s forwards;
     background-color: ${(props) => props.theme.background.color};
 
+    ${down("md")} { 
+      right: 0px;
+    }
+
     li {
       cursor: pointer;
       color: ${(props) => props.theme.color};
       flex-wrap: nowrap;
-      
+  
       svg {
         width: 16px;
         height: 16px;
@@ -231,7 +249,6 @@ export const HeaderRightSection = styled.div`
         margin: 0px;
         padding: 0px;
       }
-
       :hover {
         color: ${(props) => props.theme.hover.background.color};
       }
@@ -244,22 +261,22 @@ export const UnderHeaderCategory = styled.nav`
   display: flex;
   align-items: center;
   z-index: 24;
-  margin-top: 70px;
-  position: fixed;
+  position: sticky;
+  margin-top: 25px;
+  top: 50px;
   background-color: ${(props) => props.theme.background.color};
   border-radius: 0px 0px 8px 8px;
   overflow-y: hidden;
   overflow-x: auto;
   box-shadow: 1px 1px 17px 0px rgba(0, 0, 0, 0.1);
 
-  ${down("sm")} {
-    width: 100%;
-    border-radius: 0px;
-  }
-
   &::-webkit-scrollbar-thumb {
     border-radius: 4px;
     background-color: #dc3d3d;
+
+    ${down("md")} {
+      background-color: ${(props) => props.theme.background.color};
+    }
   }
 
   ::-webkit-scrollbar {
@@ -273,6 +290,11 @@ export const UnderHeaderCategory = styled.nav`
     padding: 0;
     margin: 0;
     align-items: center;
+    margin-left: 125px;
+    user-select: none;
+    ${down('xl')} {
+      margin-left: 0px;
+    }
     
     a {
     color: ${(props) => props.theme.color};
@@ -350,29 +372,19 @@ export const UnderHeader = styled.div`
 `;
 
 export const ItemCount = styled.div`
-  background-color: red;
-  width: 13px;
-  height: 13px;
-  border-radius: 50%;
+  background-color: #a10000;
+  width: 25px;
+  height: 15px;
+  border-radius: 25px;
   align-items: center;
   display: flex;
   position: absolute;
-  margin-left: 16px;
+  margin-left: 22px;
   justify-content: center;
 
   span {
     color: white;
     font-weight: 700;
     font-size: 10px;
-
-    ${down("sm")} {
-      font-size: 8px;
-    }
-  }
-
-  ${down("sm")} {
-    width: 11px;
-    height: 11px;
-    margin-left: 12px;
   }
 `;

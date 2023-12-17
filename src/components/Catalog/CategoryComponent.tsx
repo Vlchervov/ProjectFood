@@ -1,4 +1,3 @@
-import React from "react";
 import { IDataContent } from "../../interfaces";
 import { Categories, CategoryName } from "./Catalog.styled";
 import { CatalogCard } from "./CatalogCard";
@@ -10,10 +9,8 @@ export const CategoryComponent = (props: IDataContent) => {
     <>
       <CategoryName>{state.name}</CategoryName>
       <Categories id={state.anchor}>
-        {state.cards.map((item, index) => (
-          <React.Fragment key={index}>
-            <CatalogCard {...item} />
-          </React.Fragment>
+        {state.cards.map((item) => (
+          <CatalogCard {...item} key={item.id} />
         ))}
       </Categories>
     </>

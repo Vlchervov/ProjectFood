@@ -4,12 +4,14 @@ import { between, down } from "styled-breakpoints";
 export const Catalog = styled.div`
   display: flex;
   flex-direction: column;
-  padding-top: 160px;
+  /* padding-top: 160px; */
+  padding-top: 60px;
   
   .catalog__swiper {
     width: 60%;
-    height: 280px;
+    height: 245px;
     border-radius: 12px;
+    overflow: hidden;
     margin-top: 12px;
     user-select: none;
     box-shadow: 4px 5px 10px 0px rgba(0, 0, 0, 0.4);
@@ -20,10 +22,15 @@ export const Catalog = styled.div`
     }
 
     ${down("sm")} {
-      width: 96%;
+      width: 95%;
       height: 12.5rem;
-
     }
+
+    ${between("sm", "md")} {
+    height: 180px;
+    width: 100%;
+    border-radius: 0px;
+  }
   }
 `;
 
@@ -34,11 +41,16 @@ export const CategoryName = styled.h1`
   user-select: none;
   display: flex;
   justify-content: flex-start;
-  margin-left: 20px;
-  margin-right: 20px;
+  margin-left: 145px;
+  margin-right: 0px;
 
-  ${between("sm", "xl")} {
+  ${between("sm", "md")} {
     justify-content: center;
+    margin-left: 0px;
+  }
+
+  ${between("md", "xl")} {
+
   }
 
   ${down("sm")} {
@@ -52,19 +64,22 @@ export const Categories = styled.section`
   background-color: ${(props) => props.theme.background.color};
   padding-top: 0px;
   flex-wrap: wrap;
-
+  margin-left: 120px;
+  margin-right: 80px;
   &:not(:nth-of-type(3)) {
     border-bottom: ${(props) => props.theme.border.bottom};
   }
 
   ${between("sm", "xl")} {
     margin-left: 0px;
-    justify-content: center;
+    margin-right: 0px;
+   justify-content: center;
   }
 
   ${down("sm")} {
     justify-content: center;
     margin-left: 0px;
+    margin-right: 0px;
   }
 `;
 
@@ -75,7 +90,7 @@ export const CategoriesItem = styled.div`
   flex-direction: column;
   display: flex;
   margin-left: 20px;
-  width: 310px;
+  width: 267px;
   margin-right: 20px;
   margin-bottom: 20px;
   box-shadow: 0px 10px 11px 2px rgba(0, 0, 0, 0.10); 
@@ -90,14 +105,16 @@ export const CategoriesItem = styled.div`
   }
 
   .swiperCard {
-    height: 235px;
-    width: 310px;
+    height: 100%;
+    width: 100%;
     &:last-child {
       border-bottom: none;
     }
 
     img {
+      object-fit: cover;
       width: 100%;
+      height: 100%;
     }
 
     ${down("sm")} {

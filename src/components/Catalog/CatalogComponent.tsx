@@ -7,14 +7,16 @@ import { Catalog } from "./Catalog.styled";
 import { motion } from "framer-motion";
 import { AiOutlineArrowUp } from "react-icons/ai";
 import { useGlobalContext } from "../../hooks/useGlobalContext";
+import { HeaderCategory } from "../header/HeaderCategory/HeaderCategory";
 
 export const CatalogComponent = () => {
-  const { scroll, handleButton } = useGlobalContext();
+  const { scroll, handleButton, hidden } = useGlobalContext();
   const [state] = useState(data.data);
   const h3ref = useRef<HTMLInputElement>(null);
   useLayoutEffect(() => {
     h3ref.current!.scrollIntoView();
   }, []);
+
 
   return (
     <Catalog
@@ -40,8 +42,9 @@ export const CatalogComponent = () => {
           <img src="https://s0.rbk.ru/v6_top_pics/resized/1200xH/media/img/7/74/755614628166747.jpg" alt="фото баннера" />
         </SwiperSlide>
       </Swiper>
+      <HeaderCategory />
       {state.map((e) => {
-        return <CategoryComponent  {...e} key={e.name} />;
+        return <CategoryComponent {...e} key={e.name} />;
       })}
     </Catalog>
   );

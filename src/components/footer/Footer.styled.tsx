@@ -27,6 +27,16 @@ export const Footer = styled.footer`
     // color: #bdbdbd;
     color: #828282;
 
+    :last-child {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      ${down("md")} {
+        align-items: center;
+        padding-bottom: 10px;
+      }
+    }
+
      ${between("md", "xl")} {
       font-size: 12px;
       flex-direction: column;
@@ -39,11 +49,11 @@ export const Footer = styled.footer`
       padding-bottom: 10px;
     }
 
-    ${down("sm")} {
+    ${down("md")} {
       padding-top: 10px;
       padding-bottom: 0px;
-      :nth-child(1) {
-       order: 1;
+      :nth-child(2) {
+       order: -1;
       }
     }
   }
@@ -53,13 +63,14 @@ export const Footer = styled.footer`
     text-align: center;
     }
     h4 {
+      text-transform: uppercase;
       font-weight: 400;
       margin: 0;
       user-select: none;
       font-size: 16px;
       line-height: 20px;
       // color: rgba(21, 21, 21, 0.3);
-      color: #757575;
+      color: #ffffff;
     }
   }
 
@@ -67,6 +78,10 @@ export const Footer = styled.footer`
     ul {
       padding: 0;
       list-style: none;
+
+      ${down("md")} {
+        margin-bottom: 0px;
+      }
       li {
         cursor: pointer;
         margin-bottom: 13px;
@@ -76,6 +91,12 @@ export const Footer = styled.footer`
         color: #bdbdbd;
         &:hover {
           text-decoration: underline;
+        }
+
+        ${down("md")} {
+          :last-child {
+            margin-bottom: 0px;
+          }
         }
       }
     }
@@ -88,8 +109,6 @@ export const Footer = styled.footer`
     font-size: 12px;
     line-height: 17px;
     // color: rgba(21, 21, 21, 0.3);
-    color: #bdbdbd;
-    
   }
   .footerLogo {
     display: flex;
@@ -101,6 +120,7 @@ export const Footer = styled.footer`
     display: flex;
     ${down('md')} {
       justify-content: center;
+      padding-top: 0px;
     }
     h4 {
       margin: 0;
@@ -118,15 +138,23 @@ export const Footer = styled.footer`
     }
   }
 
+  .footerDeveloperCompanyName {
+    display: flex;
+    justify-content: flex-end;
+    text-decoration: underline;
+    cursor: pointer;
+    user-select: none;
+    ${down("md")} {
+      justify-content: center;
+    }
+  }
+
   .footerSocial {
     display: flex;
     align-items: center;
-    padding-top: 10px;
-    ${down("sm")} {
-      flex-direction: column;
-    }
+    padding-top: 5px;
     a {
-      color: #bdbdbd;
+      
       font-size: 12px;
     }
     picture {
@@ -135,15 +163,16 @@ export const Footer = styled.footer`
       padding-top: 10px;
     }
     img {
-      width: 25px;
+      width: 20px;
       padding-right: 10px;
       cursor: pointer;
       transition: all 0.5s;
-      ${between("md", "xxl")} {
-        width: 20px;
-    }
       &:hover {
         scale: 1.2;
+      }
+
+      :last-child {
+        padding-right: 0px;
       }
     }
   }
@@ -152,8 +181,9 @@ export const Footer = styled.footer`
     text-align: center;
     user-select: none;
     display: flex;
-    ${down("sm")} {
+    ${down("md")} {
       align-items: center;
+      justify-content: center;
     }
 
     label {

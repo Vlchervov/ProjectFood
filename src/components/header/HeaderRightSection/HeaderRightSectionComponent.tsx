@@ -1,12 +1,15 @@
-import { useSelector } from "react-redux";
 import { HeaderRightSection, StyledLink, ItemCount } from "../Header.styled";
 import { useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { HiMoon } from "react-icons/hi2";
 import { BiUser } from "react-icons/bi";
 import { FaShoppingCart } from "react-icons/fa";
+import { AiFillShopping } from "react-icons/ai";
 import { DefaultTheme } from "styled-components";
 import { useGlobalContext } from "../../../hooks/useGlobalContext";
+import { useAppSelector } from "../../../hooks/useActions";
+import { FaShoppingBag } from "react-icons/fa";
+import { BiShoppingBag } from "react-icons/bi";
 
 interface IProps {
   toggleTheme(): void;
@@ -14,7 +17,7 @@ interface IProps {
 }
 
 export const HeaderRight = (props: IProps) => {
-  const { cart }: any = useSelector((state) => state);
+  const { cart } = useAppSelector((state) => state);
   const [hidden, setHidden] = useState<boolean>(true);
   const { signout } = useGlobalContext();
   const navigate = useNavigate();
@@ -23,7 +26,7 @@ export const HeaderRight = (props: IProps) => {
 
   return (
     <HeaderRightSection>
-      <ul className="menu">
+      <ul className="dropDownMenu">
         {storageValue ? (
           <>
             <li
@@ -34,7 +37,6 @@ export const HeaderRight = (props: IProps) => {
                 <BiUser />
               </StyledLink>
               <ul className="dropDown" hidden={hidden}>
-
                 <li>
                   <StyledLink className={`${location.pathname === "/profile" && "active"
                     }`} to="profile">Профиль</StyledLink>
@@ -49,7 +51,7 @@ export const HeaderRight = (props: IProps) => {
                   </StyledLink>
                 </li>
                 <li>
-                  <h6 onClick={props.toggleTheme}>{props.theme.title}  <HiMoon onClick={props.toggleTheme} className="switchTheme" /></h6>
+                  <h6 onClick={props.toggleTheme}>{props.theme.title}<HiMoon onClick={props.toggleTheme} className="switchTheme" /></h6>
                 </li>
                 <li onClick={() => {
                   signout(() => navigate("/", { replace: true }))
@@ -78,7 +80,10 @@ export const HeaderRight = (props: IProps) => {
                 <span>{cart.length}</span>
               </ItemCount>
             )}
-            <FaShoppingCart />
+            {/* <FaShoppingCart /> */}
+            <BiShoppingBag />
+            {/* <FaShoppingBag /> */}
+            {/* <AiFillShopping /> */}
           </StyledLink>
         </li>
       </ul>

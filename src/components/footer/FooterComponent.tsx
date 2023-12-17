@@ -1,6 +1,5 @@
 import { useLocation } from "react-router";
 import { Footer } from "./Footer.styled";
-import { Link } from "react-router-dom";
 
 export const FooterComponent = () => {
   return (
@@ -8,9 +7,9 @@ export const FooterComponent = () => {
       {useLocation().pathname === "/catalog" ? (
         <Footer>
           <div className="footer__section">
-          
+
             <div className="footer__item footerPaymentMethods">
-            <h4>Способы оплаты</h4>
+              <h4>Способы оплаты</h4>
             </div>
             <div className="footer__item footerPaymentCard">
               <picture>
@@ -21,12 +20,12 @@ export const FooterComponent = () => {
               </picture>
             </div>
             <div className="footer__item footerNav">
-                <ul>
-                  <li>г. Новокузнецк,
-                    пр-кт Н.С.Ермакова д 30</li>
-                  <li>+7(999)-999-99-99</li>
-                </ul>
-              </div>
+              <ul>
+                <li>г. Новокузнецк,
+                  пр-кт Н.С.Ермакова д 30</li>
+                <li>+7(999)-999-99-99</li>
+              </ul>
+            </div>
           </div>
           <div className="footer__section">
             <div className="footer__item footerDelivery">
@@ -68,6 +67,11 @@ export const FooterComponent = () => {
                 <img alt="Telegram" src="../../img/Telegram.png" />
                 <img alt="Whatsapp" src="../../img/Whatsapp.png" />
               </picture>
+            </div>
+            <div className="footer__item footerDeveloperCompanyName">
+              <a>
+                Developer name
+              </a>
             </div>
           </div>
         </Footer>

@@ -10,7 +10,6 @@ interface IpropsModalSelectCity {
 export const ModalSelectCity = (props: IpropsModalSelectCity) => {
     const nodeRef = useRef<HTMLElement>(null)
     const body = document.querySelector<HTMLBodyElement>("body");
-
     const ModalIsOpen = () => {
         return props.cityModalHidden ? (body!.style.overflow = "hidden")
             : (body!.style.overflow = "auto");

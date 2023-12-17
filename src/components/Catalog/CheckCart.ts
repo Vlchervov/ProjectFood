@@ -1,8 +1,8 @@
-import { ICartItem } from "../../interfaces";
+import { CartState } from "../../store/cart/cart.slice";
 
-export const CheckCart = (cart: any, id: number) => {
+export const CheckCart = (cart: CartState, id: number) => {
     let result: boolean = false;
-    cart.forEach((element: ICartItem) => {
+    cart.forEach((element) => {
         if (element.id === id) result = true;
     });
     return result;
