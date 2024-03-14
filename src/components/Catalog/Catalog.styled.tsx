@@ -2,13 +2,28 @@ import styled from "styled-components";
 import { between, down } from "styled-breakpoints";
 
 export const Catalog = styled.div`
-  display: flex;
-  flex-direction: column;
   /* padding-top: 160px; */
   padding-top: 60px;
+
+  .mainCatalog {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .catalogSwiper {
+    display: flex;
+  }
+
+  .swiper {
+    margin-left: 0px;
+    margin-right: 0px;
+  }
   
   .catalog__swiper {
-    width: 60%;
+    display: flex;
+    width: 600px;
+    margin-left: auto;
+    margin-right: auto;
     height: 245px;
     border-radius: 12px;
     overflow: hidden;

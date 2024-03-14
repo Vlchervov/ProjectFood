@@ -7,7 +7,6 @@ export const FooterComponent = () => {
       {useLocation().pathname === "/catalog" ? (
         <Footer>
           <div className="footer__section">
-
             <div className="footer__item footerPaymentMethods">
               <h4>Способы оплаты</h4>
             </div>
@@ -45,31 +44,31 @@ export const FooterComponent = () => {
           </div>
           <div className="footer__section">
             <div className="footer__item footerAppTitle">
-              <a>Заказывайте через приложение</a>
+              <a href="#">Заказывайте через приложение</a>
             </div>
             <div className="footerLogo">
               <div className="footer__itemLogo GoogleLogo">
-                <a>Google Play</a>
+                <a href="#">Google Play</a>
                 <picture>
-                  <img src="../img/google-play-5.svg" />
+                  <img alt="GooglePlay" src="../img/google-play-5.svg" />
                 </picture>
               </div>
               <div className="footer__itemLogo AppleLogo">
-                <a>AppStore</a>
+                <a href="#">AppStore</a>
                 <picture>
-                  <img src="../img/icons8-apple-logo.svg" />
+                  <img alt="AppStore" src="../img/icons8-apple-logo.svg" />
                 </picture>
               </div>
             </div>
             <div className="footer__item footerSocial">
-              <a>Мы в социальных сетях</a>
+              <a href="#">Мы в социальных сетях</a>
               <picture>
                 <img alt="Telegram" src="../../img/Telegram.png" />
                 <img alt="Whatsapp" src="../../img/Whatsapp.png" />
               </picture>
             </div>
             <div className="footer__item footerDeveloperCompanyName">
-              <a>
+              <a href="#">
                 Developer name
               </a>
             </div>

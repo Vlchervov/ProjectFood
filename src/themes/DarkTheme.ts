@@ -1,4 +1,4 @@
-export default {
+const blackTheme = {
   title: "DarkTheme",
 
   background: {
@@ -26,3 +26,5 @@ export default {
     bottom: "1px solid #383b3b",
   },
 };
+
+export default blackTheme;

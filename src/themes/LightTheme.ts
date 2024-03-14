@@ -1,4 +1,4 @@
-export default {
+const lightTheme = {
   title: "LightTheme",
 
   background: {
@@ -26,3 +26,5 @@ export default {
     bottom: "1px solid #e2e8eb",
   },
 };
+
+export default lightTheme;

@@ -70,7 +70,7 @@ export const HeaderRight = (props: IProps) => {
           </>
         )}
         <li>
-          <StyledLink
+          <StyledLink aria-label="basket"
             className={`shopCartButton ${location.pathname === "/basket" && "active"
               }`}
             to="basket"

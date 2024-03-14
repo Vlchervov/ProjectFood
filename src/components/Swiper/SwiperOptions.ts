@@ -1,14 +1,26 @@
 import {
+  A11y,
   Autoplay,
   EffectFade,
   Navigation,
   Pagination,
   Scrollbar,
   SwiperOptions,
+  Thumbs,
 } from "swiper";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/scrollbar";
+
+export const SwiperParamsForUnderHeaderCategory: SwiperOptions = {
+  speed: 600,
+  slidesPerView: 8,
+  spaceBetween: 0,
+  loop: false,
+  modules: [Navigation, A11y, Thumbs],
+  navigation: true,
+  grabCursor: true,
+}
 
 export const SwiperParamsForCatalogCard: SwiperOptions = {
   speed: 500,

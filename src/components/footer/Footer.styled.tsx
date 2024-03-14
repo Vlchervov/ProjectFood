@@ -2,6 +2,11 @@ import { between, down } from "styled-breakpoints";
 import styled from "styled-components";
 
 export const Footer = styled.footer`
+    a {
+      color: white;
+      text-decoration: none;
+    }
+
     background-color: #141414;
     box-shadow: 0px 10px 15px rgba(0, 0, 0, 1);
     display: flex;
@@ -25,7 +30,7 @@ export const Footer = styled.footer`
     padding-top: 25px;
     padding-bottom: 25px;
     // color: #bdbdbd;
-    color: #828282;
+    color: white;
 
     :last-child {
       display: flex;
@@ -88,7 +93,8 @@ export const Footer = styled.footer`
         font-size: 14px;
         font-family: sans-serif;
         line-height: 20px;
-        color: #bdbdbd;
+        /* color: #bdbdbd; */
+        color: white;
         &:hover {
           text-decoration: underline;
         }
@@ -103,6 +109,7 @@ export const Footer = styled.footer`
   }
 
   .footerAppTitle {
+
     ${down("sm")} {
     text-align: center;
     }
@@ -128,7 +135,8 @@ export const Footer = styled.footer`
       font-size: 16px;
       font-weight: 400;
       line-height: 20px;
-      color: #757575;
+      /* color: #757575; */
+      color: white;
     }
   }
 
@@ -154,7 +162,7 @@ export const Footer = styled.footer`
     align-items: center;
     padding-top: 5px;
     a {
-      
+      color: white;
       font-size: 12px;
     }
     picture {

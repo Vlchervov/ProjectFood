@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
-import { down } from "styled-breakpoints";
+import { between, down } from "styled-breakpoints";
 
 export const StyledLink = styled(Link)`
   color: ${(props) => props.theme.color};
@@ -282,6 +282,10 @@ export const UnderHeaderCategory = styled.nav`
   ::-webkit-scrollbar {
     height: 5px;
     cursor: pointer;
+
+    ${between("xl", "xxl")} {
+      height: 0px;
+    }
   }
 
   ul {
@@ -300,12 +304,12 @@ export const UnderHeaderCategory = styled.nav`
     color: ${(props) => props.theme.color};
     text-decoration: none;
     display: flex;
-    padding: 15px 15px 10px 15px;
+    padding: 15px 15px 10px 0px;
     margin: 0px;
     font-size: 16px;
     cursor: pointer;
     font-weight: 500;
-    width: 100%;
+    
   
     &:hover {
       color: ${(props) => props.theme.hover.background.color};
