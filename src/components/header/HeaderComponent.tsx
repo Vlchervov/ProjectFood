@@ -11,6 +11,7 @@ import { DefaultTheme } from "styled-components";
 import { useGlobalContext } from "../../hooks/useGlobalContext";
 import { HeaderRight } from "./HeaderRightSection/HeaderRightSectionComponent";
 import { ModalSelectCity } from "./ModalSelectCity/ModalSelectCity";
+import { useMediaQuery } from "react-responsive";
 interface IProps {
   toggleTheme(): void;
   theme: DefaultTheme;
@@ -26,22 +27,24 @@ export const HeaderComponent = (props: IProps) => {
     } setCityModalHidden(true)
   }
 
+  const isMobile = useMediaQuery({ query: '(max-width: 812px)' });
+
   return (
     <Header>
       <AppHeader className={`${location.pathname === "/about-us" && hidden}`}>
         <HeaderLeftSection>
           <nav>
             <ul className="menu">
-              <StyledLink aria-label="menu"
+              {isMobile ? <StyledLink aria-label="menu"
                 className={`BiMenu ${location.pathname === "/catalog" && "active"
                   }`}
                 to="catalog"
               >
                 <BiMenu />
-              </StyledLink>
+              </StyledLink> : <StyledLink to="catalog" aria-label="menu"><li>Меню</li></StyledLink>}
               <li onClick={cityAvailable}
               >
-                Выберите город
+                <button>Выберите адрес</button>
               </li>
               <ModalSelectCity cityModalHidden={cityModalHidden} setCityModalHidden={setCityModalHidden} />
             </ul>

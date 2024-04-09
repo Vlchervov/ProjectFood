@@ -26,29 +26,28 @@ export const AuthSection = styled.section`
 
 export const AuthorizationWindow = styled.div`
   /* box-shadow: 4px 5px 10px 0px rgba(0, 0, 0, 0.4); */
-  border: 0.8px solid #d4d4d4c2;
-  margin-top: 150px;
-  border-radius: 12px;
-  display: grid;
-  justify-content: center;
-  align-content: center;
+  /* border: 0.8px solid #d4d4d4c2; */
+  /* margin-top: 0px; */
+  /* display: grid; */
+  /* justify-content: center; */
+  /* align-content: center; */
   z-index: 2;
-  animation: show-modal 0.5s forwards;
+  /* animation: show-modal 0.3s forwards; */
 `;
 
 export const AuthorizationHeader = styled.div`
-  display: flex;
-  justify-content: flex-end;
+  /* display: flex; */
+  /* justify-content: flex-end; */
   div {
-    margin: 12px;
-    display: flex;
-    position: absolute;
+    /* margin: 12px; */
+    /* display: flex; */
+    /* position: absolute; */
     z-index: 10;
     cursor: pointer;
-    align-items: center;
-    justify-content: center;
-    width: 32px;
-    height: 32px;
+    /* align-items: center; */
+    /* justify-content: center; */
+    /* width: 32px;
+    height: 32px; */
 
     :hover {
       transition: background-color 1s;
@@ -75,24 +74,19 @@ export const AuthorizationHeader = styled.div`
 `;
 
 export const AuthorizationBody = styled.div`
-  padding: 2rem;
-  width: 375px;
-  background-color: #fff;
-  height: 222px;
+  /* padding: 2rem; */
+  /* background-color: #fff; */
   z-index: 4;
-  border-radius: 15px;
+  /* border-radius: 15px; */
   animation: show-modal 0.5s forwards;
   h1 {
     padding: 0;
     margin: 0;
-    text-align: center;
-    color: #000000;
-    font-size: 18px;
+    /* text-align: center; */
+    color: ${(props) => props.theme.color};
+    font-size: 14px;
   }
 
-  ${down("sm")} {
-    width: 300px;
-    }
 
   .CAPTCHA {
     .grecaptcha-badge {
@@ -128,7 +122,7 @@ export const AuthorizationBody = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding-top: 42px;
+    padding-top: 15px;
     user-select: none;
     input {
       outline: none;
@@ -136,11 +130,22 @@ export const AuthorizationBody = styled.div`
       border: none;
       background-color: #ecebeb;
       user-select: none;
+    }
 
+    label {
+      color: ${(props) => props.theme.color};
+      font-size: 12px;
+      cursor: pointer;
+    }
+
+    .agreeCheckboxaAuthorization {
+      width: 100%;
+      display: flex;
+      margin-top: 5px;
     }
 
     .phoneNumberInput {
-      width: 225px;
+      width: 400px;
       border-radius: 8px;
     }
 
@@ -152,10 +157,10 @@ export const AuthorizationBody = styled.div`
       background-color: #307df0;
       color: white;
       border: none;
-      width: 225px;
+      width: 400px;
       height: 37px;
-      margin: 25px 0px 0px 0px;
-      border-radius: 12px;
+      margin: 15px 0px 0px 0px;
+      border-radius: 6px;
       cursor: pointer;
 
       :hover {
@@ -206,10 +211,10 @@ export const AuthorizationBody = styled.div`
       background-color: #307df0;
       color: white;
       border: none;
-      padding: 12px 15px 15px 15px;
+      padding: 0px;
       width: 65%;
       height: 48px;
-      margin: 15px 0px 15px 0px;
+      margin: 0px;
       border-radius: 12px;
       cursor: pointer;
 

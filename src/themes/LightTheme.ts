@@ -1,8 +1,10 @@
 const lightTheme = {
   title: "LightTheme",
-
+  card: {
+    background: "white",
+  },
   background: {
-    color: "white",
+    color: "#eff3f6",
   },
   switchTheme: {
     color: "black",

@@ -9,7 +9,9 @@ import { useGlobalContext } from "../../../hooks/useGlobalContext";
 import { useLocation, useNavigate } from "react-router";
 
 interface IUser {
-  user: any,
+  user: {
+    phoneNumber: number;
+  }
 }
 
 export const AuthorizationForm = () => {
@@ -98,7 +100,7 @@ export const AuthorizationForm = () => {
                 onChange={setPhoneNumber}
               />
             </label>
-            <div>
+            <div className="agreeCheckboxaAuthorization">
               <input id="agree" type="checkbox" onChange={(e) => { setIsChecked(e.target.checked) }} checked={checked} />
               <label htmlFor="agree"> Я согласен
               </label>

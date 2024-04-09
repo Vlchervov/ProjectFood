@@ -21,15 +21,15 @@ export const Catalog = styled.div`
   
   .catalog__swiper {
     display: flex;
-    width: 600px;
+    width: 89%;
     margin-left: auto;
     margin-right: auto;
-    height: 245px;
+    height: 380px;
     border-radius: 12px;
     overflow: hidden;
     margin-top: 12px;
     user-select: none;
-    box-shadow: 4px 5px 10px 0px rgba(0, 0, 0, 0.4);
+    /* box-shadow: 4px 5px 10px 0px rgba(0, 0, 0, 0.4); */
     img {
      width: 100%;
      height: 100%;
@@ -56,7 +56,7 @@ export const CategoryName = styled.h1`
   user-select: none;
   display: flex;
   justify-content: flex-start;
-  margin-left: 145px;
+  margin-left: 110px;
   margin-right: 0px;
 
   ${between("sm", "md")} {
@@ -79,8 +79,10 @@ export const Categories = styled.section`
   background-color: ${(props) => props.theme.background.color};
   padding-top: 0px;
   flex-wrap: wrap;
-  margin-left: 120px;
-  margin-right: 80px;
+  /* margin-left: 120px; */
+  /* margin-right: 80px; */
+  margin-left: 80px;
+  margin-right: 40px;
   &:not(:nth-of-type(3)) {
     border-bottom: ${(props) => props.theme.border.bottom};
   }
@@ -100,15 +102,16 @@ export const Categories = styled.section`
 
 export const CategoriesItem = styled.div`
   user-select: none;
-  background-color: ${(props) => props.theme.background.color};
+  background-color: ${(props) => props.theme.card.background};
   border-radius: 25px;
   flex-direction: column;
   display: flex;
   margin-left: 20px;
-  width: 267px;
+  width: 305px;
+  transition: all 0.2s;
   margin-right: 20px;
   margin-bottom: 20px;
-  box-shadow: 0px 10px 11px 2px rgba(0, 0, 0, 0.10); 
+  /* box-shadow: 0px 10px 11px 2px rgba(0, 0, 0, 0.10);  */
 
   ${down("sm")} {
     margin-left: 0px;
@@ -127,9 +130,9 @@ export const CategoriesItem = styled.div`
     }
 
     img {
+      height: 100%;
       object-fit: cover;
       width: 100%;
-      height: 100%;
     }
 
     ${down("sm")} {
@@ -160,22 +163,23 @@ export const CategoriesItem = styled.div`
     button {
       border: none;
       user-select: none;
-      border-radius: 8px;
-      background-color: ${(props) => props.theme.background.color};
-      width: 110px;
-      height: 25px;
-      color: ${(props) => props.theme.color};
-      text-decoration: underline;
+      border-radius: 25px;
+      width: 100px;
+      height: 30px;
+      /* color: ${(props) => props.theme.color}; */
+      color: white;
+      background-color: #FF0044;
       font-weight: 500;
       transition: all 0.366s;
       cursor: pointer;
 
-      :hover {
+      /* :hover {
         transition: all 0.3s;
         color: white;
         text-decoration: none;
-        background-color: #4e9edf;
-      }
+        background-color: #f10071;
+        
+      } */
     }
   }
 
@@ -202,7 +206,7 @@ export const CategoriesItem = styled.div`
   }
 
   img {
-    max-height: 205px;
+    max-height: 240px;
     object-fit: cover;
     border-radius: 20px 20px 0px 0px;
   }

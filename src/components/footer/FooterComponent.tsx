@@ -7,7 +7,7 @@ export const FooterComponent = () => {
       {useLocation().pathname === "/catalog" ? (
         <Footer>
           <div className="footer__section">
-            <div className="footer__item footerPaymentMethods">
+            {/* <div className="footer__item footerPaymentMethods">
               <h4>Способы оплаты</h4>
             </div>
             <div className="footer__item footerPaymentCard">
@@ -17,7 +17,7 @@ export const FooterComponent = () => {
                 <img alt="Способ оплаты" src="https://storage.yandexcloud.net/ecomm-storage-dev/images/logoJcb-v2.png" />
                 <img alt="Способ оплаты" src="https://storage.yandexcloud.net/ecomm-storage-dev/images/logoMir-v2.png" />
               </picture>
-            </div>
+            </div> */}
             <div className="footer__item footerNav">
               <ul>
                 <li>г. Новокузнецк,
@@ -25,15 +25,21 @@ export const FooterComponent = () => {
                 <li>+7(999)-999-99-99</li>
               </ul>
             </div>
+            <div className="footer__item footerSocial">
+              <a href="#">Мы в Telegram</a>
+              <picture>
+                <img alt="Telegram" src="../../img/Telegram.png" />
+              </picture>
+            </div>
           </div>
           <div className="footer__section">
-            <div className="footer__item footerDelivery">
+            {/* <div className="footer__item footerDelivery">
               <h4>Title</h4>
-            </div>
+            </div> */}
             <div className="footer__item footerNav">
               <ul>
                 <li>Доставка и оплата</li>
-                <li>Публичная оферта</li>
+                {/* <li>Публичная оферта</li> */}
                 <li>Политика конфиденциальности</li>
               </ul>
             </div>
@@ -43,35 +49,34 @@ export const FooterComponent = () => {
             </div>
           </div>
           <div className="footer__section">
-            <div className="footer__item footerAppTitle">
+            {/* <div className="footer__item footerAppTitle">
               <a href="#">Заказывайте через приложение</a>
-            </div>
+            </div> */}
             <div className="footerLogo">
               <div className="footer__itemLogo GoogleLogo">
                 <a href="#">Google Play</a>
-                <picture>
+                {/* <picture>
                   <img alt="GooglePlay" src="../img/google-play-5.svg" />
-                </picture>
+                </picture> */}
               </div>
               <div className="footer__itemLogo AppleLogo">
-                <a href="#">AppStore</a>
-                <picture>
+                <a href="#">App Store</a>
+                {/* <picture>
                   <img alt="AppStore" src="../img/icons8-apple-logo.svg" />
-                </picture>
+                </picture> */}
               </div>
             </div>
-            <div className="footer__item footerSocial">
-              <a href="#">Мы в социальных сетях</a>
+            {/* <div className="footer__item footerSocial">
+              <a href="#">Мы в Telegram</a>
               <picture>
                 <img alt="Telegram" src="../../img/Telegram.png" />
-                <img alt="Whatsapp" src="../../img/Whatsapp.png" />
               </picture>
-            </div>
-            <div className="footer__item footerDeveloperCompanyName">
+            </div> */}
+            {/* <div className="footer__item footerDeveloperCompanyName">
               <a href="#">
                 Developer name
               </a>
-            </div>
+            </div> */}
           </div>
         </Footer>
       ) : null}

@@ -6,9 +6,10 @@ export const Footer = styled.footer`
       color: white;
       text-decoration: none;
     }
-
-    background-color: #141414;
-    box-shadow: 0px 10px 15px rgba(0, 0, 0, 1);
+    
+    height: 250px;
+    background-color: #1f1f1f;
+    /* box-shadow: 0px 10px 15px rgba(0, 0, 0, 1); */
     display: flex;
     justify-content: space-around;
     padding-top: 0;
@@ -27,8 +28,8 @@ export const Footer = styled.footer`
     }
 
     .footer__section {
-    padding-top: 25px;
-    padding-bottom: 25px;
+    padding-top: 18px;
+    padding-bottom: 18px;
     // color: #bdbdbd;
     color: white;
 
@@ -38,7 +39,7 @@ export const Footer = styled.footer`
       align-items: flex-end;
       ${down("md")} {
         align-items: center;
-        padding-bottom: 10px;
+        margin-bottom: 15px;
       }
     }
 
@@ -119,8 +120,12 @@ export const Footer = styled.footer`
   }
   .footerLogo {
     display: flex;
-    margin-top: 10px;
+    margin-top: 18px;
     flex-direction: row;
+
+    ${down("sm")} {
+    margin-top: 0px;
+    }
   }
 
   .footerPaymentMethods {
@@ -160,25 +165,35 @@ export const Footer = styled.footer`
   .footerSocial {
     display: flex;
     align-items: center;
-    padding-top: 5px;
+    margin-top: 12px;
+    transition: all 0.5s;
+
+    ${down("sm")} {
+      justify-content: center;
+    }
+
+    &:hover {
+      scale: 1.05;
+    }
+    
     a {
       color: white;
       font-size: 12px;
+
+      &:hover {
+        color: #55b2ff;
+      }
     }
     picture {
       padding-left: 10px;
       text-align: center;
-      padding-top: 10px;
+      
     }
     img {
       width: 20px;
       padding-right: 10px;
       cursor: pointer;
       transition: all 0.5s;
-      &:hover {
-        scale: 1.2;
-      }
-
       :last-child {
         padding-right: 0px;
       }

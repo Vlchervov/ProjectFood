@@ -3,6 +3,9 @@ import styled from "styled-components";
 declare module "styled-components" {
   export interface DefaultTheme {
     title: string;
+    card: {
+      background: string;
+    };
     background: {
       color: string;
     };

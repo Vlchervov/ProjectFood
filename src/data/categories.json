@@ -10,9 +10,9 @@
           "id": 0,
           "title": "Наименование товара №1",
           "src": {
-            "image_1": "../imgForCatalog/65b1370d25e958d92c8f3b7a8ba43341.jpg",
-            "image_2": "../imgForCatalog/",
-            "image_3": "../imgForCatalog/"
+            "image_1": "../imgForCatalog/1.jpg",
+            "image_2": "../imgForCatalog/2.jpg",
+            "image_3": "../imgForCatalog/3.jpg"
           },
           "descr": "Описание товара №1 первая категория Описание товара №1 первая категория Описание товара №1 первая категория Описание товара №1 первая категория Описание товара №1 первая категория",
           "weight": "100 гр",
@@ -24,9 +24,9 @@
           "id": 1,
           "title": "Наименование товара №2",
           "src": {
-            "image_1": "../imgForCatalog/",
-            "image_2": "../imgForCatalog/",
-            "image_3": ""
+            "image_1": "../imgForCatalog/4.jpg",
+            "image_2": "../imgForCatalog/5.jpg",
+            "image_3": "../imgForCatalog/6.jpg"
           },
           "descr": "Описание товара №2 первая категория",
           "weight": "560 гр",
@@ -38,9 +38,9 @@
           "id": 2,
           "title": "Наименование товара №3",
           "src": {
-            "image_1": "../imgForCatalog/",
-            "image_2": "../imgForCatalog/",
-            "image_3": "../imgForCatalog/"
+            "image_1": "../imgForCatalog/7.jpeg",
+            "image_2": "../imgForCatalog/8.jpg",
+            "image_3": "../imgForCatalog/9.png"
           },
           "descr": "Описание товара №3 первая категория",
           "weight": "643 гр",
@@ -52,9 +52,9 @@
           "id": 3,
           "title": "Наименование товара №4",
           "src": {
-            "image_1": "../imgForCatalog/",
-            "image_2": "../imgForCatalog/",
-            "image_3": "../imgForCatalog/"
+            "image_1": "../imgForCatalog/10.png",
+            "image_2": "../imgForCatalog/11.jpg",
+            "image_3": "../imgForCatalog/12.jpg"
           },
           "descr": "Описание товара №4 первая категория",
           "weight": "0.2 мл",
@@ -74,9 +74,9 @@
           "id": 4,
           "title": "Наименование товара №1",
           "src": {
-            "image_1": "../imgForCatalog/",
-            "image_2": "../imgForCatalog/",
-            "image_3": "../imgForCatalog/"
+            "image_1": "../imgForCatalog/13.jpg",
+            "image_2": "../imgForCatalog/14.jpg",
+            "image_3": "../imgForCatalog/15.jpg"
           },
           "descr": "Описание товара №1 вторая категория",
           "weight": "234 гр",
@@ -88,9 +88,9 @@
           "id": 5,
           "title": "Наименование товара №2",
           "src": {
-            "image_1": "../imgForCatalog/",
-            "image_2": "../imgForCatalog/",
-            "image_3": "../imgForCatalog/"
+            "image_1": "../imgForCatalog/16.jpg",
+            "image_2": "../imgForCatalog/17.jpg",
+            "image_3": "../imgForCatalog/18.jpg"
           },
           "descr": "Описание товара №2 вторая категория",
           "weight": "358 гр",
@@ -102,9 +102,9 @@
           "id": 6,
           "title": "Наименование товара №3",
           "src": {
-            "image_1": "../imgForCatalog/",
-            "image_2": "../imgForCatalog/",
-            "image_3": "../imgForCatalog/"
+            "image_1": "../imgForCatalog/19.jpg",
+            "image_2": "../imgForCatalog/20.jpg",
+            "image_3": "../imgForCatalog/21.jpg"
           },
           "descr": "Описание товара №3 вторая категория",
           "weight": "777 гр",
@@ -116,9 +116,9 @@
           "id": 7,
           "title": "Наименование товара №4",
           "src": {
-            "image_1": "../imgForCatalog/",
-            "image_2": "../imgForCatalog/",
-            "image_3": "../imgForCatalog/"
+            "image_1": "../imgForCatalog/22.jpeg",
+            "image_2": "../imgForCatalog/23.jpg",
+            "image_3": "../imgForCatalog/24.jpeg"
           },
           "descr": "Описание товара №4 вторая категория",
           "weight": "178 гр",
@@ -130,9 +130,9 @@
           "id": 8,
           "title": "Наименование товара №5",
           "src": {
-            "image_1": "../imgForCatalog/",
-            "image_2": "../imgForCatalog/",
-            "image_3": "../imgForCatalog/"
+            "image_1": "../imgForCatalog/25.jpg",
+            "image_2": "../imgForCatalog/26.jpg",
+            "image_3": "../imgForCatalog/27.jpg"
           },
           "descr": "Описание товара №5 вторая категория",
           "weight": "297 гр",
@@ -144,9 +144,9 @@
           "id": 9,
           "title": "Наименование товара №6",
           "src": {
-            "image_1": "../imgForCatalog/",
-            "image_2": "../imgForCatalog/",
-            "image_3": "../imgForCatalog/"
+            "image_1": "../imgForCatalog/28.jpg",
+            "image_2": "../imgForCatalog/29.jpg",
+            "image_3": "../imgForCatalog/30.jpg"
           },
           "descr": "Описание товара №6 вторая категория",
           "weight": "297 гр",
@@ -158,9 +158,9 @@
           "id": 10,
           "title": "Наименование товара №7",
           "src": {
-            "image_1": "../imgForCatalog/",
-            "image_2": "../imgForCatalog/",
-            "image_3": "../imgForCatalog/"
+            "image_1": "../imgForCatalog/31.jpg",
+            "image_2": "../imgForCatalog/32.jpg",
+            "image_3": "../imgForCatalog/33.jpg"
           },
           "descr": "Описание товара №7 вторая категория",
           "weight": "297 гр",
@@ -172,9 +172,9 @@
           "id": 11,
           "title": "Наименование товара №8",
           "src": {
-            "image_1": "../imgForCatalog/",
-            "image_2": "../imgForCatalog/",
-            "image_3": "../imgForCatalog/"
+            "image_1": "../imgForCatalog/34.jpg",
+            "image_2": "../imgForCatalog/35.jpg",
+            "image_3": "../imgForCatalog/36.jpg"
           },
           "descr": "Описание товара №8 вторая категория",
           "weight": "297 гр",
@@ -194,9 +194,9 @@
           "id": 12,
           "title": "Наименование товара №1",
           "src": {
-            "image_1": "../imgForCatalog/",
-            "image_2": "../imgForCatalog/",
-            "image_3": "../imgForCatalog/"
+            "image_1": "../imgForCatalog/37.jpg",
+            "image_2": "../imgForCatalog/38.jpg",
+            "image_3": "../imgForCatalog/39.jpg"
           },
           "descr": "Описание товара №1 третья категория",
           "weight": "200 гр",
@@ -208,9 +208,9 @@
           "id": 13,
           "title": "Наименование товара №2",
           "src": {
-            "image_1": "../imgForCatalog/",
-            "image_2": "../imgForCatalog/",
-            "image_3": "../imgForCatalog/"
+            "image_1": "../imgForCatalog/40.jpg",
+            "image_2": "../imgForCatalog/41.jpg",
+            "image_3": "../imgForCatalog/42.jpg"
           },
           "descr": "Описание товара №2 третья категория",
           "weight": "349 гр",
@@ -222,9 +222,9 @@
           "id": 14,
           "title": "Наименование товара №3",
           "src": {
-            "image_1": "../imgForCatalog/",
-            "image_2": "../imgForCatalog/",
-            "image_3": "../imgForCatalog/"
+            "image_1": "../imgForCatalog/43.jpg",
+            "image_2": "../imgForCatalog/44.jpg",
+            "image_3": "../imgForCatalog/45.jpeg"
           },
           "descr": "Описание товара №3 третья категория",
           "weight": "999 гр",
@@ -236,9 +236,9 @@
           "id": 15,
           "title": "Наименование товара №4",
           "src": {
-            "image_1": "../imgForCatalog/",
-            "image_2": "../imgForCatalog/",
-            "image_3": "../imgForCatalog/"
+            "image_1": "../imgForCatalog/46.jpg",
+            "image_2": "../imgForCatalog/47.jpg",
+            "image_3": "../imgForCatalog/48.jpg"
           },
           "descr": "Описание товара №4 третья категория",
           "weight": "178 гр",
@@ -250,9 +250,9 @@
           "id": 16,
           "title": "Наименование товара №5",
           "src": {
-            "image_1": "../imgForCatalog/",
-            "image_2": "../imgForCatalog/",
-            "image_3": "../imgForCatalog/"
+            "image_1": "../imgForCatalog/49.jpg",
+            "image_2": "../imgForCatalog/50.jpg",
+            "image_3": "../imgForCatalog/51.jpg"
           },
           "descr": "Описание товара №5 третья категория",
           "weight": "155 гр",
@@ -264,9 +264,9 @@
           "id": 17,
           "title": "Наименование товара №6",
           "src": {
-            "image_1": "../imgForCatalog/",
-            "image_2": "../imgForCatalog/",
-            "image_3": "../imgForCatalog/"
+            "image_1": "../imgForCatalog/52.jpg",
+            "image_2": "../imgForCatalog/53.jpg",
+            "image_3": "../imgForCatalog/54.jpeg"
           },
           "descr": "Описание товара №6 третья категория",
           "weight": "315 гр",
@@ -278,9 +278,9 @@
           "id": 18,
           "title": "Наименование товара №7",
           "src": {
-            "image_1": "../imgForCatalog/",
-            "image_2": "../imgForCatalog/",
-            "image_3": "../imgForCatalog/"
+            "image_1": "../imgForCatalog/55.jpg",
+            "image_2": "../imgForCatalog/56.jpg",
+            "image_3": "../imgForCatalog/57.jpeg"
           },
           "descr": "Описание товара №7 третья категория",
           "weight": "100 гр",
@@ -292,9 +292,9 @@
           "id": 19,
           "title": "Наименование товара №8",
           "src": {
-            "image_1": "../imgForCatalog/",
-            "image_2": "../imgForCatalog/",
-            "image_3": "../imgForCatalog/"
+            "image_1": "../imgForCatalog/58.jpg",
+            "image_2": "../imgForCatalog/59.jpg",
+            "image_3": "../imgForCatalog/60.jpg"
           },
           "descr": "Описание товара №8 третья категория",
           "weight": "50 гр",

@@ -22,7 +22,7 @@ export const Basket = () => {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0.6 }}
-      transition={{ ease: "easeOut", duration: 0.6 }}
+      transition={{ ease: "easeOut", duration: 0.5 }}
     >
       <div className="basket">
         <div className="cardWrapper">
@@ -40,7 +40,7 @@ export const Basket = () => {
               </div>
             ) : (
               <div className="listItem">
-                <h1>Корзина товаров</h1>
+                <h1>Корзина</h1>
                 <h6
                   onClick={() => {
                     setIsModalForCleanBasketVisible(true);
@@ -53,17 +53,21 @@ export const Basket = () => {
                   isModalForCleanBasketVisible={isModalForCleanBasketVisible}
                 />
                 {!ShowOrderPayment ? (
-                  <>
-                    {cart.map((item: ICartItem): any => (
-                      <CartItem key={item.id} item={item} />
-                    ))}
-                    <button
-                      className="basket__goToOrder"
-                      onClick={() => setShowOrderPayment(!ShowOrderPayment)}
-                    >
-                      Перейти к оформлению заказа
-                    </button>
-                  </>
+                  <div style={{ display: "flex" }}>
+                    <div className="basket__cartItemContainer">
+                      {cart.map((item: ICartItem): JSX.Element => (
+                        <CartItem key={item.id} item={item} />
+                      ))}
+                    </div>
+                    <div style={{ position: "sticky", top: "80px", borderRadius: "12px", marginLeft: "16px", display: "flex", padding: "12px", height: "450px", background: "#ffd1d1", alignItems: "flex-end" }}>
+                      <button
+                        className="basket__goToOrder"
+                        onClick={() => setShowOrderPayment(!ShowOrderPayment)}
+                      >
+                        Перейти к оформлению заказа
+                      </button>
+                    </div>
+                  </div>
                 ) : (
                   <BasketPaymentForm
                     cart={cart}

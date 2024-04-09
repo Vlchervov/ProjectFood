@@ -1,6 +1,8 @@
 const blackTheme = {
   title: "DarkTheme",
-
+  card: {
+    background: "#1f1f1f",
+  },
   background: {
     color: "#1b1b1b",
   },

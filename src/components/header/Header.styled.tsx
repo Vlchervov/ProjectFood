@@ -37,7 +37,7 @@ export const AppHeader = styled.div`
   border-radius: 0px;
   background-color: ${(props) => props.theme.background.color};
   border-top: ${(props) => props.theme.border.top};
-  border-bottom: ${(props) => props.theme.border.bottom};
+  /* border-bottom: ${(props) => props.theme.border.bottom}; */
   z-index: 25;
 
   ${down("sm")} {
@@ -90,29 +90,27 @@ export const AppHeader = styled.div`
     }
   }
 
+
+
   .shopCartButton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 32px;
+    /* width: 36px;
+    height: 36px; */
     cursor: pointer;
     transform: color 500ms ease;
-  }
-
-  .menu {
-    z-index: 99;
-    display: flex;
-    margin: 0;
-    padding: 0;
-    align-items: center;
-    li {
-      list-style: none;
-      align-items: center;
-      padding-bottom: 111px;
-      padding: 10px 12px;
-      font-size: 14px;
+    
+    svg {
+      /* width: 18px;
+      height: 18px; */
     }
   }
 `;
 
 export const HeaderLeftSection = styled.div`
-  margin-left: 125px;
+  margin-left: 70px;
   display: flex;
   ${down('xl')} {
     margin-left: 0px;
@@ -122,28 +120,61 @@ export const HeaderLeftSection = styled.div`
     height: 45px;
   }
 
+  .menu {
+    display: flex;
+    padding-left: 0px;
+  }
+
   li {
-    cursor: pointer;
-    color: ${(props) => props.theme.color};
-    :hover {
-      text-decoration: underline;
-      text-decoration-color: ${(props) => props.theme.active.color};
-      text-decoration-style: double;
+    display: flex;
+    align-items: center;
+
+    &:nth-child(1) { 
+      color: ${(props) => props.theme.color};
+      margin-right: 25px;
     }
+
+    button {
+      cursor: pointer;
+      outline: none;
+      border: 0.1px solid #FF0044;
+      color: ${(props) => props.theme.color};
+      background: none;
+      border-radius: 4px;
+      height: 25px;
+      width: 140px;
+      font-size: 12px;
+      transition: ease-in 0.4s;
+      :hover {
+      color: white;
+      background-color: #FF0044;
+      transition: background-color 0.4s ease-out;
+    }
+    }
+   
   }
 `;
 
 export const HeaderRightSection = styled.div`
-  margin-right: 125px;
+  margin-right: 70px;
   padding-right: 0px;
   z-index: 10;
   display: flex;
   ${down("xl")} {
     margin-right: 15px;
     } 
-  svg {
-    width: 24px;
-    height: 30px;
+
+    li {
+      width: 24px;
+      height: 24px;
+    }
+
+    svg {
+    width: 20px;
+    height: 20px;
+  }
+
+    .userIcon {
 
   }
 
@@ -154,6 +185,7 @@ export const HeaderRightSection = styled.div`
     padding: 0;
     align-items: center;
     li {
+      width: 100%;
       list-style: none;
       align-items: center;
       padding-bottom: 111px;
@@ -198,12 +230,15 @@ export const HeaderRightSection = styled.div`
 
   .AppHeaderSection__ButtonAuthorized {
     border: none;
-    height: 30px;
+    height: 25px;
     width: 80px;
     border-radius: 6px;
-    color: #413e3e;
+    color: ${(props) => props.theme.color};
+    background: none;
+    border: 0.1px solid #FF0044;
     cursor: pointer;
     margin-right: 12px;
+    transition: ease-in 0.4s;
     font-weight: 700;
 
     ${down("sm")} {
@@ -213,7 +248,9 @@ export const HeaderRightSection = styled.div`
     }
 
     :hover {
-      color: #000000;
+      color: white;
+      background-color: #FF0044;
+      transition: background-color 0.4s ease-out;
     }
   }
 
@@ -239,8 +276,8 @@ export const HeaderRightSection = styled.div`
       flex-wrap: nowrap;
   
       svg {
-        width: 16px;
-        height: 16px;
+        width: 12px;
+        height: 12px;
       }
       h6 {
         color: ${(props) => props.theme.switchTheme.color};
@@ -257,24 +294,56 @@ export const HeaderRightSection = styled.div`
 `;
 
 export const UnderHeaderCategory = styled.nav`
-  width: 100%;
   display: flex;
-  align-items: center;
-  z-index: 24;
+  justify-content: center;
+  z-index: 10;
   position: sticky;
   margin-top: 25px;
-  top: 50px;
+  top: 55px;
   background-color: ${(props) => props.theme.background.color};
-  border-radius: 0px 0px 8px 8px;
-  overflow-y: hidden;
-  overflow-x: auto;
-  box-shadow: 1px 1px 17px 0px rgba(0, 0, 0, 0.1);
+  border-radius: 0px;
+
 
   &::-webkit-scrollbar-thumb {
     border-radius: 4px;
     background-color: #dc3d3d;
 
-    ${down("md")} {
+    ${down("xl")} {
+      background-color: ${(props) => props.theme.background.color};
+    }
+  }
+
+  ::-webkit-scrollbar {
+    height: 5px;
+    cursor: pointer;
+
+    ${between("xl", "xxl")} {
+      height: 0px;
+    }
+
+
+  }
+
+  ul {
+    width: 90%;
+    padding-left: 0px;
+    display: flex;
+    list-style: none;
+    flex-wrap: wrap;
+    align-items: center;
+    user-select: none;
+  
+    
+    ${down("sm")} {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+    background-color: #dc3d3d;
+
+    ${down("xl")} {
       background-color: ${(props) => props.theme.background.color};
     }
   }
@@ -288,29 +357,24 @@ export const UnderHeaderCategory = styled.nav`
     }
   }
 
-  ul {
-    display: flex;
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    align-items: center;
-    margin-left: 125px;
-    user-select: none;
-    ${down('xl')} {
+    ${down("xl")} {
       margin-left: 0px;
+      padding-left: 10px;
     }
+
     
     a {
+    white-space: nowrap;
     color: ${(props) => props.theme.color};
     text-decoration: none;
     display: flex;
-    padding: 15px 15px 10px 0px;
+    padding: 0px 35px 0px 0px;
     margin: 0px;
-    font-size: 16px;
+    font-size: 14px;
+    width: 100%;
     cursor: pointer;
     font-weight: 500;
     
-  
     &:hover {
       color: ${(props) => props.theme.hover.background.color};
     }
@@ -382,6 +446,7 @@ export const ItemCount = styled.div`
   border-radius: 25px;
   align-items: center;
   display: flex;
+  top: 5px;
   position: absolute;
   margin-left: 22px;
   justify-content: center;

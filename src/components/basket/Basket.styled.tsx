@@ -6,7 +6,7 @@ export const BasketSection = styled.section`
   padding-bottom: 100px;
   padding-top: 125px;
   display: flex;
-  align-items: center;
+  /* align-items: center; */
 
   .basketSwiper {
     width: 490px;
@@ -34,7 +34,6 @@ export const BasketSection = styled.section`
   .listItem {
     display: flex;
     flex-direction: column;
-    align-items: flex-end;
   }
 
   label {
@@ -110,6 +109,13 @@ export const BasketSection = styled.section`
       }
     }
 
+    &__cartItemContainer {
+    background-color: #ffe8e8;
+    padding: 12px;
+    border-radius: 12px;
+    width: 900px;
+  }
+
     &__returnToCatalogButton,
     &__goToOrder {
       cursor: pointer;
@@ -118,12 +124,14 @@ export const BasketSection = styled.section`
       height: 38px;
       margin-bottom: 25px;
       border-radius: 25px;
-      background-color: #478dff;
+      /* background-color: #478dff; */
+      background-color: #FF0044;
       color: white;
       margin-top: 25px;
 
       &:hover {
-        background-color: #2d75e0;
+        /* background-color: #2d75e0; */
+        background-color: #d10038;
       }
 
       &:disabled {
@@ -199,14 +207,13 @@ export const BasketSection = styled.section`
 
     h1 {
       width: 100%;
-      font-size: 18px;
+      font-size: 24px;
+      font-weight: 600;
       user-select: none;
-      background-color: #f5f4f4;
-      text-align: center;
+      color: ${(props) => props.theme.color};
       display: flex;
-      align-items: center;
       height: 30px;
-      justify-content: center;
+      justify-content: flex-start;
     }
   }
 
