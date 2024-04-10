@@ -4,7 +4,7 @@ export interface IDataContent {
   name: string;
   city: string;
   anchor: string;
-  key: string | number;
+  // key: string | number;
   anchorID: string;
   cards: {
     id: number;
@@ -60,5 +60,6 @@ export interface ICartItem {
   weight: string;
   descr: string;
   priceTotal: number;
+  price?: number;
   count: number;
 }

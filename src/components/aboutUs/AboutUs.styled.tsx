@@ -9,7 +9,7 @@ export const NewSection = styled.section`
   justify-content: flex-start;
   overflow: hidden;
   padding: 130px 0px 0px 50px;
-  background: #ff0055;
+  background: #bd19c8;
   font-weight: 700;
   font-family: "Inter-Bold", "Inter", sans-serif;
   color: rgba(255, 255, 255, 0.9);
@@ -28,31 +28,6 @@ export const NewSection = styled.section`
     user-select: none;
   }
 
-  b {
-    background-color: #0c8f00;
-  }
-
-  b:nth-child(2) {
-    background-color: #ff0055;
-  }
-
-  b:nth-child(1) {
-    background-color: #0051ff;
-  }
-  b:nth-child(4) {
-    background-color: #00ddc0;
-
-    strong {
-      background-color: #bd19c8;
-    }
-  }
-  b:nth-child(7) {
-    background-color: #000000;
-  }
-  b:nth-child(9) {
-    background-color: #fffb00;
-    color: #000000;
-  }
 
   span {
     display: block;
@@ -60,8 +35,9 @@ export const NewSection = styled.section`
     opacity: 0;
   }
 
-  :nth-child(3) {
+  :nth-child(2) {
     margin: 0;
+    color: black;
     background: #ffffff;
 
     h2 {
@@ -80,26 +56,14 @@ export const NewSection = styled.section`
         padding-left: 14px;
       }
     }
-
-    ::-webkit-scrollbar {
-      width: 8px;
-      height: 8px;
-      display: none;
-      scroll-behavior: inherit;
-    }
-
-    ::-webkit-scrollbar-thumb {
-      border-radius: none;
-      background: #eeeeee;
-    }
   }
 
-  :nth-child(4) {
-    background: #bd19c8;
+  :nth-child(3) {
+    background: #0077ff;
     text-decoration: underline;
   }
 
-  :nth-child(5) {
-    background: #0077ff;
+  :nth-child(4) {
+    background: #ff0015;
   }
 `;

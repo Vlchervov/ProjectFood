@@ -36,13 +36,13 @@ export const FooterComponent = () => {
             {/* <div className="footer__item footerDelivery">
               <h4>Title</h4>
             </div> */}
-            <div className="footer__item footerNav">
+            {/* <div className="footer__item footerNav">
               <ul>
                 <li>Доставка и оплата</li>
-                {/* <li>Публичная оферта</li> */}
+                <li>Публичная оферта</li>
                 <li>Политика конфиденциальности</li>
               </ul>
-            </div>
+            </div> */}
           </div>
           <div className="footer__section">
             <div className="footer__item footerContacts">

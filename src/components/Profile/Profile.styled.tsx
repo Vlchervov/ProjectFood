@@ -23,15 +23,16 @@ export const ProfileSection = styled.section`
 `
 
 export const WrapperAboutUser = styled.div`
-    border-radius: 0px;
+    background-color: ${(props) => props.theme.card.background};
+    border-radius: 8px;
     display: flex;
     flex-direction: column;
     margin-left: auto;
     margin-right: auto;
-    width: 25%;
+    width: 50%;
     height: 400px;
     justify-content: space-between;
-    box-shadow: 1px 0px 4px 0px #bdbdbd; 
+    /* box-shadow: 1px 0px 4px 0px #bdbdbd;  */
     /* border: ${(props) => props.theme.border.border}; */
 
     ${down("sm")} {

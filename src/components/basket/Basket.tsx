@@ -9,6 +9,7 @@ import { motion } from "framer-motion";
 import { Modal } from "../modal/ModalComponent";
 import { BasketPaymentForm } from "./PaymentForm";
 import { useGlobalContext } from "../../hooks/useGlobalContext";
+import { GoToUpComponent } from "../../utils/GoToUpComponent";
 
 export const Basket = () => {
   const [ShowOrderPayment, setShowOrderPayment] = useState<boolean>(false);
@@ -22,6 +23,7 @@ export const Basket = () => {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0.6 }}
+      ref={GoToUpComponent()}
       transition={{ ease: "easeOut", duration: 0.5 }}
     >
       <div className="basket">

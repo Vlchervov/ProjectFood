@@ -12,9 +12,9 @@ export const AuthComponent = () => {
       <AuthorizationWindow>
         <AuthorizationHeader></AuthorizationHeader>
         <AuthorizationBody>
-          <div id="recaptcha-container" className="CAPTCHA"></div>
           <AuthorizationForm />
         </AuthorizationBody>
+        <div id="recaptcha-container" className="CAPTCHA"></div>
       </AuthorizationWindow>
     </AuthSection>
   );

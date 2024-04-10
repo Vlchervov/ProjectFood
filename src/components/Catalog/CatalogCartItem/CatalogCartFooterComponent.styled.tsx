@@ -1,20 +1,13 @@
-.product {
-  user-select: none;
-  width: 100%;
+import styled from "styled-components";
 
-  @media (max-width: 812px) {
-    width: 100%;
-  }
+export const CatalogCartFooter = styled.div`
+    display: flex;
 
-  img {
-    object-fit: cover;
-    width: 145px;
-    max-height: 120px;
-    border-radius: 12px;
-    margin-left: 12px;
-    margin-top: 14px;
-  }
-
+    .CatalogCartFooter {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        justify-content: space-between;
   &__count {
     background-color: #e9e9e9;
     text-align: center;
@@ -82,7 +75,6 @@
       height: 22px;
     }
   }
-
 
   &__item {
     @media (max-width: 812px) {
@@ -159,3 +151,5 @@
     line-height: 22px;
   }
 }
+    
+`

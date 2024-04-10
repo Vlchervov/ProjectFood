@@ -4,6 +4,7 @@ import { between, down } from "styled-breakpoints";
 export const Catalog = styled.div`
   /* padding-top: 160px; */
   padding-top: 60px;
+  scroll-behavior: smooth;
 
   .mainCatalog {
     display: flex;
@@ -84,7 +85,7 @@ export const Categories = styled.section`
   margin-left: 80px;
   margin-right: 40px;
   &:not(:nth-of-type(3)) {
-    border-bottom: ${(props) => props.theme.border.bottom};
+    /* border-bottom: ${(props) => props.theme.border.bottom}; */
   }
 
   ${between("sm", "xl")} {

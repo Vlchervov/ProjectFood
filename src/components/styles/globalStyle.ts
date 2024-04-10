@@ -51,9 +51,9 @@ body {
 
 }
 
-html {
+/* html {
   scroll-behavior: smooth;
-}
+} */
 
 @keyframes HideHeader {
   0% {
@@ -88,7 +88,7 @@ html {
   width: 35px;
   height: 35px;
   cursor: pointer;
-  top: 95%;
+  bottom: 5%;
   right: 30px;
   display: none;
   opacity: 0;
@@ -100,7 +100,6 @@ html {
 
   ${down("sm")} {
    right: 15px;
-   top: 90%;
   }
 }
 

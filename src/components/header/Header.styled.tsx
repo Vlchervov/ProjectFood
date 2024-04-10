@@ -120,6 +120,15 @@ export const HeaderLeftSection = styled.div`
     height: 45px;
   }
 
+  nav {
+    display: flex;
+    align-items: center;
+  
+    ${down('sm')} {
+      margin-left: 8px;
+  }
+  }
+
   .menu {
     display: flex;
     padding-left: 0px;

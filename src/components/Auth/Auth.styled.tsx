@@ -142,6 +142,10 @@ export const AuthorizationBody = styled.div`
       width: 100%;
       display: flex;
       margin-top: 5px;
+
+      input {
+        margin: 0px 8px 0px 4px;
+      }
     }
 
     .phoneNumberInput {
@@ -212,7 +216,7 @@ export const AuthorizationBody = styled.div`
       color: white;
       border: none;
       padding: 0px;
-      width: 65%;
+      width: 100%;
       height: 48px;
       margin: 0px;
       border-radius: 12px;
