@@ -8,7 +8,7 @@ export const Footer = styled.footer`
     }
     
     height: 250px;
-    background-color: #1f1f1f;
+    background-color: ${(props) => props.theme.footer.background};
     /* box-shadow: 0px 10px 15px rgba(0, 0, 0, 1); */
     display: flex;
     justify-content: flex-start;

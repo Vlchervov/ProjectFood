@@ -55,18 +55,18 @@ export const Basket = () => {
                   isModalForCleanBasketVisible={isModalForCleanBasketVisible}
                 />
                 {!ShowOrderPayment ? (
-                  <div style={{ display: "flex" }}>
+                  <div className="basket__cartItemContainerWrapper">
                     <div className="basket__cartItemContainer">
                       {cart.map((item: ICartItem): JSX.Element => (
                         <CartItem key={item.id} item={item} />
                       ))}
                     </div>
-                    <div style={{ position: "sticky", top: "80px", borderRadius: "12px", marginLeft: "16px", display: "flex", padding: "12px", height: "450px", background: "#ffd1d1", alignItems: "flex-end" }}>
+                    <div className="basket__goToOrderWrapper">
                       <button
                         className="basket__goToOrder"
                         onClick={() => setShowOrderPayment(!ShowOrderPayment)}
                       >
-                        Перейти к оформлению заказа
+                        Перейти к оформлению
                       </button>
                     </div>
                   </div>

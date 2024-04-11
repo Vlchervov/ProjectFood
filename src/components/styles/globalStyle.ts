@@ -116,6 +116,7 @@ body {
   text-align: flex-start;
   display: flex;
   flex-direction: column;
+
 }
 
 
@@ -148,7 +149,7 @@ code {
 
   ::-webkit-scrollbar-thumb {
     border-radius: 25px;
-    background-color: #dc3d3d;
+    background-color: #c7c7c7;
   }
 }
 `;

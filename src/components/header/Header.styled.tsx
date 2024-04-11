@@ -13,7 +13,11 @@ export const StyledLink = styled(Link)`
 `;
 
 export const Header = styled.header`
-  display: flex;
+ position: fixed;
+ width: 100%;
+ display: flex;
+ justify-content: center;
+ z-index: 25;
   .active {
     color: ${(props) => props.theme.active.color};
   }
@@ -24,24 +28,30 @@ export const Header = styled.header`
       color: white;
     }
   }
+
+  .headerWrapper {
+    z-index: 25;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+  }
 `;
 
 export const AppHeader = styled.div`
   user-select: none;
-  position: fixed;
-  width: 100%;
   height: 55px;
-  display: ${({ hidden }) => (hidden ? "none" : "flex")};
-  justify-content: space-between;
+  max-width: 1472px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
   /* margin-top: 25px; */
   border-radius: 0px;
   background-color: ${(props) => props.theme.background.color};
   border-top: ${(props) => props.theme.border.top};
+  margin-left: 0px;
   /* border-bottom: ${(props) => props.theme.border.bottom}; */
-  z-index: 25;
 
   ${down("sm")} {
-    margin-left: 0px;
     z-index: 25;
     width: 100%;
   }
@@ -110,7 +120,7 @@ export const AppHeader = styled.div`
 `;
 
 export const HeaderLeftSection = styled.div`
-  margin-left: 70px;
+  margin-left: 0px;
   display: flex;
   ${down('xl')} {
     margin-left: 0px;
@@ -155,7 +165,7 @@ export const HeaderLeftSection = styled.div`
 `;
 
 export const HeaderRightSection = styled.div`
-  margin-right: 70px;
+  margin-right: 0px;
   padding-right: 0px;
   z-index: 10;
   display: flex;
@@ -188,7 +198,6 @@ export const HeaderRightSection = styled.div`
       width: 100%;
       list-style: none;
       align-items: center;
-      padding-bottom: 111px;
       padding: 10px 12px 4px;
       font-size: 14px;
     }
@@ -255,11 +264,9 @@ export const HeaderRightSection = styled.div`
   }
 
   .dropDown {
-    right: 105px;
     align-items: center;
     margin: 0;
     padding: 0;
-    width: 110px;
     position: absolute;
     border-radius: 12px;
     border: ${(props) => props.theme.border.border};
@@ -295,7 +302,6 @@ export const HeaderRightSection = styled.div`
 
 export const UnderHeaderCategory = styled.nav`
   display: flex;
-  justify-content: center;
   z-index: 10;
   position: sticky;
   margin-top: 25px;
@@ -320,12 +326,9 @@ export const UnderHeaderCategory = styled.nav`
     ${between("xl", "xxl")} {
       height: 0px;
     }
-
-
   }
 
   ul {
-    width: 90%;
     padding-left: 0px;
     display: flex;
     list-style: none;
@@ -333,7 +336,6 @@ export const UnderHeaderCategory = styled.nav`
     align-items: center;
     user-select: none;
   
-    
     ${down("sm")} {
     flex-wrap: nowrap;
     overflow-x: auto;
@@ -362,13 +364,12 @@ export const UnderHeaderCategory = styled.nav`
       padding-left: 10px;
     }
 
-    
     a {
     white-space: nowrap;
     color: ${(props) => props.theme.color};
     text-decoration: none;
     display: flex;
-    padding: 0px 35px 0px 0px;
+    padding: 0px 32px 0px 0px;
     margin: 0px;
     font-size: 14px;
     width: 100%;

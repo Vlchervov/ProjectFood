@@ -4,7 +4,17 @@ import { between, down } from "styled-breakpoints";
 export const Catalog = styled.div`
   /* padding-top: 160px; */
   padding-top: 60px;
-  scroll-behavior: smooth;
+  max-width: 1472px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 24px;
+
+  ${down("sm")} {
+    padding: unset;
+    margin: unset;
+    margin-top: 60px;
+    max-width: unset;
+  }
 
   .mainCatalog {
     display: flex;
@@ -21,8 +31,8 @@ export const Catalog = styled.div`
   }
   
   .catalog__swiper {
+    background-color: white;
     display: flex;
-    width: 89%;
     margin-left: auto;
     margin-right: auto;
     height: 380px;
@@ -56,9 +66,9 @@ export const CategoryName = styled.h1`
   font-weight: 600;
   user-select: none;
   display: flex;
-  justify-content: flex-start;
-  margin-left: 110px;
-  margin-right: 0px;
+  padding: 24px 0px 0px 24px;
+  margin: unset;
+  margin-left: 20px;
 
   ${between("sm", "md")} {
     justify-content: center;
@@ -75,15 +85,23 @@ export const CategoryName = styled.h1`
   }
 `;
 
+export const WrapperCatalogCategories = styled.div`
+  background-color: white;
+  border-radius: 24px;
+
+  ${down("sm")} {
+    border-radius: 0px;
+  }
+`
+
 export const Categories = styled.section`
   display: flex;
-  background-color: ${(props) => props.theme.background.color};
-  padding-top: 0px;
+  /* background-color: ${(props) => props.theme.background.color}; */
   flex-wrap: wrap;
+  padding: 24px;
+  margin-bottom: 18px;
   /* margin-left: 120px; */
   /* margin-right: 80px; */
-  margin-left: 80px;
-  margin-right: 40px;
   &:not(:nth-of-type(3)) {
     /* border-bottom: ${(props) => props.theme.border.bottom}; */
   }
@@ -164,12 +182,12 @@ export const CategoriesItem = styled.div`
     button {
       border: none;
       user-select: none;
-      border-radius: 25px;
-      width: 100px;
+      border-radius: 8px;
+      width: 120px;
       height: 30px;
       color: white;
-      background-color: #FF0044;
-      /* background-color: #2c88ff; */
+      /* background-color: #FF0044; */
+      background-color: #2c88ff;
       transition: all 0.366s;
       cursor: pointer;
 
@@ -177,7 +195,8 @@ export const CategoriesItem = styled.div`
         transition: all 0.3s;
         color: white;
         text-decoration: none;
-        background-color: #da003a;
+        /* background-color: #da003a; */
+        background-color: #1c77ff;;
         
       }
     }
@@ -208,7 +227,7 @@ export const CategoriesItem = styled.div`
   img {
     max-height: 240px;
     object-fit: cover;
-    border-radius: 20px 20px 0px 0px;
+    border-radius: 16px;
   }
 
   .categories__price {

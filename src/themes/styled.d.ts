@@ -6,6 +6,9 @@ declare module "styled-components" {
     card: {
       background: string;
     };
+    footer: {
+      background: string;
+    };
     background: {
       color: string;
     };

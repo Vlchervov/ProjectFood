@@ -29,13 +29,15 @@ export const CatalogCartFooter = styled.div`
     margin-right: 12px;
     // background-color: #478dff;
     background-color: white;
-    border: 1px solid #FF0044;
+    /* border: 1px solid #FF0044; */
+    border: 1px solid #478dff;
     border-radius: 8px;
     transition: all 0.5s ease-out;
     // box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.2);
 
     &:hover {
-      background-color: #FF0044;
+      /* background-color: #FF0044; */
+      background-color: #478dff;
 
       span {
         background-color: white;
@@ -45,7 +47,8 @@ export const CatalogCartFooter = styled.div`
     span {
       display: block;
       position: absolute;
-      background-color: #FF0044;
+      /* background-color: #FF0044; */
+      background-color: #478dff;
       width: 11px;
       height: 2px;
     }
@@ -77,10 +80,6 @@ export const CatalogCartFooter = styled.div`
   }
 
   &__item {
-    @media (max-width: 812px) {
-      width: 100%;
-    }
-
     margin-top: 20px;
     align-items: flex-start;
     justify-content: space-between;

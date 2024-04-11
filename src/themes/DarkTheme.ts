@@ -3,6 +3,9 @@ const blackTheme = {
   card: {
     background: "#1f1f1f",
   },
+  footer: {
+    background: "#1f1f1f",
+  },
   background: {
     color: "#1b1b1b",
   },
@@ -12,7 +15,7 @@ const blackTheme = {
   color: "#94a2ae",
   hover: {
     background: {
-      color: "#dc3d3d",
+      color: "#478dff",
     },
     color: {
       color: "white",

@@ -1,3 +1,4 @@
+import { down } from "styled-breakpoints";
 import styled from "styled-components";
 
 
@@ -34,13 +35,13 @@ export const BasketItem = styled.div`
     margin-right: 12px;
     // background-color: #478dff;
     background-color: white;
-    border: 1px solid #FF0044;
+    border: 1px solid #478dff;
     border-radius: 8px;
     transition: all 0.5s ease-out;
     // box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.2);
 
     &:hover {
-      background-color: #FF0044;
+      background-color: #478dff;
 
       span {
         background-color: white;
@@ -50,7 +51,7 @@ export const BasketItem = styled.div`
     span {
       display: block;
       position: absolute;
-      background-color: #FF0044;
+      background-color: #478dff;
       width: 11px;
       height: 2px;
     }
@@ -82,18 +83,19 @@ export const BasketItem = styled.div`
   }
 
   &__item {
-    @media (max-width: 812px) {
-      width: 100%;
-    }
-
     margin-top: 20px;
     align-items: flex-start;
     justify-content: space-between;
     display: flex;
-    border-radius: 8px;
-    background-color: white;
+    border-radius: 0px;
+    background-color: ${(props) => props.theme.card.background};
     // box-shadow: 0px 0px 12px 4px rgba(0, 0, 0, 0.1);
     text-decoration: none;
+    border-bottom: ${(props) => props.theme.border.bottom};
+
+    ${down("sm")} {
+      flex-direction: column;
+    }
   }
 
   &__body {
@@ -103,6 +105,10 @@ export const BasketItem = styled.div`
     height: 100%;
     width: 100%;
     padding-left: 20px;
+
+    ${down("sm")} {
+      width: unset;
+    }
   }
 
   &__content {
@@ -121,12 +127,13 @@ export const BasketItem = styled.div`
     font-size: 14px;
     line-height: 20px;
     margin-bottom: 0px;
+    color: ${(props) => props.theme.color}
   }
 
   &__weight {
     font-size: 12px;
     line-height: 17px;
-    color: #94a2ae;
+    color: ${(props) => props.theme.color};
     margin-bottom: 0px;
   }
 
@@ -134,8 +141,7 @@ export const BasketItem = styled.div`
     font-family: sans-serif;
     font-size: 14px;
     line-height: 17px;
-    color: #94a2ae;
-    overflow-x: hidden;
+    color: ${(props) => props.theme.color};
     width: 100%;
     height: 60px;
     margin-bottom: 8px;
@@ -154,6 +160,7 @@ export const BasketItem = styled.div`
     font-weight: 500;
     font-size: 16px;
     line-height: 22px;
+    color: ${(props) => props.theme.color};
   }
 }
 `
