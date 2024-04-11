@@ -34,20 +34,18 @@ export const HeaderComponent = (props: IProps) => {
       <AppHeader className={`${location.pathname === "/about-us" && hidden}`}>
         <HeaderLeftSection>
           <nav>
-            <ul className="menu">
-              {isMobile ? <StyledLink aria-label="menu"
+            {isMobile ?
+              <StyledLink aria-label="menu"
                 className={`BiMenu ${location.pathname === "/catalog" && "active"
                   }`}
                 to="catalog"
               >
                 <BiMenu />
-              </StyledLink> : <StyledLink to="catalog" aria-label="menu"><li>Меню</li></StyledLink>}
-              <li onClick={cityAvailable}
-              >
-                <button>Выберите адрес</button>
-              </li>
-              <ModalSelectCity cityModalHidden={cityModalHidden} setCityModalHidden={setCityModalHidden} />
-            </ul>
+              </StyledLink> :
+              <StyledLink to="catalog" aria-label="menu">Меню</StyledLink>
+            }
+            <button onClick={cityAvailable}>Выберите адрес</button>
+            <ModalSelectCity cityModalHidden={cityModalHidden} setCityModalHidden={setCityModalHidden} />
           </nav>
         </HeaderLeftSection>
         <HeaderRight theme={props.theme} toggleTheme={props.toggleTheme} />

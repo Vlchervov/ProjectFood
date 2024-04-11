@@ -20,7 +20,6 @@ const GlobalState = ({ children }: any) => {
   };
 
   const handleButton = () => {
-    // window.scrollTo(0, 0);
     document.body.scrollIntoView({
       block: "start",
       behavior: "smooth",

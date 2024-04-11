@@ -18,66 +18,53 @@ export const FooterComponent = () => {
                 <img alt="Способ оплаты" src="https://storage.yandexcloud.net/ecomm-storage-dev/images/logoMir-v2.png" />
               </picture>
             </div> */}
-            <div className="footer__item footerNav">
+            {/* <div className="footer__item footerNav">
               <ul>
                 <li>г. Новокузнецк,
                   пр-кт Н.С.Ермакова д 30</li>
                 <li>+7(999)-999-99-99</li>
               </ul>
-            </div>
+            </div> */}
             <div className="footer__item footerSocial">
-              <a href="#">Мы в Telegram</a>
+              <a href="/#">Telegram</a>
               <picture>
                 <img alt="Telegram" src="../../img/Telegram.png" />
               </picture>
             </div>
+            <div className="footer__item footerSocial">
+              <a href="/#">VKонтакте</a>
+              <picture>
+                <img alt="Telegram" src="../../img/VK_Compact_Logo.svg" />
+              </picture>
+            </div>
           </div>
-          <div className="footer__section">
-            {/* <div className="footer__item footerDelivery">
+
+          {/* <div className="footer__section">
+            <div className="footer__item footerDelivery">
               <h4>Title</h4>
-            </div> */}
-            {/* <div className="footer__item footerNav">
+            </div>
+            <div className="footer__item footerNav">
               <ul>
                 <li>Доставка и оплата</li>
                 <li>Публичная оферта</li>
                 <li>Политика конфиденциальности</li>
               </ul>
-            </div> */}
-          </div>
+            </div>
+          </div> */}
           <div className="footer__section">
             <div className="footer__item footerContacts">
             </div>
           </div>
-          <div className="footer__section">
-            {/* <div className="footer__item footerAppTitle">
-              <a href="#">Заказывайте через приложение</a>
-            </div> */}
+          {/* <div className="footer__section">
             <div className="footerLogo">
               <div className="footer__itemLogo GoogleLogo">
                 <a href="#">Google Play</a>
-                {/* <picture>
-                  <img alt="GooglePlay" src="../img/google-play-5.svg" />
-                </picture> */}
               </div>
               <div className="footer__itemLogo AppleLogo">
                 <a href="#">App Store</a>
-                {/* <picture>
-                  <img alt="AppStore" src="../img/icons8-apple-logo.svg" />
-                </picture> */}
               </div>
             </div>
-            {/* <div className="footer__item footerSocial">
-              <a href="#">Мы в Telegram</a>
-              <picture>
-                <img alt="Telegram" src="../../img/Telegram.png" />
-              </picture>
-            </div> */}
-            {/* <div className="footer__item footerDeveloperCompanyName">
-              <a href="#">
-                Developer name
-              </a>
-            </div> */}
-          </div>
+          </div> */}
         </Footer>
       ) : null}
     </>

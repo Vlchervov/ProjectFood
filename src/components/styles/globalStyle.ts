@@ -17,7 +17,6 @@ body {
   height: 10px;
 }
 
-
 .swiper-slide {
   width: 116px;
 }
@@ -48,7 +47,6 @@ body {
     font-size: 30px;
   }
 }
-
 }
 
 /* html {

@@ -120,30 +120,7 @@ export const HeaderLeftSection = styled.div`
     height: 45px;
   }
 
-  nav {
-    display: flex;
-    align-items: center;
-  
-    ${down('sm')} {
-      margin-left: 8px;
-  }
-  }
-
-  .menu {
-    display: flex;
-    padding-left: 0px;
-  }
-
-  li {
-    display: flex;
-    align-items: center;
-
-    &:nth-child(1) { 
-      color: ${(props) => props.theme.color};
-      margin-right: 25px;
-    }
-
-    button {
+  button {
       cursor: pointer;
       outline: none;
       border: 0.1px solid #FF0044;
@@ -160,8 +137,21 @@ export const HeaderLeftSection = styled.div`
       transition: background-color 0.4s ease-out;
     }
     }
-   
+
+  nav {
+    display: flex;
+    align-items: center;
+
+    a { 
+      color: ${(props) => props.theme.color};
+      margin-right: 12px;
+    }
+  
+    ${down('sm')} {
+      margin-left: 8px;
   }
+  }
+
 `;
 
 export const HeaderRightSection = styled.div`
@@ -169,6 +159,7 @@ export const HeaderRightSection = styled.div`
   padding-right: 0px;
   z-index: 10;
   display: flex;
+  align-items: center;
   ${down("xl")} {
     margin-right: 15px;
     } 
@@ -198,7 +189,7 @@ export const HeaderRightSection = styled.div`
       list-style: none;
       align-items: center;
       padding-bottom: 111px;
-      padding: 10px 12px;
+      padding: 10px 12px 4px;
       font-size: 14px;
     }
   }

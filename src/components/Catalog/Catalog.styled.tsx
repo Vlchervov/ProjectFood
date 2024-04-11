@@ -167,20 +167,19 @@ export const CategoriesItem = styled.div`
       border-radius: 25px;
       width: 100px;
       height: 30px;
-      /* color: ${(props) => props.theme.color}; */
       color: white;
       background-color: #FF0044;
-      font-weight: 500;
+      /* background-color: #2c88ff; */
       transition: all 0.366s;
       cursor: pointer;
 
-      /* :hover {
+      :hover {
         transition: all 0.3s;
         color: white;
         text-decoration: none;
-        background-color: #f10071;
+        background-color: #da003a;
         
-      } */
+      }
     }
   }
 

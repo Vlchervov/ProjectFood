@@ -149,7 +149,7 @@ export const CatalogCartFooter = styled.div`
     font-weight: 500;
     font-size: 16px;
     line-height: 22px;
+    color: ${(props) => props.theme.color};
   }
 }
-    
 `

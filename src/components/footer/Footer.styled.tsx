@@ -11,7 +11,7 @@ export const Footer = styled.footer`
     background-color: #1f1f1f;
     /* box-shadow: 0px 10px 15px rgba(0, 0, 0, 1); */
     display: flex;
-    justify-content: space-around;
+    justify-content: flex-start;
     padding-top: 0;
 
     ${between('sm', "md")} {
@@ -28,6 +28,7 @@ export const Footer = styled.footer`
     }
 
     .footer__section {
+    margin-left: 110px;
     padding-top: 18px;
     padding-bottom: 18px;
     // color: #bdbdbd;
@@ -39,7 +40,7 @@ export const Footer = styled.footer`
       align-items: flex-end;
       ${down("md")} {
         align-items: center;
-        margin-bottom: 15px;
+        margin-bottom: 14px;
       }
     }
 
@@ -56,6 +57,8 @@ export const Footer = styled.footer`
     }
 
     ${down("md")} {
+      width: 60%;
+      margin-left: 0px;
       padding-top: 10px;
       padding-bottom: 0px;
       :nth-child(2) {
@@ -110,7 +113,6 @@ export const Footer = styled.footer`
   }
 
   .footerAppTitle {
-
     ${down("sm")} {
     text-align: center;
     }
@@ -163,26 +165,31 @@ export const Footer = styled.footer`
   }
 
   .footerSocial {
+    background-color: ${(props) => props.theme.card.background};
+    border-radius: 4px;
+    padding: 8px;
     display: flex;
     align-items: center;
     margin-top: 12px;
     transition: all 0.5s;
+    background-color: white;
 
     ${down("sm")} {
       justify-content: center;
     }
 
     &:hover {
-      scale: 1.05;
-    }
-    
-    a {
-      color: white;
-      font-size: 12px;
-
-      &:hover {
+      a {
         color: #55b2ff;
       }
+        background-color: #1f1f1f;
+        
+        scale: 1.01;
+      }
+    
+    a {
+      color: black;
+      font-size: 18px;
     }
     picture {
       padding-left: 10px;
@@ -190,7 +197,9 @@ export const Footer = styled.footer`
       
     }
     img {
-      width: 20px;
+      width: 18px;
+      height: 18px;
+
       padding-right: 10px;
       cursor: pointer;
       transition: all 0.5s;
