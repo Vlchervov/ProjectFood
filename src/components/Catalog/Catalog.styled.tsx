@@ -86,7 +86,7 @@ export const CategoryName = styled.h1`
 `;
 
 export const WrapperCatalogCategories = styled.div`
-  background-color: white;
+  background-color: ${(props) => props.theme.card.background};
   border-radius: 24px;
 
   ${down("sm")} {

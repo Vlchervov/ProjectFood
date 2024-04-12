@@ -14,6 +14,7 @@ export const StyledLink = styled(Link)`
 
 export const Header = styled.header`
  position: fixed;
+ background-color: ${(props) => props.theme.background.color};
  width: 100%;
  display: flex;
  justify-content: center;
@@ -46,8 +47,6 @@ export const AppHeader = styled.div`
   justify-content: center;
   /* margin-top: 25px; */
   border-radius: 0px;
-  background-color: ${(props) => props.theme.background.color};
-  border-top: ${(props) => props.theme.border.top};
   margin-left: 0px;
   /* border-bottom: ${(props) => props.theme.border.bottom}; */
 

@@ -83,7 +83,7 @@ export const BasketItem = styled.div`
   }
 
   &__item {
-    margin-top: 20px;
+    margin-top: 8px;
     align-items: flex-start;
     justify-content: space-between;
     display: flex;

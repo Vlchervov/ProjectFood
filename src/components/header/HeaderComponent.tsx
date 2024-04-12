@@ -30,8 +30,8 @@ export const HeaderComponent = (props: IProps) => {
   const isMobile = useMediaQuery({ query: '(max-width: 812px)' });
 
   return (
-    <Header>
-      <AppHeader className={`${location.pathname === "/about-us" && hidden}`}>
+    <Header className={`${location.pathname === "/about-us" && hidden}`}>
+      <AppHeader>
         <div className="headerWrapper">
           <HeaderLeftSection>
             <nav>
