@@ -18,7 +18,7 @@ interface IProps {
 }
 
 export const HeaderComponent = (props: IProps) => {
-  const { hidden } = useGlobalContext();
+  const { hidden, scroll } = useGlobalContext();
   const [cityModalHidden, setCityModalHidden] = useState<boolean>(false);
   const location = useLocation();
   const cityAvailable = () => {
@@ -30,7 +30,7 @@ export const HeaderComponent = (props: IProps) => {
   const isMobile = useMediaQuery({ query: '(max-width: 812px)' });
 
   return (
-    <Header className={`${location.pathname === "/about-us" && hidden}`}>
+    <Header>
       <AppHeader>
         <div className="headerWrapper">
           <HeaderLeftSection>
@@ -43,9 +43,11 @@ export const HeaderComponent = (props: IProps) => {
                 >
                   <BiMenu />
                 </StyledLink> :
-                <StyledLink to="catalog" aria-label="menu">Меню</StyledLink>
+                <StyledLink to="catalog" aria-label="menu">
+                  <button>Меню</button>
+                </StyledLink>
               }
-              <button onClick={cityAvailable}>Выберите адрес</button>
+              {location.pathname === "/catalog" ? <button onClick={cityAvailable}>Выберите адрес</button> : null}
               <ModalSelectCity cityModalHidden={cityModalHidden} setCityModalHidden={setCityModalHidden} />
             </nav>
           </HeaderLeftSection>

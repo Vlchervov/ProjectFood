@@ -19,6 +19,23 @@ const GlobalState = ({ children }: any) => {
     setScroll(window.scrollY);
   };
 
+  useEffect(() => {
+    const handleScroll = () => {
+      scroll && setVisible(position > scroll);
+      setPosition(scroll);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  },);
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+  }, []);
+
+  const hidden: string = visible ? "visible" : "hidden";
+
   const handleButton = () => {
     document.body.scrollIntoView({
       block: "start",
@@ -36,23 +53,6 @@ const GlobalState = ({ children }: any) => {
 
     changeOverflowWhenModalIsOpen();
   }, [isModalForCleanBasketVisible]);
-
-  useEffect(() => {
-    window.addEventListener("scroll", handleScroll);
-  }, []);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setVisible(position > scroll);
-      setPosition(scroll);
-    };
-    window.addEventListener("scroll", handleScroll);
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  });
-
-  const hidden: string = visible ? "visible" : "hidden";
 
   const signin = (newUser: string, cb: () => {}) => {
     setUser(newUser);

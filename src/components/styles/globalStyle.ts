@@ -73,12 +73,12 @@ body {
 
 .visible {
   top: 0;
-  animation: OpenHeader 0.4s ease;
+  animation: OpenHeader 0.8s ease;
 }
 
 .hidden {
   top: -145px;
-  animation: HideHeader 0.5s ease;
+  animation: HideHeader 0.8s ease;
 }
 
 .arrowUp {

@@ -18,7 +18,7 @@ export const Header = styled.header`
  width: 100%;
  display: flex;
  justify-content: center;
- z-index: 25;
+ z-index: 10;
   .active {
     color: ${(props) => props.theme.active.color};
   }
@@ -31,7 +31,6 @@ export const Header = styled.header`
   }
 
   .headerWrapper {
-    z-index: 25;
     display: flex;
     width: 100%;
     justify-content: space-between;
@@ -41,7 +40,7 @@ export const Header = styled.header`
 export const AppHeader = styled.div`
   user-select: none;
   height: 55px;
-  max-width: 1472px;
+  max-width: 1440px;
   width: 100%;
   display: flex;
   justify-content: center;
@@ -99,8 +98,6 @@ export const AppHeader = styled.div`
     }
   }
 
-
-
   .shopCartButton {
     display: flex;
     justify-content: center;
@@ -132,9 +129,10 @@ export const HeaderLeftSection = styled.div`
   button {
       cursor: pointer;
       outline: none;
-      border: 0.1px solid #FF0044;
-      color: ${(props) => props.theme.color};
-      background: none;
+      /* border: 0.1px solid #FF0044; */
+      background-color: #2c88ff;
+      border: none;
+      color: white;
       border-radius: 4px;
       height: 25px;
       width: 140px;
@@ -142,7 +140,7 @@ export const HeaderLeftSection = styled.div`
       transition: ease-in 0.4s;
       :hover {
       color: white;
-      background-color: #FF0044;
+      background-color: #1c77ff;
       transition: background-color 0.4s ease-out;
     }
     }
@@ -160,7 +158,6 @@ export const HeaderLeftSection = styled.div`
       margin-left: 8px;
   }
   }
-
 `;
 
 export const HeaderRightSection = styled.div`
@@ -179,12 +176,12 @@ export const HeaderRightSection = styled.div`
     }
 
     svg {
-    width: 20px;
-    height: 20px;
+    width: 24px;
+    height: 24px;
   }
 
     .userIcon {
-
+      margin-right: 36px;
   }
 
   .dropDownMenu {
@@ -197,7 +194,6 @@ export const HeaderRightSection = styled.div`
       width: 100%;
       list-style: none;
       align-items: center;
-      padding: 10px 12px 4px;
       font-size: 14px;
     }
   }
@@ -262,14 +258,14 @@ export const HeaderRightSection = styled.div`
     }
   }
 
-  .dropDown {
+  .dropDownList {
     align-items: center;
     margin: 0;
-    padding: 0;
+    padding: 10px 12px 4px;
     position: absolute;
-    border-radius: 12px;
+    border-radius: 8px;
     border: ${(props) => props.theme.border.border};
-    animation: show-dropDown 1s forwards;
+    animation: show-dropDown 0.8s forwards;
     background-color: ${(props) => props.theme.background.color};
 
     ${down("md")} { 
@@ -277,9 +273,12 @@ export const HeaderRightSection = styled.div`
     }
 
     li {
+      align-items: center;
+      width: 100%;
       cursor: pointer;
       color: ${(props) => props.theme.color};
       flex-wrap: nowrap;
+      font-size: 14px;
   
       svg {
         width: 12px;
@@ -301,13 +300,15 @@ export const HeaderRightSection = styled.div`
 
 export const UnderHeaderCategory = styled.nav`
   display: flex;
-  z-index: 10;
+  position: -webkit-fixed;
+  z-index: 9;
   position: sticky;
-  margin-top: 25px;
-  top: 55px;
+  margin: 12px 0 12px 0;
+  height: 60px;
+  top: 45px;
   background-color: ${(props) => props.theme.background.color};
   border-radius: 0px;
-
+ -webkit-overflow-scrolling: auto;
 
   &::-webkit-scrollbar-thumb {
     border-radius: 4px;
@@ -392,7 +393,6 @@ export const UnderHeader = styled.div`
   justify-content: space-between;
   background-color: ${(props) => props.theme.background.color};
   border-bottom: ${(props) => props.theme.border.bottom};
-  z-index: 24;
   border-bottom-left-radius: 15px;
 
   ${down("sm")} {

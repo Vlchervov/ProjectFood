@@ -4,7 +4,7 @@ import { between, down } from "styled-breakpoints";
 export const Catalog = styled.div`
   /* padding-top: 160px; */
   padding-top: 60px;
-  max-width: 1472px;
+  max-width: 1440px;
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 24px;
@@ -196,7 +196,7 @@ export const CategoriesItem = styled.div`
         color: white;
         text-decoration: none;
         /* background-color: #da003a; */
-        background-color: #1c77ff;;
+        background-color: #1c77ff;
         
       }
     }

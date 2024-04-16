@@ -3,12 +3,16 @@ import { down } from "styled-breakpoints";
 
 export const NewSection = styled.section`
   box-sizing: border-box;
+  max-width: 1440px;
+  margin-left: auto;
+  margin-right: auto;
   width: 100%;
   height: 102vh;
   display: flex;
   justify-content: flex-start;
-  overflow: hidden;
-  padding: 130px 0px 0px 50px;
+  border-radius: 12px;
+  margin-bottom: 12px;
+  padding: 24px 0px 0px 12px;
   background: #bd19c8;
   font-weight: 700;
   font-family: "Inter-Bold", "Inter", sans-serif;
@@ -36,15 +40,15 @@ export const NewSection = styled.section`
   }
 
   :nth-child(2) {
-    margin: 0;
     color: black;
     background: #ffffff;
 
     h2 {
       user-select: none;
-      background-color: black;
-      color: #ffffff;
+      background-color: ${(props) => props.theme.card.background};
+      color: ${(props) => props.theme.color};
       justify-content: flex-start;
+      border-top-left-radius: 12px;
       padding-left: 14px;
       margin: 0;
       font-weight: 500;
