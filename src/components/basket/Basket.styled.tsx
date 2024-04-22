@@ -128,8 +128,22 @@ export const BasketSection = styled.section`
     }
   }
 
+  &__orderInfo {
+    color: ${(props) => props.theme.color};
+
+    p {
+      margin: 0;
+      &:nth-child(1) {
+        font-size: 24px;
+        font-weight: 500;
+      }
+    }
+  }
+
   &__goToOrderWrapper {
     display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     position: sticky;
     top: 80px;
     border-radius: 12px;
@@ -137,7 +151,6 @@ export const BasketSection = styled.section`
     padding: 12px;
     height: 450px;
     background-color: ${(props) => props.theme.card.background};
-    align-items: flex-end;
 
     ${down("sm")} {
       margin-left: 0px;

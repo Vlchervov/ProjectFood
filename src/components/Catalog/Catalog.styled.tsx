@@ -9,6 +9,13 @@ export const Catalog = styled.div`
   margin-right: auto;
   margin-bottom: 24px;
 
+  ${between("xl", "xxl")} {
+    max-width: unset;
+    width: 100%;
+    margin-left: unset;
+    margin-right: unset;
+  }
+
   ${down("sm")} {
     padding: unset;
     margin: unset;
@@ -127,7 +134,7 @@ export const CategoriesItem = styled.div`
   display: flex;
   margin-left: 20px;
   width: 305px;
-  transition: all 0.2s;
+  transition: all 0.5ms ease-out;
   margin-right: 20px;
   margin-bottom: 20px;
   /* box-shadow: 0px 10px 11px 2px rgba(0, 0, 0, 0.10);  */

@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { CartItem } from "./item/CartItem";
 import { Link } from "react-router-dom";
 import { FaShoppingBasket } from "react-icons/fa";
@@ -7,15 +6,18 @@ import { BasketSection } from "./Basket.styled";
 import { useSelector } from "react-redux";
 import { motion } from "framer-motion";
 import { Modal } from "../modal/ModalComponent";
-import { BasketPaymentForm } from "./PaymentForm";
 import { useGlobalContext } from "../../hooks/useGlobalContext";
 import { GoToUpComponent } from "../../utils/GoToUpComponent";
 
 export const Basket = () => {
-  const [ShowOrderPayment, setShowOrderPayment] = useState<boolean>(false);
   const { setIsModalForCleanBasketVisible, isModalForCleanBasketVisible } =
     useGlobalContext();
   const { cart }: any = useSelector((state) => state);
+  const totalCount: number = cart.reduce((count: number, item: ICartItem): number => item.count + count, 0);
+  const totalPrice: number = cart.reduce(
+    (amount: number, item: ICartItem): number => item.priceTotal + amount,
+    0
+  );
 
   return (
     <BasketSection
@@ -54,28 +56,27 @@ export const Basket = () => {
                   setIsModalForCleanBasketVisible={setIsModalForCleanBasketVisible}
                   isModalForCleanBasketVisible={isModalForCleanBasketVisible}
                 />
-                {!ShowOrderPayment ? (
-                  <div className="basket__cartItemContainerWrapper">
-                    <div className="basket__cartItemContainer">
-                      {cart.map((item: ICartItem): JSX.Element => (
-                        <CartItem key={item.id} item={item} />
-                      ))}
-                    </div>
-                    <div className="basket__goToOrderWrapper">
-                      <button
-                        className="basket__goToOrder"
-                        onClick={() => setShowOrderPayment(!ShowOrderPayment)}
-                      >
-                        Перейти к оформлению
-                      </button>
-                    </div>
+                <div className="basket__cartItemContainerWrapper">
+                  <div className="basket__cartItemContainer">
+                    {cart.map((item: ICartItem): JSX.Element => (
+                      <CartItem key={item.id} item={item} />
+                    ))}
                   </div>
-                ) : (
-                  <BasketPaymentForm
-                    cart={cart}
-                    ShowOrderPayment={ShowOrderPayment}
-                  />
-                )}
+                  <div className="basket__goToOrderWrapper">
+                    <div className="basket__orderInfo">
+                      <p>Итого</p>
+                      <p>Количество: {totalCount}</p>
+                      <p>
+                        К оплате: {totalPrice}
+                        {"\u00A0"}₽
+                      </p>
+                    </div>
+                    <button
+                      className="basket__goToOrder">
+                      Перейти к оформлению
+                    </button>
+                  </div>
+                </div>
               </div>
             )}
           </>

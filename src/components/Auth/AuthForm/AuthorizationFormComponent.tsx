@@ -6,6 +6,7 @@ import ru from "react-phone-input-2/lang/ru.json";
 import { auth } from "../../../firebase.config";
 import { useGlobalContext } from "../../../hooks/useGlobalContext";
 import { useLocation, useNavigate } from "react-router";
+import "react-phone-input-2/lib/style.css";
 
 interface IUser {
   user: {

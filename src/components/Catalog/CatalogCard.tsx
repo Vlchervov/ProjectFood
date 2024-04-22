@@ -18,7 +18,7 @@ export const CatalogCard = (props: ICartItem) => {
   return (
     <CategoriesItem
       as={motion.div}
-      whileHover={isMobile ? { scale: 1 } : { scale: 1.02 }}
+      whileHover={isMobile ? { scale: 1 } : { scale: 1.02}}
     >
       <SwiperComponent img={props.src} />
       <div className="categories__body">
