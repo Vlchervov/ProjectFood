@@ -44,7 +44,8 @@ export const HeaderComponent = (props: IProps) => {
                   <BiMenu />
                 </StyledLink> :
                 <StyledLink to="catalog" aria-label="menu">
-                  <button>Меню</button>
+
+                  <button >Меню</button>
                 </StyledLink>
               }
               {location.pathname === "/catalog" ? <button onClick={cityAvailable}>Выберите адрес</button> : null}

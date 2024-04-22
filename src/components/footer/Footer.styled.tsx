@@ -6,14 +6,18 @@ export const Footer = styled.footer`
       color: white;
       text-decoration: none;
     }
-    
     height: 250px;
-    background-color: ${(props) => props.theme.footer.background};
+    background-color: ${(props) => props.theme.background};
     /* box-shadow: 0px 10px 15px rgba(0, 0, 0, 1); */
     display: flex;
-    justify-content: flex-start;
+    justify-content: center;
     padding-top: 0;
-
+    width: 100%;
+    max-width: 1460px;
+    border-radius: 6px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 24px;
     ${between('sm', "md")} {
     align-items: center;
     
@@ -28,7 +32,7 @@ export const Footer = styled.footer`
     }
 
     .footer__section {
-    margin-left: 110px;
+    /* margin-left: 110px; */
     padding-top: 18px;
     padding-bottom: 18px;
     // color: #bdbdbd;
@@ -164,15 +168,19 @@ export const Footer = styled.footer`
     }
   }
 
+  .footer__wrapperSocialSection {
+    display: flex;
+    max-width: 1440px;
+    width: 100%;
+    justify-content: flex-end;
+  }
+
   .footerSocial {
-    background-color: ${(props) => props.theme.card.background};
-    border-radius: 4px;
     padding: 8px;
     display: flex;
     align-items: center;
     margin-top: 12px;
     transition: all 0.5s;
-    background-color: white;
 
     ${down("sm")} {
       justify-content: center;
@@ -181,14 +189,12 @@ export const Footer = styled.footer`
     &:hover {
       a {
         color: #55b2ff;
-      }
-        background-color: #1f1f1f;
-        
+      }     
         scale: 1.01;
       }
     
     a {
-      color: black;
+      color: ${(props) => props.theme.color};
       font-size: 18px;
     }
     picture {

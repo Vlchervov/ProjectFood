@@ -129,19 +129,18 @@ export const HeaderLeftSection = styled.div`
   button {
       cursor: pointer;
       outline: none;
-      /* border: 0.1px solid #FF0044; */
-      background-color: #2c88ff;
+      background: none;
       border: none;
       color: white;
-      border-radius: 4px;
-      height: 25px;
-      width: 140px;
+      height: 30px;
+      width: 125px;
+      background-color: #2c87ff;
+      border-radius: 8px;
       font-size: 12px;
       transition: ease-in 0.4s;
       :hover {
-      color: white;
-      background-color: #1c77ff;
       transition: background-color 0.4s ease-out;
+      background-color: #006cf8;
     }
     }
 
@@ -237,13 +236,14 @@ export const HeaderRightSection = styled.div`
     height: 25px;
     width: 80px;
     border-radius: 6px;
-    color: ${(props) => props.theme.color};
+    color: #ffffff;
     background: none;
-    border: 0.1px solid #FF0044;
+    border: none;
     cursor: pointer;
     margin-right: 12px;
     transition: ease-in 0.4s;
     font-weight: 700;
+    background-color: #6e6e6e52;
 
     ${down("sm")} {
       font-size: 10px;
@@ -251,11 +251,11 @@ export const HeaderRightSection = styled.div`
       width: 70px;
     }
 
-    :hover {
+    /* :hover {
       color: white;
       background-color: #FF0044;
       transition: background-color 0.4s ease-out;
-    }
+    } */
   }
 
   .dropDownList {

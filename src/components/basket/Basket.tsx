@@ -72,6 +72,7 @@ export const Basket = () => {
                       </p>
                     </div>
                     <button
+                      onClick={() => alert("Упс... Оформление заказа не доступно.")}
                       className="basket__goToOrder">
                       Перейти к оформлению
                     </button>

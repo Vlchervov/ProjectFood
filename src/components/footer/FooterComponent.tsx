@@ -6,8 +6,9 @@ export const FooterComponent = () => {
     <>
       {useLocation().pathname === "/catalog" ? (
         <Footer>
-          <div className="footer__section">
-            {/* <div className="footer__item footerPaymentMethods">
+          <div className="footer__wrapperSocialSection">
+            <div className="footer__section">
+              {/* <div className="footer__item footerPaymentMethods">
               <h4>Способы оплаты</h4>
             </div>
             <div className="footer__item footerPaymentCard">
@@ -18,27 +19,27 @@ export const FooterComponent = () => {
                 <img alt="Способ оплаты" src="https://storage.yandexcloud.net/ecomm-storage-dev/images/logoMir-v2.png" />
               </picture>
             </div> */}
-            {/* <div className="footer__item footerNav">
+              {/* <div className="footer__item footerNav">
               <ul>
                 <li>г. Новокузнецк,
                   пр-кт Н.С.Ермакова д 30</li>
                 <li>+7(999)-999-99-99</li>
               </ul>
             </div> */}
-            <div className="footer__item footerSocial">
-              <a href="/#">Telegram</a>
-              <picture>
-                <img alt="Telegram" src="../../img/Telegram.png" />
-              </picture>
-            </div>
-            <div className="footer__item footerSocial">
-              <a href="/#">VKонтакте</a>
-              <picture>
-                <img alt="Telegram" src="../../img/VK_Compact_Logo.svg" />
-              </picture>
+              <div className="footer__item footerSocial">
+                <a href="/#">Telegram</a>
+                <picture>
+                  <img alt="Telegram" src="../../img/Telegram.png" />
+                </picture>
+              </div>
+              <div className="footer__item footerSocial">
+                <a href="/#">VKонтакте</a>
+                <picture>
+                  <img alt="Telegram" src="../../img/VK_Compact_Logo.svg" />
+                </picture>
+              </div>
             </div>
           </div>
-
           {/* <div className="footer__section">
             <div className="footer__item footerDelivery">
               <h4>Title</h4>
@@ -51,11 +52,11 @@ export const FooterComponent = () => {
               </ul>
             </div>
           </div> */}
-          <div className="footer__section">
+          {/* <div className="footer__section">
             <div className="footer__item footerContacts">
             </div>
           </div>
-          {/* <div className="footer__section">
+          <div className="footer__section">
             <div className="footerLogo">
               <div className="footer__itemLogo GoogleLogo">
                 <a href="#">Google Play</a>
