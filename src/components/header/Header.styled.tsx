@@ -440,20 +440,20 @@ export const UnderHeader = styled.div`
 `;
 
 export const ItemCount = styled.div`
-  background-color: #a10000;
-  width: 25px;
-  height: 15px;
+  background-color: #f91155;
+  width: 32px;
+  height: 16px;
   border-radius: 25px;
   align-items: center;
   display: flex;
-  top: 5px;
+  top: 4px;
   position: absolute;
-  margin-left: 22px;
+  margin-left: 52px;
   justify-content: center;
 
   span {
     color: white;
     font-weight: 700;
-    font-size: 10px;
+    font-size: 12px;
   }
 `;
