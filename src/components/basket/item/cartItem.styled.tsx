@@ -62,17 +62,19 @@ export const BasketItem = styled.div`
   }
 
   &__deleteButton {
-    margin-left: 30px;
-    margin-right: 40px;
     height: 55px;
     border: none;
+    padding: 0px;
+    margin-right: 16px;
+    text-align: end;
     font-weight: 400;
     background: none;
     border-radius: 25px;
+    color: #e74c4c;
 
     &:hover {
       text-decoration: none;
-      color: #e74c4c;
+      color: #b10000;
       cursor: pointer;
     }
 

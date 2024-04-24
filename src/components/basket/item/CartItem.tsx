@@ -20,40 +20,42 @@ export const CartItem = (props: PropsCart) => {
               <p className="product__weight">{props.item.weight}</p>
               <p className="product__description">{props.item.descr}</p>
             </div>
-            {/* <button
-          className="product__deleteButton"
-          onClick={() => {
-            removeItem(props.item.id);
-          }}
-        >
-          <GoTrashcan /> 
-          Удалить товар
-        </button> */}
           </div>
-          <div className="product__footer">
-            <p className="product__price">
-              {"\u00A0"}
-              {props.item.priceTotal + "₽"}
-            </p>
-            <div
-              className="product__counterDecreaseButton"
+          <div style={{ display: "flex", flexDirection: "column" }}>
+            <div className="product__footer">
+              <p className="product__price">
+                {"\u00A0"}
+                {props.item.priceTotal + "₽"}
+              </p>
+              <div
+                className="product__counterDecreaseButton"
+                onClick={() => {
+                  decrease(props.item.id);
+                  if (props.item.count === 1) removeItem(props.item.id);
+                }}
+              >
+                <span></span>
+              </div>
+              <p className="product__count">{props.item.count}</p>
+              <div
+                className="product__counterIncreaseButton"
+                onClick={() => {
+                  increase(props.item.id);
+                }}
+              >
+                <span></span>
+                <span></span>
+              </div>
+            </div>
+            <button
+              className="product__deleteButton"
               onClick={() => {
-                decrease(props.item.id);
-                if (props.item.count === 1) removeItem(props.item.id);
+                removeItem(props.item.id);
               }}
             >
-              <span></span>
-            </div>
-            <p className="product__count">{props.item.count}</p>
-            <div
-              className="product__counterIncreaseButton"
-              onClick={() => {
-                increase(props.item.id);
-              }}
-            >
-              <span></span>
-              <span></span>
-            </div>
+              {/* <GoTrashcan /> */}
+              Удалить товар
+            </button>
           </div>
         </div>
       </div>

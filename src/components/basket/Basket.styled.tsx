@@ -5,7 +5,6 @@ export const BasketSection = styled.section`
   flex: 1 1 auto;
   padding-bottom: 100px;
   padding-top: 125px;
-  display: flex;
   /* align-items: center; */
 
   .basketSwiper {
@@ -96,6 +95,7 @@ export const BasketSection = styled.section`
       color: #999999;
     }
   }
+
   .basket {
     width: 100%;
     display: flex;
@@ -140,16 +140,84 @@ export const BasketSection = styled.section`
     }
   }
 
+  &__recommendedProducts {
+    background-color: ${(props) => props.theme.card.background};
+    margin-top: 22px;
+    height: 250px;
+    width: 75%;
+    border-radius: 12px;
+
+    h1 {
+      color: ${(props) => props.theme.color};
+      padding: 12px;
+      margin: 0px;
+    }
+  }
+
+  &__loyaltySystemWrapper,
+      &__promoCodeFieldWrapper {
+    background-color: ${(props) => props.theme.card.background};
+    padding: 12px;
+    margin-left: 16px;
+    margin-top: 12px;
+
+    p {
+      color: ${(props) => props.theme.color};
+    }
+  }
+
+  &__promoCodeFieldWrapper {
+    display: flex;
+    flex-direction: column;
+    background-color: ${(props) => props.theme.card.background};
+
+    h1 {
+      margin-top: 0;
+    }
+  }
+
+  &__promoCodeField {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    input {
+      border-radius: 4px;
+      border: 0.8px solid ${(props) => props.theme.color};
+      height: 35px;
+      width: 160px;
+      outline: none;
+      background-color: ${(props) => props.theme.card.background};
+      color: ${(props) => props.theme.color};
+      font-size: 16px;
+      padding-left: 10px;
+      text-transform: uppercase;
+
+      &::placeholder {
+        font-size: 10px;
+      }
+    }
+
+    button {
+      border: none;
+      height: 35px; 
+      border-radius: 4px;
+      cursor: pointer;
+      background-color: #3c87ff;
+      color: white;
+
+      :hover {
+        background-color: #2579ff;
+      }
+    }
+  }
+
   &__goToOrderWrapper {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    position: sticky;
-    top: 80px;
     border-radius: 12px;
     margin-left: 16px;
     padding: 12px;
-    height: 450px;
     background-color: ${(props) => props.theme.card.background};
 
     ${down("sm")} {
