@@ -4,7 +4,7 @@ import {
   AuthorizationHeader,
   AuthorizationWindow,
 } from "./Auth.styled";
-import { AuthorizationForm } from "./AuthForm/AuthorizationFormComponent";
+import { CaptchaVerify } from "./CaptchaVerify/CaptchaVerify";
 
 export const AuthComponent = () => {
   return (
@@ -12,7 +12,7 @@ export const AuthComponent = () => {
       <AuthorizationWindow>
         <AuthorizationHeader></AuthorizationHeader>
         <AuthorizationBody>
-          <AuthorizationForm />
+          <CaptchaVerify />
         </AuthorizationBody>
         <div id="recaptcha-container" className="CAPTCHA"></div>
       </AuthorizationWindow>
