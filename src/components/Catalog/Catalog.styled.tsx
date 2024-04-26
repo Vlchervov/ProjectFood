@@ -4,11 +4,15 @@ import { between, down } from "styled-breakpoints";
 export const Catalog = styled.div`
   /* padding-top: 160px; */
   padding-top: 60px;
-  max-width: 1420px;
+  max-width: 1336px;
   width: 100%;
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 24px;
+
+  ${down("xxl")} {
+    max-width: 1070px;
+  }
 
   .mainCatalog {
     display: flex;
@@ -103,7 +107,7 @@ export const CategoriesItem = styled.div`
   flex-direction: column;
   display: flex;
   margin-left: 20px;
-  width: 300px;
+  width: 280px;
   transition: all 0.5ms ease-out;
   margin-right: 20px;
   margin-bottom: 20px;

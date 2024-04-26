@@ -38,9 +38,13 @@ export const Footer = styled.footer`
 
   .footer__wrapperSocialSection {
     display: flex;
-    max-width: 1420px;
+    max-width: 1336px;
     width: 100%;
     justify-content: flex-end;
+
+    ${down("xxl")} {
+    max-width: 1070px;
+  }
   }
 
   .footerSocial {

@@ -40,7 +40,7 @@ export const Header = styled.header`
 export const AppHeader = styled.div`
   user-select: none;
   height: 55px;
-  max-width: 1440px;
+  max-width: 1336px;
   width: 100%;
   display: flex;
   justify-content: center;
@@ -52,6 +52,10 @@ export const AppHeader = styled.div`
   ${down("sm")} {
     z-index: 25;
     width: 100%;
+  }
+
+  ${down("xxl")} {
+    max-width: 1070px;
   }
 
   .react-select {
@@ -133,14 +137,14 @@ export const HeaderLeftSection = styled.div`
       border: none;
       color: white;
       height: 30px;
-      width: 125px;
-      background-color: #2c87ff;
+      width: 120px;
+      background: #006cf8;;
       border-radius: 8px;
       font-size: 12px;
       transition: ease-in 0.4s;
       :hover {
       transition: background-color 0.4s ease-out;
-      background-color: #006cf8;
+      background-color: #005eda;
     }
     }
 
@@ -168,6 +172,10 @@ export const HeaderRightSection = styled.div`
   ${down("xl")} {
     margin-right: 15px;
     } 
+
+    ${down("sm")} {
+      margin-right: 20px;
+    }
 
     li {
       width: 24px;
@@ -243,7 +251,7 @@ export const HeaderRightSection = styled.div`
     margin-right: 12px;
     transition: ease-in 0.4s;
     font-weight: 700;
-    background-color: #6e6e6e52;
+    background: #006cf8;
 
     ${down("sm")} {
       font-size: 10px;
@@ -251,11 +259,10 @@ export const HeaderRightSection = styled.div`
       width: 70px;
     }
 
-    /* :hover {
-      color: white;
-      background-color: #FF0044;
+    :hover {
+      background-color: #005eda;
       transition: background-color 0.4s ease-out;
-    } */
+    }
   }
 
   .dropDownList {
@@ -369,7 +376,7 @@ export const UnderHeaderCategory = styled.nav`
     color: ${(props) => props.theme.color};
     text-decoration: none;
     display: flex;
-    padding: 0px 32px 0px 0px;
+    padding: 0px 18px 0px 0px;
     margin: 0px;
     font-size: 14px;
     width: 100%;
@@ -450,6 +457,12 @@ export const ItemCount = styled.div`
   position: absolute;
   margin-left: 52px;
   justify-content: center;
+
+  ${down("sm")} {
+  
+    margin-left: 32px;
+    width: 24px;
+  }
 
   span {
     color: white;
