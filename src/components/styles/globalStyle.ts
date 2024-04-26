@@ -12,42 +12,6 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-.button-next {
-  width: 20px;
-  height: 10px;
-}
-
-.swiper-slide {
-  width: 116px;
-}
-
-.swiperCategory {
-  margin: 0px;
-  padding: 0px;
-  width: 1200px;
-  height: 50px;
-
-  .swiper-slide {
-    display: flex;
-    justify-content: center;
-  }
-
-  .swiper-button-next {
-    height: 50px;
-    width: 0px;
-  ::after {
-    font-size: 30px;
-  }
-}
-
-.swiper-button-prev {
-  width: 0px;
-  height: 50px;
-  ::after {
-    font-size: 30px;
-  }
-}
-}
 
 /* html {
   scroll-behavior: smooth;
@@ -116,9 +80,7 @@ body {
   text-align: flex-start;
   display: flex;
   flex-direction: column;
-
 }
-
 
 .App-link {
   color: #61dafb;

@@ -336,7 +336,7 @@ export const UnderHeaderCategory = styled.nav`
     align-items: center;
     user-select: none;
   
-    ${down("sm")} {
+    ${down("xl")} {
     flex-wrap: nowrap;
     overflow-x: auto;
   }

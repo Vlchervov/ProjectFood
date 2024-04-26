@@ -4,24 +4,11 @@ import { between, down } from "styled-breakpoints";
 export const Catalog = styled.div`
   /* padding-top: 160px; */
   padding-top: 60px;
-  max-width: 1440px;
+  max-width: 1420px;
+  width: 100%;
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 24px;
-
-  ${between("xl", "xxl")} {
-    max-width: unset;
-    width: 100%;
-    margin-left: unset;
-    margin-right: unset;
-  }
-
-  ${down("sm")} {
-    padding: unset;
-    margin: unset;
-    margin-top: 60px;
-    max-width: unset;
-  }
 
   .mainCatalog {
     display: flex;
@@ -78,17 +65,12 @@ export const CategoryName = styled.h1`
   margin-left: 20px;
 
   ${between("sm", "md")} {
-    justify-content: center;
     margin-left: 0px;
-  }
-
-  ${between("md", "xl")} {
-
+    font-size: 20px;
   }
 
   ${down("sm")} {
-    margin-left: 20px;
-    font-size: 20px;
+    margin-left: 0px;
   }
 `;
 
@@ -107,20 +89,8 @@ export const Categories = styled.section`
   flex-wrap: wrap;
   padding: 24px;
   margin-bottom: 18px;
-  /* margin-left: 120px; */
-  /* margin-right: 80px; */
-  &:not(:nth-of-type(3)) {
-    /* border-bottom: ${(props) => props.theme.border.bottom}; */
-  }
-
-  ${between("sm", "xl")} {
-    margin-left: 0px;
-    margin-right: 0px;
-   justify-content: center;
-  }
 
   ${down("sm")} {
-    justify-content: center;
     margin-left: 0px;
     margin-right: 0px;
   }
@@ -133,17 +103,23 @@ export const CategoriesItem = styled.div`
   flex-direction: column;
   display: flex;
   margin-left: 20px;
-  width: 305px;
+  width: 300px;
   transition: all 0.5ms ease-out;
   margin-right: 20px;
   margin-bottom: 20px;
   /* box-shadow: 0px 10px 11px 2px rgba(0, 0, 0, 0.10);  */
 
+  ${between("sm", "md")} {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
   ${down("sm")} {
     margin-left: 0px;
     padding-left: 0px;
     margin-right: 0px;
-    width: 95%;
+    width: 100%;
     flex-direction: column;
     justify-content: center;
   }

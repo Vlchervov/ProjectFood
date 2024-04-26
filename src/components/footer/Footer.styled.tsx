@@ -1,4 +1,4 @@
-import { between, down } from "styled-breakpoints";
+import { down } from "styled-breakpoints";
 import styled from "styled-components";
 
 export const Footer = styled.footer`
@@ -13,23 +13,10 @@ export const Footer = styled.footer`
     justify-content: center;
     padding-top: 0;
     width: 100%;
-    max-width: 1460px;
     border-radius: 6px;
     margin-left: auto;
     margin-right: auto;
     margin-top: 24px;
-    ${between('sm', "md")} {
-    align-items: center;
-    
-    flex-direction: column;
-    white-space: nowrap;
-    }
-
-    ${down("md")} {
-      align-items: center;
-      flex-direction: column;
-      text-align: center;
-    }
 
     .footer__section {
     /* margin-left: 110px; */
@@ -47,130 +34,11 @@ export const Footer = styled.footer`
         margin-bottom: 14px;
       }
     }
-
-     ${between("md", "xl")} {
-      font-size: 12px;
-      flex-direction: column;
-      display: flex;
-      margin: 0;
-    }
-
-    ${between("sm", "md")} {
-      padding-top: 10px;
-      padding-bottom: 10px;
-    }
-
-    ${down("md")} {
-      width: 60%;
-      margin-left: 0px;
-      padding-top: 10px;
-      padding-bottom: 0px;
-      :nth-child(2) {
-       order: -1;
-      }
-    }
-  }
-
-  .footerDelivery {
-    ${down('sm')} {
-    text-align: center;
-    }
-    h4 {
-      text-transform: uppercase;
-      font-weight: 400;
-      margin: 0;
-      user-select: none;
-      font-size: 16px;
-      line-height: 20px;
-      // color: rgba(21, 21, 21, 0.3);
-      color: #ffffff;
-    }
-  }
-
-  .footerNav {
-    ul {
-      padding: 0;
-      list-style: none;
-
-      ${down("md")} {
-        margin-bottom: 0px;
-      }
-      li {
-        cursor: pointer;
-        margin-bottom: 13px;
-        font-size: 14px;
-        font-family: sans-serif;
-        line-height: 20px;
-        /* color: #bdbdbd; */
-        color: white;
-        &:hover {
-          text-decoration: underline;
-        }
-
-        ${down("md")} {
-          :last-child {
-            margin-bottom: 0px;
-          }
-        }
-      }
-    }
-  }
-
-  .footerAppTitle {
-    ${down("sm")} {
-    text-align: center;
-    }
-    font-size: 12px;
-    line-height: 17px;
-    // color: rgba(21, 21, 21, 0.3);
-  }
-  .footerLogo {
-    display: flex;
-    margin-top: 18px;
-    flex-direction: row;
-
-    ${down("sm")} {
-    margin-top: 0px;
-    }
-  }
-
-  .footerPaymentMethods {
-    display: flex;
-    ${down('md')} {
-      justify-content: center;
-      padding-top: 0px;
-    }
-    h4 {
-      margin: 0;
-      user-select: none;
-      font-size: 16px;
-      font-weight: 400;
-      line-height: 20px;
-      /* color: #757575; */
-      color: white;
-    }
-  }
-
-  .footerContacts {
-    ${down("sm")} {
-      text-align: center;
-    }
-  }
-
-  .footerDeveloperCompanyName {
-    display: flex;
-    justify-content: flex-end;
-    text-decoration: underline;
-    cursor: pointer;
-    user-select: none;
-    ${down("md")} {
-      justify-content: center;
-    }
   }
 
   .footer__wrapperSocialSection {
     display: flex;
-    max-width: 1440px;
+    max-width: 1420px;
     width: 100%;
     justify-content: flex-end;
   }
@@ -181,10 +49,6 @@ export const Footer = styled.footer`
     align-items: center;
     margin-top: 12px;
     transition: all 0.5s;
-
-    ${down("sm")} {
-      justify-content: center;
-    }
 
     &:hover {
       a {
@@ -205,71 +69,12 @@ export const Footer = styled.footer`
     img {
       width: 18px;
       height: 18px;
-
       padding-right: 10px;
       cursor: pointer;
       transition: all 0.5s;
       :last-child {
         padding-right: 0px;
       }
-    }
-  }
-
-  .footerPaymentCard {
-    text-align: center;
-    user-select: none;
-    display: flex;
-    ${down("md")} {
-      align-items: center;
-      justify-content: center;
-    }
-
-    label {
-      display: flex;
-    }
-
-    img {
-      width: 50px;
-      padding-top: 15px;
-      ${between("md", "xxl")} {
-        width: 30px;
-    }
-
-      :not(:nth-child(1)) {
-        padding-left: 12px;
-      }
-    }
-  }
-
-  .footer__itemLogo {
-    ${down("sm")} {
-      justify-content: center;
-    }
-    padding: 0px;
-    margin-left: 15px;
-    cursor: pointer;
-    picture {
-      margin-left: 5px;
-      display: flex;
-      img {
-      width: 15px;
-      }
-    }
-  }
-  .GoogleLogo {
-    display: flex;
-    padding: 0px;
-    margin: 0px;
-    color: #bdbdbd;
-    &:hover {
-      color: ${(props) => props.theme.active.color}
-    }
-  }
-  .AppleLogo {
-    display: flex; 
-    color: #bdbdbd;
-    &:hover {
-      color: ${(props) => props.theme.active.color}
     }
   }
 `
