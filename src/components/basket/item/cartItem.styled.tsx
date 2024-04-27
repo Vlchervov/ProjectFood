@@ -12,6 +12,10 @@ export const BasketItem = styled.div`
     border-radius: 12px;
     margin-left: 12px;
     margin-top: 14px;
+
+    ${down("sm")} {
+      margin-left: 0px;
+    }
   }
 
   &__count {
@@ -146,8 +150,19 @@ export const BasketItem = styled.div`
     color: ${(props) => props.theme.color};
     width: 100%;
     height: 60px;
+    overflow: auto;
     margin-bottom: 8px;
     margin-top: 8px;
+  }
+
+  &__footerWrapper {
+    display: flex;
+    flex-direction: column;
+    ${down("sm")} {
+      flex-direction: row-reverse;
+      width: 100%;
+      justify-content: space-between;
+    }
   }
 
   &__footer {

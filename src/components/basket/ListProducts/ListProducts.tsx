@@ -50,7 +50,7 @@ export const ListProducts = (props: any) => {
                                 Перейти к оформлению
                             </button>
                         </div>
-                        <LoyaltySystem />
+                        {/* <LoyaltySystem /> */}
                         {/* <PromoCodes /> */}
                     </div>
                 </div>

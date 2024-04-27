@@ -13,15 +13,17 @@ export const CartItem = (props: PropsCart) => {
     <BasketItem>
       <div className="product">
         <div className="product__item">
-          <img src={props.item.src.image_1} alt="фото товара" />
-          <div className="product__body">
-            <div className="product__content">
-              <p className="product__title">{props.item.title}</p>
-              <p className="product__weight">{props.item.weight}</p>
-              <p className="product__description">{props.item.descr}</p>
+          <div style={{ width: "100%", display: "flex" }}>
+            <img src={props.item.src.image_1} alt="фото товара" />
+            <div className="product__body">
+              <div className="product__content">
+                <p className="product__title">{props.item.title}</p>
+                <p className="product__weight">{props.item.weight}</p>
+                <p className="product__description">{props.item.descr}</p>
+              </div>
             </div>
           </div>
-          <div style={{ display: "flex", flexDirection: "column" }}>
+          <div className="product__footerWrapper">
             <div className="product__footer">
               <p className="product__price">
                 {"\u00A0"}
